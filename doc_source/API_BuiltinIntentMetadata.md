@@ -12,7 +12,7 @@ Required: No
  **supportedLocales**   
 A list of identifiers for the locales that the intent supports\.  
 Type: Array of strings  
-Valid Values:` en-US`   
+Valid Values:` en-US | en-GB | de-DE`   
 Required: No
 
 ## See Also<a name="API_BuiltinIntentMetadata_SeeAlso"></a>

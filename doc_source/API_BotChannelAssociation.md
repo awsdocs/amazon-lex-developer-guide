@@ -36,6 +36,7 @@ Length Constraints: Minimum length of 0\. Maximum length of 200\.
 Required: No
 
  **failureReason**   
+If `status` is `FAILED`, Amazon Lex provides the reason that it failed to create the association\.  
 Type: String  
 Required: No
 
@@ -47,6 +48,13 @@ Pattern: `^([A-Za-z]_?)+$`
 Required: No
 
  **status**   
+The status of the bot channel\.   
+
++  `CREATED` \- The channel has been created and is ready for use\.
+
++  `IN_PROGRESS` \- Channel creation is in progress\.
+
++  `FAILED` \- There was an error creating the channel\. For information about the reason for the failure, see the `failureReason` field\.
 Type: String  
 Valid Values:` IN_PROGRESS | CREATED | FAILED`   
 Required: No

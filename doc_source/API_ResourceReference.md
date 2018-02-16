@@ -7,7 +7,7 @@ Describes the resource that refers to the resource that you are attempting to de
  **name**   
 The name of the resource that is using the resource that you are trying to delete\.  
 Type: String  
-Length Constraints: Minimum length of 1\. Maximum length of 64\.  
+Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `[a-zA-Z_]+`   
 Required: No
 

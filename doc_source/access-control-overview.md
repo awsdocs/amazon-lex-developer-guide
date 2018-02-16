@@ -50,7 +50,7 @@ A *permissions policy* describes who has access to what\. The following section 
 **Note**  
 This section discusses using IAM in the context of Amazon Lex\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
-Policies attached to an IAM identity are referred to as *identity\-based* policies \(IAM polices\) and policies attached to a resource are referred to as *resource\-based* policies\. Amazon Lex supports only identity\-based policies \(IAM policies\)\. 
+Policies attached to an IAM identity are referred to as *identity\-based* policies \(IAM policies\) and policies attached to a resource are referred to as *resource\-based* policies\. Amazon Lex supports only identity\-based policies \(IAM policies\)\. 
 
 
 + [Identity\-Based Policies \(IAM Policies\)](#access-control-manage-access-intro-iam-policies)
@@ -90,7 +90,7 @@ The following is an example policy that allows the user to perform the `PutBot` 
 }
 ```
 
-For more information about using identity\-based policies with Amazon Lex, see [Using Identity\-Based Polices \(IAM Policies\) for Amazon Lex](access-control-managing-permissions.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
+For more information about using identity\-based policies with Amazon Lex, see [Using Identity\-Based Policies \(IAM Policies\) for Amazon Lex](access-control-managing-permissions.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
 
 ### Resource\-Based Policies<a name="access-control-manage-access-intro-resource-policies"></a>
 

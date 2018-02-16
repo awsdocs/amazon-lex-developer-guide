@@ -73,8 +73,7 @@ The following example shows two versions of an Amazon Lex bot, version `$LATEST`
 
 When you create a second version of the bot, you can update the alias to point to the new version of the bot using the console or the [PutBot](API_PutBot.md) operation\. When you change the alias, all of your client applications use the new version\. If there is a problem with the new version, you can roll back to the previous version by simply changing the alias to point to that version\.
 
-![\[Updating an alias changes the version used by client
-						applications.\]](http://docs.aws.amazon.com/lex/latest/dg/images/lex-publish-alias-bot-v2.png) 
+![\[Updating an alias changes the version used by client applications.\]](http://docs.aws.amazon.com/lex/latest/dg/images/lex-publish-alias-bot-v2.png) 
 
 **Note**  
 Although you can test the `$LATEST` version of a bot in the console, we recommend that when you integrate a bot with your client application, you first publish a version and create an alias that points to that version\. Use the alias in your client application for the reasons explained in this section\. When you update an alias, Amazon Lex will wait until the session timeout of all current sessions expires before it starts using the new version\. For more information about the session timeout, see [[ERROR] BAD/MISSING LINK TEXT](context-mgmt.md#context-mgmt-session-timeout)

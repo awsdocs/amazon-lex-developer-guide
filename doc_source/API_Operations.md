@@ -48,6 +48,8 @@ The following actions are supported by Amazon Lex Model Building Service:
 
 +  [GetExport](API_GetExport.md) 
 
++  [GetImport](API_GetImport.md) 
+
 +  [GetIntent](API_GetIntent.md) 
 
 +  [GetIntents](API_GetIntents.md) 
@@ -69,6 +71,8 @@ The following actions are supported by Amazon Lex Model Building Service:
 +  [PutIntent](API_PutIntent.md) 
 
 +  [PutSlotType](API_PutSlotType.md) 
+
++  [StartImport](API_StartImport.md) 
 
 The following actions are supported by Amazon Lex Runtime Service:
 

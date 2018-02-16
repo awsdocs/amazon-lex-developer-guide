@@ -16,7 +16,7 @@ The request requires the following URI parameters\.
 
  ** locale **   
 A list of locales that the intent supports\.  
-Valid Values:` en-US` 
+Valid Values:` en-US | en-GB | de-DE` 
 
  ** maxResults **   
 The maximum number of intents to return in the response\. The default is 10\.  

@@ -28,15 +28,15 @@ At the end of this section, you get application credentials \(Client Id, Client 
 
       + To save the changes, choose **Add Bot User**\.
 
-   1. In the left menu, choose **Interactive Messages**\.
+   1. In the left menu, choose **Interactive Components**\.
 
-      + Choose **Enable Interactive Messages**\.
+      + Choose **Enable Interactive Components**\.
 
       + In the **Request URL** box, specify any valid URL\. For example, you can use **https://slack\.com**\.
 **Note**  
 For now, enter any valid URL to get the verification token that you need in the next step\. You will update this URL after you add the bot channel association in the Amazon Lex console\. 
 
-      + Choose **Enable Interactive Messages**\.
+      + Choose **Enable Interactive Components**\.
 
 1. In the left menu, in **Settings**, choose **Basic Information**\. Record the following application credentials:
 

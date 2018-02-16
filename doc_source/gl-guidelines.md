@@ -6,7 +6,7 @@ This section describes general guidelines when using Amazon Lex\.
 
    
 
-  For [PostContent](API_runtime_PostContent.md), uses the unsigned payload option described in [ Signature Calculations for the Authorization Header: Transferring Payload in a Single Chunck \(AWS Signature Version 4\)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html) in the *Amazon Simple Storage Service \(S3\) API Reference*\.
+  For [PostContent](API_runtime_PostContent.md), uses the unsigned payload option described in [ Signature Calculations for the Authorization Header: Transferring Payload in a Single Chunk \(AWS Signature Version 4\)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html) in the *Amazon Simple Storage Service \(S3\) API Reference*\.
 
    
 
@@ -24,15 +24,19 @@ This section describes general guidelines when using Amazon Lex\.
   "Tell me the prediction for {Sign}" 
   ```
 
-  Where `{Sign}` is a slot of custom type `ZodiacSign`\. has has 12 enumeration values, `Aries` through `Pisces`\. From the user utterance "Tell me the prediction for \.\.\." Amazon Lex understands that what follows is a zodiac sign\. 
+  Where `{Sign}` is a slot of custom type `ZodiacSign`\. It has 12 enumeration values, `Aries` through `Pisces`\. From the user utterance "Tell me the prediction for \.\.\." Amazon Lex understands what follows is a zodiac sign\. 
 
    
 
-  If the user says "Tell me the prediction for earth", Amazon Lex infers that "earth" is a `ZodiacSign` and passes it to your client application or Lambda functions\. You must check that slot values have valid values before using them in your fulfillment activity\.
+  When the `valueSelectionStrategy` field is set to `ORIGINAL_VALUE` using the [PutSlotType](API_PutSlotType.md) operation, or if **Expand values** is selected in the console, if the user says "Tell me the prediction for earth", Amazon Lex infers that "earth" is a `ZodiacSign` and passes it to your client application or Lambda functions\. You must check that slot values have valid values before using them in your fulfillment activity\.
 
    
 
-  When Amazon Lex calls a Lambda function or returns the result of a conversation to your client application, the case of the slot values is not guaranteed\. For example, if you are eliciting values for the [AMAZON\.Movie](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference#movie) built\-in slot type, and a user says or types "Gone with the wind," Amazon Lex may return "Gone with the Wind," "gone with the wind," or "Gone With The Wind\."
+  If you set the `valueSelectionStrategy` field to `TOP_RESOLUTION` using the [PutSlotType](API_PutSlotType.md) operation, or if **Restrict to slot values and synonyms** is selected in the console, the values that are returned are limited to the values that you defined for the slot type\. For example, if the user says "Tell me the prediction for earth" the value would not be recognized because it is not one of the values defined for the slot type\. When you define synonyms for slot values, they are recognized the same as a slot value, however, the slot value is returned instead of the synonym\.
+
+   
+
+  When Amazon Lex calls a Lambda function or returns the result of a speech interaction with your client application, the case of the slot values is not guaranteed\. For example, if you are eliciting values for the [AMAZON\.Movie](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference#movie) built\-in slot type, and a user says or types "Gone with the wind," Amazon Lex may return "Gone with the Wind," "gone with the wind," or "Gone With The Wind\." In text interactions, the case of the slot values matches the text entered or the slot value, depending on the value of the `valueResolutionStrategy` field\.
 
    
 

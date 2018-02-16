@@ -2,7 +2,7 @@
 
 Amazon Lex enables you to build applications using a speech or text interface powered by the same technology that powers Amazon Alexa\. Following are the typical steps you perform when working with Amazon Lex:
 
-1. Create a bot and configure it with one or more intents that you want to support\. You add the configuration so that the bot is able to understand the user's goal \(intent\), engage in conversation with the user to elicit information, and, after the user provides the necessary data, fulfill the user's intent\.
+1. Create a bot and configure it with one or more intents that you want to support\. Configure the bot so it understands the user's goal \(intent\), engages in conversation with the user to elicit information, and fulfills the user's intent\.
 
 1. Test the bot\. You can use the test window client provided by the Amazon Lex console\.
 
@@ -16,7 +16,7 @@ Before you get started, familiarize yourself with the following Amazon Lex core 
 
    
 
-  Amazon Lex bots can understand user input provided with text or speech and converse in natural language\. You can create Lambda functions and add them as code hook in your intent configuration to perform user data validation and fulfillment tasks\. 
+  Amazon Lex bots can understand user input provided with text or speech and converse in natural language\. You can create Lambda functions and add them as code hooks in your intent configuration to perform user data validation and fulfillment tasks\. 
 
    
 
@@ -65,7 +65,7 @@ The following topics provide additional information\. We recommend that you revi
 
 + [Programming Model](programming-model.md)
 + [Service Permissions](howitworks-service-permissions.md)
-+ [Managing Messages \(Prompts and Statements\)](howitworks-manage-prompts.md)
++ [Managing Messages](howitworks-manage-prompts.md)
 + [Managing Conversation Context](context-mgmt.md)
 + [Bot Deployment Options](chatbot-service.md)
 + [Built\-in Intents and Slot Types](howitworks-builtins.md)

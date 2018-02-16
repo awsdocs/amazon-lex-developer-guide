@@ -70,7 +70,7 @@ Note the following additional information about the event fields:
 
    
 
-  A slot value may not match one of the slot values configured for the slot\. For example, if the user responds to the prompt "What color car would you like?" with "pizza," Amazon Lex will return "pizza" as the slot value\. Your function should validate the values to make sure that they make sense in context\.
+  The slot value in the input event may not match one of the values configured for the slot\. For example, if the user responds to the prompt "What color car would you like?" with "pizza," Amazon Lex will return "pizza" as the slot value\. Your function should validate the values to make sure that they make sense in context\.
 
    
 
@@ -210,7 +210,7 @@ The `type` field indicates the next course of action\. It also determines the ot
       "type": "Close",
       "fulfillmentState": "Fulfilled or Failed",
       "message": {
-        "contentType": "PlainText or SSML",
+        "contentType": "PlainText or SSML or CustomPayload",
         "content": "Message to convey to the user. For example, Thanks, your pizza has been ordered."
       },
      "responseCard": {
@@ -244,7 +244,7 @@ The `type` field indicates the next course of action\. It also determines the ot
   "dialogAction": {
       "type": "ConfirmIntent",
       "message": {
-        "contentType": "PlainText or SSML",
+        "contentType": "PlainText or SSML or CustomPayload",
         "content": "Message to convey to the user. For example, Are you sure you want a large pizza?"
       },
      "intentName": "intent-name",
@@ -298,7 +298,7 @@ The `type` field indicates the next course of action\. It also determines the ot
     "dialogAction": {
       "type": "ElicitIntent",
       "message": {
-        "contentType": "PlainText or SSML",
+        "contentType": "PlainText or SSML or CustomPayload",
         "content": "Message to convey to the user. For example, What can I help you with?"
       },
       "responseCard": {
@@ -332,7 +332,7 @@ The `type` field indicates the next course of action\. It also determines the ot
     "dialogAction": {
       "type": "ElicitSlot",
       "message": {
-        "contentType": "PlainText or SSML",
+        "contentType": "PlainText or SSML or CustomPayload",
         "content": "Message to convey to the user. For example, What size pizza would you like?"
       },
      "intentName": "intent-name",

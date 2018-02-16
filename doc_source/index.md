@@ -1,7 +1,7 @@
 # Amazon Lex Developer Guide
 
 -----
-*****Copyright &copy; 2017 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -18,7 +18,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Amazon Lex: How It Works](how-it-works.md)
    + [Programming Model](programming-model.md)
    + [Service Permissions](howitworks-service-permissions.md)
-   + [Managing Messages (Prompts and Statements)](howitworks-manage-prompts.md)
+   + [Managing Messages](howitworks-manage-prompts.md)
    + [Managing Conversation Context](context-mgmt.md)
    + [Bot Deployment Options](chatbot-service.md)
    + [Built-in Intents and Slot Types](howitworks-builtins.md)
@@ -82,7 +82,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Using Lambda Functions](using-lambda.md)
    + [Lambda Function Input Event and Response Format](lambda-input-response-format.md)
    + [Amazon Lex and AWS Lambda Blueprints](lex-lambda-blueprints.md)
-+ [Deploying and ExportingAmazon Lex Bots](examples.md)
++ [Deploying Amazon Lex Bots](examples.md)
    + [Deploying an Amazon Lex Bot on a Messaging Platform](example1.md)
       + [Integrating an Amazon Lex Bot with Facebook Messenger](fb-bot-association.md)
       + [Integrating an Amazon Lex Bot with Kik](kik-bot-association.md)
@@ -99,7 +99,12 @@ Amazon's trademarks and trade dress may not be used in
          + [Step 6: Test the Integration](slack-bot-test.md)
       + [Integrating an Amazon Lex Bot with Twilio Programmable SMS](twilio-bot-association.md)
    + [Deploying an Amazon Lex Bot in Mobile Applications](example2.md)
-   + [Exporting Amazon Lex Bots](export.md)
++ [Importing and Exporting Amazon Lex Bots, Intents, and Slot Types](import-export.md)
+   + [Exporting and Importing in Amazon Lex Format](import-export-lex.md)
+      + [Exporting in Amazon Lex Format](export-to-lex.md)
+      + [Importing in Amazon Lex Format](import-from-lex.md)
+      + [JSON Format for Importing and Exporting](import-export-format.md)
+   + [Exporting to an Alexa Skill](export-to-alexa.md)
 + [Additional Examples: Creating Amazon Lex Bots](additional-exercises.md)
    + [Example Bot: ScheduleAppointment](ex1-sch-appt.md)
       + [Step 1: Create an Amazon Lex Bot](ex1-sch-appt-create-bot.md)
@@ -125,7 +130,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Limits](gl-limits.md)
 + [Authentication and Access Control for Amazon Lex](auth-and-access-control.md)
    + [Overview of Managing Access Permissions to Your Amazon Lex Resources](access-control-overview.md)
-   + [Using Identity-Based Polices (IAM Policies) for Amazon Lex](access-control-managing-permissions.md)
+   + [Using Identity-Based Policies (IAM Policies) for Amazon Lex](access-control-managing-permissions.md)
    + [Amazon Lex API Permissions: Actions, Resources, and Conditions Reference](lex-api-permissions-ref.md)
 + [API Reference](API_Reference.md)
    + [Actions](API_Operations.md)
@@ -153,6 +158,7 @@ Amazon's trademarks and trade dress may not be used in
          + [GetBuiltinIntents](API_GetBuiltinIntents.md)
          + [GetBuiltinSlotTypes](API_GetBuiltinSlotTypes.md)
          + [GetExport](API_GetExport.md)
+         + [GetImport](API_GetImport.md)
          + [GetIntent](API_GetIntent.md)
          + [GetIntents](API_GetIntents.md)
          + [GetIntentVersions](API_GetIntentVersions.md)
@@ -164,6 +170,7 @@ Amazon's trademarks and trade dress may not be used in
          + [PutBotAlias](API_PutBotAlias.md)
          + [PutIntent](API_PutIntent.md)
          + [PutSlotType](API_PutSlotType.md)
+         + [StartImport](API_StartImport.md)
       + [Amazon Lex Runtime Service](API_Operations_Amazon_Lex_Runtime_Service.md)
          + [PostContent](API_runtime_PostContent.md)
          + [PostText](API_runtime_PostText.md)

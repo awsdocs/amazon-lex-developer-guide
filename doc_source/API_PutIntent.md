@@ -57,6 +57,7 @@ Content-type: application/json
       ],
       "responseCard": "string"
    },
+   "createVersion": boolean,
    "description": "string",
    "dialogCodeHook": { 
       "messageVersion": "string",
@@ -166,6 +167,10 @@ You you must provide both the `rejectionStatement` and the `confirmationPrompt`,
 Type: [Prompt](API_Prompt.md) object  
 Required: No
 
+ ** createVersion **   
+Type: Boolean  
+Required: No
+
  ** description **   
 A description of the intent\.  
 Type: String  
@@ -254,6 +259,7 @@ Content-type: application/json
       "responseCard": "string"
    },
    "createdDate": number,
+   "createVersion": boolean,
    "description": "string",
    "dialogCodeHook": { 
       "messageVersion": "string",
@@ -351,6 +357,9 @@ Type: [Prompt](API_Prompt.md) object
  ** createdDate **   
 The date that the intent was created\.  
 Type: Timestamp
+
+ ** createVersion **   
+Type: Boolean
 
  ** description **   
 A description of the intent\.  

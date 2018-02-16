@@ -20,6 +20,27 @@ If you've already created an Amazon Lex bot using the console, the service\-link
 
    The response is:
 
+   ```
+   {
+       "Role": {
+           "AssumeRolePolicyDocument": {
+               "Version": "2012-10-17", 
+               "Statement": [
+                   {
+                       "Action": "sts:AssumeRole", 
+                       "Effect": "Allow", 
+                       "Principal": {
+                           "Service": "lex.amazonaws.com"
+                       }
+                   }
+               ]
+           },
+           "RoleName": "AWSServiceRoleForLexBots", 
+           "Path": "/aws-service-role/lex.amazonaws.com/", 
+           "Arn": "arn:aws:iam::account-id:role/aws-service-role/lex.amazonaws.com/AWSServiceRoleForLexBots"
+   }
+   ```
+
 ## Next Step<a name="gs-create-next-2"></a>
 
 [Step 2: Create a Custom Slot Type \(AWS CLI\)](gs-create-flower-types.md)

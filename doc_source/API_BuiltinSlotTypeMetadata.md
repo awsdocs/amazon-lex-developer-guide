@@ -12,7 +12,7 @@ Required: No
  **supportedLocales**   
 A list of target locales for the slot\.   
 Type: Array of strings  
-Valid Values:` en-US`   
+Valid Values:` en-US | en-GB | de-DE`   
 Required: No
 
 ## See Also<a name="API_BuiltinSlotTypeMetadata_SeeAlso"></a>

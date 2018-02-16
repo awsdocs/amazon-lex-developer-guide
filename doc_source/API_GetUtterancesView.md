@@ -6,9 +6,8 @@ For example, say that you have created a bot to order flowers\. After your users
 
 After you publish a new version of a bot, you can get information about the old version and the new so that you can compare the performance across the two versions\. 
 
-Data is available for the last 15 days\. You can request information for up to 5 versions in each request\. The response contains information about a maximum of 100 utterances for each version\.
-
-If the bot's `childDirected` field is set to `true`, utterances for the bot are not stored and cannot be retrieved with the `GetUtterancesView` operation\. For more information, see [PutBot](API_PutBot.md)\.
+**Note**  
+Utterance statistics are generated once a day\. Data is available for the last 15 days\. You can request information for up to 5 versions in each request\. The response contains information about a maximum of 100 utterances for each version\.
 
 This operation requires permissions for the `lex:GetUtterancesView` action\.
 

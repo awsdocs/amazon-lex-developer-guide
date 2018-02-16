@@ -14,10 +14,10 @@ All of the attributes take the namespace, `x-amz-lex:`, as the prefix \. For exa
 
 | Attribute | Description | 
 | --- | --- | 
-| channel\-id | The channel endpoint identifier from Amazon Lex  | 
-| channel\-name | The channel name from Amazon Lex  | 
+| channel\-id | The channel endpoint identifier from Amazon Lex\. | 
+| channel\-name | The channel name from Amazon Lex\. | 
 | channel\-type |  One of the following values: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/example1.html)  | 
-| webhook\-endpoint\-url | The Amazon Lex endpoint for the channel  | 
+| webhook\-endpoint\-url | The Amazon Lex endpoint for the channel\. | 
 
 
 **Facebook Request Attributes**  

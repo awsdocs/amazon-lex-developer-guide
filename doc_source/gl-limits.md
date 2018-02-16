@@ -90,6 +90,10 @@ Currently, Amazon Lex is available in the following regions:
 
    
 
++ When using message groups you can define up to five message groups for each message\. Each message group can contain a maximum of five messages, and you are limited to 15 messages in all message groups\.
+
+   
+
 + You can define sample utterances for intents and slots\. You can use a maximum of 200,000 characters for all utterances\.
 
    
@@ -168,6 +172,14 @@ Currently, Amazon Lex is available in the following regions:
 
    
 
++ You can create up to five message groups for each message in an intent\. There can be a total of 15 messages in all message groups for a message\.
+
+   
+
++ The console can only create message groups for the `conclusionStatement` and `followUpPrompt` messages\. You can create message groups for any other message using the Amazon Lex API\.
+
+   
+
 + Each slot can have up to 10 sample utterances\. Each sample utterance must refer to the slot name exactly once\. For example:
 
   ```
@@ -176,7 +188,7 @@ Currently, Amazon Lex is available in the following regions:
 
    
 
-+  Each bot can have a maximum of 200,000 characters for intent and slot utterences combined\. 
++  Each bot can have a maximum of 200,000 characters for intent and slot utterances combined\. 
 
    
 

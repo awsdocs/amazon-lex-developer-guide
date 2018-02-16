@@ -17,6 +17,7 @@ Valid Values:` PlainText | SSML | CustomPayload`
 Required: Yes
 
  **groupNumber**   
+Identifies the message group that the message belongs to\. When a group is assigned to a message, Amazon Lex returns one message from each group in the response\.  
 Type: Integer  
 Valid Range: Minimum value of 1\. Maximum value of 5\.  
 Required: No

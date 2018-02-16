@@ -10,4 +10,4 @@ Currently, Amazon Lex provides the following bot deployment options:
 
 + Twilio – You can integrate your Amazon Lex bot with the Twilio Simple Messaging Service \(SMS\)\.
 
-For examples, see [Deploying and ExportingAmazon Lex Bots](examples.md)\.
+For examples, see [Deploying Amazon Lex Bots](examples.md)\.

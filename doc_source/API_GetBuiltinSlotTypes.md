@@ -18,7 +18,7 @@ The request requires the following URI parameters\.
 
  ** locale **   
 A list of locales that the slot type supports\.  
-Valid Values:` en-US` 
+Valid Values:` en-US | en-GB | de-DE` 
 
  ** maxResults **   
 The maximum number of slot types to return in the response\. The default is 10\.  

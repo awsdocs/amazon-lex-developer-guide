@@ -1,4 +1,4 @@
-# Using Identity\-Based Polices \(IAM Policies\) for Amazon Lex<a name="access-control-managing-permissions"></a>
+# Using Identity\-Based Policies \(IAM Policies\) for Amazon Lex<a name="access-control-managing-permissions"></a>
 
 This topic provides examples of identity\-based policies that demonstrate how an account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\) and thereby grant permissions to perform operations on Amazon Lex resources\. 
 
@@ -9,7 +9,7 @@ The sections in this topic cover the following:
 
 +  [Permissions Required to Use the Amazon Lex Console](#additional-console-required-permissions) 
 
-+ [AWS Managed \(Predefined\) Polices for Amazon Lex](#access-policy-examples-aws-managed)
++ [AWS Managed \(Predefined\) Policies for Amazon Lex](#access-policy-examples-aws-managed)
 
 + [Examples of Customer Managed Policies ](#access-policy-examples-for-sdk-cli) 
 
@@ -166,7 +166,7 @@ The Amazon Lex console needs these additional permissions for the following reas
 
 + `iam` actions so that the console can manage server\-linked roles that grant permission to use other AWS resources\.
 
-## AWS Managed \(Predefined\) Polices for Amazon Lex<a name="access-policy-examples-aws-managed"></a>
+## AWS Managed \(Predefined\) Policies for Amazon Lex<a name="access-policy-examples-aws-managed"></a>
 
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate which permissions are needed\. For more information, see [AWS Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\. 
 

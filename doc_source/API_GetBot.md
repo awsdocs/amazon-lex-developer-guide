@@ -127,7 +127,7 @@ Type: Timestamp
  ** locale **   
  The target locale for the bot\.   
 Type: String  
-Valid Values:` en-US` 
+Valid Values:` en-US | en-GB | de-DE` 
 
  ** name **   
 The name of the bot\.  

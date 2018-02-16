@@ -3,7 +3,7 @@
 In this exercise, you add additional utterances to those you created in Getting Started Exercise 1\. You use the **Monitoring** tab in the Amazon Lex console to view utterances that your bot did not recognize\. To improve the experience for your users, you add those utterances to the bot\. 
 
 **Note**  
-Utterance statistics are generated once a day, generally in the evening\. You can see the utterance that was not recognized, how many times it was heard, and the last date and time that the utterance was heard\. It can take up to 24 hours for missed utterances to appear in the console\.
+Utterance statistics are generated once a day\. You can see the utterance that was not recognized, how many times it was heard, and the last date and time that the utterance was heard\. It can take up to 24 hours for missed utterances to appear in the console\.
 
 **To view and add missed utterances to a bot:**
 
@@ -26,8 +26,7 @@ Utterance statistics are generated once a day, generally in the evening\. You ca
 1. Choose the `OrderFlowers` bot\.
 
 1. Choose the **Monitoring** tab, and then choose **Utterances** from the left menu and then choose the **Missed** button\. The pane shows a maximum of 100 missed utterances\.  
-![\[The Utterances pane showing missed
-                        utterances.\]](http://docs.aws.amazon.com/lex/latest/dg/images/utterances-10.png)
+![\[The Utterances pane showing missed utterances.\]](http://docs.aws.amazon.com/lex/latest/dg/images/utterances-10.png)
 
 1. To choose the missed utterances that you want to add to the bot, select the check box next to them\. To add the utterance to the `$LATEST` version of the intent, choose the down arrow next to the **Add utterance to intent** dropdown, and then choose the intent\.
 

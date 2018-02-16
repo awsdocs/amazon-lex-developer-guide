@@ -14,16 +14,16 @@ The request requires the following URI parameters\.
 
  ** exportType **   
 The format of the exported data\.  
-Valid Values:` ALEXA_SKILLS_KIT` 
+Valid Values:` ALEXA_SKILLS_KIT | LEX` 
 
  ** name **   
 The name of the bot to export\.  
-Length Constraints: Minimum length of 1\. Maximum length of 64\.  
+Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `[a-zA-Z_]+` 
 
  ** resourceType **   
 The type of resource to export\.   
-Valid Values:` BOT` 
+Valid Values:` BOT | INTENT | SLOT_TYPE` 
 
  ** version **   
 The version of the bot to export\.  
@@ -71,7 +71,7 @@ Valid Values:` IN_PROGRESS | READY | FAILED`
  ** exportType **   
 The format of the exported data\.  
 Type: String  
-Valid Values:` ALEXA_SKILLS_KIT` 
+Valid Values:` ALEXA_SKILLS_KIT | LEX` 
 
  ** failureReason **   
 If `status` is `FAILED`, Amazon Lex provides the reason that it failed to export the resource\.  
@@ -80,13 +80,13 @@ Type: String
  ** name **   
 The name of the bot being exported\.  
 Type: String  
-Length Constraints: Minimum length of 1\. Maximum length of 64\.  
+Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `[a-zA-Z_]+` 
 
  ** resourceType **   
 The type of the exported resource\.  
 Type: String  
-Valid Values:` BOT` 
+Valid Values:` BOT | INTENT | SLOT_TYPE` 
 
  ** url **   
 An S3 pre\-signed URL that provides the location of the exported resource\. The exported resource is a ZIP archive that contains the exported resource in JSON format\. The structure of the archive may change\. Your code should not rely on the archive structure\.  

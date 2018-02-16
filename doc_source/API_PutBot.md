@@ -36,6 +36,7 @@ Content-type: application/json
       ],
       "responseCard": "string"
    },
+   "createVersion": boolean,
    "description": "string",
    "idleSessionTTLInSeconds": number,
    "intents": [ 
@@ -89,6 +90,10 @@ When you create a clarification prompt, make sure that it suggests the correct r
 Type: [Prompt](API_Prompt.md) object  
 Required: No
 
+ ** createVersion **   
+Type: Boolean  
+Required: No
+
  ** description **   
 A description of the bot\.  
 Type: String  
@@ -114,12 +119,12 @@ Required: No
  Specifies the target locale for the bot\. Any intent used in the bot must be compatible with the locale of the bot\.   
 The default is `en-US`\.  
 Type: String  
-Valid Values:` en-US`   
+Valid Values:` en-US | en-GB | de-DE`   
 Required: Yes
 
  ** processBehavior **   
-If you set the `processBehavior` element to `Build`, Amazon Lex builds the bot so that it can be run\. If you set the element to `Save`Amazon Lex saves the bot, but doesn't build it\.   
-If you don't specify this value, the default value is `Save`\.  
+If you set the `processBehavior` element to `BUILD`, Amazon Lex builds the bot so that it can be run\. If you set the element to `SAVE` Amazon Lex saves the bot, but doesn't build it\.   
+If you don't specify this value, the default value is `BUILD`\.  
 Type: String  
 Valid Values:` SAVE | BUILD`   
 Required: No
@@ -160,6 +165,7 @@ Content-type: application/json
       "responseCard": "string"
    },
    "createdDate": number,
+   "createVersion": boolean,
    "description": "string",
    "failureReason": "string",
    "idleSessionTTLInSeconds": number,
@@ -205,6 +211,9 @@ Type: [Prompt](API_Prompt.md) object
 The date that the bot was created\.  
 Type: Timestamp
 
+ ** createVersion **   
+Type: Boolean
+
  ** description **   
 A description of the bot\.  
 Type: String  
@@ -230,7 +239,7 @@ Type: Timestamp
  ** locale **   
  The target locale for the bot\.   
 Type: String  
-Valid Values:` en-US` 
+Valid Values:` en-US | en-GB | de-DE` 
 
  ** name **   
 The name of the bot\.  

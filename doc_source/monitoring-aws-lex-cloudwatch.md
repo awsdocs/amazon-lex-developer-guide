@@ -1,6 +1,6 @@
 # Monitoring Amazon Lex with Amazon CloudWatch<a name="monitoring-aws-lex-cloudwatch"></a>
 
- To track the health of your Amazon Lex bots, use Amazon CloudWatch\. With CloudWatch, you can get metrics for individual Amazon Lex operations or for global Amazon Lex operations for your account\. \. You can also set up CloudWatch alarms to be notified when one or more metrics exceeds a threshold that you define\. For example, you can monitor the number of requests made to a bot over a particular time period, view the latency of successful requests, or raise an alarm when errors exceed a threshold\.
+To track the health of your Amazon Lex bots, use Amazon CloudWatch\. With CloudWatch, you can get metrics for individual Amazon Lex operations or for global Amazon Lex operations for your account\. You can also set up CloudWatch alarms to be notified when one or more metrics exceeds a threshold that you define\. For example, you can monitor the number of requests made to a bot over a particular time period, view the latency of successful requests, or raise an alarm when errors exceed a threshold\.
 
 ## CloudWatch Metrics for Amazon Lex<a name="aws-lex-cloudwatch-using"></a>
 
@@ -44,7 +44,7 @@ View Amazon Lex metrics using the Amazon Lex console and the CloudWatch console\
 
 ## Creating an Alarm<a name="aws-lex-cloudwatch-alarms"></a>
 
-A CloudWatch alarm watches a single metric over a time period that you specify, and performs one or more actions: sending a notification to an Amazon SNS topic or Auto Scaling policy\. The action or actions are based on the value of the metric relative to a given threshold over a number of time periods that you specify\. CloudWatch can also send you an Amazon Simple Notification Service \(Amazon SNS\) message when the alarm changes state\. \. \.
+A CloudWatch alarm watches a single metric over a time period that you specify, and performs one or more actions: sending a notification to an Amazon SNS topic or Auto Scaling policy\. The action or actions are based on the value of the metric relative to a given threshold over a number of time periods that you specify\. CloudWatch can also send you an Amazon Simple Notification Service \(Amazon SNS\) message when the alarm changes state\. 
 
 CloudWatch alarms invoke actions only when the state changes and has persisted for the period that you specify\.
 

@@ -12,14 +12,15 @@ You can delete only resources that are not in use\. In general, you should delet
 
 1. Delete slot types\.
 
+To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.
+
 **To clean up your account \(AWS CLI\)**
 
 1. In the AWS CLI command line, delete the alias:
 
    ```
-   aws lex-models delete-bot-alias 
+   aws lex-models delete-bot-alias \
        --region region \
-       --endpoint endpoint \     
        --name PROD \
        --bot-name OrderFlowersBot
    ```
@@ -27,27 +28,24 @@ You can delete only resources that are not in use\. In general, you should delet
 1. In the AWS CLI command line, delete the bot:
 
    ```
-   aws lex-models delete-bot 
+   aws lex-models delete-bot \
        --region region \
-       --endpoint endpoint \     
        --name OrderFlowersBot
    ```
 
 1. In the AWS CLI command line, delete the intent:
 
    ```
-   aws lex-models delete-intent 
+   aws lex-models delete-intent \
        --region region \
-       --endpoint endpoint \     
        --name OrderFlowers
    ```
 
 1. From the AWS CLI command line, delete the slot type:
 
    ```
-   aws lex-models delete-slot-type 
+   aws lex-models delete-slot-type \
        --region region \
-       --endpoint endpoint \     
        --name FlowerTypes
    ```
 

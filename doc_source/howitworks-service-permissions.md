@@ -4,9 +4,9 @@ Amazon Lex uses AWS Identity and Access Management \(IAM\)[ service\-linked role
 
 Amazon Lex uses two IAM service\-linked roles:
 
-+ **AWSServiceRoleForLexBots** — Amazon Lex uses this service\-linked role to invoke Amazon Polly to synthesize speech responses for your bot\.
++ **AWSServiceRoleForLexBots**—Amazon Lex uses this service\-linked role to invoke Amazon Polly to synthesize speech responses for your bot\.
 
-+ **AWSServiceRoleForLexChannels** — Amazon Lex uses this service\-linked role to post text to your bot when managing channels\.
++ **AWSServiceRoleForLexChannels**—Amazon Lex uses this service\-linked role to post text to your bot when managing channels\.
 
 You don't need to manually create either of these roles\. When you create your first bot using the console, Amazon Lex creates the **AWSServiceRoleForLexBots** role for you\. When you first associate a bot with a messaging channel, Amazon Lex creates the **AWSServiceRoleForLexChannels** role for you\. 
 
@@ -14,7 +14,7 @@ You don't need to manually create either of these roles\. When you create your f
 
 When invoking Lambda functions, Amazon Lex uses resource\-based policies\. A *resource\-based policy* is attached to a resource; it lets you specify who has access to the resource and which actions they can perform on it\. This enables you to narrowly scope permissions between Lambda functions and the intents that you have created\. It also allows you to see those permissions in a single policy when you manage Lambda functions that have many event sources\. 
 
-For more information, see [ Using Resource\-Based Polices forAWS Lambda \(Lambda Function Policies\)](http://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) in the *AWS Lambda Developer Guide*\. 
+For more information, see [ Using Resource\-Based Polices for AWS Lambda \(Lambda Function Policies\)](http://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) in the *AWS Lambda Developer Guide*\. 
 
  To create resource\-based policies for intents that you associate with a Lambda function, you can use the Amazon Lex console\. Or, you can use the AWS command line interface \(AWS CLI\)\. In the AWS CLI, use the Lambda [AddPermisssion](http://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html) API with the `Principal` field set to `lex.amazonaws.com` and the `SourceArn` set to the ARN of the intent that is allowed to invoke the function\. 
 

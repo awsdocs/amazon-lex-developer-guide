@@ -16,6 +16,7 @@ Content-type: application/json
 
 {
    "checksum": "string",
+   "createVersion": boolean,
    "description": "string",
    "enumerationValues": [ 
       { 
@@ -47,6 +48,10 @@ Identifies a specific revision of the `$LATEST` version\.
 When you create a new slot type, leave the `checksum` field blank\. If you specify a checksum you get a `BadRequestException` exception\.  
 When you want to update a slot type, set the `checksum` field to the checksum of the most recent revision of the `$LATEST` version\. If you don't specify the ` checksum` field, or if the checksum does not match the `$LATEST` version, you get a `PreconditionFailedException` exception\.  
 Type: String  
+Required: No
+
+ ** createVersion **   
+Type: Boolean  
 Required: No
 
  ** description **   
@@ -82,6 +87,7 @@ Content-type: application/json
 {
    "checksum": "string",
    "createdDate": number,
+   "createVersion": boolean,
    "description": "string",
    "enumerationValues": [ 
       { 
@@ -109,6 +115,9 @@ Type: String
  ** createdDate **   
 The date that the slot type was created\.  
 Type: Timestamp
+
+ ** createVersion **   
+Type: Boolean
 
  ** description **   
 A description of the slot type\.  
