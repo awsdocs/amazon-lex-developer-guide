@@ -21,30 +21,28 @@ Punctuation marks are not supported by the Alexa Skills Kit\. You need to update
 
 **To upload the bot to an Alexa Skill**
 
-1. Log in to the developer portal at [https://developer\.amazon\.com/](https://developer.amazon.com/edw/home.html#/)\. 
+1. Log in to the [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask)\. 
 
-1. To open the Alexa console, choose **Developer Console**, then choose **ALEXA**\.
+2. Click the **Create Skill** Button\.
 
-1. Open the Alexa Skill Kit page\. In the **Alexa Skills Kit** box, choose **Get Started**\. 
+3. Define the *Skill Name* and click the **Next** button\.
 
-1. Choose **Add a New Skill**\. Fill in the required fields:
+4. Chose **Custom** for the model and click the **Create Skill** button\.
 
-   + **Skill Type** \(choose **Custom Interaction Model**\)
+<p align="center"><img width='500px' src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/ask-devconsole/choose-ia-model._TTH_.png" ></p>
 
-   + **Language**
+5. On the left menu, select **Invocation**\.
 
-   + **Name**
+6. Define the *Skill Invocation Name* and click **Save Model**\.
 
-   + **Invocation Name**
+7. On the left menu, select **JSON Editor**\.
 
-1. Choose **Save**, then choose **Next**\.
+8. Extract the JSON file from the \.zip archive that you downloaded\. Drag and Drop the .json file or paste the contents of the JSON file into the code editor\.
 
-1. Choose **Launch Skill Builder**\.
+9. Click **Save Model**, then Click **Build Model**\.
 
-1. On the left menu, choose **Code Editor**\.
+Complete the remaining items in the *Skill builder checklist*.
 
-1. Extract the JSON file from the \.zip archive that you downloaded\. Paste the contents of the JSON file into the code editor\.
+<p align="center"><img width='500px' src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/ask-devconsole/skill-builder-checklist._TTH_.png" ></p>
 
-1. Choose **Apply Changes**, then choose **Build Model**\.
-
-After uploading the schema into the Alexa skill, make changes necessary for running the skill with Alexa\. For more information about creating an Alexa skill, see [Use the Skill Builder \(Beta\)](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/ask-define-the-vui-with-gui) in the *Alexa Skills Kit*\. 
+For more information about creating an Alexa skill, see [Create a Skill and Choose the Interaction Model](https://developer.amazon.com/docs/devconsole/create-a-skill-and-choose-the-interaction-model.html)\. 
