@@ -13,41 +13,41 @@ PUT /bots/name/versions/$LATEST HTTP/1.1
 Content-type: application/json
 
 {
-   "abortStatement": { 
-      "messages": [ 
+   "[abortStatement](#lex-PutBot-request-abortStatement)": { 
+      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
          { 
-            "content": "string",
-            "contentType": "string",
-            "groupNumber": number
+            "[content](API_Message.md#lex-Type-Message-content)": "string",
+            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
+            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
          }
       ],
-      "responseCard": "string"
+      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
    },
-   "checksum": "string",
-   "childDirected": boolean,
-   "clarificationPrompt": { 
-      "maxAttempts": number,
-      "messages": [ 
+   "[checksum](#lex-PutBot-request-checksum)": "string",
+   "[childDirected](#lex-PutBot-request-childDirected)": boolean,
+   "[clarificationPrompt](#lex-PutBot-request-clarificationPrompt)": { 
+      "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
+      "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
          { 
-            "content": "string",
-            "contentType": "string",
-            "groupNumber": number
+            "[content](API_Message.md#lex-Type-Message-content)": "string",
+            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
+            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
          }
       ],
-      "responseCard": "string"
+      "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
    },
-   "createVersion": boolean,
-   "description": "string",
-   "idleSessionTTLInSeconds": number,
-   "intents": [ 
+   "[createVersion](#lex-PutBot-request-createVersion)": boolean,
+   "[description](#lex-PutBot-request-description)": "string",
+   "[idleSessionTTLInSeconds](#lex-PutBot-request-idleSessionTTLInSeconds)": number,
+   "[intents](#lex-PutBot-request-intents)": [ 
       { 
-         "intentName": "string",
-         "intentVersion": "string"
+         "[intentName](API_Intent.md#lex-Type-Intent-intentName)": "string",
+         "[intentVersion](API_Intent.md#lex-Type-Intent-intentVersion)": "string"
       }
    ],
-   "locale": "string",
-   "processBehavior": "string",
-   "voiceId": "string"
+   "[locale](#lex-PutBot-request-locale)": "string",
+   "[processBehavior](#lex-PutBot-request-processBehavior)": "string",
+   "[voiceId](#lex-PutBot-request-voiceId)": "string"
 }
 ```
 
@@ -55,7 +55,7 @@ Content-type: application/json
 
 The request requires the following URI parameters\.
 
- ** name **   
+ ** [name](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-name"></a>
 The name of the bot\. The name is *not* case sensitive\.   
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
@@ -64,43 +64,44 @@ Pattern: `^([A-Za-z]_?)+$`
 
 The request accepts the following data in JSON format\.
 
- ** abortStatement **   
+ ** [abortStatement](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-abortStatement"></a>
 When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times\. After that, Amazon Lex sends the message defined in `abortStatement` to the user, and then aborts the conversation\. To set the number of retries, use the `valueElicitationPrompt` field for the slot type\.   
 For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses \(for example, "thin crust, "deep dish," etc\.\), Amazon Lex tries to elicit a correct response a few more times\.   
 For example, in a pizza ordering application, `OrderPizza` might be one of the intents\. This intent might require the `CrustType` slot\. You specify the `valueElicitationPrompt` field when you create the `CrustType` slot\.  
 Type: [Statement](API_Statement.md) object  
 Required: No
 
- ** checksum **   
+ ** [checksum](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-checksum"></a>
 Identifies a specific revision of the `$LATEST` version\.  
 When you create a new bot, leave the `checksum` field blank\. If you specify a checksum you get a `BadRequestException` exception\.  
 When you want to update a bot, set the `checksum` field to the checksum of the most recent revision of the `$LATEST` version\. If you don't specify the ` checksum` field, or if the checksum does not match the `$LATEST` version, you get a `PreconditionFailedException` exception\.  
 Type: String  
 Required: No
 
- ** childDirected **   
+ ** [childDirected](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-childDirected"></a>
 For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act \(COPPA\) by specifying `true` or `false` in the `childDirected` field\. By specifying `true` in the `childDirected` field, you confirm that your use of Amazon Lex **is** related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA\. By specifying `false` in the `childDirected` field, you confirm that your use of Amazon Lex **is not** related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA\. You may not specify a default value for the `childDirected` field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA\.  
 If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA\. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the [Amazon Lex FAQ\.](https://aws.amazon.com/lex/faqs#data-security)   
 Type: Boolean  
 Required: Yes
 
- ** clarificationPrompt **   
+ ** [clarificationPrompt](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-clarificationPrompt"></a>
 When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification\. To specify how many times Amazon Lex should repeate the clarification prompt, use the `maxAttempts` field\. If Amazon Lex still doesn't understand, it sends the message in the `abortStatement` field\.   
 When you create a clarification prompt, make sure that it suggests the correct response from the user\. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink\.'"  
 Type: [Prompt](API_Prompt.md) object  
 Required: No
 
- ** createVersion **   
+ ** [createVersion](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-createVersion"></a>
+When set to `true` a new numbered version of the bot is created\. This is the same as calling the `CreateBotVersion` operation\. If you do not specify `createVersion`, the default is `false`\.  
 Type: Boolean  
 Required: No
 
- ** description **   
+ ** [description](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-description"></a>
 A description of the bot\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.  
 Required: No
 
- ** idleSessionTTLInSeconds **   
+ ** [idleSessionTTLInSeconds](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-idleSessionTTLInSeconds"></a>
 The maximum time in seconds that Amazon Lex retains the data gathered in a conversation\.  
 A user interaction session remains active for the amount of time specified\. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout\.  
 For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order\. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over\.  
@@ -110,27 +111,27 @@ Type: Integer
 Valid Range: Minimum value of 60\. Maximum value of 86400\.  
 Required: No
 
- ** intents **   
+ ** [intents](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-intents"></a>
 An array of `Intent` objects\. Each intent represents a command that a user can express\. For example, a pizza ordering bot might support an OrderPizza intent\. For more information, see [Amazon Lex: How It Works](how-it-works.md)\.  
 Type: Array of [Intent](API_Intent.md) objects  
 Required: No
 
- ** locale **   
+ ** [locale](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-locale"></a>
  Specifies the target locale for the bot\. Any intent used in the bot must be compatible with the locale of the bot\.   
 The default is `en-US`\.  
 Type: String  
-Valid Values:` en-US | en-GB | de-DE`   
+Valid Values:` en-US`   
 Required: Yes
 
- ** processBehavior **   
+ ** [processBehavior](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-processBehavior"></a>
 If you set the `processBehavior` element to `BUILD`, Amazon Lex builds the bot so that it can be run\. If you set the element to `SAVE` Amazon Lex saves the bot, but doesn't build it\.   
 If you don't specify this value, the default value is `BUILD`\.  
 Type: String  
 Valid Values:` SAVE | BUILD`   
 Required: No
 
- ** voiceId **   
-The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user\. The locale configured for the voice must match the locale of the bot\. For more information, see [Available Voices](http://docs.aws.amazon.com/polly/latest/dg/voicelist.html) in the *Amazon Polly Developer Guide*\.  
+ ** [voiceId](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-voiceId"></a>
+The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user\. The locale configured for the voice must match the locale of the bot\. For more information, see [Voices in Amazon Polly](http://docs.aws.amazon.com/polly/latest/dg/voices-in-polly.html) in the *Amazon Polly Developer Guide*\.  
 Type: String  
 Required: No
 
@@ -141,46 +142,46 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "abortStatement": { 
-      "messages": [ 
+   "[abortStatement](#lex-PutBot-response-abortStatement)": { 
+      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
          { 
-            "content": "string",
-            "contentType": "string",
-            "groupNumber": number
+            "[content](API_Message.md#lex-Type-Message-content)": "string",
+            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
+            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
          }
       ],
-      "responseCard": "string"
+      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
    },
-   "checksum": "string",
-   "childDirected": boolean,
-   "clarificationPrompt": { 
-      "maxAttempts": number,
-      "messages": [ 
+   "[checksum](#lex-PutBot-response-checksum)": "string",
+   "[childDirected](#lex-PutBot-response-childDirected)": boolean,
+   "[clarificationPrompt](#lex-PutBot-response-clarificationPrompt)": { 
+      "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
+      "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
          { 
-            "content": "string",
-            "contentType": "string",
-            "groupNumber": number
+            "[content](API_Message.md#lex-Type-Message-content)": "string",
+            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
+            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
          }
       ],
-      "responseCard": "string"
+      "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
    },
-   "createdDate": number,
-   "createVersion": boolean,
-   "description": "string",
-   "failureReason": "string",
-   "idleSessionTTLInSeconds": number,
-   "intents": [ 
+   "[createdDate](#lex-PutBot-response-createdDate)": number,
+   "[createVersion](#lex-PutBot-response-createVersion)": boolean,
+   "[description](#lex-PutBot-response-description)": "string",
+   "[failureReason](#lex-PutBot-response-failureReason)": "string",
+   "[idleSessionTTLInSeconds](#lex-PutBot-response-idleSessionTTLInSeconds)": number,
+   "[intents](#lex-PutBot-response-intents)": [ 
       { 
-         "intentName": "string",
-         "intentVersion": "string"
+         "[intentName](API_Intent.md#lex-Type-Intent-intentName)": "string",
+         "[intentVersion](API_Intent.md#lex-Type-Intent-intentVersion)": "string"
       }
    ],
-   "lastUpdatedDate": number,
-   "locale": "string",
-   "name": "string",
-   "status": "string",
-   "version": "string",
-   "voiceId": "string"
+   "[lastUpdatedDate](#lex-PutBot-response-lastUpdatedDate)": number,
+   "[locale](#lex-PutBot-response-locale)": "string",
+   "[name](#lex-PutBot-response-name)": "string",
+   "[status](#lex-PutBot-response-status)": "string",
+   "[version](#lex-PutBot-response-version)": "string",
+   "[voiceId](#lex-PutBot-response-voiceId)": "string"
 }
 ```
 
@@ -190,76 +191,77 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** abortStatement **   
+ ** [abortStatement](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-abortStatement"></a>
 The message that Amazon Lex uses to abort a conversation\. For more information, see [PutBot](#API_PutBot)\.  
 Type: [Statement](API_Statement.md) object
 
- ** checksum **   
+ ** [checksum](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-checksum"></a>
 Checksum of the bot that you created\.  
 Type: String
 
- ** childDirected **   
+ ** [childDirected](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-childDirected"></a>
 For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act \(COPPA\) by specifying `true` or `false` in the `childDirected` field\. By specifying `true` in the `childDirected` field, you confirm that your use of Amazon Lex **is** related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA\. By specifying `false` in the `childDirected` field, you confirm that your use of Amazon Lex **is not** related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA\. You may not specify a default value for the `childDirected` field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA\.  
 If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA\. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the [Amazon Lex FAQ\.](https://aws.amazon.com/lex/faqs#data-security)   
 Type: Boolean
 
- ** clarificationPrompt **   
+ ** [clarificationPrompt](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-clarificationPrompt"></a>
  The prompts that Amazon Lex uses when it doesn't understand the user's intent\. For more information, see [PutBot](#API_PutBot)\.   
 Type: [Prompt](API_Prompt.md) object
 
- ** createdDate **   
+ ** [createdDate](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-createdDate"></a>
 The date that the bot was created\.  
 Type: Timestamp
 
- ** createVersion **   
+ ** [createVersion](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-createVersion"></a>
+ `True` if a new version of the bot was created\. If the `createVersion` field was not specified in the request, the `createVersion` field is set to false in the response\.  
 Type: Boolean
 
- ** description **   
+ ** [description](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-description"></a>
 A description of the bot\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.
 
- ** failureReason **   
+ ** [failureReason](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-failureReason"></a>
 If `status` is `FAILED`, Amazon Lex provides the reason that it failed to build the bot\.  
 Type: String
 
- ** idleSessionTTLInSeconds **   
+ ** [idleSessionTTLInSeconds](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-idleSessionTTLInSeconds"></a>
 The maximum length of time that Amazon Lex retains the data gathered in a conversation\. For more information, see [PutBot](#API_PutBot)\.  
 Type: Integer  
 Valid Range: Minimum value of 60\. Maximum value of 86400\.
 
- ** intents **   
+ ** [intents](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-intents"></a>
 An array of `Intent` objects\. For more information, see [PutBot](#API_PutBot)\.  
 Type: Array of [Intent](API_Intent.md) objects
 
- ** lastUpdatedDate **   
+ ** [lastUpdatedDate](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-lastUpdatedDate"></a>
 The date that the bot was updated\. When you create a resource, the creation date and last updated date are the same\.  
 Type: Timestamp
 
- ** locale **   
+ ** [locale](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-locale"></a>
  The target locale for the bot\.   
 Type: String  
-Valid Values:` en-US | en-GB | de-DE` 
+Valid Values:` en-US` 
 
- ** name **   
+ ** [name](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-name"></a>
 The name of the bot\.  
 Type: String  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** status **   
+ ** [status](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-status"></a>
  When you send a request to create a bot with `processBehavior` set to `BUILD`, Amazon Lex sets the `status` response element to `BUILDING`\. After Amazon Lex builds the bot, it sets `status` to `READY`\. If Amazon Lex can't build the bot, Amazon Lex sets `status` to `FAILED`\. Amazon Lex returns the reason for the failure in the `failureReason` response element\.   
 When you set `processBehavior`to `SAVE`, Amazon Lex sets the status code to `NOT BUILT`\.  
 Type: String  
 Valid Values:` BUILDING | READY | FAILED | NOT_BUILT` 
 
- ** version **   
+ ** [version](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-version"></a>
 The version of the bot\. For a new bot, the version is always `$LATEST`\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
 Pattern: `\$LATEST|[0-9]+` 
 
- ** voiceId **   
+ ** [voiceId](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-voiceId"></a>
 The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user\. For more information, see [PutBot](#API_PutBot)\.  
 Type: String
 
@@ -288,21 +290,12 @@ HTTP Status Code: 412
 ## See Also<a name="API_PutBot_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/PutBot) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutBot) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutBot) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutBot) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutBot) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutBot) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutBot) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutBot) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/PutBot) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/PutBot) 

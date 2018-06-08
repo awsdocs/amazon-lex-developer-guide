@@ -14,12 +14,12 @@ GET /bots/botName/aliases/name HTTP/1.1
 
 The request requires the following URI parameters\.
 
- ** botName **   
+ ** [botName](#API_GetBotAlias_RequestSyntax) **   <a name="lex-GetBotAlias-request-botName"></a>
 The name of the bot\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** name **   
+ ** [name](#API_GetBotAlias_RequestSyntax) **   <a name="lex-GetBotAlias-request-name"></a>
 The name of the bot alias\. The name is case sensitive\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
@@ -35,13 +35,13 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "botName": "string",
-   "botVersion": "string",
-   "checksum": "string",
-   "createdDate": number,
-   "description": "string",
-   "lastUpdatedDate": number,
-   "name": "string"
+   "[botName](#lex-GetBotAlias-response-botName)": "string",
+   "[botVersion](#lex-GetBotAlias-response-botVersion)": "string",
+   "[checksum](#lex-GetBotAlias-response-checksum)": "string",
+   "[createdDate](#lex-GetBotAlias-response-createdDate)": number,
+   "[description](#lex-GetBotAlias-response-description)": "string",
+   "[lastUpdatedDate](#lex-GetBotAlias-response-lastUpdatedDate)": number,
+   "[name](#lex-GetBotAlias-response-name)": "string"
 }
 ```
 
@@ -51,36 +51,36 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** botName **   
+ ** [botName](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-botName"></a>
 The name of the bot that the alias points to\.  
 Type: String  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** botVersion **   
+ ** [botVersion](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-botVersion"></a>
 The version of the bot that the alias points to\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
 Pattern: `\$LATEST|[0-9]+` 
 
- ** checksum **   
+ ** [checksum](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-checksum"></a>
 Checksum of the bot alias\.  
 Type: String
 
- ** createdDate **   
+ ** [createdDate](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-createdDate"></a>
 The date that the bot alias was created\.  
 Type: Timestamp
 
- ** description **   
+ ** [description](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-description"></a>
 A description of the bot alias\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.
 
- ** lastUpdatedDate **   
+ ** [lastUpdatedDate](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-lastUpdatedDate"></a>
 The date that the bot alias was updated\. When you create a resource, the creation date and the last updated date are the same\.  
 Type: Timestamp
 
- ** name **   
+ ** [name](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-name"></a>
 The name of the bot alias\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
@@ -107,21 +107,12 @@ HTTP Status Code: 404
 ## See Also<a name="API_GetBotAlias_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetBotAlias) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetBotAlias) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetBotAlias) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetBotAlias) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetBotAlias) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetBotAlias) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetBotAlias) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetBotAlias) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetBotAlias) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetBotAlias) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetBotAlias) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetBotAlias) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetBotAlias) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetBotAlias) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetBotAlias) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetBotAlias) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetBotAlias) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetBotAlias) 

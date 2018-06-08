@@ -1,11 +1,8 @@
 # Exporting in Amazon Lex Format<a name="export-to-lex"></a>
 
 Export your Amazon Lex bots, intents, and slot types to a format that you can import to an AWS account\. You can export the following resources:
-
 + A bot, including all of the intents and custom slot types used by the bot
-
 + An intent, including all of the custom slot types used by the intent
-
 + A custom slot type, including all of values for the slot type
 
 You can export only a numbered version of a resource\. You can't export a resource's `$LATEST` version\.

@@ -14,26 +14,26 @@ GET /bots/botName/aliases/aliasName/channels/?maxResults=maxResults&nameContains
 
 The request requires the following URI parameters\.
 
- ** botAlias **   
+ ** [botAlias](#API_GetBotChannelAssociations_RequestSyntax) **   <a name="lex-GetBotChannelAssociations-request-botAlias"></a>
 An alias pointing to the specific version of the Amazon Lex bot to which this association is being made\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^(-|^([A-Za-z]_?)+$)$` 
 
- ** botName **   
+ ** [botName](#API_GetBotChannelAssociations_RequestSyntax) **   <a name="lex-GetBotChannelAssociations-request-botName"></a>
 The name of the Amazon Lex bot in the association\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** maxResults **   
+ ** [maxResults](#API_GetBotChannelAssociations_RequestSyntax) **   <a name="lex-GetBotChannelAssociations-request-maxResults"></a>
 The maximum number of associations to return in the response\. The default is 50\.   
 Valid Range: Minimum value of 1\. Maximum value of 50\.
 
- ** nameContains **   
+ ** [nameContains](#API_GetBotChannelAssociations_RequestSyntax) **   <a name="lex-GetBotChannelAssociations-request-nameContains"></a>
 Substring to match in channel association names\. An association will be returned if any part of its name matches the substring\. For example, "xyz" matches both "xyzabc" and "abcxyz\." To return all bot channel associations, use a hyphen \("\-"\) as the `nameContains` parameter\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** nextToken **   
+ ** [nextToken](#API_GetBotChannelAssociations_RequestSyntax) **   <a name="lex-GetBotChannelAssociations-request-nextToken"></a>
 A pagination token for fetching the next page of associations\. If the response to this call is truncated, Amazon Lex returns a pagination token in the response\. To fetch the next page of associations, specify the pagination token in the next request\. 
 
 ## Request Body<a name="API_GetBotChannelAssociations_RequestBody"></a>
@@ -47,22 +47,22 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "botChannelAssociations": [ 
+   "[botChannelAssociations](#lex-GetBotChannelAssociations-response-botChannelAssociations)": [ 
       { 
-         "botAlias": "string",
-         "botConfiguration": { 
+         "[botAlias](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-botAlias)": "string",
+         "[botConfiguration](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-botConfiguration)": { 
             "string" : "string" 
          },
-         "botName": "string",
-         "createdDate": number,
-         "description": "string",
-         "failureReason": "string",
-         "name": "string",
-         "status": "string",
-         "type": "string"
+         "[botName](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-botName)": "string",
+         "[createdDate](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-createdDate)": number,
+         "[description](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-description)": "string",
+         "[failureReason](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-failureReason)": "string",
+         "[name](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-name)": "string",
+         "[status](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-status)": "string",
+         "[type](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-type)": "string"
       }
    ],
-   "nextToken": "string"
+   "[nextToken](#lex-GetBotChannelAssociations-response-nextToken)": "string"
 }
 ```
 
@@ -72,11 +72,11 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** botChannelAssociations **   
+ ** [botChannelAssociations](#API_GetBotChannelAssociations_ResponseSyntax) **   <a name="lex-GetBotChannelAssociations-response-botChannelAssociations"></a>
 An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel\.   
 Type: Array of [BotChannelAssociation](API_BotChannelAssociation.md) objects
 
- ** nextToken **   
+ ** [nextToken](#API_GetBotChannelAssociations_ResponseSyntax) **   <a name="lex-GetBotChannelAssociations-response-nextToken"></a>
 A pagination token that fetches the next page of associations\. If the response to this call is truncated, Amazon Lex returns a pagination token in the response\. To fetch the next page of associations, specify the pagination token in the next request\.   
 Type: String
 
@@ -97,21 +97,12 @@ HTTP Status Code: 429
 ## See Also<a name="API_GetBotChannelAssociations_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetBotChannelAssociations) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetBotChannelAssociations) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetBotChannelAssociations) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetBotChannelAssociations) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetBotChannelAssociations) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetBotChannelAssociations) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetBotChannelAssociations) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetBotChannelAssociations) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetBotChannelAssociations) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetBotChannelAssociations) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetBotChannelAssociations) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetBotChannelAssociations) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetBotChannelAssociations) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetBotChannelAssociations) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetBotChannelAssociations) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetBotChannelAssociations) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetBotChannelAssociations) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetBotChannelAssociations) 

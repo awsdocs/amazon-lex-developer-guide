@@ -10,7 +10,7 @@ In general, when you create bots, you:
 
 In this exercise you create and test a new Amazon Lex bot using the CLI\. Use the JSON structures that we provide to create the bot\. To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.
 
-
+**Topics**
 + [Step 1: Create a Service\-Linked Role \(AWS CLI\)](gs-create-role.md)
 + [Step 2: Create a Custom Slot Type \(AWS CLI\)](gs-create-flower-types.md)
 + [Step 3: Create an Intent \(AWS CLI\)](gs-cli-create-order-flowers.md)

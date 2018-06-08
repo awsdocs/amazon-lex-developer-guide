@@ -1,9 +1,7 @@
 # Step 4: Add the Lambda Function as Code Hook \(Console\)<a name="gs-bp-create-integrate"></a>
 
 In this section, you update the configuration of the OrderFlowers intent to use the Lambda function as follows:
-
 + First use the Lambda function as a code hook to perform fulfillment of the `OrderFlowers` intent\. You test the bot and verify that you received a fulfillment message from the Lambda function\. Amazon Lex invokes the Lambda function only after you provide data for all the required slots for ordering flowers\.
-
 + Configure the same Lambda function as a code hook to perform initialization and validation\. You test and verify that the Lambda function performs validation \(as you provide slot data\)\.
 
 **To add a Lambda function as a code hook \(console\)**

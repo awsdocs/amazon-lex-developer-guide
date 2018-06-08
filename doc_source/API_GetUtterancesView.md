@@ -21,18 +21,18 @@ GET /bots/botname/utterances?view=aggregation&bot_versions=botVersions&status_ty
 
 The request requires the following URI parameters\.
 
- ** botName **   
+ ** [botName](#API_GetUtterancesView_RequestSyntax) **   <a name="lex-GetUtterancesView-request-botName"></a>
 The name of the bot for which utterance information should be returned\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** botVersions **   
+ ** [botVersions](#API_GetUtterancesView_RequestSyntax) **   <a name="lex-GetUtterancesView-request-botVersions"></a>
 An array of bot versions for which utterance information should be returned\. The limit is 5 versions per request\.  
 Array Members: Minimum number of 1 item\. Maximum number of 5 items\.  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
 Pattern: `\$LATEST|[0-9]+` 
 
- ** statusType **   
+ ** [statusType](#API_GetUtterancesView_RequestSyntax) **   <a name="lex-GetUtterancesView-request-statusType"></a>
 To return utterances that were recognized and handled, use`Detected`\. To return utterances that were not recognized, use `Missed`\.  
 Valid Values:` Detected | Missed` 
 
@@ -47,17 +47,17 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "botName": "string",
-   "utterances": [ 
+   "[botName](#lex-GetUtterancesView-response-botName)": "string",
+   "[utterances](#lex-GetUtterancesView-response-utterances)": [ 
       { 
-         "botVersion": "string",
-         "utterances": [ 
+         "[botVersion](API_UtteranceList.md#lex-Type-UtteranceList-botVersion)": "string",
+         "[utterances](API_UtteranceList.md#lex-Type-UtteranceList-utterances)": [ 
             { 
-               "count": number,
-               "distinctUsers": number,
-               "firstUtteredDate": number,
-               "lastUtteredDate": number,
-               "utteranceString": "string"
+               "[count](API_UtteranceData.md#lex-Type-UtteranceData-count)": number,
+               "[distinctUsers](API_UtteranceData.md#lex-Type-UtteranceData-distinctUsers)": number,
+               "[firstUtteredDate](API_UtteranceData.md#lex-Type-UtteranceData-firstUtteredDate)": number,
+               "[lastUtteredDate](API_UtteranceData.md#lex-Type-UtteranceData-lastUtteredDate)": number,
+               "[utteranceString](API_UtteranceData.md#lex-Type-UtteranceData-utteranceString)": "string"
             }
          ]
       }
@@ -71,13 +71,13 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** botName **   
+ ** [botName](#API_GetUtterancesView_ResponseSyntax) **   <a name="lex-GetUtterancesView-response-botName"></a>
 The name of the bot for which utterance information was returned\.  
 Type: String  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** utterances **   
+ ** [utterances](#API_GetUtterancesView_ResponseSyntax) **   <a name="lex-GetUtterancesView-response-utterances"></a>
 An array of [UtteranceList](API_UtteranceList.md) objects, each containing a list of [UtteranceData](API_UtteranceData.md) objects describing the utterances that were processed by your bot\. The response contains a maximum of 100 `UtteranceData` objects for each version\.  
 Type: Array of [UtteranceList](API_UtteranceList.md) objects
 
@@ -98,21 +98,12 @@ HTTP Status Code: 429
 ## See Also<a name="API_GetUtterancesView_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetUtterancesView) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetUtterancesView) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetUtterancesView) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetUtterancesView) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetUtterancesView) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetUtterancesView) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetUtterancesView) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetUtterancesView) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetUtterancesView) 

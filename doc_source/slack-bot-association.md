@@ -1,6 +1,6 @@
 # Integrating an Amazon Lex Bot with Slack<a name="slack-bot-association"></a>
 
-
+**Topics**
 + [Step 1: Create an Amazon Lex Bot](slack-bot-assoc-create-bot.md)
 + [Step 2: Sign Up for Slack and Create a Slack Team](slack-bot-assoc-create-team.md)
 + [Step 3: Create a Slack Application](slack-bot-assoc-create-app.md)

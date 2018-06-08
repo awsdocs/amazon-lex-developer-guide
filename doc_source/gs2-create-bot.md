@@ -2,7 +2,7 @@
 
 In this step, you create a bot to handle pizza orders\. 
 
-
+**Topics**
 + [Create the Bot](gs2-create-bot-create.md)
 + [Create an Intent](gs2-create-bot-intent.md)
 + [Create Slot Types](gs2-create-bot-slot-types.md)

@@ -1,6 +1,6 @@
 # Integrating an Amazon Lex Bot with Facebook Messenger<a name="fb-bot-association"></a>
 
-
+**Topics**
 + [Step 1: Create an Amazon Lex Bot](#fb-bot-assoc-create-bot)
 + [Step 2: Create a Facebook Application](#fb-bot-assoc-create-fb-app)
 + [Step 3: Integrate Facebook Messenger with the Amazon Lex Bot](#fb-bot-assoc-create-assoc)
@@ -27,9 +27,7 @@ If you don't already have an Amazon Lex bot, create and deploy one\. In this top
 ## Step 2: Create a Facebook Application<a name="fb-bot-assoc-create-fb-app"></a>
 
 On the Facebook developer portal, create a Facebook application and a Facebook page\. For instructions, see [Quick Start](https://developers.facebook.com/docs/messenger-platform/guides/quick-start) in the Facebook Messenger platform documentation\. Write down the following:
-
 + The **App Secret** for the Facebook App 
-
 + The **Page Access Token** for the Facebook page
 
 ## Step 3: Integrate Facebook Messenger with the Amazon Lex Bot<a name="fb-bot-assoc-create-assoc"></a>
@@ -51,17 +49,11 @@ After you complete this step, the console provides a callback URL\. Write down t
    1. Choose **Facebook** under **Chatbots**\. The console displays the Facebook integration page\.
 
    1. On the Facebook integration page, do the following:
-
       + Type the following name: `BotFacebookAssociation`\.
-
       + For **KMS key**, choose **aws/lex** \.
-
       + For **Alias**, choose the bot alias\.
-
       + For **Verify token**, type a token\. This can be any string you choose \(for example, `ExampleToken`\)\. You use this token later in the Facebook developer portal when you set up the webhook\.
-
       + For **Page access token**, type the token that you obtained from Facebook in Step 2\.
-
       + For **App secret key**, type the key that you obtained from Facebook in Step 2\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/fb-10a.png)
 
@@ -76,13 +68,9 @@ After you complete this step, the console provides a callback URL\. Write down t
    For instructions, see [Quick Start](https://developers.facebook.com/docs/messenger-platform/guides/quick-start) in the Facebook Messenger platform documentation\. 
 
 1. On the **webhook** page of the subscription wizard, do the following:
-
    + For **Callback URL**, type the callback URL provided in the Amazon Lex console earlier in the procedure\.
-
    + For **Verify Token**, type the same token that you used in Amazon Lex\.
-
    + Choose **Subscription Fields** \(**messages**, **messaging\_postbacks**, and **messaging\_optins**\)\.
-
    + Choose **Verify and Save**\. This initiates a handshake between Facebook and Amazon Lex\.
 
 1. Enable Webhooks integration\. Choose the page that you created, and then choose **subscribe**\.

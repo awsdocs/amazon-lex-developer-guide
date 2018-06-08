@@ -9,11 +9,8 @@ In this section, you create a Lambda function using a blueprint \(lex\-make\-app
 1. For **Select blueprint**, type **lex** to find the blueprint, and then choose the **lex\-make\-appointment\-python** blueprint\.
 
 1. Configure the Lambda function as follows, and then choose **Create Function**\.
-
    + Type the Lambda function name \(`MakeAppointmentCodeHook`\)\.
-
    + For the role, choose **Create a new role from template\(s\)**, and then type a role name\.
-
    + Leave other default values\.
 
 1. Test the Lambda function\.

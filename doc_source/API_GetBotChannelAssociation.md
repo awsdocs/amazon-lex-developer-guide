@@ -14,17 +14,17 @@ GET /bots/botName/aliases/aliasName/channels/name HTTP/1.1
 
 The request requires the following URI parameters\.
 
- ** botAlias **   
+ ** [botAlias](#API_GetBotChannelAssociation_RequestSyntax) **   <a name="lex-GetBotChannelAssociation-request-botAlias"></a>
 An alias pointing to the specific version of the Amazon Lex bot to which this association is being made\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** botName **   
+ ** [botName](#API_GetBotChannelAssociation_RequestSyntax) **   <a name="lex-GetBotChannelAssociation-request-botName"></a>
 The name of the Amazon Lex bot\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** name **   
+ ** [name](#API_GetBotChannelAssociation_RequestSyntax) **   <a name="lex-GetBotChannelAssociation-request-name"></a>
 The name of the association between the bot and the channel\. The name is case sensitive\.   
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
@@ -40,17 +40,17 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "botAlias": "string",
-   "botConfiguration": { 
+   "[botAlias](#lex-GetBotChannelAssociation-response-botAlias)": "string",
+   "[botConfiguration](#lex-GetBotChannelAssociation-response-botConfiguration)": { 
       "string" : "string" 
    },
-   "botName": "string",
-   "createdDate": number,
-   "description": "string",
-   "failureReason": "string",
-   "name": "string",
-   "status": "string",
-   "type": "string"
+   "[botName](#lex-GetBotChannelAssociation-response-botName)": "string",
+   "[createdDate](#lex-GetBotChannelAssociation-response-createdDate)": number,
+   "[description](#lex-GetBotChannelAssociation-response-description)": "string",
+   "[failureReason](#lex-GetBotChannelAssociation-response-failureReason)": "string",
+   "[name](#lex-GetBotChannelAssociation-response-name)": "string",
+   "[status](#lex-GetBotChannelAssociation-response-status)": "string",
+   "[type](#lex-GetBotChannelAssociation-response-type)": "string"
 }
 ```
 
@@ -60,53 +60,50 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** botAlias **   
+ ** [botAlias](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-botAlias"></a>
 An alias pointing to the specific version of the Amazon Lex bot to which this association is being made\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** botConfiguration **   
+ ** [botConfiguration](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-botConfiguration"></a>
 Provides information that the messaging platform needs to communicate with the Amazon Lex bot\.  
 Type: String to string map
 
- ** botName **   
+ ** [botName](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-botName"></a>
 The name of the Amazon Lex bot\.  
 Type: String  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** createdDate **   
+ ** [createdDate](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-createdDate"></a>
 The date that the association between the bot and the channel was created\.  
 Type: Timestamp
 
- ** description **   
+ ** [description](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-description"></a>
 A description of the association between the bot and the channel\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.
 
- ** failureReason **   
+ ** [failureReason](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-failureReason"></a>
 If `status` is `FAILED`, Amazon Lex provides the reason that it failed to create the association\.  
 Type: String
 
- ** name **   
+ ** [name](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-name"></a>
 The name of the association between the bot and the channel\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** status **   
+ ** [status](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-status"></a>
 The status of the bot channel\.   
-
 +  `CREATED` \- The channel has been created and is ready for use\.
-
 +  `IN_PROGRESS` \- Channel creation is in progress\.
-
 +  `FAILED` \- There was an error creating the channel\. For information about the reason for the failure, see the `failureReason` field\.
 Type: String  
 Valid Values:` IN_PROGRESS | CREATED | FAILED` 
 
- ** type **   
+ ** [type](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-type"></a>
 The type of the messaging platform\.  
 Type: String  
 Valid Values:` Facebook | Slack | Twilio-Sms | Kik` 
@@ -132,21 +129,12 @@ HTTP Status Code: 404
 ## See Also<a name="API_GetBotChannelAssociation_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetBotChannelAssociation) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetBotChannelAssociation) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetBotChannelAssociation) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetBotChannelAssociation) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetBotChannelAssociation) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetBotChannelAssociation) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetBotChannelAssociation) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetBotChannelAssociation) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetBotChannelAssociation) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetBotChannelAssociation) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetBotChannelAssociation) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetBotChannelAssociation) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetBotChannelAssociation) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetBotChannelAssociation) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetBotChannelAssociation) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetBotChannelAssociation) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetBotChannelAssociation) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetBotChannelAssociation) 

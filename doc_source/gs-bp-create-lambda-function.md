@@ -15,13 +15,9 @@ You return to the Amazon Lex console and add the Lambda function as the code hoo
    Lambda function blueprints are provided in both Node\.js and Python\. For this exercise, use the Python\-based blueprint\.
 
 1. On the **Basic information** page, do the following, and then choose **Create function**\. 
-
    + Type a Lambda function name \(`OrderFlowersCodeHook`\)\.
-
    + For the IAM role, choose **Create a new role from template\(s\)**\.
-
    + Type a role name \(`LexOrderFlowersRole`\)\.
-
    + Leave the other default values\.
 
 1. Choose **Create function**\.

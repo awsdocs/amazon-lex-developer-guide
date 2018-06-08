@@ -10,13 +10,9 @@ Utterance statistics are generated once a day\. You can see the utterance that w
 1. Follow the first step of Getting Started Exercise 1 to create and test an `OrderFlowers` bot\. For instructions, see [Exercise 1: Create an Amazon Lex Bot Using a Blueprint \(Console\)](gs-bp.md)\.
 
 1. Test the bot by typing the following utterances in the **Test Bot** window\. Type each utterance several times\. The example bot doesn't recognize the following utterances:
-
    + Order flowers
-
    + Get me flowers
-
    + Please order flowers
-
    + Get me some flowers
 
 1. Wait for Amazon Lex to gather usage data about the missed utterances\. Utterance data is generated once per day, generally overnight\.

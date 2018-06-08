@@ -1,6 +1,6 @@
 # Integrating an Amazon Lex Bot with Kik<a name="kik-bot-association"></a>
 
-
+**Topics**
 + [Step 1: Create an Amazon Lex Bot](kik-bot-assoc-create-bot.md)
 + [Step 2: Create a Kik Bot](kik-bot-assoc-create-kik-bot.md)
 + [Step 3: Integrate the Kik Bot with the Amazon Lex Bot](kik-bot-assoc-create-assoc.md)

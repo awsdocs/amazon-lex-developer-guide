@@ -16,7 +16,7 @@ First, create a Lambda function which fulfills a pizza order\. You specify this 
 
    1. Type the name \(`PizzaOrderProcessor`\)\.
 
-   1. For the **Runtime**, choose **Node\.js 4\.3 **\.
+   1. For the **Runtime**, choose the latest version of Node\.js\.
 
    1. For the **Role**, choose **Create new role from template\(s\)**\.
 
@@ -90,7 +90,7 @@ In the console, test the Lambda function by using sample event data to manually 
 
 1. On the **Configure test event** page, do the following: 
 
-   1. 
+   1. Choose **Create new test event**\.
 
    1. In the **Event name** field, enter a name for the event \(`PizzaOrderProcessorTest`\)\.
 

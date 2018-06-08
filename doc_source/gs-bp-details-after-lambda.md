@@ -23,9 +23,7 @@ For more information about the `PostText` runtime API and additional details on 
       ```
 
       Both the request URI and the body provide information to Amazon Lex:
-
       + Request URI – Provides bot name \(`OrderFlowers`\), bot alias \(`$LATEST`\), and user name \(a random string identifying the user\)\. The trailing `text` indicates that it is a `PostText` API request \(and not `PostContent`\)\.
-
       + Request body – Includes the user input \(`inputText`\) and empty `sessionAttributes`\. When the client makes the first request, there are no session attributes\. The Lambda function initiates them later\.
 
    1. From the `inputText`, Amazon Lex detects the intent \(`OrderFlowers`\)\. This intent is configured with a Lambda function as a code hook for user data initialization and validation\. Therefore, Amazon Lex invokes that Lambda function by passing the following information as event data:
@@ -57,11 +55,8 @@ For more information about the `PostText` runtime API and additional details on 
       For more information, see [Input Event Format](lambda-input-response-format.md#using-lambda-input-event-format)\.
 
       In addition to the information that the client sent, Amazon Lex also includes the following additional data:
-
       + `messageVersion` – Currently Amazon Lex supports only the 1\.0 version\.
-
       + `invocationSource` – Indicates the purpose of Lambda function invocation\. In this case, it is to perform user data initialization and validation\. At this time, Amazon Lex knows that the user has not provided all the slot data to fulfill the intent\.
-
       + `currentIntent` information with all of the slot values set to null\.
 
    1. At this time, all the slot values are null\. There is nothing for the Lambda function to validate\. The Lambda function returns the following response to Amazon Lex:
@@ -83,7 +78,6 @@ For more information about the `PostText` runtime API and additional details on 
       For information about the response format, see [Response Format](lambda-input-response-format.md#using-lambda-response-format)\.
 
       Note the following:
-
       + `dialogAction.type` – By setting this value to `Delegate`, Lambda function delegates the responsibility of deciding the next course of action to Amazon Lex\. 
 **Note**  
 If Lambda function detects anything in the user data validation, it instructs Amazon Lex what to do next, as shown in the next few steps\.
@@ -137,9 +131,7 @@ If Lambda function detects anything in the user data validation, it instructs Am
       ```
 
       Note the following:
-
       + `invocationSource` – continues to be `DialogCodeHook` \(we are simply validating user data\)\. 
-
       + `currentIntent.slots` – Amazon Lex has updated the `FlowerType` slot to roses\.
 
    1. According to the `invocationSource` value of `DialogCodeHook`, the Lambda function performs user data validation\. It recognizes `roses` as a valid slot value \(and sets `Price` as a session attribute\) and returns the following response to Amazon Lex\. 
@@ -161,9 +153,7 @@ If Lambda function detects anything in the user data validation, it instructs Am
       ```
 
       Note the following:
-
       + `sessionAttributes` – Lambda function has added `Price` \(of the roses\) as a session attribute\.
-
       + `dialogAction.type` – is set to `Delegate`\. The user data was valid so the Lambda function directs Amazon Lex to choose the next course of action\.
 
        
@@ -241,9 +231,7 @@ If Lambda function detects anything in the user data validation, it instructs Am
       ```
 
       Note the following:
-
       + `sessionAttributes` – No change\.
-
       + `dialogAction.type` – is set to `Delegate`\. The user data was valid, and the Lambda function directs Amazon Lex to choose the next course of action\.
 
    1. According to the `dialogAction.type`, Amazon Lex chooses the next course of action\. Amazon Lex knows it needs more slot data so it picks the next unfilled slot \(`PickupTime`\) with the highest priority according to the intent configuration\. Amazon Lex selects one of the prompt messages \("Deliver the roses at what time on 2017\-01\-01?"\) for this slot according to the intent configuration and sends the following response back to the client:   
@@ -319,9 +307,7 @@ If Lambda function detects anything in the user data validation, it instructs Am
       ```
 
       Note the following:
-
       + `sessionAttributes` – No change in session attribute\.
-
       + `dialogAction.type` – is set to `Delegate`\. The user data was valid so the Lambda function directs Amazon Lex to choose the next course of action\.
 
    1. At this time Amazon Lex knows it has all the slot data\. This intent is configured with a confirmation prompt\. Therefore, Amazon Lex sends the following response to the user asking for confirmation before fulfilling the intent:   
@@ -375,9 +361,7 @@ If Lambda function detects anything in the user data validation, it instructs Am
       ```
 
       Note the following:
-
       + `invocationSource` – This time Amazon Lex set this value to `FulfillmentCodeHook`, directing the Lambda function to fulfill the intent\.
-
       + `confirmationStatus` – is set to `Confirmed`\.
 
    1. This time, the Lambda function fulfills the `OrderFlowers` intent, and returns the following response:
@@ -399,9 +383,7 @@ If Lambda function detects anything in the user data validation, it instructs Am
       ```
 
       Note the following: 
-
       + Sets the `dialogAction.type` – The Lambda function sets this value to `Close`, directing Amazon Lex to not expect a user response\. 
-
       + `dialogAction.fulfillmentState` – is set to Fulfilled and includes an appropriate `message` to convey to the user\.
 
    1. Amazon Lex reviews the `fulfillmentState` and sends the following response back to the client\. 
@@ -410,19 +392,14 @@ If Lambda function detects anything in the user data validation, it instructs Am
 ![\[\]](http://docs.aws.amazon.com/lex/latest/dg/images/gs-1-details-48.png)
 
       Note that:
-
       + `dialogState` – Amazon Lex sets this value to `fulfilled`\.
-
       + `message` – is the same message that the Lambda function provided\.
 
       The client displays the message\.
 
 1. Now test the bot again\. To establish a new \(user\) context, choose the **Clear** link in the test window\. Now provide invalid slot data for the `OrderFlowers` intent\. This time the Lambda function performs the data validation, resets invalid slot data value to null, and asks Amazon Lex to prompt the user for valid data\. For example, try the following:
-
    + Jasmine as the flower type \(it is not one of the supported flower types\)\.
-
    + Yesterday as the day when you want to pick up the flowers\.
-
    + After placing your order, enter another flower type instead of replying "yes" to confirm the order\. In response, the Lambda function updates the `Price` in the session attribute, keeping a running total of flower orders\.
 
    The Lambda function also performs the fulfillment activity\. 

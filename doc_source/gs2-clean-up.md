@@ -5,11 +5,8 @@ Delete the resources that you created and clean up your account to avoid incurri
 You can delete only resources that are not in use\. For example, you cannot delete a slot type that is referenced by an intent\. You cannot delete an intent that is referenced by a bot\.
 
 Delete resources in the following order:
-
 + Delete bots to free up intent resources\.
-
 + Delete intents to free up slot type resources\.
-
 + Delete slot types last\.
 
 **To clean up your account**
@@ -28,16 +25,14 @@ Delete resources in the following order:
 
 1. In the left menu, choose **Slot types**\.
 
-1. In the list of slot types, choose **Crusts**\.
+1. <a name="chooseSlots"></a>In the list of slot types, choose **Crusts**\.
 
-1. To delete the slot type, choose **Delete**, and then choose **Continue**\.
+1. <a name="deleteSlots"></a>To delete the slot type, choose **Delete**, and then choose **Continue**\.
 
-1. Repeat [[ERROR] BAD/MISSING LINK TEXT](#chooseSlots) and [[ERROR] BAD/MISSING LINK TEXT](#deleteSlots) for the `Sizes` and `PizzaKind` slot types\.
+1. Repeat [Step 8](#chooseSlots) and [Step 9](#deleteSlots) for the `Sizes` and `PizzaKind` slot types\.
 
 You have removed all of the resources that you created and cleaned up your account\.
 
 ## Next Steps<a name="gs-ex2-more-info"></a>
-
 + [Publish a Version and Create an Alias](http://docs.aws.amazon.com/lex/latest/dg/gettingstarted-ex3.html)
-
 + [Create an Amazon Lex bot with the AWS Command Line Interface](http://docs.aws.amazon.com/lex/latest/dg/gs-cli.html)

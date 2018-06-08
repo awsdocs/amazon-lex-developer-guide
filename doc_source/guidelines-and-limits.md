@@ -2,6 +2,6 @@
 
 The following sections provide guidelines and limits when using Amazon Lex\.
 
-
+**Topics**
 + [General Guidelines](gl-guidelines.md)
 + [Limits](gl-limits.md)

@@ -16,7 +16,7 @@ POST /slottypes/name/versions HTTP/1.1
 Content-type: application/json
 
 {
-   "checksum": "string"
+   "[checksum](#lex-CreateSlotTypeVersion-request-checksum)": "string"
 }
 ```
 
@@ -24,7 +24,7 @@ Content-type: application/json
 
 The request requires the following URI parameters\.
 
- ** name **   
+ ** [name](#API_CreateSlotTypeVersion_RequestSyntax) **   <a name="lex-CreateSlotTypeVersion-request-name"></a>
 The name of the slot type that you want to create a new version for\. The name is case sensitive\.   
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
@@ -33,7 +33,7 @@ Pattern: `^([A-Za-z]_?)+$`
 
 The request accepts the following data in JSON format\.
 
- ** checksum **   
+ ** [checksum](#API_CreateSlotTypeVersion_RequestSyntax) **   <a name="lex-CreateSlotTypeVersion-request-checksum"></a>
 Checksum for the `$LATEST` version of the slot type that you want to publish\. If you specify a checksum and the `$LATEST` version of the slot type has a different checksum, Amazon Lex returns a `PreconditionFailedException` exception and doesn't publish the new version\. If you don't specify a checksum, Amazon Lex publishes the `$LATEST` version\.  
 Type: String  
 Required: No
@@ -45,19 +45,19 @@ HTTP/1.1 201
 Content-type: application/json
 
 {
-   "checksum": "string",
-   "createdDate": number,
-   "description": "string",
-   "enumerationValues": [ 
+   "[checksum](#lex-CreateSlotTypeVersion-response-checksum)": "string",
+   "[createdDate](#lex-CreateSlotTypeVersion-response-createdDate)": number,
+   "[description](#lex-CreateSlotTypeVersion-response-description)": "string",
+   "[enumerationValues](#lex-CreateSlotTypeVersion-response-enumerationValues)": [ 
       { 
-         "synonyms": [ "string" ],
-         "value": "string"
+         "[synonyms](API_EnumerationValue.md#lex-Type-EnumerationValue-synonyms)": [ "string" ],
+         "[value](API_EnumerationValue.md#lex-Type-EnumerationValue-value)": "string"
       }
    ],
-   "lastUpdatedDate": number,
-   "name": "string",
-   "valueSelectionStrategy": "string",
-   "version": "string"
+   "[lastUpdatedDate](#lex-CreateSlotTypeVersion-response-lastUpdatedDate)": number,
+   "[name](#lex-CreateSlotTypeVersion-response-name)": "string",
+   "[valueSelectionStrategy](#lex-CreateSlotTypeVersion-response-valueSelectionStrategy)": "string",
+   "[version](#lex-CreateSlotTypeVersion-response-version)": "string"
 }
 ```
 
@@ -67,40 +67,40 @@ If the action is successful, the service sends back an HTTP 201 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** checksum **   
+ ** [checksum](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-checksum"></a>
 Checksum of the `$LATEST` version of the slot type\.  
 Type: String
 
- ** createdDate **   
+ ** [createdDate](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-createdDate"></a>
 The date that the slot type was created\.  
 Type: Timestamp
 
- ** description **   
+ ** [description](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-description"></a>
 A description of the slot type\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.
 
- ** enumerationValues **   
+ ** [enumerationValues](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-enumerationValues"></a>
 A list of `EnumerationValue` objects that defines the values that the slot type can take\.  
 Type: Array of [EnumerationValue](API_EnumerationValue.md) objects  
 Array Members: Minimum number of 1 item\. Maximum number of 10000 items\.
 
- ** lastUpdatedDate **   
+ ** [lastUpdatedDate](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-lastUpdatedDate"></a>
 The date that the slot type was updated\. When you create a resource, the creation date and last update date are the same\.  
 Type: Timestamp
 
- ** name **   
+ ** [name](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-name"></a>
 The name of the slot type\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** valueSelectionStrategy **   
+ ** [valueSelectionStrategy](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-valueSelectionStrategy"></a>
 The strategy that Amazon Lex uses to determine the value of the slot\. For more information, see [PutSlotType](API_PutSlotType.md)\.  
 Type: String  
 Valid Values:` ORIGINAL_VALUE | TOP_RESOLUTION` 
 
- ** version **   
+ ** [version](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-version"></a>
 The version assigned to the new slot type version\.   
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
@@ -135,21 +135,12 @@ HTTP Status Code: 412
 ## See Also<a name="API_CreateSlotTypeVersion_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/CreateSlotTypeVersion) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/CreateSlotTypeVersion) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/CreateSlotTypeVersion) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/CreateSlotTypeVersion) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/CreateSlotTypeVersion) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/CreateSlotTypeVersion) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/CreateSlotTypeVersion) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/CreateSlotTypeVersion) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/CreateSlotTypeVersion) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/CreateSlotTypeVersion) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/CreateSlotTypeVersion) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/CreateSlotTypeVersion) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/CreateSlotTypeVersion) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/CreateSlotTypeVersion) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/CreateSlotTypeVersion) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/CreateSlotTypeVersion) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/CreateSlotTypeVersion) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/CreateSlotTypeVersion) 

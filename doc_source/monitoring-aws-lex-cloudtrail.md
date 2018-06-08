@@ -3,17 +3,12 @@
 Amazon Lex is integrated with AWS CloudTrail, a service that captures all of the Amazon Lex API calls and delivers log files to an S3 bucket, where they are written with other AWS service records\. CloudTrail captures API calls from the Amazon Lex console or from Amazon Lex API operations\. Using the information collected by CloudTrail, you can track requests made to Amazon Lex, the source IP address from which the requests were made, who made the requests, when they were made, and so on\. 
 
 Each operation creates a log entry containing request information\. Only the following operations contain response information:
-
 +  [CreateBotVersion](API_CreateBotVersion.md), [CreateIntentVersion](API_CreateIntentVersion.md), [CreateSlotTypeVersion](API_CreateSlotTypeVersion.md)
-
 + [PutBot](API_PutBot.md), [PutBotAlias](API_PutBotAlias.md), [PutIntent](API_PutIntent.md), [PutSlotType](API_PutSlotType.md) 
 
 Every log entry contains information about who generated the request\. Use the user identity in log entries to determine the following: 
-
 + Whether the request was made with root or IAM user credentials
-
 + Whether the request was made with temporary security credentials for a role or federated user
-
 + Whether the request was made by another AWS service
 
  For more information, see the [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.

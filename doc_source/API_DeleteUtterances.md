@@ -4,7 +4,7 @@ Deletes stored utterances\.
 
 Amazon Lex stores the utterances that users send to your bot\. Utterances are stored for 15 days for use with the [GetUtterancesView](API_GetUtterancesView.md) operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input\.
 
-Use the `DeleteStoredUtterances` operation to manually delete stored utterances for a specific user\.
+Use the `DeleteUtterances` operation to manually delete stored utterances for a specific user\. When you use the `DeleteUtterances` operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately\. Utterances stored for use with the `GetUtterancesView` operation are deleted after 15 days\.
 
 This operation requires permissions for the `lex:DeleteUtterances` action\.
 
@@ -18,12 +18,12 @@ DELETE /bots/botName/utterances/userId HTTP/1.1
 
 The request requires the following URI parameters\.
 
- ** botName **   
+ ** [botName](#API_DeleteUtterances_RequestSyntax) **   <a name="lex-DeleteUtterances-request-botName"></a>
 The name of the bot that stored the utterances\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** userId **   
+ ** [userId](#API_DeleteUtterances_RequestSyntax) **   <a name="lex-DeleteUtterances-request-userId"></a>
  The unique identifier for the user that made the utterances\. This is the user ID that was sent in the [PostContent](http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html) or [PostText](http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html) operation request that contained the utterance\.  
 Length Constraints: Minimum length of 2\. Maximum length of 100\.
 
@@ -62,21 +62,12 @@ HTTP Status Code: 404
 ## See Also<a name="API_DeleteUtterances_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/DeleteUtterances) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/DeleteUtterances) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/DeleteUtterances) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/DeleteUtterances) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/DeleteUtterances) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/DeleteUtterances) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/DeleteUtterances) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/DeleteUtterances) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/DeleteUtterances) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/DeleteUtterances) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/DeleteUtterances) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/DeleteUtterances) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/DeleteUtterances) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/DeleteUtterances) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/DeleteUtterances) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/DeleteUtterances) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/DeleteUtterances) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/DeleteUtterances) 

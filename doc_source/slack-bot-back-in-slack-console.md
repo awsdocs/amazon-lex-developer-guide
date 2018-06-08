@@ -9,9 +9,7 @@ In this section, use the Slack API console to complete integration of the Slack 
    1. In the **Redirect URLs** section, add the OAuth URL that Amazon Lex provided in the preceding step\. Choose **Add a new Redirect URL**, and then choose **Save URLs**\.
 
    1. In the **Scopes** section, choose two permissions in the **Select Permission Scopes** drop\-down\. Filter the list with the following text:
-
       + **chat:write:bot**
-
       + **team:read**
 
       Choose **Save Changes**\.
@@ -19,13 +17,9 @@ In this section, use the Slack API console to complete integration of the Slack 
 1. Update the **Interactive Components** feature by updating the **Request URL** value to the Postback URL that Amazon Lex provided in the preceding step\. Choose **Add**, and then choose **Save URLs**\.
 
 1. Subscribe to the **Event Subscriptions** feature as follows:
-
    + Enable events by choosing the **On** option\.
-
    + Set the **Request URL** value to the Postback URL that Amazon Lex provided in the preceding step\. 
-
    + In the **Subscribe to Bot Events** section, subscribe to the `message.im` bot event to enable direct messaging between the end user and the Slack bot\.
-
    + Save the changes\.
 
 **Next Step**  

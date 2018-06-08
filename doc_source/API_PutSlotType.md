@@ -15,16 +15,16 @@ PUT /slottypes/name/versions/$LATEST HTTP/1.1
 Content-type: application/json
 
 {
-   "checksum": "string",
-   "createVersion": boolean,
-   "description": "string",
-   "enumerationValues": [ 
+   "[checksum](#lex-PutSlotType-request-checksum)": "string",
+   "[createVersion](#lex-PutSlotType-request-createVersion)": boolean,
+   "[description](#lex-PutSlotType-request-description)": "string",
+   "[enumerationValues](#lex-PutSlotType-request-enumerationValues)": [ 
       { 
-         "synonyms": [ "string" ],
-         "value": "string"
+         "[synonyms](API_EnumerationValue.md#lex-Type-EnumerationValue-synonyms)": [ "string" ],
+         "[value](API_EnumerationValue.md#lex-Type-EnumerationValue-value)": "string"
       }
    ],
-   "valueSelectionStrategy": "string"
+   "[valueSelectionStrategy](#lex-PutSlotType-request-valueSelectionStrategy)": "string"
 }
 ```
 
@@ -32,7 +32,7 @@ Content-type: application/json
 
 The request requires the following URI parameters\.
 
- ** name **   
+ ** [name](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-name"></a>
 The name of the slot type\. The name is *not* case sensitive\.   
 The name can't match a built\-in slot type name, or a built\-in slot type name with "AMAZON\." removed\. For example, because there is a built\-in slot type called `AMAZON.DATE`, you can't create a custom slot type called `DATE`\.  
 For a list of built\-in slot types, see [Slot Type Reference](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference) in the *Alexa Skills Kit*\.  
@@ -43,35 +43,34 @@ Pattern: `^([A-Za-z]_?)+$`
 
 The request accepts the following data in JSON format\.
 
- ** checksum **   
+ ** [checksum](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-checksum"></a>
 Identifies a specific revision of the `$LATEST` version\.  
 When you create a new slot type, leave the `checksum` field blank\. If you specify a checksum you get a `BadRequestException` exception\.  
 When you want to update a slot type, set the `checksum` field to the checksum of the most recent revision of the `$LATEST` version\. If you don't specify the ` checksum` field, or if the checksum does not match the `$LATEST` version, you get a `PreconditionFailedException` exception\.  
 Type: String  
 Required: No
 
- ** createVersion **   
+ ** [createVersion](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-createVersion"></a>
+When set to `true` a new numbered version of the slot type is created\. This is the same as calling the `CreateSlotTypeVersion` operation\. If you do not specify `createVersion`, the default is `false`\.  
 Type: Boolean  
 Required: No
 
- ** description **   
+ ** [description](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-description"></a>
 A description of the slot type\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.  
 Required: No
 
- ** enumerationValues **   
+ ** [enumerationValues](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-enumerationValues"></a>
 A list of `EnumerationValue` objects that defines the values that the slot type can take\. Each value can have a list of `synonyms`, which are additional values that help train the machine learning model about the values that it resolves for a slot\.   
 When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot\. If you are using a Lambda function, this resolution list is passed to the function\. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value\. The `valueSelectionStrategy` field indicates the option to use\.   
 Type: Array of [EnumerationValue](API_EnumerationValue.md) objects  
 Array Members: Minimum number of 1 item\. Maximum number of 10000 items\.  
 Required: No
 
- ** valueSelectionStrategy **   
+ ** [valueSelectionStrategy](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-valueSelectionStrategy"></a>
 Determines the slot resolution strategy that Amazon Lex uses to return slot type values\. The field can be set to one of the following values:  
-
 +  `ORIGINAL_VALUE` \- Returns the value entered by the user, if the user value is similar to the slot value\.
-
 +  `TOP_RESOLUTION` \- If there is a resolution list for the slot, return the first value in the resolution list as the slot type value\. If there is no resolution list, null is returned\.
 If you don't specify the `valueSelectionStrategy`, the default is `ORIGINAL_VALUE`\.  
 Type: String  
@@ -85,20 +84,20 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "checksum": "string",
-   "createdDate": number,
-   "createVersion": boolean,
-   "description": "string",
-   "enumerationValues": [ 
+   "[checksum](#lex-PutSlotType-response-checksum)": "string",
+   "[createdDate](#lex-PutSlotType-response-createdDate)": number,
+   "[createVersion](#lex-PutSlotType-response-createVersion)": boolean,
+   "[description](#lex-PutSlotType-response-description)": "string",
+   "[enumerationValues](#lex-PutSlotType-response-enumerationValues)": [ 
       { 
-         "synonyms": [ "string" ],
-         "value": "string"
+         "[synonyms](API_EnumerationValue.md#lex-Type-EnumerationValue-synonyms)": [ "string" ],
+         "[value](API_EnumerationValue.md#lex-Type-EnumerationValue-value)": "string"
       }
    ],
-   "lastUpdatedDate": number,
-   "name": "string",
-   "valueSelectionStrategy": "string",
-   "version": "string"
+   "[lastUpdatedDate](#lex-PutSlotType-response-lastUpdatedDate)": number,
+   "[name](#lex-PutSlotType-response-name)": "string",
+   "[valueSelectionStrategy](#lex-PutSlotType-response-valueSelectionStrategy)": "string",
+   "[version](#lex-PutSlotType-response-version)": "string"
 }
 ```
 
@@ -108,43 +107,44 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** checksum **   
+ ** [checksum](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-checksum"></a>
 Checksum of the `$LATEST` version of the slot type\.  
 Type: String
 
- ** createdDate **   
+ ** [createdDate](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-createdDate"></a>
 The date that the slot type was created\.  
 Type: Timestamp
 
- ** createVersion **   
+ ** [createVersion](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-createVersion"></a>
+ `True` if a new version of the slot type was created\. If the `createVersion` field was not specified in the request, the `createVersion` field is set to false in the response\.  
 Type: Boolean
 
- ** description **   
+ ** [description](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-description"></a>
 A description of the slot type\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.
 
- ** enumerationValues **   
+ ** [enumerationValues](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-enumerationValues"></a>
 A list of `EnumerationValue` objects that defines the values that the slot type can take\.  
 Type: Array of [EnumerationValue](API_EnumerationValue.md) objects  
 Array Members: Minimum number of 1 item\. Maximum number of 10000 items\.
 
- ** lastUpdatedDate **   
+ ** [lastUpdatedDate](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-lastUpdatedDate"></a>
 The date that the slot type was updated\. When you create a slot type, the creation date and last update date are the same\.  
 Type: Timestamp
 
- ** name **   
+ ** [name](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-name"></a>
 The name of the slot type\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** valueSelectionStrategy **   
+ ** [valueSelectionStrategy](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-valueSelectionStrategy"></a>
 The slot resolution strategy that Amazon Lex uses to determine the value of the slot\. For more information, see [PutSlotType](#API_PutSlotType)\.  
 Type: String  
 Valid Values:` ORIGINAL_VALUE | TOP_RESOLUTION` 
 
- ** version **   
+ ** [version](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-version"></a>
 The version of the slot type\. For a new slot type, the version is always `$LATEST`\.   
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
@@ -175,21 +175,12 @@ HTTP Status Code: 412
 ## See Also<a name="API_PutSlotType_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/PutSlotType) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutSlotType) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutSlotType) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutSlotType) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutSlotType) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutSlotType) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutSlotType) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutSlotType) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/PutSlotType) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/PutSlotType) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutSlotType) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutSlotType) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutSlotType) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutSlotType) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutSlotType) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutSlotType) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutSlotType) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/PutSlotType) 

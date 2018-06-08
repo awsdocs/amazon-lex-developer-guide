@@ -1,9 +1,7 @@
 # Step 3: Create an Intent \(AWS CLI\)<a name="gs-cli-create-order-flowers"></a>
 
 Create an intent for the `OrderFlowersBot` bot and provide three slots, or parameters\. The slots allow the bot to fulfill the intent:
-
 + `FlowerType` is a custom slot type that specifies which types of flowers can be ordered\.
-
 + `AMAZON.DATE` and `AMAZON.TIME` are built\-in slot types used for getting the date and time to deliver the flowers from the user\.
 
 To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.

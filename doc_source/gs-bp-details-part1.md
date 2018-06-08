@@ -18,11 +18,9 @@ This section explains flow of information between client and Amazon Lex in which
       ```
 
       Both the request URI and the body provide information to Amazon Lex:
-
       + Request URI – Provides bot name \(`OrderFlowers`\), bot alias \(`$LATEST`\), and user name \(a random string identifying the user\)\. The trailing `text` indicates that it is a `PostText` API request \(and not `PostContent`\)\.
 
          
-
       + Request body – Includes the user input \(`inputText`\) and empty `sessionAttributes`\. When the client makes the first request, there are no session attributes\. The Lambda function initiates them later\.
 
    1. From the `inputText`, Amazon Lex detects the intent \(`OrderFlowers`\)\. This intent does not have any code hooks \(that is, the Lambda functions\) for initialization and validation of user input or fulfillment\. 
@@ -127,15 +125,11 @@ This section explains flow of information between client and Amazon Lex in which
       Amazon Lex set the `dialogState` to `ReadyForFulfillment`\. The client can then fulfill the intent\.
 
 1. Now test the bot again\. To do that, you must choose the **Clear** link in the console to establish a new \(user\) context\. Now as you provide data for the order flowers intent, try to provide invalid data\. For example: 
-
    + Jasmine as the flower type \(it is not one of the supported flower types\)\.
-
    + Yesterday as the day when you want to pick up the flowers\.
 
    Notice that the bot accepts these values because you don't have any code to initialize/validate user data\. In the next section, you add a Lambda function to do this\. Note the following about the Lambda function:
-
    + The Lambda function validates slot data after every user input\. It fulfills the intent at the end\. That is, the bot processes the flowers order and returns a message to the user instead of simply returning slot data to the client\. For more information, see [Using Lambda Functions](using-lambda.md)\.
-
    + The Lambda function also sets the session attributes\. For more information about session attributes, see [PostText](API_runtime_PostText.md)\. 
 
       After you complete the Getting Started section, you can do the additional exercises \([Additional Examples: Creating Amazon Lex Bots](additional-exercises.md) \)\. [Example Bot: BookTrip](ex-book-trip.md) uses session attributes to share cross\-intent information to engage in a dynamic conversation with the user\.

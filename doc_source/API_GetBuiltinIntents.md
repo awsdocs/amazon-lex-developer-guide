@@ -14,18 +14,18 @@ GET /builtins/intents/?locale=locale&maxResults=maxResults&nextToken=nextToken&s
 
 The request requires the following URI parameters\.
 
- ** locale **   
+ ** [locale](#API_GetBuiltinIntents_RequestSyntax) **   <a name="lex-GetBuiltinIntents-request-locale"></a>
 A list of locales that the intent supports\.  
-Valid Values:` en-US | en-GB | de-DE` 
+Valid Values:` en-US` 
 
- ** maxResults **   
+ ** [maxResults](#API_GetBuiltinIntents_RequestSyntax) **   <a name="lex-GetBuiltinIntents-request-maxResults"></a>
 The maximum number of intents to return in the response\. The default is 10\.  
 Valid Range: Minimum value of 1\. Maximum value of 50\.
 
- ** nextToken **   
+ ** [nextToken](#API_GetBuiltinIntents_RequestSyntax) **   <a name="lex-GetBuiltinIntents-request-nextToken"></a>
 A pagination token that fetches the next page of intents\. If this API call is truncated, Amazon Lex returns a pagination token in the response\. To fetch the next page of intents, use the pagination token in the next request\.
 
- ** signatureContains **   
+ ** [signatureContains](#API_GetBuiltinIntents_RequestSyntax) **   <a name="lex-GetBuiltinIntents-request-signatureContains"></a>
 Substring to match in built\-in intent signatures\. An intent will be returned if any part of its signature matches the substring\. For example, "xyz" matches both "xyzabc" and "abcxyz\." To find the signature for an intent, see [Standard Built\-in Intents](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents) in the *Alexa Skills Kit*\.
 
 ## Request Body<a name="API_GetBuiltinIntents_RequestBody"></a>
@@ -39,13 +39,13 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "intents": [ 
+   "[intents](#lex-GetBuiltinIntents-response-intents)": [ 
       { 
-         "signature": "string",
-         "supportedLocales": [ "string" ]
+         "[signature](API_BuiltinIntentMetadata.md#lex-Type-BuiltinIntentMetadata-signature)": "string",
+         "[supportedLocales](API_BuiltinIntentMetadata.md#lex-Type-BuiltinIntentMetadata-supportedLocales)": [ "string" ]
       }
    ],
-   "nextToken": "string"
+   "[nextToken](#lex-GetBuiltinIntents-response-nextToken)": "string"
 }
 ```
 
@@ -55,11 +55,11 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** intents **   
+ ** [intents](#API_GetBuiltinIntents_ResponseSyntax) **   <a name="lex-GetBuiltinIntents-response-intents"></a>
 An array of `builtinIntentMetadata` objects, one for each intent in the response\.  
 Type: Array of [BuiltinIntentMetadata](API_BuiltinIntentMetadata.md) objects
 
- ** nextToken **   
+ ** [nextToken](#API_GetBuiltinIntents_ResponseSyntax) **   <a name="lex-GetBuiltinIntents-response-nextToken"></a>
 A pagination token that fetches the next page of intents\. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response\. To fetch the next page of intents, specify the pagination token in the next request\.  
 Type: String
 
@@ -80,21 +80,12 @@ HTTP Status Code: 429
 ## See Also<a name="API_GetBuiltinIntents_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetBuiltinIntents) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetBuiltinIntents) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetBuiltinIntents) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetBuiltinIntents) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetBuiltinIntents) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetBuiltinIntents) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetBuiltinIntents) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetBuiltinIntents) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetBuiltinIntents) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetBuiltinIntents) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetBuiltinIntents) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetBuiltinIntents) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetBuiltinIntents) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetBuiltinIntents) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetBuiltinIntents) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetBuiltinIntents) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetBuiltinIntents) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetBuiltinIntents) 

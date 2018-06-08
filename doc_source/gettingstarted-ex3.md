@@ -1,9 +1,7 @@
 # Exercise 3: Publish a Version and Create an Alias<a name="gettingstarted-ex3"></a>
 
 In Getting Started Exercises 1 and 2, you created a bot and tested it\. In this exercise, you do the following:
-
 + Publish a new version of the bot\. Amazon Lex takes a snapshot copy of the `$LATEST` version to publish a new version\. 
-
 + Create an alias that points to the new version\. 
 
 For more information about versioning and aliases, see [Versioning and Aliases](versioning-aliases.md)\.

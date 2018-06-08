@@ -7,19 +7,14 @@ In this section, you create an Amazon Lex bot using the ScheduleAppointment blue
 1. On the **Bots** page, choose **Create**\.
 
 1. On the **Create your Lex bot** page, do the following:
-
    + Choose the **ScheduleAppointment** blueprint\.
-
    + Leave the default bot name \(ScheduleAppointment\)\.
 
 1. Choose **Create**\.
 
    This step saves and builds the bot\. The console sends the following requests to Amazon Lex during the build process: 
-
    + Create a new version of the slot types \(from the $LATEST version\)\. For information about slot types defined in this bot blueprint, see [Overview of the Bot Blueprint \(ScheduleAppointment\)](ex1-sch-appt.md#ex1-sch-appt-bp-summary-bot)\.
-
    + Create a version of the `MakeAppointment` intent \(from the $LATEST version\)\. In some cases, the console sends a request for the `update` API operation before creating a new version\. 
-
    + Update the $LATEST version of the bot\. 
 
      At this time, Amazon Lex builds a machine learning model for the bot\. When you test the bot in the console, the console uses the runtime API to send user input back to Amazon Lex\. Amazon Lex then uses the machine learning model to interpret the user input\. 
@@ -30,11 +25,8 @@ In this section, you create an Amazon Lex bot using the ScheduleAppointment blue
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/appt-test-no-lambda.png)
 
    Note the following:
-
    + From the initial user input \("Book an appointment"\), the bot infers the intent \(`MakeAppointment`\)\. 
-
    + The bot then uses the configured prompts to get slot data from the user\. 
-
    + The bot blueprint has the `MakeAppointment` intent configured with the following confirmation prompt:
 
      ```

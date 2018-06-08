@@ -18,16 +18,16 @@ GET /slottypes/name/versions/?maxResults=maxResults&nextToken=nextToken HTTP/1.1
 
 The request requires the following URI parameters\.
 
- ** maxResults **   
+ ** [maxResults](#API_GetSlotTypeVersions_RequestSyntax) **   <a name="lex-GetSlotTypeVersions-request-maxResults"></a>
 The maximum number of slot type versions to return in the response\. The default is 10\.  
 Valid Range: Minimum value of 1\. Maximum value of 50\.
 
- ** name **   
+ ** [name](#API_GetSlotTypeVersions_RequestSyntax) **   <a name="lex-GetSlotTypeVersions-request-name"></a>
 The name of the slot type for which versions should be returned\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** nextToken **   
+ ** [nextToken](#API_GetSlotTypeVersions_RequestSyntax) **   <a name="lex-GetSlotTypeVersions-request-nextToken"></a>
 A pagination token for fetching the next page of slot type versions\. If the response to this call is truncated, Amazon Lex returns a pagination token in the response\. To fetch the next page of versions, specify the pagination token in the next request\. 
 
 ## Request Body<a name="API_GetSlotTypeVersions_RequestBody"></a>
@@ -41,14 +41,14 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "nextToken": "string",
-   "slotTypes": [ 
+   "[nextToken](#lex-GetSlotTypeVersions-response-nextToken)": "string",
+   "[slotTypes](#lex-GetSlotTypeVersions-response-slotTypes)": [ 
       { 
-         "createdDate": number,
-         "description": "string",
-         "lastUpdatedDate": number,
-         "name": "string",
-         "version": "string"
+         "[createdDate](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-createdDate)": number,
+         "[description](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-description)": "string",
+         "[lastUpdatedDate](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-lastUpdatedDate)": number,
+         "[name](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-name)": "string",
+         "[version](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-version)": "string"
       }
    ]
 }
@@ -60,11 +60,11 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** nextToken **   
+ ** [nextToken](#API_GetSlotTypeVersions_ResponseSyntax) **   <a name="lex-GetSlotTypeVersions-response-nextToken"></a>
 A pagination token for fetching the next page of slot type versions\. If the response to this call is truncated, Amazon Lex returns a pagination token in the response\. To fetch the next page of versions, specify the pagination token in the next request\.   
 Type: String
 
- ** slotTypes **   
+ ** [slotTypes](#API_GetSlotTypeVersions_ResponseSyntax) **   <a name="lex-GetSlotTypeVersions-response-slotTypes"></a>
 An array of `SlotTypeMetadata` objects, one for each numbered version of the slot type plus one for the `$LATEST` version\.  
 Type: Array of [SlotTypeMetadata](API_SlotTypeMetadata.md) objects
 
@@ -89,21 +89,12 @@ HTTP Status Code: 404
 ## See Also<a name="API_GetSlotTypeVersions_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetSlotTypeVersions) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetSlotTypeVersions) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetSlotTypeVersions) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetSlotTypeVersions) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetSlotTypeVersions) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetSlotTypeVersions) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetSlotTypeVersions) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetSlotTypeVersions) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetSlotTypeVersions) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/GetSlotTypeVersions) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetSlotTypeVersions) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetSlotTypeVersions) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetSlotTypeVersions) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetSlotTypeVersions) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetSlotTypeVersions) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetSlotTypeVersions) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetSlotTypeVersions) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/GetSlotTypeVersions) 

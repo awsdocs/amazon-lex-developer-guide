@@ -11,9 +11,9 @@ PUT /bots/botName/aliases/name HTTP/1.1
 Content-type: application/json
 
 {
-   "botVersion": "string",
-   "checksum": "string",
-   "description": "string"
+   "[botVersion](#lex-PutBotAlias-request-botVersion)": "string",
+   "[checksum](#lex-PutBotAlias-request-checksum)": "string",
+   "[description](#lex-PutBotAlias-request-description)": "string"
 }
 ```
 
@@ -21,12 +21,12 @@ Content-type: application/json
 
 The request requires the following URI parameters\.
 
- ** botName **   
+ ** [botName](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-botName"></a>
 The name of the bot\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** name **   
+ ** [name](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-name"></a>
 The name of the alias\. The name is *not* case sensitive\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
@@ -35,21 +35,21 @@ Pattern: `^([A-Za-z]_?)+$`
 
 The request accepts the following data in JSON format\.
 
- ** botVersion **   
+ ** [botVersion](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-botVersion"></a>
 The version of the bot\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
 Pattern: `\$LATEST|[0-9]+`   
 Required: Yes
 
- ** checksum **   
+ ** [checksum](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-checksum"></a>
 Identifies a specific revision of the `$LATEST` version\.  
 When you create a new bot alias, leave the `checksum` field blank\. If you specify a checksum you get a `BadRequestException` exception\.  
 When you want to update a bot alias, set the `checksum` field to the checksum of the most recent revision of the `$LATEST` version\. If you don't specify the ` checksum` field, or if the checksum does not match the `$LATEST` version, you get a `PreconditionFailedException` exception\.  
 Type: String  
 Required: No
 
- ** description **   
+ ** [description](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-description"></a>
 A description of the alias\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.  
@@ -62,13 +62,13 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "botName": "string",
-   "botVersion": "string",
-   "checksum": "string",
-   "createdDate": number,
-   "description": "string",
-   "lastUpdatedDate": number,
-   "name": "string"
+   "[botName](#lex-PutBotAlias-response-botName)": "string",
+   "[botVersion](#lex-PutBotAlias-response-botVersion)": "string",
+   "[checksum](#lex-PutBotAlias-response-checksum)": "string",
+   "[createdDate](#lex-PutBotAlias-response-createdDate)": number,
+   "[description](#lex-PutBotAlias-response-description)": "string",
+   "[lastUpdatedDate](#lex-PutBotAlias-response-lastUpdatedDate)": number,
+   "[name](#lex-PutBotAlias-response-name)": "string"
 }
 ```
 
@@ -78,36 +78,36 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** botName **   
+ ** [botName](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-botName"></a>
 The name of the bot that the alias points to\.  
 Type: String  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
- ** botVersion **   
+ ** [botVersion](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-botVersion"></a>
 The version of the bot that the alias points to\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
 Pattern: `\$LATEST|[0-9]+` 
 
- ** checksum **   
+ ** [checksum](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-checksum"></a>
 The checksum for the current version of the alias\.  
 Type: String
 
- ** createdDate **   
+ ** [createdDate](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-createdDate"></a>
 The date that the bot alias was created\.  
 Type: Timestamp
 
- ** description **   
+ ** [description](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-description"></a>
 A description of the alias\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.
 
- ** lastUpdatedDate **   
+ ** [lastUpdatedDate](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-lastUpdatedDate"></a>
 The date that the bot alias was updated\. When you create a resource, the creation date and the last updated date are the same\.  
 Type: Timestamp
 
- ** name **   
+ ** [name](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-name"></a>
 The name of the alias\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
@@ -138,21 +138,12 @@ HTTP Status Code: 412
 ## See Also<a name="API_PutBotAlias_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/PutBotAlias) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutBotAlias) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutBotAlias) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutBotAlias) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutBotAlias) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutBotAlias) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutBotAlias) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutBotAlias) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/PutBotAlias) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/lex-models-2017-04-19/PutBotAlias) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutBotAlias) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutBotAlias) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutBotAlias) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutBotAlias) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutBotAlias) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutBotAlias) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutBotAlias) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/PutBotAlias) 

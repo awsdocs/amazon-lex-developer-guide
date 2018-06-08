@@ -80,6 +80,6 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
    }
    ```
 
-## Next Step<a name="gs-create-step-next-5"></a>
+## Next Step<a name="gs-create-next-5"></a>
 
 [Step 5: Test a Bot \(AWS CLI\)](gs-create-test.md)

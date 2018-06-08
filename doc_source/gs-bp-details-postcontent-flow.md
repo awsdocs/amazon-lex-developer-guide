@@ -18,15 +18,10 @@ This section explains the flow of information between the client and Amazon Lex 
       ```
 
       Both the request URI and the body provide information to Amazon Lex:
-
       + Request URI – Provides the bot name \(`OrderFlowers`\), bot alias \(`$LATEST`\), and the user name \(a random string that identifies the user\)\. `content` indicates that this is a `PostContent` API request \(not a `PostText` request\)\.
-
       + Request headers
-
         + `x-amz-lex-session-attributes` – The base64\-encoded value represents "\{\}"\. When the client makes the first request, there are no session attributes\. 
-
         + `Content-Type` – Reflects the audio format\.
-
       + Request body – The user input audio stream \("I would like to order some flowers\."\)\.
 **Note**  
 If the user chooses to send text \("I would like to order some flowers"\) to the `PostContent` API instead of speaking, the request body is the user input\. The `Content-Type` header is set accordingly:  
@@ -54,17 +49,13 @@ If the user chooses to send text \("I would like to order some flowers"\) to the
       ```
 
       The header values provide the following information:
-
       + `x-amz-lex-input-transcript` – Provides the transcript of the audio \(user input\) from the request
-
       + `x-amz-lex-message` – Provides the transcript of the audio Amazon Lex returned in the response
-
       + `x-amz-lex-slots` – The base64 encoded version of the slots and values:
 
         ```
         {"PickupTime":null,"FlowerType":null,"PickupDate":null}
         ```
-
       + `x-amz-lex-session-attributes` – The base64\-encoded version of the session attributes \(\{\}\)
 
       The client plays the audio in the response body\.
@@ -99,13 +90,11 @@ If the user chooses to send text \("I would like to order some flowers"\) to the
       ```
 
       The header values provide the following information:
-
       + `x-amz-lex-slots` – The base64\-encoded version of the slots and values:
 
         ```
         {"PickupTime":null,"FlowerType":"roses","PickupDate":null}
         ```
-
       + `x-amz-lex-session-attributes` – The base64\-encoded version of the session attributes \(\{\}\)
 
       The client plays the audio in the response body\.
@@ -141,13 +130,11 @@ If the user chooses to send text \("I would like to order some flowers"\) to the
       ```
 
       The header values provide the following information:
-
       + `x-amz-lex-slots` – The base64\-encoded version of the slots and values:
 
         ```
         {"PickupTime":null,"FlowerType":"roses","PickupDate":"2017-03-18"}
         ```
-
       + `x-amz-lex-session-attributes` – The base64\-encoded version of the session attributes \(\{\}\)
 
       The client plays the audio in the response body\.
@@ -184,13 +171,11 @@ If the user chooses to send text \("I would like to order some flowers"\) to the
       ```
 
       The header values provide the following information:
-
       + `x-amz-lex-slots` – The base64\-encoded version of the slots and values:
 
         ```
         {"PickupTime":"18:00","FlowerType":"roses","PickupDate":"2017-03-18"}
         ```
-
       + `x-amz-lex-session-attributes` – The base64\-encoded version of the session attributes \(\{\}\)
 
       The client plays the audio in the response body\.
@@ -225,15 +210,11 @@ If the user chooses to send text \("I would like to order some flowers"\) to the
       The`x-amz-lex-dialog-state` response header is set to `ReadyForFulfillment`\. The client can then fulfill the intent\.
 
 1. Now, retest the bot\. To establish a new \(user\) context, choose the **Clear** link in the console\. Provide data for the `OrderFlowers` intent, and include some invalid data\. For example: 
-
    + Jasmine as the flower type \(it is not one of the supported flower types\)
-
    + Yesterday as the day when you want to pick up the flowers
 
    Notice that the bot accepts these values because you don't have any code to initialize and validate the user data\. In the next section, you add a Lambda function to do this\. Note the following about the Lambda function:
-
    + It validates slot data after every user input\. It fulfills the intent at the end\. That is, the bot processes the flower order and returns a message to the user instead of simply returning slot data to the client\. For more information, see [Using Lambda Functions](using-lambda.md)\.
-
    + It also sets the session attributes\. For more information about session attributes, see [PostText](API_runtime_PostText.md)\. 
 
       After you complete the Getting Started section, you can do the additional exercises \([Additional Examples: Creating Amazon Lex Bots](additional-exercises.md) \)\. [Example Bot: BookTrip](ex-book-trip.md) uses session attributes to share cross\-intent information to engage in a dynamic conversation with the user\.

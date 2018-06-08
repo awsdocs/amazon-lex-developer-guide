@@ -28,13 +28,9 @@ Punctuation marks are not supported by the Alexa Skills Kit\. You need to update
 1. Open the Alexa Skill Kit page\. In the **Alexa Skills Kit** box, choose **Get Started**\. 
 
 1. Choose **Add a New Skill**\. Fill in the required fields:
-
    + **Skill Type** \(choose **Custom Interaction Model**\)
-
    + **Language**
-
    + **Name**
-
    + **Invocation Name**
 
 1. Choose **Save**, then choose **Next**\.

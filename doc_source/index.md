@@ -123,7 +123,6 @@ Amazon's trademarks and trade dress may not be used in
    + [Example: Integrating with a Web site](ex-web.md)
 + [Monitoring Amazon Lex](monitoring-aws-lex.md)
    + [Monitoring Amazon Lex with Amazon CloudWatch](monitoring-aws-lex-cloudwatch.md)
-      + [CloudWatch Metrics for Amazon Lex](aws-lex-cloudwatch-dimensions.md)
    + [Monitoring Amazon Lex API Calls with AWS CloudTrail Logs](monitoring-aws-lex-cloudtrail.md)
 + [Guidelines and Limits in Amazon Lex](guidelines-and-limits.md)
    + [General Guidelines](gl-guidelines.md)

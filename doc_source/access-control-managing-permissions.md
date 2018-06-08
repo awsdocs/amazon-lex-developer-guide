@@ -6,11 +6,8 @@ This topic provides examples of identity\-based policies that demonstrate how an
 Before you proceed, we recommend that you review [Overview of Managing Access Permissions to Your Amazon Lex Resources](access-control-overview.md)\. 
 
 The sections in this topic cover the following:
-
 +  [Permissions Required to Use the Amazon Lex Console](#additional-console-required-permissions) 
-
 + [AWS Managed \(Predefined\) Policies for Amazon Lex](#access-policy-examples-aws-managed)
-
 + [Examples of Customer Managed Policies ](#access-policy-examples-for-sdk-cli) 
 
 The following is an example of a permissions policy:
@@ -151,19 +148,12 @@ The permissions reference table lists the Amazon Lex API operations and shows th
 ```
 
 The Amazon Lex console needs these additional permissions for the following reasons:
-
 +  `cloudwatch` permissions to view performance and monitoring information in the console\. 
-
 + `iam` actions to assume IAM roles for making calls to Lambda functions and processing data for a bot channel association\.
-
 + `kms` actions to manage the AWS Key Management Service keys used to encrypt data when creating a bot channel association\.
-
 + `lambda` actions to display Lambda functions that your bot can use, and to grant Lex the necessary permissions for your bot to invoke these functions\.
-
 + `lex` actions so that the console can display Amazon Lex resources in the account\.
-
 + `polly` actions so that the console can display Amazon Polly voices and so that it can translate text to speech\.
-
 + `iam` actions so that the console can manage server\-linked roles that grant permission to use other AWS resources\.
 
 ## AWS Managed \(Predefined\) Policies for Amazon Lex<a name="access-policy-examples-aws-managed"></a>
@@ -171,11 +161,8 @@ The Amazon Lex console needs these additional permissions for the following reas
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate which permissions are needed\. For more information, see [AWS Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\. 
 
 The following AWS managed policies, which you can attach to users in your account, are specific to Amazon Lex:
-
 + **ReadOnly** — Grants read\-only access to Amazon Lex resources\. 
-
 + **RunBotsOnly** — Grants access to run Amazon Lex conversational bots\.
-
 + **FullAccess** — Grants full access to create, read, update, delete, and run all Amazon Lex resources\. Grants access to associate Lambda functions whose name starts with `AmazonLex` with Amazon Lex intents\.
 
 **Note**  
@@ -190,7 +177,7 @@ In this section, we provide examples of user policies that grant permissions for
 **Note**  
 All examples use the us\-east\-1 Region and contain fictitious account IDs\.
 
-
+**Topics**
 + [Example 1: Allow a User to Delete Any Bot](#access-policy-example-update-any-bot)
 + [Example 2: Allow a User to Update a Specific Bot](#access-policy-example-update-specific-bot)
 + [Example 3: Allow a User to Manage a Specific Bot](#access-policy-example-build-specific-bot)

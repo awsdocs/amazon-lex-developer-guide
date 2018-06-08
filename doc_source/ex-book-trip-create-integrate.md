@@ -9,17 +9,12 @@ In this section, you update the configurations of both the BookCar and BookHotel
    1. Make sure the intent version \(next to the intent name\) is $LATEST\. 
 
    1. Add the Lambda function as an initialization and validation code hook as follows:
-
       + In **Options**, choose **Initialization and validation code hook**\.
-
       + Choose your Lambda function from the list\.
 
    1. Add the Lambda function as a fulfillment code hook as follows:
-
       + In **Fulfillment**, choose **AWS Lambda function**\.
-
       + Choose your Lambda function from the list\.
-
       + Choose **Goodbye message** and type a message\.
 
    1. Choose **Save**\.

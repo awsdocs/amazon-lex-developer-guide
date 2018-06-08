@@ -1,6 +1,6 @@
 # Integrating an Amazon Lex Bot with Twilio Programmable SMS<a name="twilio-bot-association"></a>
 
-
+**Topics**
 + [Step 1: Create an Amazon Lex Bot](#twilio-bot-assoc-create-bot)
 + [Step 2: Create a Twilio SMS Account](#twilio-bot-assoc-create-fb-app)
 + [Step 3: Integrate the Twilio Messaging Service Endpoint with the Amazon Lex Bot](#twilio-bot-assoc-create-assoc)
@@ -27,9 +27,7 @@ If you don't already have an Amazon Lex bot, create and deploy one\. In this top
 ## Step 2: Create a Twilio SMS Account<a name="twilio-bot-assoc-create-fb-app"></a>
 
 Sign up for a Twilio account and record the following account information: 
-
 + **ACCOUNT SID** 
-
 + **AUTH TOKEN** 
 
 For sign\-up instructions, see [https://www\.twilio\.com/console](https://www.twilio.com/console)\.
@@ -49,15 +47,10 @@ For sign\-up instructions, see [https://www\.twilio\.com/console](https://www.tw
    1. In the **Chatbots** section, choose **Twilio SMS**\. 
 
    1. On the **Twilio SMS** page, provide the following information:
-
       + Type a name\. For example, `BotTwilioAssociation`\.
-
       + Choose "aws/lex" from **KMS key**\.
-
       + For **Alias**, choose the bot alias\.
-
       + For **Authentication Token**, type the AUTH TOKEN for your Twilio account\. 
-
       + For **Account SID**, type the ACCOUNT SID for your Twilio account\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/twilio-10a.png)
 

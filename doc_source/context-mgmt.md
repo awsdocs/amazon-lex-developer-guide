@@ -2,7 +2,7 @@
 
 *Conversation context* is the information that a user, your application, or a Lambda function provides to an Amazon Lex bot to fulfill an intent\. Conversation context includes slot data that the user provides, request attributes set by the client application, and session attributes that the client application and Lambda functions create\. 
 
-
+**Topics**
 + [Setting Session Attributes](#context-mgmt-session-attribs)
 + [Setting Request Attributes](#context-mgmt-request-attribs)
 + [Setting the Session Timeout](#context-mgmt-session-timeout)
@@ -12,15 +12,11 @@
 ## Setting Session Attributes<a name="context-mgmt-session-attribs"></a>
 
 *Session attributes* contain application\-specific information that is passed between a bot and a client application during a session\. Amazon Lex passes session attributes to all Lambda functions configured for a bot\. If a Lambda function adds or updates session attributes, Amazon Lex passes the new information back to the client application\. For example:
-
 + In [Exercise 1: Create an Amazon Lex Bot Using a Blueprint \(Console\)](gs-bp.md), the example bot uses the `price` session attribute to maintain the price of flowers\. The Lambda function sets this attribute based on the type of flowers that was ordered\. For more information, see [Step 5 \(Optional\): Review the Details of the Information Flow \(Console\)](gs-bp-details-after-lambda.md)\. 
-
 + In [Example Bot: BookTrip](ex-book-trip.md), the example bot uses the `currentReservation` session attribute to maintain a copy of the slot type data during the conversation to book a hotel or to book a rental car\. For more information, see [Details of the Information Flow](book-trip-detail-flow.md)\.
 
 Use session attributes in your Lambda functions to initialize a bot and to customize prompts and response cards\. For example:
-
 + Initialization — In a pizza ordering bot, the client application passes the user's location as a session attribute in the first call to the [PostContent](API_runtime_PostContent.md) or [PostText](API_runtime_PostText.md) operation\. For example, `"Location": "111 Maple Street"`\. The Lambda function uses this information to find the closest pizzeria to place the order\.
-
 + Personalize prompts — Configure prompts and response cards to refer to session attributes\. For example, "Hey \[FirstName\], what toppings would you like?" If you pass the user's first name as a session attribute \(`{"FirstName": "Jo"}`\), Amazon Lex substitutes the name for the placeholder\. It then sends a personalized prompt to the user, "Hey Jo, which toppings would you like?"
 
 Session attributes persist for the duration of the session\. Amazon Lex stores them in an encrypted data store until the session ends\. The client can create session attributes in a request by calling either the [PostContent](API_runtime_PostContent.md) or the [PostText](API_runtime_PostText.md) operation with the `sessionAttributes` field set to a value\. A Lambda function can create a session attribute in a response\. After the client or a Lambda function creates a session attribute, the stored attribute value is used any time that the client application doesn't include `sessionAttribute` field in a request to Amazon Lex\.
@@ -53,7 +49,7 @@ If you are sending binary or structured data in a session attribute, you must fi
 
 ## Setting Request Attributes<a name="context-mgmt-request-attribs"></a>
 
-*Request attributes* contain request\-specific information and apply only to the current request\. A client application sends this information to Amazon Lex\. Use request attributes to pass information that doesn't need to persist for the entire session\. You can create your own request attributes or you can use predefined attributes\. To send request attributes, use the `x-amz-lex-request-attributes` header in a [[ERROR] BAD/MISSING LINK TEXT](API_runtime_PostContent.md) or the `requestAttributes` field in a [[ERROR] BAD/MISSING LINK TEXT](API_runtime_PostText.md) request\. Because request attributes don't persist across requests like session attributes do, they are not returned in `PostContent` or `PostText` responses\. 
+*Request attributes* contain request\-specific information and apply only to the current request\. A client application sends this information to Amazon Lex\. Use request attributes to pass information that doesn't need to persist for the entire session\. You can create your own request attributes or you can use predefined attributes\. To send request attributes, use the `x-amz-lex-request-attributes` header in a [PostContent](API_runtime_PostContent.md) or the `requestAttributes` field in a [PostText](API_runtime_PostText.md) request\. Because request attributes don't persist across requests like session attributes do, they are not returned in `PostContent` or `PostText` responses\. 
 
 **Note**  
 To send information that persists across requests, use session attributes\.
@@ -71,11 +67,8 @@ In addition to the following predefined attributes, Amazon Lex provides predefin
 If you have two client applications that have different capabilities, you may need to limit the format of messages in a response\. For example, you might want to restrict messages sent to a Web client to plain text, but enable a mobile client to use both plain text and Speech Synthesis Markup Language \(SSML\)\. To set the format of messages returned by the [PostContent](API_runtime_PostContent.md) and [PostText](API_runtime_PostText.md) operations, use the `x-amz-lex:accept-content-types"` request attribute\. 
 
 You can set the attribute to any combination of the following message types: 
-
 + `PlainText`—The message contains plain UTF\-8 text\.
-
 + `SSML`—The message contains text formatted for voice output\.
-
 + `CustomPayload`—The message contains a custom format that you have created for your client\. You can define the payload to meet the needs of your application\.
 
 Amazon Lex returns only messages with the specified type in the `Message` field of the response\. You can set more than one value by separating values with a comma\. If you are using message groups, every message group must contain at least one message of the specified type\. Otherwise, you get a `NoUsableMessageException` error\. For more information, see [Message Groups](howitworks-manage-prompts.md#message-groups)\.

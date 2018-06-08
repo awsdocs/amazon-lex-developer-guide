@@ -7,9 +7,7 @@ In this section, you create an Amazon Lex bot \(BookTrip\)\.
 1. On the **Bots** page, choose **Create**\.
 
 1. On the **Create your Lex bot** page, 
-
    + Choose **BookTrip** blueprint\.
-
    + Leave the default bot name \(BookTrip\)\.
 
 1. Choose **Create**\. The console sends a series of requests to Amazon Lex to create the bot\. Note the following:
@@ -29,9 +27,7 @@ In this section, you create an Amazon Lex bot \(BookTrip\)\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/book-trip-no-lambda-20.png)
 
    Note that, 
-
    + There is no user data validation at this time\. For example, you can provide any city to book a hotel\.
-
    + You are providing some of the same information again \(destination, pick\-up city, pick\-up date, and return date\) to book a car\. In a dynamic conversation, your bot should initialize some of this information based on prior input user provided for booking hotel\. 
 
    In this next section, you create a Lambda function to do some of the user data validation, and initialization using cross\-intent information sharing via session attributes\. Then you update the intent configuration by adding the Lambda function as code hook to perform initialization/validation of user input and fulfill intent\.

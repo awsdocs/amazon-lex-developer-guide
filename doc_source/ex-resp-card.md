@@ -37,9 +37,6 @@ To create and test a bot with a response card:
    1. To publish a bot version, choose **Publish**\. Specify BETA as an alias that points to the bot version\. For information about versioning, see [Versioning and Aliases](versioning-aliases.md)\.
 
 1. Deploy the bot on a messaging platform:
-
    + Deploy the bot on the Facebook Messenger platform and test the integration\. For instructions, see [Integrating an Amazon Lex Bot with Facebook Messenger](fb-bot-association.md)\. When you order flowers, the message window shows the response card so you can choose a flower type\.
-
    + Deploy the bot on the Slack platform and test the integration\. For instructions, see [Integrating an Amazon Lex Bot with Slack ](slack-bot-association.md)\. When you order flowers, the message window shows the response card so you can choose a flower type\.
-
    + Deploy the bot on the Twilio SMS platform\. For instructions, see [Integrating an Amazon Lex Bot with Twilio Programmable SMS  ](twilio-bot-association.md)\. When you order flowers, the message from Twilio shows the image from the response card\. Twilio SMS does not support buttons in the response\.

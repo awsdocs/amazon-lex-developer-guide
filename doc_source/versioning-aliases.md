@@ -4,7 +4,7 @@ Amazon Lex supports publishing versions of bots, intents, and slot types so that
 
 Amazon Lex bots also support aliases\. An *alias* is a pointer to a specific version of a bot\. With an alias, you can easily update the version that your client applications are using\. For example, you can point an alias to version 1 of your bot\. When you are ready to update the bot, you publish version 2 and change the alias to point to the new version\. Because your applications use the alias instead of a specific version, all of your clients get the new functionality without needing to be updated\.
 
-
+**Topics**
 + [Versioning](#versioning-intro)
 + [Aliases](#aliases-intro)
 
@@ -46,21 +46,13 @@ You can update only the `$LATEST` version of an Amazon Lex bot, intent, or slot 
 ### Deleting an Amazon Lex Resource or Version<a name="versioning-intro-deleting-function-versions"></a>
 
 Amazon Lex supports deleting a resource or version using the console or one of the API operations:
-
 + [DeleteBot](API_DeleteBot.md)
-
 + [DeleteBotVersion](API_DeleteBotVersion.md)
-
 + [DeleteBotAlias](API_DeleteBotAlias.md)
-
 + [DeleteBotChannelAssociation](API_DeleteBotChannelAssociation.md)
-
 + [DeleteIntent](API_DeleteIntent.md)
-
 + [DeleteIntentVersion](API_DeleteIntentVersion.md)
-
 + [DeleteSlotType](API_DeleteSlotType.md)
-
 + [DeleteSlotTypeVersion](API_DeleteSlotTypeVersion.md)
 
 ## Aliases<a name="aliases-intro"></a>
@@ -76,4 +68,4 @@ When you create a second version of the bot, you can update the alias to point t
 ![\[Updating an alias changes the version used by client applications.\]](http://docs.aws.amazon.com/lex/latest/dg/images/lex-publish-alias-bot-v2.png) 
 
 **Note**  
-Although you can test the `$LATEST` version of a bot in the console, we recommend that when you integrate a bot with your client application, you first publish a version and create an alias that points to that version\. Use the alias in your client application for the reasons explained in this section\. When you update an alias, Amazon Lex will wait until the session timeout of all current sessions expires before it starts using the new version\. For more information about the session timeout, see [[ERROR] BAD/MISSING LINK TEXT](context-mgmt.md#context-mgmt-session-timeout)
+Although you can test the `$LATEST` version of a bot in the console, we recommend that when you integrate a bot with your client application, you first publish a version and create an alias that points to that version\. Use the alias in your client application for the reasons explained in this section\. When you update an alias, Amazon Lex will wait until the session timeout of all current sessions expires before it starts using the new version\. For more information about the session timeout, see [Setting the Session Timeout](context-mgmt.md#context-mgmt-session-timeout)

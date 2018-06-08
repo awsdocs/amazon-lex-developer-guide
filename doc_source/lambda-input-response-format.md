@@ -2,7 +2,7 @@
 
 This section describes the structure of the event data that Amazon Lex provides to a Lambda function\. Use this information to parse the input in your Lambda code\. It also explains the format of the response that Amazon Lex expects your Lambda function to return\. 
 
-
+**Topics**
 + [Input Event Format](#using-lambda-input-event-format)
 + [Response Format](#using-lambda-response-format)
 
@@ -61,7 +61,6 @@ The input format may change without a corresponding change in the `messageVersio
 ```
 
 Note the following additional information about the event fields:
-
 + **currentIntent** – Provides the intent `name`, `slots`, `slotDetails` and `confirmationStatus` fields\.
 
    
@@ -93,21 +92,15 @@ Note the following additional information about the event fields:
   In the confirmation response, a user utterance might provide slot updates\. For example, the user might say "yes, change size to medium\." In this case, the subsequent Lambda event has the updated slot value, `PizzaSize` set to `medium`\. Amazon Lex sets the `confirmationStatus` to `None`, because the user modified some slot data, requiring the Lambda function to perform user data validation\.
 
    
-
 + **bot** – Information about the bot that processed the request\.
-
   + `name` – The name of the bot that processed the request\.
-
   + `alias` – The alias of the bot version that processed the request\.
-
   + `version` – The version of the bot that processed the request\.
 
    
-
 + **userId** – This value is provided by the client application\. Amazon Lex passes it to the Lambda function\. 
 
    
-
 + **inputTranscript** – The text used to process the request\.
 
   If the input was text, the `inputTranscript` field contains the text that was input by the user\.
@@ -117,9 +110,7 @@ Note the following additional information about the event fields:
   If the input was an audio stream, the `inputTranscript` field contains the text extracted from the audio stream\. This is the text that is actually processed to recognize intents and slot values\. 
 
    
-
 + **invocationSource** – To indicate why Amazon Lex is invoking the Lambda function, it sets this to one of the following values: 
-
   + `DialogCodeHook` – Amazon Lex sets this value to direct the Lambda function to initialize the function and to validate the user's data input\. 
 
      
@@ -129,7 +120,6 @@ Note the following additional information about the event fields:
 If the intent is not clear, Amazon Lex can't invoke the Lambda function\.
 
      
-
   + `FulfillmentCodeHook` – Amazon Lex sets this value to direct the Lambda function to fulfill an intent\.
 
      
@@ -141,7 +131,6 @@ If the intent is not clear, Amazon Lex can't invoke the Lambda function\.
   In your intent configuration, you can have two separate Lambda functions to initialize and validate user data and to fulfill the intent\. You can also use one Lambda function to do both\. In that case, your Lambda function can use the `invocationSource` value to follow the correct code path\.
 
     
-
 + **outputDialogMode** – For each user input, the client sends the request to Amazon Lex using one of the runtime API operations, [PostContent](API_runtime_PostContent.md) or [PostText](API_runtime_PostText.md)\. Amazon Lex use the request parameters, Amazon Lex to determine whether the response to the client is text or voice, and sets this field accordingly\.
 
    
@@ -149,15 +138,12 @@ If the intent is not clear, Amazon Lex can't invoke the Lambda function\.
   The Lambda function can use this information to generate an appropriate message\. For example, if the client expects a voice response, your Lambda function could return Speech Synthesis Markup Language \(SSML\) instead of text\.
 
    
-
 + **messageVersion** – The version of the message that identifies the format of the event data going into the Lambda function and the expected format of the response from a Lambda function\. 
 **Note**  
 You configure this value when you define an intent\. In the current implementation, only message version 1\.0 is supported\. Therefore, the console assumes the default value of 1\.0 and doesn't show the message version\.
-
 + **sessionAttributes** – Application\-specific session attributes that the client sends in the request\. If you want Amazon Lex to include them in the response to the client, your Lambda function should send these back to Amazon Lex in the response\. For more information, see [Setting Session Attributes](context-mgmt.md#context-mgmt-session-attribs)
 
    
-
 + **requestAttributes** – request\-specific attributes that the client sends in the request\. Use request attributes to pass information that doesn't need to persist for the entire session\. For more information, see [Setting Request Attributes](context-mgmt.md#context-mgmt-request-attribs)
 
    
@@ -198,7 +184,6 @@ Optional\. If you include the `sessionAttributes` field it can be empty\. If you
 Required\. The `dialogAction` field directs Amazon Lex to the next course of action, and describes what to expect from the user after Amazon Lex returns a response to the client\.
 
 The `type` field indicates the next course of action\. It also determines the other fields that the Lambda function needs to provide as part of the `dialogAction` value\.
-
 + `Close` — Informs Amazon Lex not to expect a response from the user\. For example, "Your pizza order has been placed" does not require a response\.
 
    
@@ -233,12 +218,11 @@ The `type` field indicates the next course of action\. It also determines the ot
        }
     }
   ```
-
 + `ConfirmIntent` — Informs Amazon Lex that the user is expected to give a yes or no answer to confirm or deny the current intent\.
 
    
 
-  You must include the `intentName` and `slots` fields\. The `slots` field must contain an entry for each of the slots configured for the specified intent\. If the value of a slot is unknown, you must set it to null\. The `message` and `responseCard` fields are optional\. 
+  You must include the `intentName` and `slots` fields\. The `slots` field must contain an entry for each of the slots configured for the specified intent\. If the value of a slot is unknown, you must set it to null\. You must include the `message` field if the intent's `confirmationPrompt` field is null\. If you specify both the `message` field and the `confirmationPrompt` field, the response includes the contents of the `confirmationPrompt` field\. The `responseCard` field is optional\. 
 
   ```
   "dialogAction": {
@@ -273,7 +257,6 @@ The `type` field indicates the next course of action\. It also determines the ot
        }
     }
   ```
-
 + `Delegate` — Directs Amazon Lex to choose the next course of action based on the bot configuration\. The response must include any session attributes, and the `slots` field must include all of the slots specified for the requested intent\. If the value of the field is unknown, you must set it to null\. You will get a `DependencyFailedException` exception if your fufillment function returns the `Delegate` dialog action without removing any slots\.
 
   ```
@@ -286,7 +269,6 @@ The `type` field indicates the next course of action\. It also determines the ot
      }
     }
   ```
-
 + `ElicitIntent` — Informs Amazon Lex that the user is expected to respond with an utterance that includes an intent\. For example, "I want a large pizza," which indicates the `OrderPizzaIntent`\. The utterance "large," on the other hand, is not sufficient for Amazon Lex to infer the user's intent\.
 
    
@@ -321,7 +303,6 @@ The `type` field indicates the next course of action\. It also determines the ot
       }
    }
   ```
-
 + `ElicitSlot` — Informs Amazon Lex that the user is expected to provide a slot value in the response\.
 
    

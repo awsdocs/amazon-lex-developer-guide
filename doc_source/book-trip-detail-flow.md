@@ -1,7 +1,6 @@
 # Details of the Information Flow<a name="book-trip-detail-flow"></a>
 
 In this exercise, you engaged in a conversation with the Amazon Lex BookTrip bot using the test window client provided in the Amazon Lex console\. This section explains the following: 
-
 + The data flow between the client and Amazon Lex\.
 
    
@@ -11,10 +10,9 @@ In this exercise, you engaged in a conversation with the Amazon Lex BookTrip bot
 For an example of the information flow between the client and Amazon Lex in which the client uses the `PostContent` API, see [Step 2a \(Optional\): Review the Details of the Spoken Information Flow \(Console\) ](gs-bp-details-postcontent-flow.md)\.
 
    
-
 + The data flow between Amazon Lex and the Lambda function\. For more information, see [Lambda Function Input Event and Response Format](lambda-input-response-format.md)\.
 
-
+**Topics**
 + [Data Flow: Book Hotel Intent](#data-flow-book-hotel)
 + [Data Flow: Book Car Intent](#data-flow-book-car)
 
@@ -38,9 +36,7 @@ This section explains what happens after each user input\.
       ```
 
       Both the request URI and the body provides information to Amazon Lex:
-
       + Request URI – Provides bot name \(BookTrip\), bot alias \($LATEST\) and the user name\. The trailing `text` indicates that it is a `PostText` API request \(and not `PostContent`\)\.
-
       + Request body – Includes the user input \(`inputText`\) and empty `sessionAttributes`\. Initially, this is an empty object and the Lambda function first sets the session attributes\.
 
    1. From the `inputText`, Amazon Lex detects the intent \(BookHotel\)\. This intent is configured with a Lambda function as a code hook for user data initialization/validation\. Therefore, Amazon Lex invokes that Lambda function by passing the following information as the event parameter \(see [Input Event Format](lambda-input-response-format.md#using-lambda-input-event-format)\):
@@ -72,11 +68,8 @@ This section explains what happens after each user input\.
       ```
 
       In addition to the information sent by the client, Amazon Lex also includes the following additional data:
-
       + `messageVersion` – Currently Amazon Lex supports only the 1\.0 version\.
-
       + `invocationSource` – Indicates the purpose of Lambda function invocation\. In this case, it is to perform user data initialization and validation \(at this time Amazon Lex knows that the user has not provided all the slot data to fulfill the intent\)\.
-
       + `currentIntent` – All of the slot values are set to null\.
 
    1. At this time, all the slot values are null\. There is nothing for the Lambda function to validate\. The Lambda function returns the following response to Amazon Lex\. For information about response format, see [Response Format](lambda-input-response-format.md#using-lambda-response-format)\. 
@@ -548,11 +541,8 @@ The term `ConfirmIntent` \(value of the `dialogAction.type`\) is not related to 
       Because the user replied Yes, Amazon Lex sets the `confirmationStatus` to `Confirmed`\. 
 
    1. From the `confirmationStatus`, the Lambda function knows that the prepopulated values are correct\. The Lambda function does the following:
-
       + Updates the `currentReservation` session attribute to slot value it had prepopulated\.
-
       + Sets the `dialogAction.type` to `ElicitSlot`
-
       + Sets the `slotToElicit` value to `DriverAge`\. 
 
       The following response is sent:

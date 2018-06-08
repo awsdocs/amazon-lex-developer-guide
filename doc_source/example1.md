@@ -28,6 +28,16 @@ All of the attributes take the namespace, `x-amz-lex:`, as the prefix \. For exa
 | facebook\-page\-id | The Facebook page identifier of the recipient\. See [https://developers\.facebook\.com/docs/messenger\-platform/webhook\-reference/message\-received](https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-received)\. | 
 
 
+**Kik Request Attributes**  
+
+| Attribute | Description | 
+| --- | --- | 
+| kik\-chat\-id | The identifier for the conversation that your bot is involved in\. For more information, see [https://dev\.kik\.com/\#/docs/messaging\#message\-formats](https://dev.kik.com/#/docs/messaging#message-formats)\. | 
+| kik\-chat\-type | The type of conversation that the message originated from\. For more information, see [https://dev\.kik\.com/\#/docs/messaging\#message\-formats](https://dev.kik.com/#/docs/messaging#message-formats)\. | 
+| kik\-message\-id | A UUID the identifies the message\. For more information, see [https://dev\.kik\.com/\#/docs/messaging\#message\-formats](https://dev.kik.com/#/docs/messaging#message-formats)\. | 
+| kik\-message\-type | The type of message\. For more information, see [https://dev\.kik\.com/\#/docs/messaging\#message\-types](https://dev.kik.com/#/docs/messaging#message-types)\. | 
+
+
 **Twilio Request Attributes**  
 
 | Attribute | Description | 

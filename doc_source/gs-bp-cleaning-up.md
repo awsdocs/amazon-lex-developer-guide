@@ -3,11 +3,8 @@
 Now, delete the resources that you created and clean up your account\.
 
 You can delete only resources that are not in use\. In general, you should delete resources in the following order:
-
 + Delete bots to free up intent resources\.
-
 + Delete intents to free up slot type resources\.
-
 + Delete slot types last\.
 
 **To clean up your account \(console\)**
