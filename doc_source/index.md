@@ -1,7 +1,7 @@
 # Amazon Lex Developer Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -121,16 +121,25 @@ Amazon's trademarks and trade dress may not be used in
    + [Example: Using a Response Card](ex-resp-card.md)
    + [Example: Updating Utterances](ex-utterances.md)
    + [Example: Integrating with a Web site](ex-web.md)
-+ [Monitoring Amazon Lex](monitoring-aws-lex.md)
-   + [Monitoring Amazon Lex with Amazon CloudWatch](monitoring-aws-lex-cloudwatch.md)
-   + [Monitoring Amazon Lex API Calls with AWS CloudTrail Logs](monitoring-aws-lex-cloudtrail.md)
++ [Security in Amazon Lex](security.md)
+   + [Data Protection in Amazon Lex](data-protection.md)
+      + [Encryption at Rest](at-rest.md)
+      + [Encryption in Transit](in-transit.md)
+      + [Key Management](key-management.md)
+   + [Identity and Access Management for Amazon Lex](security-iam.md)
+      + [How Amazon Lex Works with IAM](security_iam_service-with-iam.md)
+      + [Amazon Lex Identity-Based Policy Examples](security_iam_id-based-policy-examples.md)
+      + [Amazon Lex Resource-Based Policy Example](security_iam_resource-based-policy-examples.md)
+      + [Troubleshooting Amazon Lex Identity and Access](security_iam_troubleshoot.md)
+   + [Monitoring in Amazon Lex](monitoring-aws-lex.md)
+      + [Monitoring Amazon Lex with Amazon CloudWatch](monitoring-aws-lex-cloudwatch.md)
+      + [Monitoring Amazon Lex API Calls with AWS CloudTrail Logs](monitoring-aws-lex-cloudtrail.md)
+   + [Compliance Validation for Amazon Lex](compliance.md)
+   + [Resilience in Amazon Lex](disaster-recovery-resiliency.md)
+   + [Infrastructure Security in Amazon Lex](infrastructure-security.md)
 + [Guidelines and Limits in Amazon Lex](guidelines-and-limits.md)
    + [General Guidelines](gl-guidelines.md)
    + [Limits](gl-limits.md)
-+ [Authentication and Access Control for Amazon Lex](auth-and-access-control.md)
-   + [Overview of Managing Access Permissions to Your Amazon Lex Resources](access-control-overview.md)
-   + [Using Identity-Based Policies (IAM Policies) for Amazon Lex](access-control-managing-permissions.md)
-   + [Amazon Lex API Permissions: Actions, Resources, and Conditions Reference](lex-api-permissions-ref.md)
 + [API Reference](API_Reference.md)
    + [Actions](API_Operations.md)
       + [Amazon Lex Model Building Service](API_Operations_Amazon_Lex_Model_Building_Service.md)

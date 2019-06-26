@@ -4,7 +4,7 @@ Creates an Amazon Lex conversational bot or replaces an existing bot\. When you 
 
 If you specify the name of an existing bot, the fields in the request replace the existing values in the `$LATEST` version of the bot\. Amazon Lex removes any fields that you don't provide values for in the request, except for the `idleTTLInSeconds` and `privacySettings` fields, which are set to their default values\. If you don't specify values for required fields, Amazon Lex throws an exception\.
 
-This operation requires permissions for the `lex:PutBot` action\. For more information, see [Authentication and Access Control for Amazon Lex](auth-and-access-control.md)\.
+This operation requires permissions for the `lex:PutBot` action\. For more information, see [Identity and Access Management for Amazon Lex](security-iam.md)\.
 
 ## Request Syntax<a name="API_PutBot_RequestSyntax"></a>
 
@@ -85,7 +85,7 @@ Type: Boolean
 Required: Yes
 
  ** [clarificationPrompt](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-clarificationPrompt"></a>
-When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification\. To specify how many times Amazon Lex should repeate the clarification prompt, use the `maxAttempts` field\. If Amazon Lex still doesn't understand, it sends the message in the `abortStatement` field\.   
+When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification\. To specify how many times Amazon Lex should repeat the clarification prompt, use the `maxAttempts` field\. If Amazon Lex still doesn't understand, it sends the message in the `abortStatement` field\.   
 When you create a clarification prompt, make sure that it suggests the correct response from the user\. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink\.'"  
 Type: [Prompt](API_Prompt.md) object  
 Required: No
@@ -131,7 +131,7 @@ Valid Values:` SAVE | BUILD`
 Required: No
 
  ** [voiceId](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-voiceId"></a>
-The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user\. The locale configured for the voice must match the locale of the bot\. For more information, see [Voices in Amazon Polly](http://docs.aws.amazon.com/polly/latest/dg/voices-in-polly.html) in the *Amazon Polly Developer Guide*\.  
+The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user\. The locale configured for the voice must match the locale of the bot\. For more information, see [Voices in Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/voicelist.html) in the *Amazon Polly Developer Guide*\.  
 Type: String  
 Required: No
 
@@ -250,10 +250,13 @@ Length Constraints: Minimum length of 2\. Maximum length of 50\.
 Pattern: `^([A-Za-z]_?)+$` 
 
  ** [status](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-status"></a>
- When you send a request to create a bot with `processBehavior` set to `BUILD`, Amazon Lex sets the `status` response element to `BUILDING`\. After Amazon Lex builds the bot, it sets `status` to `READY`\. If Amazon Lex can't build the bot, Amazon Lex sets `status` to `FAILED`\. Amazon Lex returns the reason for the failure in the `failureReason` response element\.   
-When you set `processBehavior`to `SAVE`, Amazon Lex sets the status code to `NOT BUILT`\.  
+ When you send a request to create a bot with `processBehavior` set to `BUILD`, Amazon Lex sets the `status` response element to `BUILDING`\.  
+In the `READY_BASIC_TESTING` state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types\.  
+If Amazon Lex can't build the bot, Amazon Lex sets `status` to `FAILED`\. Amazon Lex returns the reason for the failure in the `failureReason` response element\.   
+When you set `processBehavior` to `SAVE`, Amazon Lex sets the status code to `NOT BUILT`\.  
+When the bot is in the `READY` state you can test and publish the bot\.  
 Type: String  
-Valid Values:` BUILDING | READY | FAILED | NOT_BUILT` 
+Valid Values:` BUILDING | READY | READY_BASIC_TESTING | FAILED | NOT_BUILT` 
 
  ** [version](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-version"></a>
 The version of the bot\. For a new bot, the version is always `$LATEST`\.  
@@ -294,6 +297,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutBot) 

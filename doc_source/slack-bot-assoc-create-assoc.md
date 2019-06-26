@@ -12,7 +12,7 @@ In the Amazon Lex console, activate a bot channel association to associate the b
 
 1. Choose the **Channels** tab\.
 
-1. In the **Chatbots** section, choose **Slack**\. 
+1. In the left menu, choose **Slack**\. 
 
 1. On the **Slack** page, provide the following:
    + Type a name\. For example, `BotSlackIntegration`\.

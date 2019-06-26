@@ -6,8 +6,9 @@ For example, say that you have created a bot to order flowers\. After your users
 
 After you publish a new version of a bot, you can get information about the old version and the new so that you can compare the performance across the two versions\. 
 
-**Note**  
-Utterance statistics are generated once a day\. Data is available for the last 15 days\. You can request information for up to 5 versions in each request\. The response contains information about a maximum of 100 utterances for each version\.
+Utterance statistics are generated once a day\. Data is available for the last 15 days\. You can request information for up to 5 versions of your bot in each request\. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days\. The response contains information about a maximum of 100 utterances for each version\.
+
+If you set `childDirected` field to true when you created your bot, or if you opted out of participating in improving Amazon Lex, utterances are not available\.
 
 This operation requires permissions for the `lex:GetUtterancesView` action\.
 
@@ -33,7 +34,7 @@ Length Constraints: Minimum length of 1\. Maximum length of 64\.
 Pattern: `\$LATEST|[0-9]+` 
 
  ** [statusType](#API_GetUtterancesView_RequestSyntax) **   <a name="lex-GetUtterancesView-request-statusType"></a>
-To return utterances that were recognized and handled, use`Detected`\. To return utterances that were not recognized, use `Missed`\.  
+To return utterances that were recognized and handled, use `Detected`\. To return utterances that were not recognized, use `Missed`\.  
 Valid Values:` Detected | Missed` 
 
 ## Request Body<a name="API_GetUtterancesView_RequestBody"></a>
@@ -78,7 +79,7 @@ Length Constraints: Minimum length of 2\. Maximum length of 50\.
 Pattern: `^([A-Za-z]_?)+$` 
 
  ** [utterances](#API_GetUtterancesView_ResponseSyntax) **   <a name="lex-GetUtterancesView-response-utterances"></a>
-An array of [UtteranceList](API_UtteranceList.md) objects, each containing a list of [UtteranceData](API_UtteranceData.md) objects describing the utterances that were processed by your bot\. The response contains a maximum of 100 `UtteranceData` objects for each version\.  
+An array of [UtteranceList](API_UtteranceList.md) objects, each containing a list of [UtteranceData](API_UtteranceData.md) objects describing the utterances that were processed by your bot\. The response contains a maximum of 100 `UtteranceData` objects for each version\. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days\.  
 Type: Array of [UtteranceList](API_UtteranceList.md) objects
 
 ## Errors<a name="API_GetUtterancesView_Errors"></a>
@@ -102,6 +103,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetUtterancesView) 

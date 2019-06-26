@@ -144,7 +144,7 @@ You configure this value when you define an intent\. In the current implementati
 + **sessionAttributes** – Application\-specific session attributes that the client sends in the request\. If you want Amazon Lex to include them in the response to the client, your Lambda function should send these back to Amazon Lex in the response\. For more information, see [Setting Session Attributes](context-mgmt.md#context-mgmt-session-attribs)
 
    
-+ **requestAttributes** – request\-specific attributes that the client sends in the request\. Use request attributes to pass information that doesn't need to persist for the entire session\. For more information, see [Setting Request Attributes](context-mgmt.md#context-mgmt-request-attribs)
++ **requestAttributes** – request\-specific attributes that the client sends in the request\. Use request attributes to pass information that doesn't need to persist for the entire session\. If there are no request attributes, the value will be null\. For more information, see [Setting Request Attributes](context-mgmt.md#context-mgmt-request-attribs)
 
    
 
@@ -170,7 +170,7 @@ The response consists of two fields\. The `sessionAttributes` field is optional,
 
 ### sessionAttributes<a name="lambda-response-sessionAttributes"></a>
 
-Optional\. If you include the `sessionAttributes` field it can be empty\. If you want Amazon Lex to include any session attributes in the response to the client application, your Lambda function must return them in this field\. For more information, see the [PostContent](API_runtime_PostContent.md) and [PostText](API_runtime_PostText.md) operations\.
+Optional\. If you include the `sessionAttributes` field it can be empty\. If your Lambda function doesn't return session attributes, the last known `sessionAttributes` passed via the API or Lambda function remain\. For more information, see the [PostContent](API_runtime_PostContent.md) and [PostText](API_runtime_PostText.md) operations\.
 
 ```
   "sessionAttributes": { 
@@ -222,7 +222,7 @@ The `type` field indicates the next course of action\. It also determines the ot
 
    
 
-  You must include the `intentName` and `slots` fields\. The `slots` field must contain an entry for each of the slots configured for the specified intent\. If the value of a slot is unknown, you must set it to null\. You must include the `message` field if the intent's `confirmationPrompt` field is null\. If you specify both the `message` field and the `confirmationPrompt` field, the response includes the contents of the `confirmationPrompt` field\. The `responseCard` field is optional\. 
+  You must include the `intentName` and `slots` fields\. The `slots` field must contain an entry for each of the filled slots for the specified intent\. You don't need to include a entry in the `slots` field for slots that aren't filled\. You must include the `message` field if the intent's `confirmationPrompt` field is null\. The contents of the `message` field returned by the Lambda function take precedence over the `confirmationPrompt` specified in the intent\. The `responseCard` field is optional\. 
 
   ```
   "dialogAction": {
@@ -257,7 +257,7 @@ The `type` field indicates the next course of action\. It also determines the ot
        }
     }
   ```
-+ `Delegate` — Directs Amazon Lex to choose the next course of action based on the bot configuration\. The response must include any session attributes, and the `slots` field must include all of the slots specified for the requested intent\. If the value of the field is unknown, you must set it to null\. You will get a `DependencyFailedException` exception if your fufillment function returns the `Delegate` dialog action without removing any slots\.
++ `Delegate` — Directs Amazon Lex to choose the next course of action based on the bot configuration\. If the response does not include any session attributes Amazon Lex retains the existing attributes\. If you want a slot value to be null, you don't need to include the slot field in the request\. You will get a `DependencyFailedException` exception if your fulfilment function returns the `Delegate` dialog action without removing any slots\.
 
   ```
     "dialogAction": {
@@ -307,7 +307,7 @@ The `type` field indicates the next course of action\. It also determines the ot
 
    
 
-  The `intentName`, `slotToElicit`, and `slots` fields are required\. The `slots` field must include all of the slots specified for the requested intent\. The `message` and `responseCard` fields are optional\. If you don't specify a message, Amazon Lex uses one of the slot elicitation prompts configured for the slot\. 
+  The `intentName`, `slotToElicit`, and `slots` fields are required\. The `message` and `responseCard` fields are optional\. If you don't specify a message, Amazon Lex uses one of the slot elicitation prompts configured for the slot\. 
 
   ```
     "dialogAction": {

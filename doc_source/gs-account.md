@@ -18,13 +18,11 @@ If you already have an AWS account, skip to the next task\. If you don't have an
 
 **To create an AWS account**
 
-1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
-**Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
+1. Open [https://portal\.aws\.amazon\.com/billing/signup](https://portal.aws.amazon.com/billing/signup)\.
 
 1. Follow the online instructions\.
 
-   Part of the sign\-up procedure involves receiving a phone call and entering a PIN using the phone keypad\.
+   Part of the sign\-up procedure involves receiving a phone call and entering a verification code on the phone keypad\.
 
 Write down your AWS account ID because you'll need it for the next task\.
 
@@ -43,14 +41,14 @@ The Getting Started exercises in this guide assume that you have a user \(`admin
 
 **To create an administrator user and sign in to the console**
 
-1. Create an administrator user called `adminuser` in your AWS account\. For instructions, see [Creating Your First IAM User and Administrators Group](http://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
+1. Create an administrator user called `adminuser` in your AWS account\. For instructions, see [Creating Your First IAM User and Administrators Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
 
-1. As a user, you can sign in to the AWS Management Console using a special URL\. For more information, [How Users Sign In to Your Account](http://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_how-users-sign-in.html) in the *IAM User Guide*\.
+1. As a user, you can sign in to the AWS Management Console using a special URL\. For more information, [How Users Sign In to Your Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_how-users-sign-in.html) in the *IAM User Guide*\.
 
 For more information about IAM, see the following:
 + [AWS Identity and Access Management \(IAM\)](https://aws.amazon.com/iam/)
-+ [Getting Started](http://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html)
-+ [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
++ [Getting Started](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html)
++ [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 ## Next Step<a name="gs-next-step-2"></a>
 

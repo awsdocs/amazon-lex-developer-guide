@@ -9,7 +9,7 @@ This section describes current limits in Amazon Lex\. These limits are grouped b
 
 ## General Limits<a name="gl-limits-general"></a>
 
-For a list of AWS Regions where Amazon Lex is available, see [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#lex_region) in the *Amazon Web Services General Reference*\.
+For a list of AWS Regions where Amazon Lex is available, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#lex_region) in the *Amazon Web Services General Reference*\.
 
 Currently, Amazon Lex supports only US English language\. That is, Amazon Lex trains your bots to understand only US English\.
 

@@ -14,7 +14,7 @@ Do the following to publish a version of a bot you created for this exercise:
 
 1. Choose **Publish**\.
 
-1. On the **Publish *botname*** wizard, specify an alias \(BETA\), and then choose **Publish**\.
+1. On the **Publish *botname*** wizard, specify the alias **BETA**, and then choose **Publish**\.
 
 1. Verify that the Amazon Lex console shows the new version next to the bot name\.   
 ![\[\]](http://docs.aws.amazon.com/lex/latest/dg/images/gs2-final.png)

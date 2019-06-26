@@ -1,4 +1,4 @@
-# Monitoring Amazon Lex<a name="monitoring-aws-lex"></a>
+# Monitoring in Amazon Lex<a name="monitoring-aws-lex"></a>
 
 Monitoring is important for maintaining the reliability, availability, and performance of your Amazon Lex chatbots\. This topic describes how to use Amazon CloudWatch Logs and AWS CloudTrail to monitor Amazon Lex and describes the Amazon Lex runtime and channel association metrics\.
 

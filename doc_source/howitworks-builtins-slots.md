@@ -2,12 +2,13 @@
 
 Amazon Lex supports built\-in slot types from the *Alexa Skills Kit*\. You can create slots of these types in your intents\. This eliminates the need to create enumeration values for commonly used slot data such as date, time, and location\. Built\-in slot types do not have versions\. 
 
-For a list of available built\-in slot types, see [Slot Type Reference](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference) in the Alexa Skills Kit documentation\.
+For a list of available built\-in slot types, see the [Slot Type Reference](https://developer.amazon.com/docs/custom-skills/slot-type-reference.html) in the Alexa Skills Kit documentation\. 
 
 **Note**  
-Amazon Lex doesn't support the `AMAZON.LITERAL` built\-in slot type\. 
+Amazon Lex doesn't support the `AMAZON.LITERAL` or the `AMAZON.SearchQuery` built\-in slot types\. 
+Amazon Lex extends the `AMAZON.NUMBER` and `AMAZON.TIME` slot types\. See below for more information\.
 
- Amazon Lex supports the following built\-in slot types\. Slot types marked "Developer Preview" are in preview and might change\. 
+In addition to the Alexa Skills Kit slot types, Amazon Lex supports the following built\-in slot types\. Slot types marked "Developer Preview" are in preview and might change\. 
 
 
 | Slot Type | Short Description | Supported Languages | Availability | 
@@ -25,5 +26,3 @@ When used with Amazon Lex, the following slot types extend the Alexa Skill Kit s
 | --- | --- | --- | --- | 
 | [AMAZON\.NUMBER](built-in-slot-number.md) | Converts numeric words into digits | English \(US\) | Developer Preview | 
 | [AMAZON\.TIME](built-in-slot-time.md) | Converts words that indicate times into a time format | English \(US\) | Available | 
-
-The built\-in slot types are described in detail in the following sections\.

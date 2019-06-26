@@ -4,7 +4,7 @@ A *bot* is the primary resource type in Amazon Lex\. The other resource types in
 
 You create a bot using the Amazon Lex console or the model building API\. The console provides a graphical user interface that you use to build a production\-ready bot for your application\. If you prefer, you can use the model building API through the AWS CLI or your own custom program to create a bot\. 
 
-After you create a bot, you deploy it on one of the [supported platforms](http://docs.aws.amazon.com/lex/latest/dg/chatbot-service.html) or integrate it into your own application\. When a user interacts with the bot, the client application sends requests to the bot using the Amazon Lex runtime API\. For example, when a user says "I want to order pizza," your client sends this input to Amazon Lex using one of the runtime API operations\. Users can provide input as speech or text\. 
+After you create a bot, you deploy it on one of the [supported platforms](https://docs.aws.amazon.com/lex/latest/dg/chatbot-service.html) or integrate it into your own application\. When a user interacts with the bot, the client application sends requests to the bot using the Amazon Lex runtime API\. For example, when a user says "I want to order pizza," your client sends this input to Amazon Lex using one of the runtime API operations\. Users can provide input as speech or text\. 
 
 You can also create Lambda functions and use them in an intent\. Use these Lambda function code hooks to perform runtime activities such as initialization, validation of user input, and intent fulfillment\. The following sections provide additional information\.
 

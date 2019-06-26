@@ -1,7 +1,7 @@
 # General Guidelines<a name="gl-guidelines"></a>
 
 This section describes general guidelines when using Amazon Lex\.
-+ Signing requests – All Amazon Lex model\-building and runtime API operations in the [API Reference](API_Reference.md) use signature V4 for authenticating requests\. For more information about authenticating requests, see [Signature Version 4 Signing Process](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) in the *Amazon Web Services General Reference*\. 
++ Signing requests – All Amazon Lex model\-building and runtime API operations in the [API Reference](API_Reference.md) use signature V4 for authenticating requests\. For more information about authenticating requests, see [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) in the *Amazon Web Services General Reference*\. 
 
    
 

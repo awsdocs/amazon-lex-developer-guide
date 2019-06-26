@@ -8,7 +8,7 @@ Now, create the `OrderPizza` intent , an action that the user wants to perform, 
 
 1. In the **Create intent** dialog box, type the name of the intent \(`OrderPizza`\), and then choose **Add**\.
 
-The console sends a request to Amazon Lex to create the `OrderPizza` intent\. You configure the intent after you create slot types\.
+The console sends a request to Amazon Lex to create the `OrderPizza` intent\. In this example you create slots for the intent after you create slot types\.
 
 ## Next Step<a name="gs2-next-step-slot-types"></a>
 

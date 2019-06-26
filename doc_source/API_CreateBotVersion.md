@@ -150,7 +150,7 @@ Pattern: `^([A-Za-z]_?)+$`
  ** [status](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-status"></a>
  When you send a request to create or update a bot, Amazon Lex sets the `status` response element to `BUILDING`\. After Amazon Lex builds the bot, it sets `status` to `READY`\. If Amazon Lex can't build the bot, it sets `status` to `FAILED`\. Amazon Lex returns the reason for the failure in the `failureReason` response element\.   
 Type: String  
-Valid Values:` BUILDING | READY | FAILED | NOT_BUILT` 
+Valid Values:` BUILDING | READY | READY_BASIC_TESTING | FAILED | NOT_BUILT` 
 
  ** [version](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-version"></a>
 The version of the bot\.   
@@ -195,6 +195,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/CreateBotVersion) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/CreateBotVersion) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/CreateBotVersion) 
++  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/lex-models-2017-04-19/CreateBotVersion) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/CreateBotVersion) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/CreateBotVersion) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/CreateBotVersion) 

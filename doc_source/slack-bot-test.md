@@ -2,7 +2,7 @@
 
 Now use a browser window to test the integration of Slack with your Amazon Lex bot\. 
 
-1. Choose **Manage Distribution** under **Settings**\. Choose **Add to Slack** to install the application\. Authorize the bot to respond to messsages\.
+1. Choose **Manage Distribution** under **Settings**\. Choose **Add to Slack** to install the application\. Authorize the bot to respond to messages\.
 
 1. You are redirected to your Slack team\. In the left menu, in the **Direct Messages** section, choose your bot\. If you don't see your bot, choose the plus icon \(\+\) next to **Direct Messages** to search for it\.
 

@@ -18,4 +18,4 @@ Only U\.S\. phone numbers are supported\.
 | International number with leading plus \(\+\) sign | 11\-digit number with leading plus sign\. | \+1 509 555\-1212 | \+15095551212 | 
 | International number without leading plus \(\+\) sign | 11\-digit number without leading plus sign | 1 \(509\) 555\-1212 | 15095551212 | 
 | National number | 10\-digit number without international code | \(509\) 555\-1212 | 5095551212 | 
-| Local number | 7\-digit phone number without and international code or an area code | 555\-1212 | 5551212 | 
+| Local number | 7\-digit phone number without an international code or an area code | 555\-1212 | 5551212 | 

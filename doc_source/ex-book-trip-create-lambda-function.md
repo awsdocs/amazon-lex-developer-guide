@@ -1,14 +1,14 @@
 # Step 3: Create a Lambda function<a name="ex-book-trip-create-lambda-function"></a>
 
-In this section you create a Lambda function using a blueprint \(**lex\-book\-trip\-python**\) provided in the Amazon Lex console\. You also test the Lambda function by invoking it using sample event data provided by the console\.
+In this section you create a Lambda function using a blueprint \(**lex\-book\-trip\-python**\) provided in the AWS Lambda console\. You also test the Lambda function by invoking it using sample event data provided by the console\.
 
-This Lambda function is written in Node\.js\.
+This Lambda function is written in Python\.
 
 1. Sign in to the AWS Management Console and open the AWS Lambda console at [https://console\.aws\.amazon\.com/lambda/](https://console.aws.amazon.com/lambda/)\.
 
-1. Choose **Create a Lambda function**\.
+1. Choose **Create function**\.
 
-1. On **Select blueprint**, type **lex** to find the blueprint, choose the `lex-book-trip-python` blueprint\.
+1. Choose **Use a blueprint**\. Type **lex** to find the blueprint, choose the `lex-book-trip-python` blueprint\.
 
 1. Configure the Lambda function as follows and then choose **Create Function**\.
    + Type a Lambda function name \(`BookTripCodeHook`\)\.

@@ -25,4 +25,4 @@ When the value entered by the user is a synonym, the first entry in the list of 
    }
 ```
 
-For each slot type, you can define a maximum of 10,000 values and synonyms\. Each bot can have a total number of 50,000 slot type values and synonyms\. 
+For each slot type, you can define a maximum of 10,000 values and synonyms\. Each bot can have a total number of 50,000 slot type values and synonyms\. For example, you can have 5 slot types, each with 5,000 values and 5,000 synonyms, or you can have 10 slot types, each with 2,500 values and 2,500 synonyms\. If you exceed these limits, you will get a `LimitExceededException` when you call the [PutBot](API_PutBot.md) operation\.

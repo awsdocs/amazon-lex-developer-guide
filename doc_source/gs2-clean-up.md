@@ -34,5 +34,5 @@ Delete resources in the following order:
 You have removed all of the resources that you created and cleaned up your account\.
 
 ## Next Steps<a name="gs-ex2-more-info"></a>
-+ [Publish a Version and Create an Alias](http://docs.aws.amazon.com/lex/latest/dg/gettingstarted-ex3.html)
-+ [Create an Amazon Lex bot with the AWS Command Line Interface](http://docs.aws.amazon.com/lex/latest/dg/gs-cli.html)
++ [Publish a Version and Create an Alias](https://docs.aws.amazon.com/lex/latest/dg/gettingstarted-ex3.html)
++ [Create an Amazon Lex bot with the AWS Command Line Interface](https://docs.aws.amazon.com/lex/latest/dg/gs-cli.html)

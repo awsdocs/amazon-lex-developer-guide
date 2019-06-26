@@ -5,6 +5,8 @@ In this exercise, you add additional utterances to those you created in Getting 
 **Note**  
 Utterance statistics are generated once a day\. You can see the utterance that was not recognized, how many times it was heard, and the last date and time that the utterance was heard\. It can take up to 24 hours for missed utterances to appear in the console\.
 
+You can see utterances for different versions of your bot\. To change the version of your bot that you are seeing utterances for, choose a different version from the drop\-down next to the bot name\.
+
 **To view and add missed utterances to a bot:**
 
 1. Follow the first step of Getting Started Exercise 1 to create and test an `OrderFlowers` bot\. For instructions, see [Exercise 1: Create an Amazon Lex Bot Using a Blueprint \(Console\)](gs-bp.md)\.

@@ -41,8 +41,8 @@ The request requires the following URI parameters\.
  The message Amazon Lex returns in the response can be either text or speech based on the `Accept` HTTP header value in the request\.   
 +  If the value is `text/plain; charset=utf-8`, Amazon Lex returns text in the response\. 
 +  If the value begins with `audio/`, Amazon Lex returns speech in the response\. Amazon Lex uses Amazon Polly to generate the speech \(using the configuration you specified in the `Accept` header\)\. For example, if you specify `audio/mpeg` as the value, Amazon Lex returns speech in the MPEG format\.
-
-  The following are the accepted values:
++ If the value is `audio/pcm`, the speech returned is `audio/pcm` in 16\-bit, little endian format\. 
++ The following are the accepted values:
   + audio/mpeg
   + audio/ogg
   + audio/pcm
@@ -166,7 +166,7 @@ Valid Values:` PlainText | CustomPayload | SSML | Composite`
  Map of key/value pairs representing the session\-specific context information\. 
 
  ** [slots](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-slots"></a>
-Map of zero or more intent slots \(name/value pairs\) Amazon Lex detected from the user input during the conversation\.  
+Map of zero or more intent slots \(name/value pairs\) Amazon Lex detected from the user input during the conversation\. The field is base\-64 encoded\.  
 Amazon Lex creates a resolution list containing likely values for a slot\. The value that it returns is determined by the `valueSelectionStrategy` selected when the slot type was created or updated\. If `valueSelectionStrategy` is set to `ORIGINAL_VALUE`, the value provided by the user is returned, if the user value is similar to the slot values\. If `valueSelectionStrategy` is set to `TOP_RESOLUTION` Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null\. If you don't specify a `valueSelectionStrategy`, the default is `ORIGINAL_VALUE`\.
 
  ** [slotToElicit](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-slotToElicit"></a>
@@ -282,6 +282,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PostContent) 
++  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PostContent) 

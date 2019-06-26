@@ -23,7 +23,7 @@ Session attributes persist for the duration of the session\. Amazon Lex stores t
 
 For example, suppose you have two session attributes, `{"x": "1", "y": "2"}`\. If the client calls the `PostContent` or `PostText` operation without specifying the `sessionAttributes` field, Amazon Lex calls the Lambda function with the stored session attributes \(`{"x": 1, "y": 2}`\)\. If the Lambda function doesn't return session attributes, Amazon Lex returns the stored session attributes to the client application\.
 
-If either the client application or a Lambda function passes session attributes, Amazon Lex updates the stored session attributes\. Passing an existing value, such as ` {"x": 2}`, updates the stored value\. When an empty map, `{}`, is passed, stored values are erased\.
+If either the client application or a Lambda function passes session attributes, Amazon Lex updates the stored session attributes\. Passing an existing value, such as ` {"x": 2}`, updates the stored value\. If you pass a new set of session attributes, such as `{"z": 3}`, the existing values are removed and only the new value is kept\. When an empty map, `{}`, is passed, stored values are erased\.
 
 To send session attributes to Amazon Lex, you create a string\-to\-string map of the attributes\. The following shows how to map session attributes: 
 
@@ -83,7 +83,8 @@ To set the time zone used to resolve dates so that it is relative to the user's 
 
 | Region | Default time zone | 
 | --- | --- | 
-| US East \(N\. Virginia\) | America/New York | 
+| US East \(N\. Virginia\) | America/New\_York | 
+| US West \(Oregon\) | America/Los\_Angeles | 
 | EU \(Ireland\) | Europe/Dublin | 
 
 For example, if the user responds `tomorrow` in response to the prompt "Which day would you like your package delivered?" the actual *date* that the package is delivered depends on the user's time zone\. For example, when it is 01:00 September 16 in New York, it is 22:00 September 15 in Los Angeles\. If a person in Los Angeles orders a package to be delivered "tomorrow" using the default time zone, the package would be delivered on the 17th, not the 16th\. However, if you set the `x-amz-lex:time-zone` request attribute to `America/Los_Angeles`, the package would be delivered on the 16th\.
@@ -122,7 +123,7 @@ Amazon Lex retains context information—slot data and session attributes—unti
 
 For example, suppose that you create a `ShoeOrdering` bot that supports intents such as `OrderShoes` and `GetOrderStatus`\. When Amazon Lex detects that the user's intent is to order shoes, it asks for slot data\. For example, it asks for shoe size, color, brand, etc\. If the user provides some of the slot data but doesn't complete the shoe purchase, Amazon Lex remembers all of the slot data and session attributes for the entire session\. If the user returns to the session before it expires, he or she can provide the remaining slot data, and complete the purchase\.
 
-In the Amazon Lex console, you set the session timeout when you create a bot\. With the AWS command line interface \(AWS CLI\) or API, you set the timeout when you create or update a bot with the [PutBot](API_PutBot.md) operation by setting the [idleSessionTTLInSeconds](http://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-idleSessionTTLInSeconds) field\.
+In the Amazon Lex console, you set the session timeout when you create a bot\. With the AWS command line interface \(AWS CLI\) or API, you set the timeout when you create or update a bot with the [PutBot](API_PutBot.md) operation by setting the [idleSessionTTLInSeconds](https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-idleSessionTTLInSeconds) field\.
 
 ## Sharing Information Between Intents<a name="context-mgmt-cross-intent"></a>
 

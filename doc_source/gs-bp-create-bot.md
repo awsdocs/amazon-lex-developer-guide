@@ -6,7 +6,7 @@ To create an Amazon Lex bot \(console\)
 
 1. Sign in to the AWS Management Console and open the Amazon Lex console at [https://console\.aws\.amazon\.com/lex/](https://console.aws.amazon.com/lex/)\.
 
-1. On the **Bots** page, choose **Create**\. 
+1. If this is your first bot, choose **Get Started**; otherwise, on the **Bots** page, choose **Create**\. 
 
 1. On the **Create your Lex bot** page, provide the following information, and then choose **Create**\.
    + Choose the **OrderFlowers** blueprint\.

@@ -15,7 +15,7 @@ Configure the `OrderPizza` intent to fulfill a user's request to order a pizza\.
     + Can I get a \{size\} \{pizzaKind\} pizza
   + **Lambda initialization and validation** – Leave the default setting\.
   + **Confirmation prompt** – Leave the default setting\.
-  + **Fulfillment** – Perform the following tasts:
+  + **Fulfillment** – Perform the following tasks:
     + Choose **AWS Lambda function**\.
     + Choose **PizzaOrderProcessor**\. 
     + If the **Add permission to Lambda function** dialog box is shown, choose **OK** to give the `OrderPizza` intent permission to call the `PizzaOrderProcessor` Lambda function\.

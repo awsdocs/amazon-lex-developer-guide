@@ -13,11 +13,11 @@ To get metrics for your Amazon Lex operations , you must specify the following i
 
 You can get metrics for Amazon Lex with the AWS Management Console, the AWS CLI, or the CloudWatch API\. You can use the CloudWatch API through one of the Amazon AWS Software Development Kits \(SDKs\) or the CloudWatch API tools\. The Amazon Lex console displays graphs based on the raw data from the CloudWatch API\. 
 
-You must have the appropriate CloudWatch permissions to monitor Amazon Lex with CloudWatch For more information, see [ Authentication and Access Control for Amazon CloudWatch](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) in the *Amazon CloudWatch User Guide*\.
+You must have the appropriate CloudWatch permissions to monitor Amazon Lex with CloudWatch \. For more information, see [ Authentication and Access Control for Amazon CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) in the *Amazon CloudWatch User Guide*\.
 
 ## Viewing Amazon Lex Metrics<a name="aws-lex-cloudwatch-metrics"></a>
 
-View Amazon Lex metrics using the Amazon Lex console and the CloudWatch console\.
+View Amazon Lex metrics using the Amazon Lex console or the CloudWatch console\.
 
 **To view metrics \(Amazon Lex console\)**
 
@@ -33,13 +33,13 @@ View Amazon Lex metrics using the Amazon Lex console and the CloudWatch console\
 
 1. Choose **Metrics**, choose **All Metrics**, and then choose **AWS/Lex**\.
 
-1. Choose the dimension, and then choose a metric name\. Choose **Add to graph**\.
+1. Choose the dimension, choose a metric name, then choose **Add to graph**\.
 
 1. Choose a value for the date range\. The metric count for the selected date range is displayed in the graph\.
 
 ## Creating an Alarm<a name="aws-lex-cloudwatch-alarms"></a>
 
-A CloudWatch alarm watches a single metric over a time period that you specify, and performs one or more actions: sending a notification to an Amazon SNS topic or Auto Scaling policy\. The action or actions are based on the value of the metric relative to a given threshold over a number of time periods that you specify\. CloudWatch can also send you an Amazon Simple Notification Service \(Amazon SNS\) message when the alarm changes state\. 
+A CloudWatch alarm watches a single metric over a specified time period, and performs one or more actions: sending a notification to an Amazon Simple Notification Service  \(Amazon SNS\) topic or Auto Scaling policy\. The action or actions are based on the value of the metric relative to a given threshold over a number of time periods that you specify\. CloudWatch can also send you an Amazon SNS message when the alarm changes state\. 
 
 CloudWatch alarms invoke actions only when the state changes and has persisted for the period that you specify\.
 
@@ -53,7 +53,7 @@ CloudWatch alarms invoke actions only when the state changes and has persisted f
 
 1. For **Time Range**, choose a time range to monitor, and then choose **Next**\.
 
-1. Type a **Name** and **Description**\.
+1. Enter a **Name** and **Description**\.
 
 1.  For **Whenever**, choose **>=**, and type a maximum value\.
 
@@ -68,17 +68,17 @@ The following table describes the Amazon Lex runtime metrics\.
 
 | Metric | Description | 
 | --- | --- | 
-| RuntimeInvalidLambdaResponses |  The number of invalid Lambda responses in the specified period\. Valid dimension for the `PostContent`operation with the `Text` or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimension for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html)  | 
-| RuntimeLambdaErrors | The number of AWS Lambda runtime errors in the specified period\.Valid dimension for the `PostContent` operation with the `Text `or `Speech`` InputMode` :[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html)Valid dimension for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html)  | 
+| RuntimeInvalidLambdaResponses |  The number of invalid AWS Lambda \(Lambda\) responses in the specified period\. Valid dimension for the `PostContent`operation with the `Text` or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimension for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html)  | 
+| RuntimeLambdaErrors | The number of Lambda runtime errors in the specified period\.Valid dimension for the `PostContent` operation with the `Text `or `Speech`` InputMode` :[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html)Valid dimension for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html)  | 
 | MissedUtteranceCount |  The number of utterances that were not recognized in the specified period\. Valid dimensions for the `PostContent` operation with the `Text `or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimensions for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html)  | 
 | RuntimePollyErrors |  The number of invalid Amazon Polly responses in the specified period\. Valid dimension for the `PostContent` operation with the `Text` or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimension for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html)  | 
 | RuntimeRequestCount |  The number of runtime requests in the specified period\. Valid dimensions for the `PostContent` operation with the `Text` or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimensions for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Unit: Count  | 
 | RuntimeSucessfulRequestLatency |  The latency for successful requests between the time that the request was made and the response was passed back\. Valid dimensions for the `PostContent` operation with the `Text` or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimensions for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Unit: Milliseconds  | 
 | RuntimeSystemErrors |  The number of system errors in the specified period\. The response code range for a system error is 500 to 599\. Valid dimension for the `PostContent` operation with the `Text` or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimension for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Unit: Count  | 
-| RuntimeThrottledEvents |  The number of throttled requests\. Amazon Lex throttles a request when it receives more requests than the limit of transactions per second set for your account\. If the limit set for your account is frequently exceeded, you can request a limit increase\. To request an increase, see [AWS Service Limits](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html)\.  Valid dimension for the `PostContent` operation with the `Text` or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimension for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Unit: Count  | 
+| RuntimeThrottledEvents |  The number of throttled requests\. Amazon Lex throttles a request when it receives more requests than the limit of transactions per second set for your account\. If the limit set for your account is frequently exceeded, you can request a limit increase\. To request an increase, see [AWS Service Limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html)\.  Valid dimension for the `PostContent` operation with the `Text` or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimension for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Unit: Count  | 
 | RuntimeUserErrors |  The number of user errors in the specified period\. The response code range for a user error is 400 to 499\. Valid dimension for the `PostContent` operation with `Text` or `Speech` `InputMode`: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Valid dimension for the `PostText` operation: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/lex/latest/dg/monitoring-aws-lex-cloudwatch.html) Unit: Count  | 
 
-Amazon Lex runtime metrics use the `AWS/Lex` namespace, and provide metrics in the following dimensions\. You can group metrics by dimenstions in the CloudWatch console:
+Amazon Lex runtime metrics use the `AWS/Lex` namespace, and provide metrics in the following dimensions\. You can group metrics by dimensions in the CloudWatch console:
 
 
 | Dimension | Description | 
@@ -103,9 +103,9 @@ A channel association is the association between Amazon Lex and a messaging chan
 | BotChannelResponseCardErrors | The number of times that Amazon Lex could not post response cards in the specified period\.  | 
 | BotChannelSystemErrors | The number of internal errors that occurred in Amazon Lex for a channel in the specified period\.  | 
 
-Amazon Lex channel association metrics use the `AWS/Lex` namespace, and provide metrics for the following dimension\. You can group metrics by dimenstions in the CloudWatch console::
+Amazon Lex channel association metrics use the `AWS/Lex` namespace, and provide metrics for the following dimension\. You can group metrics by dimensions in the CloudWatch console:
 
 
 | Dimension | Description | 
 | --- | --- | 
-| BotAlias, BotChannelName, BotName, Source | Group metrics by the bot's alias, the channel name, the bot's name, and by the source of traffic\. | 
+| BotAlias, BotChannelName, BotName, Source | Group metrics by the bot's alias, the channel name, the bot's name, and the source of traffic\. | 
