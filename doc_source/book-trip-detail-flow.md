@@ -318,7 +318,7 @@ In this exercise, after the user provides all of the slot data, the Lambda funct
           "invocationSource": "FulfillmentCodeHook",
           "userId": "wch89kjqcpkds8seny7dly5x3otq68j3",
           "sessionAttributes": {
-              "currentReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"4\"}",
+              "currentReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"5\"}",
               "currentReservationPrice": "956"
           },
           "bot": {
@@ -332,7 +332,7 @@ In this exercise, after the user provides all of the slot data, the Lambda funct
               "slots": {
                   "RoomType": "queen",
                   "CheckInDate": "2016-12-18",
-                  "Nights": "4",
+                  "Nights": "5",
                   "Location": "Chicago"
               },
               "confirmationStatus": "Confirmed"
@@ -348,7 +348,7 @@ In this exercise, after the user provides all of the slot data, the Lambda funct
       ```
       {
           "sessionAttributes": {
-              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"4\"}"
+              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"5\"}"
           },
           "dialogAction": {
               "type": "Close",
@@ -415,7 +415,7 @@ Follow the steps in this procedure to continue the conversation\.
           "invocationSource": "DialogCodeHook",
           "userId": "wch89kjqcpkds8seny7dly5x3otq68j3",
           "sessionAttributes": {
-              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"4\"}"
+              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"5\"}"
           },
           "bot": {
               "name": "BookTrip",
@@ -446,7 +446,7 @@ Follow the steps in this procedure to continue the conversation\.
       ```
       {
           "sessionAttributes": {
-              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"4\"}",
+              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"5\"}",
               "currentReservation": "{\"ReservationType\":\"Car\",\"PickUpCity\":null,\"PickUpDate\":null,\"ReturnDate\":null,\"CarType\":null}",
               "confirmationContext": "AutoPopulate"
           },
@@ -462,7 +462,7 @@ Follow the steps in this procedure to continue the conversation\.
               },
               "message": {
                   "contentType": "PlainText",
-                  "content": "Is this car rental for your 4 night stay in Chicago on 2016-12-18?"
+                  "content": "Is this car rental for your 5 night stay in Chicago on 2016-12-18?"
               }
           }
       }
@@ -516,7 +516,7 @@ The term `ConfirmIntent` \(value of the `dialogAction.type`\) is not related to 
           "sessionAttributes": {
               "confirmationContext": "AutoPopulate",
               "currentReservation": "{\"ReservationType\":\"Car\",\"PickUpCity\":null,\"PickUpDate\":null,\"ReturnDate\":null,\"CarType\":null}",
-              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"4\"}"
+              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"5\"}"
           },
           "bot": {
               "name": "BookTrip",
@@ -551,7 +551,7 @@ The term `ConfirmIntent` \(value of the `dialogAction.type`\) is not related to 
       {
           "sessionAttributes": {
               "currentReservation": "{\"ReservationType\":\"Car\",\"PickUpCity\":\"Chicago\",\"PickUpDate\":\"2016-12-18\",\"ReturnDate\":\"2016-12-22\",\"CarType\":null}",
-              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"4\"}"
+              "lastConfirmedReservation": "{\"ReservationType\":\"Hotel\",\"Location\":\"Chicago\",\"RoomType\":\"queen\",\"CheckInDate\":\"2016-12-18\",\"Nights\":\"5\"}"
           },
           "dialogAction": {
               "type": "ElicitSlot",
