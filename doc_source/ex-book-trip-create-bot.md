@@ -20,7 +20,7 @@ In this section, you create an Amazon Lex bot \(BookTrip\)\.
    From the initial user input \("Book a hotel"\), Amazon Lex infers the intent \(BookHotel\)\. The bot then uses the prompts preconfigured in this intent to elicit slot data from the user\. After user provide all of the slot data, Amazon Lex returns a response back to the client with a message that includes all the user input as a message\. The client displays the message in the response as shown\. 
 
    ```
-   CheckInDate:2016-12-18 Location:Chicago Nights:4 RoomType:queen
+   CheckInDate:2016-12-18 Location:Chicago Nights:5 RoomType:queen
    ```
 
    Now you continue the conversation and try to book a car\.   

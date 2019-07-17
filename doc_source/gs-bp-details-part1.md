@@ -71,7 +71,7 @@ This section explains flow of information between client and Amazon Lex in which
 
       The `inputText` in the request body provides user input\. The `sessionAttributes` remains empty\.
 
-   1. Amazon Lex first interprets the `inputText` in the context of the current intent—the service remembers that it had asked the specific user for information about the `PickupDate` slot\. Amazon Lex updates the slot \(`PickupDate`\) value for the current intent\. It chooses another slot to elicit value for \(`PickupTime`\)\. It returns one of the value\-elicitation prompts—Deliver the roses at what time on 2017\-01\-01?—``to the client\.
+   1. Amazon Lex first interprets the `inputText` in the context of the current intent—the service remembers that it had asked the specific user for information about the `PickupDate` slot\. Amazon Lex updates the slot \(`PickupDate`\) value for the current intent\. It chooses another slot to elicit value for \(`PickupTime`\)\. It returns one of the value\-elicitation prompts—Deliver the roses at what time on 2017\-01\-05?—``to the client\.
 
       Amazon Lex then returns the following response:  
 ![\[\]](http://docs.aws.amazon.com/lex/latest/dg/images/gs-1-details-30.png)

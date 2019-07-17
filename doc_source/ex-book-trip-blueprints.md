@@ -36,7 +36,7 @@ The blueprint \(**BookTrip**\) you use to create a bot provides the following pr
 + **Intent 2 \(BookCar\)** – It is preconfigured as follows:
   + **Preconfigured slots** 
     + `PickUpCity`, of the `AMAZON.US_CITY` built\-in type
-    + `PickUpDate4`, of the `AMAZON.DATE` built\-in type
+    + `PickUpDate`, of the `AMAZON.DATE` built\-in type
     + `ReturnDate`, of the `AMAZON.DATE` built\-in type
     + `DriverAge`, of the `AMAZON.NUMBER` built\-in type
     + `CarType`, of the `CarTypes` custom type

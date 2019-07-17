@@ -234,10 +234,10 @@ If Lambda function detects anything in the user data validation, it instructs Am
       + `sessionAttributes` – No change\.
       + `dialogAction.type` – is set to `Delegate`\. The user data was valid, and the Lambda function directs Amazon Lex to choose the next course of action\.
 
-   1. According to the `dialogAction.type`, Amazon Lex chooses the next course of action\. Amazon Lex knows it needs more slot data so it picks the next unfilled slot \(`PickupTime`\) with the highest priority according to the intent configuration\. Amazon Lex selects one of the prompt messages \("Deliver the roses at what time on 2017\-01\-01?"\) for this slot according to the intent configuration and sends the following response back to the client:   
+   1. According to the `dialogAction.type`, Amazon Lex chooses the next course of action\. Amazon Lex knows it needs more slot data so it picks the next unfilled slot \(`PickupTime`\) with the highest priority according to the intent configuration\. Amazon Lex selects one of the prompt messages \("Deliver the roses at what time on 2017\-01\-05?"\) for this slot according to the intent configuration and sends the following response back to the client:   
 ![\[\]](http://docs.aws.amazon.com/lex/latest/dg/images/gs-1-details-30.png)
 
-      The client displays the message in the response – "Deliver the roses at what time on 2017\-01\-01?"
+      The client displays the message in the response – "Deliver the roses at what time on 2017\-01\-05?"
 
 1. User: 4 pm
 
