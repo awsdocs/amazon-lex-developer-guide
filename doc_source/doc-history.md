@@ -5,9 +5,10 @@ The following table describes important changes in each release of Amazon Lex\. 
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html) | Amazon Lex enables you to manage session information for your bots\. For more information, see [Managing Sessions With the Amazon Lex API](https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html)\. | August 8, 2019 | 
 | [Region expansion](#doc-history) | Amazon Lex is now available in US West \(Oregon\) \(us\-west\-2\)\. | May 8, 2018 | 
 | [New feature](#doc-history) | Added support for exporting and importing in Amazon Lex format\. For more information, see [Importing and Exporting Amazon Lex Bots, Intents, and Slot Types](https://docs.aws.amazon.com/lex/latest/dg/import-export.html)\. | February 13, 2018 | 
-| [New feature](#doc-history) | Amazon Lex now supports additional response messages for bots, For more information, see [ Responses](https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html#msg-prompts-response)\.  | February 8, 2018 | 
+| [New feature](#doc-history) | Amazon Lex now supports additional response messages for bots\. For more information, see [ Responses](https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html#msg-prompts-response)\.  | February 8, 2018 | 
 | [Region expansion](#doc-history) | Amazon Lex is now available in EU \(Ireland\) \(eu\-west\-1\)\. | November 21, 2017 | 
 | [New feature](#doc-history) | Added support for deploying Amazon Lex bots on Kik\. For more information, see [Integrating an Amazon Lex Bot with Kik](https://docs.aws.amazon.com/lex/latest/dg/kik-bot-association.html)\. | November 20, 2017 | 
 | [New feature](#doc-history) | Added support for new built\-in slot types and request attributes\. For more information, see [Built\-in Slot Types](https://docs.aws.amazon.com/lex/latest/dg/howitworks-builtins-slots.html) and [ Setting Request Attributes ](https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs)\. | November 3, 2017 | 

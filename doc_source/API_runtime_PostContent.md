@@ -149,7 +149,7 @@ Current user intent that Amazon Lex is aware of\.
 
  ** [message](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-message"></a>
 The message to convey to the user\. The message can come from the bot's configuration or from a Lambda function\.  
-If the intent is not configured with a Lambda function, or if the Lambda function returned `Delegate` as the `dialogAction.type` its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context\. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message\.  
+If the intent is not configured with a Lambda function, or if the Lambda function returned `Delegate` as the `dialogAction.type` in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context\. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message\.  
 When you create an intent you can assign messages to groups\. When messages are assigned to groups Amazon Lex returns one message from each group in the response\. The message field is an escaped JSON string containing the messages\. For more information about the structure of the JSON string returned, see [Supported Message Formats](howitworks-manage-prompts.md#msg-prompts-formats)\.  
 If the Lambda function returns a message, Amazon Lex passes it to the client in its response\.  
 Length Constraints: Minimum length of 1\. Maximum length of 1024\.
@@ -255,7 +255,6 @@ SignedHeaders=accept;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-lex
 "[0x7][0x0][0x7][0x0][\n]"
 "[0x0][0x7][0x0][0xfc][0xff][\n]"
 "[0x0][\n]"
-…
 ```
 
 #### Sample Response<a name="API_runtime_PostContent_Example_1_Response"></a>
@@ -272,7 +271,6 @@ SignedHeaders=accept;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-lex
 "[\r][\n]"               
 "2000[\r][\n]"
 "ID3[0x4][0x0][0x0][0x0][0x0][0x0]#TSSE[0x0][0x0][0x0][0xf][0x0][0x0][0x3]Lavf57.41.100[0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xff][0xf3]`[0xc4][0x0][0x1b]{[0x8d][0xe8][0x1]C[0x18][0x1][0x0]J[0xe0]`b[0xdd][0xd1][0xb][0xfd][0x11][0xdf][0xfe]";[0xbb][0xbb][0x9f][0xee][0xee][0xee][0xee]|DDD/[0xff][0xff][0xff][0xff]www?D[0xf7]w^?[0xff][0xfa]h[0x88][0x85][0xfe][0x88][0x88][0x88][[0xa2]'[0xff][0xfa]"{[0x9f][0xe8][0x88]]D[0xeb][0xbb][0xbb][0xa2]!u[0xfd][0xdd][0xdf][0x88][0x94][0x0]F[0xef][0xa1]8[0x0][0x82]w[0x88]N[0x0][0x0][0x9b][0xbb][0xe8][0xe
-…
 ```
 
 ## See Also<a name="API_runtime_PostContent_SeeAlso"></a>

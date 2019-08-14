@@ -1,0 +1,120 @@
+# GetSession<a name="API_runtime_GetSession"></a>
+
+Returns session information for a specified bot, alias, and user ID\.
+
+## Request Syntax<a name="API_runtime_GetSession_RequestSyntax"></a>
+
+```
+GET /bot/botName/alias/botAlias/user/userId/session HTTP/1.1
+```
+
+## URI Request Parameters<a name="API_runtime_GetSession_RequestParameters"></a>
+
+The request requires the following URI parameters\.
+
+ ** [botAlias](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-botAlias"></a>
+The alias in use for the bot that contains the session data\.
+
+ ** [botName](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-botName"></a>
+The name of the bot that contains the session data\.
+
+ ** [userId](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-userId"></a>
+The ID of the client application user\. Amazon Lex uses this to identify a user's conversation with your bot\.   
+Length Constraints: Minimum length of 2\. Maximum length of 100\.  
+Pattern: `[0-9a-zA-Z._:-]+` 
+
+## Request Body<a name="API_runtime_GetSession_RequestBody"></a>
+
+The request does not have a request body\.
+
+## Response Syntax<a name="API_runtime_GetSession_ResponseSyntax"></a>
+
+```
+HTTP/1.1 200
+Content-type: application/json
+
+{
+   "[dialogAction](#lex-runtime_GetSession-response-dialogAction)": { 
+      "[fulfillmentState](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-fulfillmentState)": "string",
+      "[intentName](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-intentName)": "string",
+      "[message](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-message)": "string",
+      "[messageFormat](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-messageFormat)": "string",
+      "[slots](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-slots)": { 
+         "string" : "string" 
+      },
+      "[slotToElicit](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-slotToElicit)": "string",
+      "[type](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-type)": "string"
+   },
+   "[recentIntentSummaryView](#lex-runtime_GetSession-response-recentIntentSummaryView)": [ 
+      { 
+         "[confirmationStatus](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-confirmationStatus)": "string",
+         "[dialogActionType](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-dialogActionType)": "string",
+         "[fulfillmentState](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-fulfillmentState)": "string",
+         "[intentName](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-intentName)": "string",
+         "[slots](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-slots)": { 
+            "string" : "string" 
+         },
+         "[slotToElicit](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-slotToElicit)": "string"
+      }
+   ],
+   "[sessionAttributes](#lex-runtime_GetSession-response-sessionAttributes)": { 
+      "string" : "string" 
+   },
+   "[sessionId](#lex-runtime_GetSession-response-sessionId)": "string"
+}
+```
+
+## Response Elements<a name="API_runtime_GetSession_ResponseElements"></a>
+
+If the action is successful, the service sends back an HTTP 200 response\.
+
+The following data is returned in JSON format by the service\.
+
+ ** [dialogAction](#API_runtime_GetSession_ResponseSyntax) **   <a name="lex-runtime_GetSession-response-dialogAction"></a>
+Describes the current state of the bot\.  
+Type: [DialogAction](API_runtime_DialogAction.md) object
+
+ ** [recentIntentSummaryView](#API_runtime_GetSession_ResponseSyntax) **   <a name="lex-runtime_GetSession-response-recentIntentSummaryView"></a>
+An array of information about the intents used in the session\. The array can contain a maximum of three summaries\. If more than three intents are used in the session, the `recentIntentSummaryView` operation contains information about the last three intents used\.  
+Type: Array of [IntentSummary](API_runtime_IntentSummary.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 3 items\.
+
+ ** [sessionAttributes](#API_runtime_GetSession_ResponseSyntax) **   <a name="lex-runtime_GetSession-response-sessionAttributes"></a>
+Map of key/value pairs representing the session\-specific context information\. It contains application information passed between Amazon Lex and a client application\.  
+Type: String to string map
+
+ ** [sessionId](#API_runtime_GetSession_ResponseSyntax) **   <a name="lex-runtime_GetSession-response-sessionId"></a>
+A unique identifier for the session\.  
+Type: String
+
+## Errors<a name="API_runtime_GetSession_Errors"></a>
+
+ **BadRequestException**   
+ Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes\.   
+HTTP Status Code: 400
+
+ **InternalFailureException**   
+Internal service error\. Retry the call\.  
+HTTP Status Code: 500
+
+ **LimitExceededException**   
+Exceeded a limit\.  
+HTTP Status Code: 429
+
+ **NotFoundException**   
+The resource \(such as the Amazon Lex bot or an alias\) that is referred to is not found\.  
+HTTP Status Code: 404
+
+## See Also<a name="API_runtime_GetSession_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/runtime.lex-2016-11-28/GetSession) 

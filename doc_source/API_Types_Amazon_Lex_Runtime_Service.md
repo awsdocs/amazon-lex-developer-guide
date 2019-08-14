@@ -2,5 +2,7 @@
 
 The following data types are supported by Amazon Lex Runtime Service:
 +  [Button](API_runtime_Button.md) 
++  [DialogAction](API_runtime_DialogAction.md) 
 +  [GenericAttachment](API_runtime_GenericAttachment.md) 
++  [IntentSummary](API_runtime_IntentSummary.md) 
 +  [ResponseCard](API_runtime_ResponseCard.md) 
