@@ -12,7 +12,7 @@ This Lambda function is written in Python\.
 
 1. Configure the Lambda function as follows and then choose **Create Function**\.
    + Type a Lambda function name \(`BookTripCodeHook`\)\.
-   + For the role, choose **Create a new role from template\(s\)** and then type a role name\.
+   + For the role, choose **Create a new role from AWS policy templates** and then type a role name\.
    + Leave the other default values\.
 
 1. Test the Lambda function\. You invoke the Lambda function twice, using sample data for both booking a car and booking a hotel\. 
