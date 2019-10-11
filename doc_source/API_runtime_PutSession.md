@@ -23,6 +23,19 @@ Content-type: application/json
       "[slotToElicit](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-slotToElicit)": "string",
       "[type](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-type)": "string"
    },
+   "[recentIntentSummaryView](#lex-runtime_PutSession-request-recentIntentSummaryView)": [ 
+      { 
+         "[checkpointLabel](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-checkpointLabel)": "string",
+         "[confirmationStatus](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-confirmationStatus)": "string",
+         "[dialogActionType](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-dialogActionType)": "string",
+         "[fulfillmentState](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-fulfillmentState)": "string",
+         "[intentName](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-intentName)": "string",
+         "[slots](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-slots)": { 
+            "string" : "string" 
+         },
+         "[slotToElicit](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-slotToElicit)": "string"
+      }
+   ],
    "[sessionAttributes](#lex-runtime_PutSession-request-sessionAttributes)": { 
       "string" : "string" 
    }
@@ -63,6 +76,17 @@ The request accepts the following data in JSON format\.
  ** [dialogAction](#API_runtime_PutSession_RequestSyntax) **   <a name="lex-runtime_PutSession-request-dialogAction"></a>
 Sets the next action that the bot should take to fulfill the conversation\.  
 Type: [DialogAction](API_runtime_DialogAction.md) object  
+Required: No
+
+ ** [recentIntentSummaryView](#API_runtime_PutSession_RequestSyntax) **   <a name="lex-runtime_PutSession-request-recentIntentSummaryView"></a>
+A summary of the recent intents for the bot\. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents\. You can also use it to remove or add intent summary objects to the list\.  
+An intent that you modify or add to the list must make sense for the bot\. For example, the intent name must be valid for the bot\. You must provide valid values for:  
++  `intentName` 
++ slot names
++  `slotToElict` 
+If you send the `recentIntentSummaryView` parameter in a `PutSession` request, the contents of the new summary view replaces the old summary view\. For example, if a `GetSession` request returns three intents in the summary view and you call `PutSession` with one intent in the summary view, the next call to `GetSession` will only return one intent\.  
+Type: Array of [IntentSummary](API_runtime_IntentSummary.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 3 items\.  
 Required: No
 
  ** [sessionAttributes](#API_runtime_PutSession_RequestSyntax) **   <a name="lex-runtime_PutSession-request-sessionAttributes"></a>
@@ -182,7 +206,6 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PutSession) 

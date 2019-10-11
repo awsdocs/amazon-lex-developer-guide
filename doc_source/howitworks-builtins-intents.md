@@ -10,5 +10,5 @@ Amazon Lex doesn't support the following intents:
 `AMAZON.NoIntent` 
 The intents in the [Built\-in Intent Library](https://developer.amazon.com/docs/custom-skills/built-in-intent-library.html) in the *Alexa Skills Kit*
 In the current implementation, you can't do the following:   
- Add or remove sample utterances or slots from the base intent
- Configure slots for built\-in intents
+Remove sample utterances or slots from the base intent
+Configure slots for built\-in intents

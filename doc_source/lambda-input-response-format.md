@@ -56,7 +56,21 @@ The input format may change without a corresponding change in the `messageVersio
   "requestAttributes": { 
      "key": "value",
      "key": "value"
-  }
+  },
+  "recentIntentSummaryView": [
+    {
+        "intentName": "Name",
+        "checkpointLabel": Label,
+        "slots": {
+          "slot name": "value",
+          "slot name": "value"
+        },
+        "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
+        "dialogActionType": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
+        "fulfillmentState": "Fulfilled or Failed",
+        "slotToElicit": "Next slot to elicit
+    }
+  ]
 }
 ```
 
@@ -144,9 +158,10 @@ You configure this value when you define an intent\. In the current implementati
 + **sessionAttributes** – Application\-specific session attributes that the client sends in the request\. If you want Amazon Lex to include them in the response to the client, your Lambda function should send these back to Amazon Lex in the response\. For more information, see [Setting Session Attributes](context-mgmt.md#context-mgmt-session-attribs)
 
    
-+ **requestAttributes** – request\-specific attributes that the client sends in the request\. Use request attributes to pass information that doesn't need to persist for the entire session\. If there are no request attributes, the value will be null\. For more information, see [Setting Request Attributes](context-mgmt.md#context-mgmt-request-attribs)
++ **requestAttributes** – Request\-specific attributes that the client sends in the request\. Use request attributes to pass information that doesn't need to persist for the entire session\. If there are no request attributes, the value will be null\. For more information, see [Setting Request Attributes](context-mgmt.md#context-mgmt-request-attribs)
 
    
++ **recentIntentSummaryView** – Information about the state of an intent\. You can see information about the last three intents used\. You can use this information to set values in the intent or to return to a previous intent\. For more information, see [Managing Sessions With the Amazon Lex API](how-session-api.md)\.
 
 ## Response Format<a name="using-lambda-response-format"></a>
 
@@ -159,6 +174,20 @@ Amazon Lex expects a response from a Lambda function in the following format:
     "key2": "value2"
     ...
   },
+  "recentIntentSummaryView": [
+    {
+       "intentName": "Name",
+       "checkpointLabel": "Label",
+       "slots": {
+         "slot name": "value",
+         "slot name": "value"
+        },
+       "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
+        "dialogActionType": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
+        "fulfillmentState": "Fulfilled or Failed",
+        "slotToElicit": "Next slot to elicit
+    }
+  ],
   "dialogAction": {
     "type": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
     Full structure based on the type field. See below for details.
@@ -166,7 +195,7 @@ Amazon Lex expects a response from a Lambda function in the following format:
 }
 ```
 
-The response consists of two fields\. The `sessionAttributes` field is optional, the `dialogAction` field is required\. The contents of the `dialogAction` field depends on the value of the `type field.`For details, see [dialogAction](#lambda-response-dialogAction)\.
+The response consists of three fields\. The `sessionAttributes` and `recentIntentSummaryView` fields are optional, the `dialogAction` field is required\. The contents of the `dialogAction` field depends on the value of the `type` field\. For details, see [dialogAction](#lambda-response-dialogAction)\.
 
 ### sessionAttributes<a name="lambda-response-sessionAttributes"></a>
 
@@ -177,6 +206,27 @@ Optional\. If you include the `sessionAttributes` field it can be empty\. If you
      "key1": "value1",
      "key2": "value2"
   }
+```
+
+### recentIntentSummaryView<a name="lambda-response-recentIntentSummaryView"></a>
+
+Optional\. If included, sets values for one or more recent intents\. You can include information for up to three intents\. For example, you can set values for previous intents based on information gathered by the current intent\. The information in the summary must be valid for the intent\. For example, the intent name must be an intent in the bot\. If you include a slot value in the summary view, the slot must exist in the intent\. If you don't include the `recentIntentSummaryView` in your response, all of the values for the recent intents remain unchanged\. For more information, see the [PutSession](API_runtime_PutSession.md) operation or the [IntentSummary](API_runtime_IntentSummary.md) data type\.
+
+```
+"recentIntentSummaryView": [
+    {
+       "intentName": "Name",
+       "checkpointLabel": "Label",
+       "slots": {
+         "slot name": "value",
+         "slot name": "value"
+        },
+       "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
+        "dialogActionType": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
+        "fulfillmentState": "Fulfilled or Failed",
+        "slotToElicit": "Next slot to elicit
+    }
+  ]
 ```
 
 ### dialogAction<a name="lambda-response-dialogAction"></a>
@@ -273,7 +323,7 @@ The `type` field indicates the next course of action\. It also determines the ot
 
    
 
-  The `message` and `responseCard` fields are optional\. If you don't provide a message, Amazon Lex uses one of the bot's clarification prompts\.
+  The `message` and `responseCard` fields are optional\. If you don't provide a message, Amazon Lex uses one of the bot's clarification prompts\. If there is no clarification prompt defined, Amazon Lex returns a 400 Bad Request exception\.
 
   ```
   {

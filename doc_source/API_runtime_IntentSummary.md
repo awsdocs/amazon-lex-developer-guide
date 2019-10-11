@@ -4,6 +4,14 @@ Provides information about the state of an intent\. You can use this information
 
 ## Contents<a name="API_runtime_IntentSummary_Contents"></a>
 
+ **checkpointLabel**   <a name="lex-Type-runtime_IntentSummary-checkpointLabel"></a>
+A user\-defined label that identifies a particular intent\. You can use this label to return to a previous intent\.   
+Use the `checkpointLabelFilter` parameter of the `GetSessionRequest` operation to filter the intents returned by the operation to those with only the specified label\.  
+Type: String  
+Length Constraints: Minimum length of 1\. Maximum length of 255\.  
+Pattern: `[a-zA-Z0-9-]+`   
+Required: No
+
  **confirmationStatus**   <a name="lex-Type-runtime_IntentSummary-confirmationStatus"></a>
 The status of the intent after the user responds to the confirmation prompt\. If the user confirms the intent, Amazon Lex sets this field to `Confirmed`\. If the user denies the intent, Amazon Lex sets this value to `Denied`\. The possible values are:  
 +  `Confirmed` \- The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled\.
@@ -52,6 +60,5 @@ Required: No
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/IntentSummary) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/IntentSummary) 
-+  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/runtime.lex-2016-11-28/IntentSummary) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/IntentSummary) 
 +  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/runtime.lex-2016-11-28/IntentSummary) 

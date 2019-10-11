@@ -1,6 +1,6 @@
 # PostText<a name="API_runtime_PostText"></a>
 
-Sends user input \(text or SSML\) to Amazon Lex\. Client applications can use this API to send requests to Amazon Lex at runtime\. Amazon Lex then interprets the user input using the machine learning model it built for the bot\. 
+Sends user input to Amazon Lex\. Client applications can use this API to send requests to Amazon Lex at runtime\. Amazon Lex then interprets the user input using the machine learning model it built for the bot\. 
 
  In response, Amazon Lex returns the next `message` to convey to the user an optional `responseCard` to display\. Consider the following example messages: 
 +  For a user input "I would like a pizza", Amazon Lex might return a response with a message eliciting slot data \(for example, PizzaSize\): "What size pizza would you like?" 
@@ -227,7 +227,6 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PostText) 
-+  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PostText) 

@@ -24,6 +24,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Bot Deployment Options](chatbot-service.md)
    + [Built-in Intents and Slot Types](howitworks-builtins.md)
       + [Built-in Intents](howitworks-builtins-intents.md)
+         + [AMAZON.FallbackIntent](built-in-intent-fallback.md)
       + [Built-in Slot Types](howitworks-builtins-slots.md)
          + [Alexa Skills Kit Slot Types](built-in-alexa.md)
          + [AMAZON.EmailAddress](built-in-slot-email.md)

@@ -52,6 +52,13 @@ To resume a session, use steps similar to these:
 + Use the `PutSession` operation to set the dialog state of the intent\. This may include setting slot values, setting session attributes, or changing the intent\.
 + The bot resumes the conversation with the user\.
 
+You can use the `PutSession` operation `checkpointLabel` parameter to label an intent so that you can find it later\. For example, a bot that asks a customer for information might go into a `Waiting` intent while the customer gathers the information\. The bot creates a checkpoint label for the current intent and then starts the `Waiting` intent\. When the customer returns the bot can find the previous intent using the checkpoint label and switch back\. 
+
+The intent must be present in the `recentIntentSummaryView` structure returned by the `GetSession` operation\. If you specify a checkpoint label in the `GetSession` operation request, it will return a maximum of three intents with that checkpoint label\.
++ Use the `GetSession` operation to get the current state of the session\.
++ Use the `PutSession` operation to add a checkpoint label to the last intent\. If necessary you can use this `PutSession` call to switch to a different intent\.
++ When it is time to switch back to the labeled intent, call the `GetSession` operation to return a recent intent list\. You can use the `checkpointLabelFilter` parameter so that Amazon Lex returns only intents with the specified checkpoint label\.
+
 ## Starting a New Session<a name="session-start"></a>
 
 If you want to have the bot start the conversation with your user, you can use the `PutSession` operation\. 

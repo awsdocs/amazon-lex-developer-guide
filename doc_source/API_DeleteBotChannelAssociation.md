@@ -14,7 +14,7 @@ DELETE /bots/botName/aliases/aliasName/channels/name HTTP/1.1
 
 The request requires the following URI parameters\.
 
- ** [botAlias](#API_DeleteBotChannelAssociation_RequestSyntax) **   <a name="lex-DeleteBotChannelAssociation-request-botAlias"></a>
+ ** [aliasName](#API_DeleteBotChannelAssociation_RequestSyntax) **   <a name="lex-DeleteBotChannelAssociation-request-botAlias"></a>
 An alias that points to the specific version of the Amazon Lex bot to which this association is being made\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
@@ -72,7 +72,6 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/DeleteBotChannelAssociation) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/DeleteBotChannelAssociation) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/DeleteBotChannelAssociation) 
-+  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/lex-models-2017-04-19/DeleteBotChannelAssociation) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/DeleteBotChannelAssociation) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/DeleteBotChannelAssociation) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/DeleteBotChannelAssociation) 

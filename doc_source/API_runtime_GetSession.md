@@ -5,7 +5,7 @@ Returns session information for a specified bot, alias, and user ID\.
 ## Request Syntax<a name="API_runtime_GetSession_RequestSyntax"></a>
 
 ```
-GET /bot/botName/alias/botAlias/user/userId/session HTTP/1.1
+GET /bot/botName/alias/botAlias/user/userId/session/?checkpointLabelFilter=checkpointLabelFilter HTTP/1.1
 ```
 
 ## URI Request Parameters<a name="API_runtime_GetSession_RequestParameters"></a>
@@ -17,6 +17,12 @@ The alias in use for the bot that contains the session data\.
 
  ** [botName](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-botName"></a>
 The name of the bot that contains the session data\.
+
+ ** [checkpointLabelFilter](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-checkpointLabelFilter"></a>
+A string used to filter the intents returned in the `recentIntentSummaryView` structure\.   
+When you specify a filter, only intents with their `checkpointLabel` field set to that string are returned\.  
+Length Constraints: Minimum length of 1\. Maximum length of 255\.  
+Pattern: `[a-zA-Z0-9-]+` 
 
  ** [userId](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-userId"></a>
 The ID of the client application user\. Amazon Lex uses this to identify a user's conversation with your bot\.   
@@ -47,6 +53,7 @@ Content-type: application/json
    },
    "[recentIntentSummaryView](#lex-runtime_GetSession-response-recentIntentSummaryView)": [ 
       { 
+         "[checkpointLabel](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-checkpointLabel)": "string",
          "[confirmationStatus](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-confirmationStatus)": "string",
          "[dialogActionType](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-dialogActionType)": "string",
          "[fulfillmentState](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-fulfillmentState)": "string",
@@ -76,6 +83,7 @@ Type: [DialogAction](API_runtime_DialogAction.md) object
 
  ** [recentIntentSummaryView](#API_runtime_GetSession_ResponseSyntax) **   <a name="lex-runtime_GetSession-response-recentIntentSummaryView"></a>
 An array of information about the intents used in the session\. The array can contain a maximum of three summaries\. If more than three intents are used in the session, the `recentIntentSummaryView` operation contains information about the last three intents used\.  
+If you set the `checkpointLabelFilter` parameter in the request, the array contains only the intents with the specified label\.  
 Type: Array of [IntentSummary](API_runtime_IntentSummary.md) objects  
 Array Members: Minimum number of 0 items\. Maximum number of 3 items\.
 
@@ -112,7 +120,6 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/GetSession) 
-+  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/GetSession) 

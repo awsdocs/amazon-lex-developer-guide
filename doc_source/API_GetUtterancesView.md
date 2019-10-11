@@ -22,7 +22,7 @@ GET /bots/botname/utterances?view=aggregation&bot_versions=botVersions&status_ty
 
 The request requires the following URI parameters\.
 
- ** [botName](#API_GetUtterancesView_RequestSyntax) **   <a name="lex-GetUtterancesView-request-botName"></a>
+ ** [botname](#API_GetUtterancesView_RequestSyntax) **   <a name="lex-GetUtterancesView-request-botName"></a>
 The name of the bot for which utterance information should be returned\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
@@ -103,7 +103,6 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetUtterancesView) 
-+  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetUtterancesView) 

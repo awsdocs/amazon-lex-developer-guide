@@ -68,6 +68,7 @@ The request accepts the following data in JSON format\.
 When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times\. After that, Amazon Lex sends the message defined in `abortStatement` to the user, and then aborts the conversation\. To set the number of retries, use the `valueElicitationPrompt` field for the slot type\.   
 For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses \(for example, "thin crust, "deep dish," etc\.\), Amazon Lex tries to elicit a correct response a few more times\.   
 For example, in a pizza ordering application, `OrderPizza` might be one of the intents\. This intent might require the `CrustType` slot\. You specify the `valueElicitationPrompt` field when you create the `CrustType` slot\.  
+If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is used instead\. For more information, see [ AMAZON\.FallbackIntent](https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html)\.  
 Type: [Statement](API_Statement.md) object  
 Required: No
 
@@ -87,6 +88,11 @@ Required: Yes
  ** [clarificationPrompt](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-clarificationPrompt"></a>
 When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification\. To specify how many times Amazon Lex should repeat the clarification prompt, use the `maxAttempts` field\. If Amazon Lex still doesn't understand, it sends the message in the `abortStatement` field\.   
 When you create a clarification prompt, make sure that it suggests the correct response from the user\. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink\.'"  
+If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the `maxAttempts` field\. For more information, see [ AMAZON\.FallbackIntent](https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html)\.  
+If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases:   
++ Follow\-up prompt \- When the user responds to a follow\-up prompt but does not provide an intent\. For example, in response to a follow\-up prompt that says "Would you like anything else today?" the user says "Yes\." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent\.
++ Lambda function \- When using a Lambda function, you return an `ElicitIntent` dialog type\. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception\.
++ PutSession operation \- When using the `PutSession` operation, you send an `ElicitIntent` dialog type\. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception\.
 Type: [Prompt](API_Prompt.md) object  
 Required: No
 
@@ -297,7 +303,6 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutBot) 
-+  [AWS SDK for Go \- Pilot](https://docs.aws.amazon.com/goto/SdkForGoPilot/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutBot) 

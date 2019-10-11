@@ -8,7 +8,7 @@ Configure error handling for the `PizzaOrderingBot` bot\.
 1. Use the **Editor** tab to configure bot error handling\.
    + Information you provide in **Clarification Prompts** maps to the bot's [clarificationPrompt](https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-clarificationPrompt) configuration\. 
 
-     When Amazon Lex can't determine the user intent, the service returns a response with this message 
+     When Amazon Lex can't determine the user intent, the service returns a response with this message\. 
    + Information that you provide in the **Hang\-up** phrase maps to the bot's [abortStatement](https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-abortStatement) configuration\. 
 
      If the service can't determine the user's intent after a set number of consecutive requests, Amazon Lex returns a response with this message\.
