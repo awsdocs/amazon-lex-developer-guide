@@ -104,11 +104,13 @@ Content-Type: contentType
 x-amz-lex-intent-name: intentName
 x-amz-lex-slots: slots
 x-amz-lex-session-attributes: sessionAttributes
+x-amz-lex-sentiment: sentimentResponse
 x-amz-lex-message: message
 x-amz-lex-message-format: messageFormat
 x-amz-lex-dialog-state: dialogState
 x-amz-lex-slot-to-elicit: slotToElicit
 x-amz-lex-input-transcript: inputTranscript
+x-amz-lex-session-id: sessionId
 
 audioStream
 ```
@@ -162,8 +164,15 @@ The format of the response message\. One of the following values:
 +  `Composite` \- The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created\.
 Valid Values:` PlainText | CustomPayload | SSML | Composite` 
 
+ ** [sentimentResponse](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-sentimentResponse"></a>
+The sentiment expressed in and utterance\.  
+When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis\.
+
  ** [sessionAttributes](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-sessionAttributes"></a>
  Map of key/value pairs representing the session\-specific context information\. 
+
+ ** [sessionId](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-sessionId"></a>
+The unique identifier for the session\.
 
  ** [slots](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-slots"></a>
 Map of zero or more intent slots \(name/value pairs\) Amazon Lex detected from the user input during the conversation\. The field is base\-64 encoded\.  
@@ -255,6 +264,7 @@ SignedHeaders=accept;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-lex
 "[0x7][0x0][0x7][0x0][\n]"
 "[0x0][0x7][0x0][0xfc][0xff][\n]"
 "[0x0][\n]"
+…
 ```
 
 #### Sample Response<a name="API_runtime_PostContent_Example_1_Response"></a>
@@ -271,6 +281,7 @@ SignedHeaders=accept;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-lex
 "[\r][\n]"               
 "2000[\r][\n]"
 "ID3[0x4][0x0][0x0][0x0][0x0][0x0]#TSSE[0x0][0x0][0x0][0xf][0x0][0x0][0x3]Lavf57.41.100[0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xff][0xf3]`[0xc4][0x0][0x1b]{[0x8d][0xe8][0x1]C[0x18][0x1][0x0]J[0xe0]`b[0xdd][0xd1][0xb][0xfd][0x11][0xdf][0xfe]";[0xbb][0xbb][0x9f][0xee][0xee][0xee][0xee]|DDD/[0xff][0xff][0xff][0xff]www?D[0xf7]w^?[0xff][0xfa]h[0x88][0x85][0xfe][0x88][0x88][0x88][[0xa2]'[0xff][0xfa]"{[0x9f][0xe8][0x88]]D[0xeb][0xbb][0xbb][0xa2]!u[0xfd][0xdd][0xdf][0x88][0x94][0x0]F[0xef][0xa1]8[0x0][0x82]w[0x88]N[0x0][0x0][0x9b][0xbb][0xe8][0xe
+…
 ```
 
 ## See Also<a name="API_runtime_PostContent_SeeAlso"></a>

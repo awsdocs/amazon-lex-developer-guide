@@ -6,3 +6,4 @@ The following data types are supported by Amazon Lex Runtime Service:
 +  [GenericAttachment](API_runtime_GenericAttachment.md) 
 +  [IntentSummary](API_runtime_IntentSummary.md) 
 +  [ResponseCard](API_runtime_ResponseCard.md) 
++  [SentimentResponse](API_runtime_SentimentResponse.md) 

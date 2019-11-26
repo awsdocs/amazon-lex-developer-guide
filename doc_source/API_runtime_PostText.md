@@ -108,9 +108,14 @@ Content-type: application/json
       ],
       "[version](API_runtime_ResponseCard.md#lex-Type-runtime_ResponseCard-version)": "string"
    },
+   "[sentimentResponse](#lex-runtime_PostText-response-sentimentResponse)": { 
+      "[sentimentLabel](API_runtime_SentimentResponse.md#lex-Type-runtime_SentimentResponse-sentimentLabel)": "string",
+      "[sentimentScore](API_runtime_SentimentResponse.md#lex-Type-runtime_SentimentResponse-sentimentScore)": "string"
+   },
    "[sessionAttributes](#lex-runtime_PostText-response-sessionAttributes)": { 
       "string" : "string" 
    },
+   "[sessionId](#lex-runtime_PostText-response-sessionId)": "string",
    "[slots](#lex-runtime_PostText-response-slots)": { 
       "string" : "string" 
    },
@@ -170,9 +175,18 @@ Valid Values:` PlainText | CustomPayload | SSML | Composite`
 Represents the options that the user has to respond to the current prompt\. Response Card can come from the bot configuration \(in the Amazon Lex console, choose the settings button next to a slot\) or from a code hook \(Lambda function\)\.   
 Type: [ResponseCard](API_runtime_ResponseCard.md) object
 
+ ** [sentimentResponse](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-sentimentResponse"></a>
+The sentiment expressed in and utterance\.  
+When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis\.  
+Type: [SentimentResponse](API_runtime_SentimentResponse.md) object
+
  ** [sessionAttributes](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-sessionAttributes"></a>
 A map of key\-value pairs representing the session\-specific context information\.  
 Type: String to string map
+
+ ** [sessionId](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-sessionId"></a>
+A unique identifier for the session\.  
+Type: String
 
  ** [slots](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-slots"></a>
  The intent slots that Amazon Lex detected from the user input in the conversation\.   

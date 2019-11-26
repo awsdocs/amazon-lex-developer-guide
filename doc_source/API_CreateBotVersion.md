@@ -70,6 +70,7 @@ Content-type: application/json
    },
    "[createdDate](#lex-CreateBotVersion-response-createdDate)": number,
    "[description](#lex-CreateBotVersion-response-description)": "string",
+   "[detectSentiment](#lex-CreateBotVersion-response-detectSentiment)": boolean,
    "[failureReason](#lex-CreateBotVersion-response-failureReason)": "string",
    "[idleSessionTTLInSeconds](#lex-CreateBotVersion-response-idleSessionTTLInSeconds)": number,
    "[intents](#lex-CreateBotVersion-response-intents)": [ 
@@ -118,6 +119,10 @@ Type: Timestamp
 A description of the bot\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.
+
+ ** [detectSentiment](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-detectSentiment"></a>
+Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis\.  
+Type: Boolean
 
  ** [failureReason](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-failureReason"></a>
 If `status` is `FAILED`, Amazon Lex provides the reason that it failed to build the bot\.  

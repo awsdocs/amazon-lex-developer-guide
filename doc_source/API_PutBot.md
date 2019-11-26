@@ -38,6 +38,7 @@ Content-type: application/json
    },
    "[createVersion](#lex-PutBot-request-createVersion)": boolean,
    "[description](#lex-PutBot-request-description)": "string",
+   "[detectSentiment](#lex-PutBot-request-detectSentiment)": boolean,
    "[idleSessionTTLInSeconds](#lex-PutBot-request-idleSessionTTLInSeconds)": number,
    "[intents](#lex-PutBot-request-intents)": [ 
       { 
@@ -97,7 +98,7 @@ Type: [Prompt](API_Prompt.md) object
 Required: No
 
  ** [createVersion](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-createVersion"></a>
-When set to `true` a new numbered version of the bot is created\. This is the same as calling the `CreateBotVersion` operation\. If you do not specify `createVersion`, the default is `false`\.  
+When set to `true` a new numbered version of the bot is created\. This is the same as calling the `CreateBotVersion` operation\. If you don't specify `createVersion`, the default is `false`\.  
 Type: Boolean  
 Required: No
 
@@ -105,6 +106,11 @@ Required: No
 A description of the bot\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.  
+Required: No
+
+ ** [detectSentiment](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-detectSentiment"></a>
+When set to `true` user utterances are sent to Amazon Comprehend for sentiment analysis\. If you don't specify `detectSentiment`, the default is `false`\.  
+Type: Boolean  
 Required: No
 
  ** [idleSessionTTLInSeconds](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-idleSessionTTLInSeconds"></a>
@@ -174,6 +180,7 @@ Content-type: application/json
    "[createdDate](#lex-PutBot-response-createdDate)": number,
    "[createVersion](#lex-PutBot-response-createVersion)": boolean,
    "[description](#lex-PutBot-response-description)": "string",
+   "[detectSentiment](#lex-PutBot-response-detectSentiment)": boolean,
    "[failureReason](#lex-PutBot-response-failureReason)": "string",
    "[idleSessionTTLInSeconds](#lex-PutBot-response-idleSessionTTLInSeconds)": number,
    "[intents](#lex-PutBot-response-intents)": [ 
@@ -226,6 +233,10 @@ Type: Boolean
 A description of the bot\.  
 Type: String  
 Length Constraints: Minimum length of 0\. Maximum length of 200\.
+
+ ** [detectSentiment](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-detectSentiment"></a>
+ `true` if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis\. If the `detectSentiment` field was not specified in the request, the `detectSentiment` field is `false` in the response\.  
+Type: Boolean
 
  ** [failureReason](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-failureReason"></a>
 If `status` is `FAILED`, Amazon Lex provides the reason that it failed to build the bot\.  

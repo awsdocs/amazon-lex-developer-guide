@@ -1,10 +1,13 @@
 # Document History for Amazon Lex<a name="doc-history"></a>
-+ **Latest documentation update: **October 10, 2019
++ **Latest documentation update: **November 21, 2019
 
 The following table describes important changes in each release of Amazon Lex\. For notification about updates to this documentation, you can subscribe to an RSS feed\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/sentiment-analysis.html) | Amazon Lex can now send user utterances to Amazon Comprehend to analyze the sentiment of the utterance\. For more information, see [Sentiment Analysis](https://docs.aws.amazon.com/lex/latest/dg/sentiment-analysis.html)\. | November 21, 2019 | 
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/compliance.html) | Amazon Lex is now SOC compliant\. For more information, see [Compliance Validation for Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/compliance.html)\. | November 19, 2019 | 
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/compliance.html) | Amazon Lex is now PCI compliant\. For more information, see [Compliance Validation for Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/compliance.html)\. | October 17, 2019 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html) | Added support for adding a checkpoint to an intent so that you can easily return to the intent during a conversation\. For more information, see [Managing Sessions](https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html)\. | October 10, 2019 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html) | Added support for the `AMAZON.FallbackIntent` so that your bot can handle situations when user input is not as expected\. For more information, see [AMAZON\.FallbackIntent](https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html)\. | October 3, 2019 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html) | Amazon Lex enables you to manage session information for your bots\. For more information, see [Managing Sessions With the Amazon Lex API](https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html)\. | August 8, 2019 | 

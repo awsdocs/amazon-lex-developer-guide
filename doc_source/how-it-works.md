@@ -62,3 +62,4 @@ The following topics provide additional information\. We recommend that you revi
 + [Bot Deployment Options](chatbot-service.md)
 + [Built\-in Intents and Slot Types](howitworks-builtins.md)
 + [Custom Slot Types](howitworks-custom-slots.md)
++ [Sentiment Analysis](sentiment-analysis.md)

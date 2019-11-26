@@ -70,7 +70,11 @@ The input format may change without a corresponding change in the `messageVersio
         "fulfillmentState": "Fulfilled or Failed",
         "slotToElicit": "Next slot to elicit
     }
-  ]
+  ],
+   "sentimentResponse": { 
+      "sentimentLabel": "sentiment",
+      "sentimentScore": "score"
+   }
 }
 ```
 
@@ -162,6 +166,9 @@ You configure this value when you define an intent\. In the current implementati
 
    
 + **recentIntentSummaryView** – Information about the state of an intent\. You can see information about the last three intents used\. You can use this information to set values in the intent or to return to a previous intent\. For more information, see [Managing Sessions With the Amazon Lex API](how-session-api.md)\.
+
+   
++ **sentimentResponse** – The result of an Amazon Comprehend sentiment analysis of the last utterance\. You can use this information to manage the conversation flow of your bot depending on the sentiment expressed by the user\. For more information, see [Sentiment Analysis](sentiment-analysis.md)\. 
 
 ## Response Format<a name="using-lambda-response-format"></a>
 

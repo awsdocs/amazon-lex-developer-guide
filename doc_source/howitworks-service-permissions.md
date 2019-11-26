@@ -3,7 +3,7 @@
 Amazon Lex uses AWS Identity and Access Management \(IAM\)[ service\-linked roles](https://docs.aws.amazon.com/console/iam/service-linked-role)\. Amazon Lex assumes these roles to call AWS services on behalf of your bots and bot channels\. The roles exist within your account, but are linked to Amazon Lex use cases and have predefined permissions\. Only Amazon Lex can assume these roles, and you can't modify their permissions\. You can delete them after deleting their related resources using IAM\. This protects your Amazon Lex resources because you can't inadvertently remove necessary permissions\. 
 
 Amazon Lex uses two IAM service\-linked roles:
-+ **AWSServiceRoleForLexBots**—Amazon Lex uses this service\-linked role to invoke Amazon Polly to synthesize speech responses for your bot\.
++ **AWSServiceRoleForLexBots**—Amazon Lex uses this service\-linked role to invoke Amazon Polly to synthesize speech responses for your bot and to call Amazon Comprehend for sentiment analysis\.
 + **AWSServiceRoleForLexChannels**—Amazon Lex uses this service\-linked role to post text to your bot when managing channels\.
 
 You don't need to manually create either of these roles\. When you create your first bot using the console, Amazon Lex creates the **AWSServiceRoleForLexBots** role for you\. When you first associate a bot with a messaging channel, Amazon Lex creates the **AWSServiceRoleForLexChannels** role for you\. 
