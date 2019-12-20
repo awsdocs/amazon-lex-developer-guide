@@ -109,3 +109,24 @@ Amazon Lex channel association metrics use the `AWS/Lex` namespace, and provide 
 | Dimension | Description | 
 | --- | --- | 
 | BotAlias, BotChannelName, BotName, Source | Group metrics by the bot's alias, the channel name, the bot's name, and the source of traffic\. | 
+
+## CloudWatch Metrics for Conversation Logs<a name="cloudwatch-metrics-for-logging"></a>
+
+Amazon Lex uses the following metrics for conversation logging:
+
+
+| Metric | Description | 
+| --- | --- | 
+| ConversationLogsAudioDeliverySuccess | The number of audio logs successfully delivered to the S3 bucket in the specified time period\. Units: Count | 
+| ConversationLogsAudioDeliveryFailure | The number of audio logs that failed to be delivered to the S3 bucket in the specified time period\. A delivery failure indicates an error with the resources configured for conversation logs\. Errors can include insufficient IAM permissions, an inaccessible AWS KMS key, or an inaccessible S3 bucket\.Units: Count | 
+| ConversationLogsTextDeliverySuccess | The number of text logs successfully delivered to CloudWatch Logs in the specified time period\. Units: Count | 
+| ConversationLogsTextDeliveryFailure | The number of text logs that failed to be delivered to CloudWatch Logs in the specified time period\. A delivery failure indicates an error with the resources configured for conversation logs\. Errors can include insufficient IAM permissions, an inaccessible AWS KMS key, or an inaccessible CloudWatch Logs log group\. Units: Count | 
+
+Amazon Lex conversation log metrics use the `AWS/Lex` namespace, and provide metrics for the following dimensions\. You can group metrics by dimension in the CloudWatch console\.
+
+
+| Dimension | Description | 
+| --- | --- | 
+| `BotAlias` | Group metrics by the bot's alias\. | 
+| `BotName` | Group metrics by the bot's name\. | 
+| `BotVersion` | Group metrics by the bot's version\. | 

@@ -13,6 +13,17 @@ Content-type: application/json
 {
    "[botVersion](#lex-PutBotAlias-request-botVersion)": "string",
    "[checksum](#lex-PutBotAlias-request-checksum)": "string",
+   "[conversationLogs](#lex-PutBotAlias-request-conversationLogs)": { 
+      "[iamRoleArn](API_ConversationLogsRequest.md#lex-Type-ConversationLogsRequest-iamRoleArn)": "string",
+      "[logSettings](API_ConversationLogsRequest.md#lex-Type-ConversationLogsRequest-logSettings)": [ 
+         { 
+            "[destination](API_LogSettingsRequest.md#lex-Type-LogSettingsRequest-destination)": "string",
+            "[kmsKeyArn](API_LogSettingsRequest.md#lex-Type-LogSettingsRequest-kmsKeyArn)": "string",
+            "[logType](API_LogSettingsRequest.md#lex-Type-LogSettingsRequest-logType)": "string",
+            "[resourceArn](API_LogSettingsRequest.md#lex-Type-LogSettingsRequest-resourceArn)": "string"
+         }
+      ]
+   },
    "[description](#lex-PutBotAlias-request-description)": "string"
 }
 ```
@@ -49,6 +60,11 @@ When you want to update a bot alias, set the `checksum` field to the checksum of
 Type: String  
 Required: No
 
+ ** [conversationLogs](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-conversationLogs"></a>
+Settings for conversation logs for the alias\.  
+Type: [ConversationLogsRequest](API_ConversationLogsRequest.md) object  
+Required: No
+
  ** [description](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-description"></a>
 A description of the alias\.  
 Type: String  
@@ -65,6 +81,18 @@ Content-type: application/json
    "[botName](#lex-PutBotAlias-response-botName)": "string",
    "[botVersion](#lex-PutBotAlias-response-botVersion)": "string",
    "[checksum](#lex-PutBotAlias-response-checksum)": "string",
+   "[conversationLogs](#lex-PutBotAlias-response-conversationLogs)": { 
+      "[iamRoleArn](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-iamRoleArn)": "string",
+      "[logSettings](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-logSettings)": [ 
+         { 
+            "[destination](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-destination)": "string",
+            "[kmsKeyArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-kmsKeyArn)": "string",
+            "[logType](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-logType)": "string",
+            "[resourceArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourceArn)": "string",
+            "[resourcePrefix](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourcePrefix)": "string"
+         }
+      ]
+   },
    "[createdDate](#lex-PutBotAlias-response-createdDate)": number,
    "[description](#lex-PutBotAlias-response-description)": "string",
    "[lastUpdatedDate](#lex-PutBotAlias-response-lastUpdatedDate)": number,
@@ -93,6 +121,10 @@ Pattern: `\$LATEST|[0-9]+`
  ** [checksum](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-checksum"></a>
 The checksum for the current version of the alias\.  
 Type: String
+
+ ** [conversationLogs](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-conversationLogs"></a>
+The settings that determine how Amazon Lex uses conversation logs for the alias\.  
+Type: [ConversationLogsResponse](API_ConversationLogsResponse.md) object
 
  ** [createdDate](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-createdDate"></a>
 The date that the bot alias was created\.  

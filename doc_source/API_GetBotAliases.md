@@ -47,6 +47,18 @@ Content-type: application/json
          "[botName](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-botName)": "string",
          "[botVersion](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-botVersion)": "string",
          "[checksum](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-checksum)": "string",
+         "[conversationLogs](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-conversationLogs)": { 
+            "[iamRoleArn](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-iamRoleArn)": "string",
+            "[logSettings](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-logSettings)": [ 
+               { 
+                  "[destination](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-destination)": "string",
+                  "[kmsKeyArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-kmsKeyArn)": "string",
+                  "[logType](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-logType)": "string",
+                  "[resourceArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourceArn)": "string",
+                  "[resourcePrefix](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourcePrefix)": "string"
+               }
+            ]
+         },
          "[createdDate](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-createdDate)": number,
          "[description](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-description)": "string",
          "[lastUpdatedDate](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-lastUpdatedDate)": number,

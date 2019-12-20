@@ -23,6 +23,11 @@ Checksum of the bot alias\.
 Type: String  
 Required: No
 
+ **conversationLogs**   <a name="lex-Type-BotAliasMetadata-conversationLogs"></a>
+Settings that determine how Amazon Lex uses conversation logs for the alias\.  
+Type: [ConversationLogsResponse](API_ConversationLogsResponse.md) object  
+Required: No
+
  **createdDate**   <a name="lex-Type-BotAliasMetadata-createdDate"></a>
 The date that the bot alias was created\.  
 Type: Timestamp  

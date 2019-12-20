@@ -121,6 +121,7 @@ Content-type: application/json
       { 
          "[description](API_Slot.md#lex-Type-Slot-description)": "string",
          "[name](API_Slot.md#lex-Type-Slot-name)": "string",
+         "[obfuscationSetting](API_Slot.md#lex-Type-Slot-obfuscationSetting)": "string",
          "[priority](API_Slot.md#lex-Type-Slot-priority)": number,
          "[responseCard](API_Slot.md#lex-Type-Slot-responseCard)": "string",
          "[sampleUtterances](API_Slot.md#lex-Type-Slot-sampleUtterances)": [ "string" ],

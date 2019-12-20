@@ -1,10 +1,13 @@
 # Document History for Amazon Lex<a name="doc-history"></a>
-+ **Latest documentation update: **November 21, 2019
++ **Latest documentation update: **December 19, 2019
 
 The following table describes important changes in each release of Amazon Lex\. For notification about updates to this documentation, you can subscribe to an RSS feed\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html) | Amazon Lex can now log conversation information and obfuscate slot values in those logs\. For more information, see [Creating Conversation Logs](https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html) and [Slot Obfuscation](https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html)\. | December 19, 2019 | 
+| [Region expansion](https://docs.aws.amazon.com/general/latest/gr/lex.html) | Amazon Lex is now available in Asia Pacific \(Sydney\) \(ap\-southeast\-2\)\. | December 17, 2019 | 
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/compliance.html) | Amazon Lex is now HIPAA compliant\. For more information, see [Compliance Validation for Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/compliance.html)\. | December 10, 2019 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/sentiment-analysis.html) | Amazon Lex can now send user utterances to Amazon Comprehend to analyze the sentiment of the utterance\. For more information, see [Sentiment Analysis](https://docs.aws.amazon.com/lex/latest/dg/sentiment-analysis.html)\. | November 21, 2019 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/compliance.html) | Amazon Lex is now SOC compliant\. For more information, see [Compliance Validation for Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/compliance.html)\. | November 19, 2019 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/compliance.html) | Amazon Lex is now PCI compliant\. For more information, see [Compliance Validation for Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/compliance.html)\. | October 17, 2019 | 
@@ -14,7 +17,7 @@ The following table describes important changes in each release of Amazon Lex\. 
 | [Region expansion](#doc-history) | Amazon Lex is now available in US West \(Oregon\) \(us\-west\-2\)\. | May 8, 2018 | 
 | [New feature](#doc-history) | Added support for exporting and importing in Amazon Lex format\. For more information, see [Importing and Exporting Amazon Lex Bots, Intents, and Slot Types](https://docs.aws.amazon.com/lex/latest/dg/import-export.html)\. | February 13, 2018 | 
 | [New feature](#doc-history) | Amazon Lex now supports additional response messages for bots\. For more information, see [ Responses](https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html#msg-prompts-response)\.  | February 8, 2018 | 
-| [Region expansion](#doc-history) | Amazon Lex is now available in EU \(Ireland\) \(eu\-west\-1\)\. | November 21, 2017 | 
+| [Region expansion](#doc-history) | Amazon Lex is now available in Europe \(Ireland\) \(eu\-west\-1\)\. | November 21, 2017 | 
 | [New feature](#doc-history) | Added support for deploying Amazon Lex bots on Kik\. For more information, see [Integrating an Amazon Lex Bot with Kik](https://docs.aws.amazon.com/lex/latest/dg/kik-bot-association.html)\. | November 20, 2017 | 
 | [New feature](#doc-history) | Added support for new built\-in slot types and request attributes\. For more information, see [Built\-in Slot Types](https://docs.aws.amazon.com/lex/latest/dg/howitworks-builtins-slots.html) and [ Setting Request Attributes ](https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs)\. | November 3, 2017 | 
 | [New feature](#doc-history) | Added export to Alexa Skills Kit feature\. For more information, see [Exporting to an Alexa Skill](https://docs.aws.amazon.com/lex/latest/dg/export-to-alexa.html)\. | September 7, 2017 | 

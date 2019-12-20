@@ -38,6 +38,18 @@ Content-type: application/json
    "[botName](#lex-GetBotAlias-response-botName)": "string",
    "[botVersion](#lex-GetBotAlias-response-botVersion)": "string",
    "[checksum](#lex-GetBotAlias-response-checksum)": "string",
+   "[conversationLogs](#lex-GetBotAlias-response-conversationLogs)": { 
+      "[iamRoleArn](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-iamRoleArn)": "string",
+      "[logSettings](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-logSettings)": [ 
+         { 
+            "[destination](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-destination)": "string",
+            "[kmsKeyArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-kmsKeyArn)": "string",
+            "[logType](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-logType)": "string",
+            "[resourceArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourceArn)": "string",
+            "[resourcePrefix](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourcePrefix)": "string"
+         }
+      ]
+   },
    "[createdDate](#lex-GetBotAlias-response-createdDate)": number,
    "[description](#lex-GetBotAlias-response-description)": "string",
    "[lastUpdatedDate](#lex-GetBotAlias-response-lastUpdatedDate)": number,
@@ -66,6 +78,10 @@ Pattern: `\$LATEST|[0-9]+`
  ** [checksum](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-checksum"></a>
 Checksum of the bot alias\.  
 Type: String
+
+ ** [conversationLogs](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-conversationLogs"></a>
+The settings that determine how Amazon Lex uses conversation logs for the alias\.  
+Type: [ConversationLogsResponse](API_ConversationLogsResponse.md) object
 
  ** [createdDate](#API_GetBotAlias_ResponseSyntax) **   <a name="lex-GetBotAlias-response-createdDate"></a>
 The date that the bot alias was created\.  

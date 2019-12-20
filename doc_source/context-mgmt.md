@@ -85,7 +85,7 @@ To set the time zone used to resolve dates so that it is relative to the user's 
 | --- | --- | 
 | US East \(N\. Virginia\) | America/New\_York | 
 | US West \(Oregon\) | America/Los\_Angeles | 
-| EU \(Ireland\) | Europe/Dublin | 
+| Europe \(Ireland\) | Europe/Dublin | 
 
 For example, if the user responds `tomorrow` in response to the prompt "Which day would you like your package delivered?" the actual *date* that the package is delivered depends on the user's time zone\. For example, when it is 01:00 September 16 in New York, it is 22:00 September 15 in Los Angeles\. If a person in Los Angeles orders a package to be delivered "tomorrow" using the default time zone, the package would be delivered on the 17th, not the 16th\. However, if you set the `x-amz-lex:time-zone` request attribute to `America/Los_Angeles`, the package would be delivered on the 16th\.
 

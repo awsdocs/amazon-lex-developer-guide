@@ -17,6 +17,12 @@ Length Constraints: Minimum length of 1\. Maximum length of 100\.
 Pattern: `^([A-Za-z](-|_|.)?)+$`   
 Required: Yes
 
+ **obfuscationSetting**   <a name="lex-Type-Slot-obfuscationSetting"></a>
+Determines whether a slot is obfuscated in conversation logs and stored utterances\. When you obfuscate a slot, the value is replaced by the slot name in curly braces \(\{\}\)\. For example, if the slot name is "full\_name", obfuscated values are replaced with "\{full\_name\}"\. For more information, see [ Slot Obfuscation ](https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html)\.   
+Type: String  
+Valid Values:` NONE | DEFAULT_OBFUSCATION`   
+Required: No
+
  **priority**   <a name="lex-Type-Slot-priority"></a>
  Directs Lex the order in which to elicit this slot value from the user\. For example, if the intent has two slots with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1\.  
 If multiple slots share the same priority, the order in which Lex elicits values is arbitrary\.  
