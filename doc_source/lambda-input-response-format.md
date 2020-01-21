@@ -68,7 +68,7 @@ The input format may change without a corresponding change in the `messageVersio
         "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
         "dialogActionType": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
         "fulfillmentState": "Fulfilled or Failed",
-        "slotToElicit": "Next slot to elicit
+        "slotToElicit": "Next slot to elicit"
     }
   ],
    "sentimentResponse": { 
@@ -192,7 +192,7 @@ Amazon Lex expects a response from a Lambda function in the following format:
        "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
         "dialogActionType": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
         "fulfillmentState": "Fulfilled or Failed",
-        "slotToElicit": "Next slot to elicit
+        "slotToElicit": "Next slot to elicit"
     }
   ],
   "dialogAction": {
@@ -231,7 +231,7 @@ Optional\. If included, sets values for one or more recent intents\. You can inc
        "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
         "dialogActionType": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
         "fulfillmentState": "Fulfilled or Failed",
-        "slotToElicit": "Next slot to elicit
+        "slotToElicit": "Next slot to elicit"
     }
   ]
 ```
