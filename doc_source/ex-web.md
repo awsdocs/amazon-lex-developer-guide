@@ -8,3 +8,6 @@ In this example you integrate a bot with a Web site using text and voice\. You u
 
    
 + [Capturing Voice Input in a Browser and Sending it to Amazon Lex](https://aws.amazon.com/blogs/ai/capturing-voice-input-in-a-browser/)—Demonstrates embedding a voice\-based chatbot in a Web site using the SDK for JavaScript in the Browser\. The application records audio, sends the audio to Amazon Lex, and then plays the response\.
+
+
++ [ Embed Customizable Chat UI for Your Chatbot](https://www.kommunicate.io/blog/integrate-amazon-lex/)—Demonstrates a full\-featured Web UI with rich messages that provides a Web client for Amazon Lex chatbots\. You can use this to provide a human + bot hybrid customer support, kommunicate.io also supports mobile apps Android, iOS, Ionic and React Native SDKs \.
