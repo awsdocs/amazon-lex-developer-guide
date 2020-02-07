@@ -1,6 +1,6 @@
 # Exercise 5: Create an Alias \(AWS CLI\)<a name="gs-cli-create-alias"></a>
 
-An alias is a pointer to a specific version of a bot\. With an alias you can easily update the version that your client applications are using\. For more information, see [Versioning and Aliases](versioning-aliases.md)\.To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.
+An alias is a pointer to a specific version of a bot\. With an alias you can easily update the version that your client applications are using\. For more information, see [Versioning and Aliases](versioning-aliases.md)\.To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Quotas ](gl-limits.md#gl-limits-model-building)\.
 
 **To create an alias \(AWS CLI\)**
 

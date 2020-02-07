@@ -12,7 +12,7 @@ You can delete only resources that are not in use\. In general, you should delet
 
 1. Delete slot types\.
 
-To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.
+To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Quotas ](gl-limits.md#gl-limits-model-building)\.
 
 **To clean up your account \(AWS CLI\)**
 

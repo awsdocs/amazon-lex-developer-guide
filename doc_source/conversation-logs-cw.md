@@ -40,9 +40,9 @@ Log entries for a user utterance is in multiple log streams\. An utterance in th
 }
 ```
 
-The `intent` and `slots` fields may not appear in an entry if a missed utterance doesn't get mapped to an intent\.
+The `intent` and `slots` fields may not appear in an entry if a missed utterance doesn't get mapped to an intent\. The `s3PathForAudio` field doesn't appear if audio logs are disabled or if the `inputDialogMode`field is `Text`\.
 
 **Note**  
 The input format may change without a corresponding change in the `messageVersion`\. Your code should not throw an error if new fields are present\.
 
-You must have a role and policy set to enable Amazon Lex to write to CloudWatch Logs\. For more information, see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)\.
+You must have a role and policy set to enable Amazon Lex to write to CloudWatch Logs\. For more information see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)\.

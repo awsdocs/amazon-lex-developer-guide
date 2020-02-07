@@ -1,6 +1,6 @@
 # Step 4: Create a Bot \(AWS CLI\)<a name="gs-cli-create-order-flowers-bot"></a>
 
-The `OrderFlowersBot` bot has one intent, the `OrderFlowers` intent that you created in the previous step\. To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.
+The `OrderFlowersBot` bot has one intent, the `OrderFlowers` intent that you created in the previous step\. To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Quotas ](gl-limits.md#gl-limits-model-building)\.
 
 **Note**  
 The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Windows, change `"\$LATEST"` to `$LATEST`\.

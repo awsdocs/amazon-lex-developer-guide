@@ -1,23 +1,16 @@
-# Limits<a name="gl-limits"></a>
+# Quotas<a name="gl-limits"></a>
 
-This section describes current limits in Amazon Lex\. These limits are grouped by categories\. 
+This section describes current quotas in Amazon Lex\. These quotas are grouped by categories\. 
 
 **Topics**
-+ [General Limits](#gl-limits-general)
-+ [Runtime Service Limits](#gl-limits-runtime)
-+ [Model Building Limits](#gl-limits-model-building)
++ [Runtime Service Quotas](#gl-limits-runtime)
++ [Model Building Quotas](#gl-limits-model-building)
 
-## General Limits<a name="gl-limits-general"></a>
+## Runtime Service Quotas<a name="gl-limits-runtime"></a>
 
-For a list of AWS Regions where Amazon Lex is available, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#lex_region) in the *Amazon Web Services General Reference*\.
+In addition to the quotas described in the API reference, note the following:
 
-Currently, Amazon Lex supports only US English language\. That is, Amazon Lex trains your bots to understand only US English\.
-
-## Runtime Service Limits<a name="gl-limits-runtime"></a>
-
-In addition to the limits described in the API reference, note the following:
-
-### API Limits<a name="gl-limits-runtime-api"></a>
+### API Quotas<a name="gl-limits-runtime-api"></a>
 + Speech input to the [PostContent](API_runtime_PostContent.md) operation can be up to 15 seconds long\.
 
    
@@ -50,16 +43,16 @@ In addition to the limits described in the API reference, note the following:
 
    
 
-## Model Building Limits<a name="gl-limits-model-building"></a>
+## Model Building Quotas<a name="gl-limits-model-building"></a>
 
 Model building refers to creating and managing bots\. This includes creating and managing bots, intents, slot types, slots, and bot channel associations\. 
 
 **Topics**
-+ [Bot Limits](#gl-limits-bots)
-+ [Intent Limits](#gl-limits-intents)
-+ [Slot Type Limits](#gl-limits-slot-type)
++ [Bot Quotas](#gl-limits-bots)
++ [Intent Quotas](#gl-limits-intents)
++ [Slot Type Quotas](#gl-limits-slot-type)
 
-### Bot Limits<a name="gl-limits-bots"></a>
+### Bot Quotas<a name="gl-limits-bots"></a>
 + You configure prompts and statements throughout the model building API\. Each of these prompts or statements can have up to five messages and each message can contain from 1 to 1000 UTF\-8 characters\. 
 
    
@@ -108,7 +101,7 @@ Model building refers to creating and managing bots\. This includes creating and
 
    
 
-### Intent Limits<a name="gl-limits-intents"></a>
+### Intent Quotas<a name="gl-limits-intents"></a>
 + Intent and slot names are case insensitive at the time of creation\. That is, if you create `OrderPizza` intent and then again try to create another `orderPizza` intent, you will get an error\. However, when accessing these resources, the resource names are case sensitive, specify `OrderPizza` and not `orderPizza`\. These names must be between 1 and 100 ASCII characters\.
 
    
@@ -156,7 +149,7 @@ Model building refers to creating and managing bots\. This includes creating and
 
    
 
-### Slot Type Limits<a name="gl-limits-slot-type"></a>
+### Slot Type Quotas<a name="gl-limits-slot-type"></a>
 + Slot type names are case insensitive at the time of creation\. If you create the `PizzaSize` slot type and then again try to create the `pizzaSize` slot type, you will get an error\. However, when accessing these resources, the resource names are case sensitive \(you must specify `PizzaSize` and not `pizzaSize`\)\. Names must be between 1 and 100 ASCII characters\.
 
    

@@ -10,7 +10,7 @@ Before you can publish a version of a bot, you must publish the intents that is 
 
 1. Publish a version of a bot with the [CreateBotVersion](API_CreateBotVersion.md) operation \.
 
-To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.
+To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Quotas ](gl-limits.md#gl-limits-model-building)\.
 
 **Topics**
 + [Step 1: Publish the Slot Type \(AWS CLI\)](gs-cli-publish-slot-type.md)

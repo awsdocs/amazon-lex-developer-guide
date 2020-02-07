@@ -4,10 +4,10 @@ The Amazon Lex console provides example bots \(called bot blueprints\) that are 
 
 You can use the following Amazon Lex bot blueprints and the corresponding AWS Lambda function blueprints as code hooks for bots: 
 + Amazon Lex blueprint — `OrderFlowers`
-  + AWS Lambda blueprints — `lex-order-flowers` \(Node\.js code\) and `lex-order-flowers-python`
+  + AWS Lambda blueprint — `lex-order-flowers-python`
 + Amazon Lex blueprint — `ScheduleAppointment` 
-  + AWS Lambda blueprints — `lex-make-appointment` \(Node\.js code\) and `lex-make-appointment-python`
+  + AWS Lambda blueprint — `lex-make-appointment-python`
 + Amazon Lex blueprint — `BookTrip`
-  + AWS Lambda blueprints — `lex-book-trip` \(Node\.js code\) and `lex-book-trip-python`
+  + AWS Lambda blueprint — `lex-book-trip-python`
 
 To create a bot using a blueprint and configure it to use a Lambda function as a code hook, see [Exercise 1: Create an Amazon Lex Bot Using a Blueprint \(Console\)](gs-bp.md)\. For an example of using other blueprints, see [Additional Examples: Creating Amazon Lex Bots](additional-exercises.md)\.

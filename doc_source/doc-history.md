@@ -1,10 +1,11 @@
 # Document History for Amazon Lex<a name="doc-history"></a>
-+ **Latest documentation update: **December 19, 2019
++ **Latest documentation update: **February 6, 2020
 
 The following table describes important changes in each release of Amazon Lex\. For notification about updates to this documentation, you can subscribe to an RSS feed\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/built-in-slot-alphanumeric.html) | Amazon Lex now supports regular expressions for the AMAZON\.AlphaNumeric built\-in slot type\. For more information, see [AMAZON\.AlphaNumeric](https://docs.aws.amazon.com/lex/latest/dg/built-in-slot-alphanumeric.html)\. | February 6, 2020 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html) | Amazon Lex can now log conversation information and obfuscate slot values in those logs\. For more information, see [Creating Conversation Logs](https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html) and [Slot Obfuscation](https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html)\. | December 19, 2019 | 
 | [Region expansion](https://docs.aws.amazon.com/general/latest/gr/lex.html) | Amazon Lex is now available in Asia Pacific \(Sydney\) \(ap\-southeast\-2\)\. | December 17, 2019 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/compliance.html) | Amazon Lex is now HIPAA compliant\. For more information, see [Compliance Validation for Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/compliance.html)\. | December 10, 2019 | 

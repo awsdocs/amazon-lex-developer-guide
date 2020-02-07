@@ -1,7 +1,7 @@
 # Amazon Lex Developer Guide
 
 -----
-*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -34,6 +34,7 @@ Amazon's trademarks and trade dress may not be used in
          + [AMAZON.FallbackIntent](built-in-intent-fallback.md)
       + [Built-in Slot Types](howitworks-builtins-slots.md)
          + [Alexa Skills Kit Slot Types](built-in-alexa.md)
+         + [AMAZON.AlphaNumeric](built-in-slot-alphanumeric.md)
          + [AMAZON.EmailAddress](built-in-slot-email.md)
          + [AMAZON.NUMBER](built-in-slot-number.md)
          + [AMAZON.Percentage](built-in-slot-percent.md)
@@ -148,9 +149,9 @@ Amazon's trademarks and trade dress may not be used in
    + [Compliance Validation for Amazon Lex](compliance.md)
    + [Resilience in Amazon Lex](disaster-recovery-resiliency.md)
    + [Infrastructure Security in Amazon Lex](infrastructure-security.md)
-+ [Guidelines and Limits in Amazon Lex](guidelines-and-limits.md)
++ [Guidelines and Quotas in Amazon Lex](guidelines-and-limits.md)
    + [General Guidelines](gl-guidelines.md)
-   + [Limits](gl-limits.md)
+   + [Quotas](gl-limits.md)
 + [API Reference](API_Reference.md)
    + [Actions](API_Operations.md)
       + [Amazon Lex Model Building Service](API_Operations_Amazon_Lex_Model_Building_Service.md)
@@ -218,7 +219,9 @@ Amazon's trademarks and trade dress may not be used in
          + [Prompt](API_Prompt.md)
          + [ResourceReference](API_ResourceReference.md)
          + [Slot](API_Slot.md)
+         + [SlotTypeConfiguration](API_SlotTypeConfiguration.md)
          + [SlotTypeMetadata](API_SlotTypeMetadata.md)
+         + [SlotTypeRegexConfiguration](API_SlotTypeRegexConfiguration.md)
          + [Statement](API_Statement.md)
          + [UtteranceData](API_UtteranceData.md)
          + [UtteranceList](API_UtteranceList.md)

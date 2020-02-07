@@ -12,7 +12,7 @@ Adding a new utterance is a four\-step process\.
 
 1. Use the [GetBot](API_GetBot.md) and [PutBot](API_PutBot.md) operations to rebuild any bot that uses the intent\.
 
-To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.
+To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Quotas ](gl-limits.md#gl-limits-model-building)\.
 
 The response from the `GetIntent` operation contains a field called `checksum` that identifies a specific revision of the intent\. You must provide the checksum value when you use the [PutIntent](API_PutIntent.md) operation to update an intent\. If you don't, you'll get the following error message:
 

@@ -51,6 +51,10 @@ Before you get started, familiarize yourself with the following Amazon Lex core 
 
   Amazon Lex also provides built\-in slot types\. For example, `AMAZON.NUMBER` is a built\-in slot type that you can use for the number of pizzas ordered\. For more information, see [Built\-in Intents and Slot Types](howitworks-builtins.md)\.
 
+For a list of AWS Regions where Amazon Lex is available, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#lex_region) in the *Amazon Web Services General Reference*\.
+
+Currently, Amazon Lex supports only US English language\. That is, Amazon Lex trains your bots to understand only US English\.
+
 The following topics provide additional information\. We recommend that you review them in order and then explore the [Getting Started with Amazon Lex](getting-started.md) exercises\.
 
 **Topics**

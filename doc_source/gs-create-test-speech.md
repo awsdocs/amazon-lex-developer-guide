@@ -2,7 +2,7 @@
 
 To test the bot using audio files, use the [PostContent](API_runtime_PostContent.md) operation\. You generate the audio files using Amazon Polly text\-to\-speech operations\.
 
-To run the commands in this exercise, you need to know the region the Amazon Lex and Amazon Polly commands will be run\. For a list of regions for Amazon Lex, see [Runtime Service Limits](gl-limits.md#gl-limits-runtime)\. For a list of regions for Amazon Polly see [ AWS Regions and Endpoints ](https://docs.aws.amazon.com/general/latest/gr/rande.html#pol_region) in the *Amazon Web Services General Reference*\.
+To run the commands in this exercise, you need to know the region the Amazon Lex and Amazon Polly commands will be run\. For a list of regions for Amazon Lex, see [Runtime Service Quotas](gl-limits.md#gl-limits-runtime)\. For a list of regions for Amazon Polly see [ AWS Regions and Endpoints ](https://docs.aws.amazon.com/general/latest/gr/rande.html#pol_region) in the *Amazon Web Services General Reference*\.
 
 **Note**  
 The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Windows, change `"\$LATEST"` to `$LATEST` and replace the backslash \(\\\) continuation character at the end of each line with a caret \(^\)\.
@@ -16,7 +16,7 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
        --region region \
        --output-format pcm \
        --text "i would like to order flowers" \
-       --voice-id "Kendra" \
+       --voice-id "Salli" \
        IntentSpeech.mpg
    ```
 
@@ -58,7 +58,7 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
        --region region \
        --output-format pcm \
        --text "roses" \
-       --voice-id "Kendra" 
+       --voice-id "Salli" \ 
        FlowerTypeSpeech.mpg
    ```
 
@@ -80,7 +80,7 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
        --region region \
        --output-format pcm \
        --text "tuesday" \
-       --voice-id "Kendra" 
+       --voice-id "Salli" \ 
        DateSpeech.mpg
    ```
 
@@ -91,7 +91,7 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
        --bot-alias "\$LATEST" \
        --user-id UserOne \
        --content-type "audio/l16; rate=16000; channels=1" \
-       --input-stream DateSpeech.mpg 
+       --input-stream DateSpeech.mpg \
        DateOutputSpeech.mpg
    ```
 
@@ -102,7 +102,7 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
        --region region \
        --output-format pcm \
        --text "10:00 a.m." \
-       --voice-id "Kendra" 
+       --voice-id "Salli" \
        TimeSpeech.mpg
    ```
 
@@ -113,7 +113,7 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
        --bot-alias "\$LATEST" \
        --user-id UserOne \
        --content-type "audio/l16; rate=16000; channels=1" \
-       --input-stream TimeSpeech.mpg 
+       --input-stream TimeSpeech.mpg \
        TimeOutputSpeech.mpg
    ```
 
@@ -124,7 +124,7 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
        --region region \
        --output-format pcm \
        --text "yes" \
-       --voice-id "Kendra" 
+       --voice-id "Salli" \
        ConfirmSpeech.mpg
    ```
 

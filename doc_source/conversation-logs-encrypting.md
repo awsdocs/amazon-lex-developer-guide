@@ -2,6 +2,9 @@
 
 You can use encryption to help protect the contents of your conversation logs\. For text and audio logs, you can use AWS KMS customer managed CMKs to encrypt data in your CloudWatch Logs log group and S3 bucket\.
 
+**Note**  
+Amazon Lex supports only symmetric CMKs\. Do not use an asymmetric CMK to encrypt your data\.
+
 You enable encryption using an AWS KMS key on the CloudWatch Logs log group that Amazon Lex uses for text logs\. You can't provide an AWS KMS key in the log settings to enable AWS KMS encryption of your log group\. For more information, see [ Encrypt Log Data in CloudWatch Logs Using AWS KMS ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/encrypt-log-data-kms.html) in the *Amazon CloudWatch Logs User Guide*\.
 
 For audio logs you use default encryption on your S3 bucket or specify an AWS KMS key to encrypt your audio objects\. Even if your S3 bucket uses default encryption you can still specify a different AWS KMS key to encrypt your audio objects\. For more information, see [ Amazon S3 Default Encryption for S3 Buckets ](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html) in the *Amazon Simple Storage Service Developer Guide*\.

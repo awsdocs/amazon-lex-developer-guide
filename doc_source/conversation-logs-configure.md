@@ -34,16 +34,16 @@ You must provide an IAM role with policies that enable Amazon Lex to write to th
 
 **To turn on text logs using the API**
 
-1. Add an entry to the `logSettings` member of the `conversationLogs` field
+1. Call the [PutBotAlias](API_PutBotAlias.md) operation with an entry in the `logSettings` member of the `conversationLogs` field
    + Set the `destination` member to `CLOUDWATCH_LOGS`
    + Set the `logType` member to `TEXT`
    + Set the `resourceArn` member to the Amazon Resource Name \(ARN\) of the CloudWatch Logs log group that is the destination for the logs
 
 1. Set the `iamRoleArn` member of the `conversationLogs` field to the Amazon Resource Name \(ARN\) of an IAM role that has the required permissions for enabling conversation logs on the specified resources\.
 
-**To turn on audio logging using the API**
+**To turn on audio logs using the API**
 
-1. Add an entry to the `logSettings` member of the `conversationLogs` field
+1. Call the [PutBotAlias](API_PutBotAlias.md) operation with an entry in the `logSettings` member of the `conversationLogs` field
    + Set the `destination` member to `S3`
    + Set the `logType` member to `AUDIO`
    + Set the `resourceArn` member to the ARN of the Amazon S3 bucket where the audio logs are stored

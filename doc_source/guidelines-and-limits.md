@@ -1,7 +1,7 @@
-# Guidelines and Limits in Amazon Lex<a name="guidelines-and-limits"></a>
+# Guidelines and Quotas in Amazon Lex<a name="guidelines-and-limits"></a>
 
-The following sections provide guidelines and limits when using Amazon Lex\.
+The following sections provide guidelines and quotas when using Amazon Lex\.
 
 **Topics**
 + [General Guidelines](gl-guidelines.md)
-+ [Limits](gl-limits.md)
++ [Quotas](gl-limits.md)

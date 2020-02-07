@@ -28,7 +28,7 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
            }
    ```
 
-1. In the AWS CLI, save the new revision of the bot:
+1. In the AWS CLI, save the new revision of the bot\. Make note of the version number returned by the call to `put-bot`\.
 
    ```
    aws lex-models put-bot \
@@ -36,11 +36,12 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
        --cli-input-json file://OrderFlowersBot_V4.json
    ```
 
-1. Get the checksum of the latest revision of the bot:
+1. Get the checksum of the latest revision of the bot\. Use the version number returned in step 3\.
 
    ```
    aws lex-models get-bot \
        --region region \
+       --version-or-alias version \
        --name OrderFlowersBot > OrderFlowersBot_V4a.json
    ```
 

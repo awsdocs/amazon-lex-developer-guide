@@ -9,7 +9,7 @@ You can't use conversation logs with a bot subject to the Children's Online Priv
 
 Conversation logs are configured for an alias\. Each alias can have different settings for their text and audio logs\. You can enable text logs, audio logs, or both for each alias\. Text logs store text input, transcripts of audio input, and associated metadata in CloudWatch Logs\. Audio logs store audio input in Amazon S3\. You can enable encryption of text and audio logs using AWS KMS customer managed CMKs\.
 
-To configure logging, use the console or the [PutBotAlias](API_PutBotAlias.md) operation\. You can't log conversations for the `$LATEST` alias of your bot\. After enabling conversation logs for an alias, [PostContent](API_runtime_PostContent.md) or [PostText](API_runtime_PostText.md) operation for that alias logs the text or audio utterances in the configured CloudWatch Logs log group or S3 bucket\.
+To configure logging, use the console or the [PutBotAlias](API_PutBotAlias.md) operation\. You can't log conversations for the `$LATEST` alias of your bot or for the test bot available in the Amazon Lex console\. After enabling conversation logs for an alias, [PostContent](API_runtime_PostContent.md) or [PostText](API_runtime_PostText.md) operation for that alias logs the text or audio utterances in the configured CloudWatch Logs log group or S3 bucket\.
 
 **Topics**
 + [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)

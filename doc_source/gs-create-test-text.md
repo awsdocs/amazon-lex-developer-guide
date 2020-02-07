@@ -1,6 +1,6 @@
 # Test the Bot Using Text Input \(AWS CLI\)<a name="gs-create-test-text"></a>
 
- To verify that the bot works correctly with text input, use the [PostText](API_runtime_PostText.md) operation\. To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [Runtime Service Limits](gl-limits.md#gl-limits-runtime)\.
+ To verify that the bot works correctly with text input, use the [PostText](API_runtime_PostText.md) operation\. To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [Runtime Service Quotas](gl-limits.md#gl-limits-runtime)\.
 
 **Note**  
 The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Windows, change `"\$LATEST"` to `$LATEST` and replace the backslash \(\\\) continuation character at the end of each line with a caret \(^\)\.

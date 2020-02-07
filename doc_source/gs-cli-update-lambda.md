@@ -14,7 +14,7 @@ Adding a Lambda expression is a five\-step process\.
 
 1. Use the [GetBot](API_GetBot.md) and [PutBot](API_PutBot.md) operations to rebuild any bot that uses the intent\.
 
-To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.
+To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Quotas ](gl-limits.md#gl-limits-model-building)\.
 
 If you add a Lambda function to an intent before you add the `InvokeFunction` permission, you get the following error message:
 

@@ -13,6 +13,7 @@ In addition to the Alexa Skills Kit slot types, Amazon Lex supports the followin
 
 | Slot Type | Short Description | Supported Languages | Availability | 
 | --- | --- | --- | --- | 
+| [AMAZON\.AlphaNumeric](built-in-slot-alphanumeric.md) | Recognizes words made up of letters and numbers\. | English \(US\) | Available | 
 | [AMAZON\.EmailAddress](built-in-slot-email.md) | Converts words that represent an email address into a standard email address | English \(US\) | Developer Preview | 
 | [AMAZON\.Percentage](built-in-slot-percent.md) | Converts words that represent a percentage to a number and a percent sign \(%\) | English \(US\) | Developer Preview | 
 | [AMAZON\.PhoneNumber](built-in-slot-phone.md) | Converts words that represent a phone number into a numeric string | English \(US\) | Developer Preview | 

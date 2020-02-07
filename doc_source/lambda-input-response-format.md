@@ -68,7 +68,7 @@ The input format may change without a corresponding change in the `messageVersio
         "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
         "dialogActionType": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
         "fulfillmentState": "Fulfilled or Failed",
-        "slotToElicit": "Next slot to elicit
+        "slotToElicit": "Next slot to elicit"
     }
   ],
    "sentimentResponse": { 
@@ -149,7 +149,7 @@ If the intent is not clear, Amazon Lex can't invoke the Lambda function\.
   In your intent configuration, you can have two separate Lambda functions to initialize and validate user data and to fulfill the intent\. You can also use one Lambda function to do both\. In that case, your Lambda function can use the `invocationSource` value to follow the correct code path\.
 
     
-+ **outputDialogMode** – For each user input, the client sends the request to Amazon Lex using one of the runtime API operations, [PostContent](API_runtime_PostContent.md) or [PostText](API_runtime_PostText.md)\. Amazon Lex use the request parameters, Amazon Lex to determine whether the response to the client is text or voice, and sets this field accordingly\.
++ **outputDialogMode** – For each user input, the client sends the request to Amazon Lex using one of the runtime API operations, [PostContent](API_runtime_PostContent.md) or [PostText](API_runtime_PostText.md)\. Amazon Lex uses the request parameters to determine whether the response to the client is text or voice, and sets this field accordingly\.
 
    
 
@@ -192,7 +192,7 @@ Amazon Lex expects a response from a Lambda function in the following format:
        "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
         "dialogActionType": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
         "fulfillmentState": "Fulfilled or Failed",
-        "slotToElicit": "Next slot to elicit
+        "slotToElicit": "Next slot to elicit"
     }
   ],
   "dialogAction": {
@@ -231,7 +231,7 @@ Optional\. If included, sets values for one or more recent intents\. You can inc
        "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
         "dialogActionType": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
         "fulfillmentState": "Fulfilled or Failed",
-        "slotToElicit": "Next slot to elicit
+        "slotToElicit": "Next slot to elicit"
     }
   ]
 ```

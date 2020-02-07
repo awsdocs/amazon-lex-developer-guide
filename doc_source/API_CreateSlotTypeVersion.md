@@ -56,6 +56,14 @@ Content-type: application/json
    ],
    "[lastUpdatedDate](#lex-CreateSlotTypeVersion-response-lastUpdatedDate)": number,
    "[name](#lex-CreateSlotTypeVersion-response-name)": "string",
+   "[parentSlotTypeSignature](#lex-CreateSlotTypeVersion-response-parentSlotTypeSignature)": "string",
+   "[slotTypeConfigurations](#lex-CreateSlotTypeVersion-response-slotTypeConfigurations)": [ 
+      { 
+         "[regexConfiguration](API_SlotTypeConfiguration.md#lex-Type-SlotTypeConfiguration-regexConfiguration)": { 
+            "[pattern](API_SlotTypeRegexConfiguration.md#lex-Type-SlotTypeRegexConfiguration-pattern)": "string"
+         }
+      }
+   ],
    "[valueSelectionStrategy](#lex-CreateSlotTypeVersion-response-valueSelectionStrategy)": "string",
    "[version](#lex-CreateSlotTypeVersion-response-version)": "string"
 }
@@ -83,7 +91,7 @@ Length Constraints: Minimum length of 0\. Maximum length of 200\.
  ** [enumerationValues](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-enumerationValues"></a>
 A list of `EnumerationValue` objects that defines the values that the slot type can take\.  
 Type: Array of [EnumerationValue](API_EnumerationValue.md) objects  
-Array Members: Minimum number of 1 item\. Maximum number of 10000 items\.
+Array Members: Minimum number of 0 items\. Maximum number of 10000 items\.
 
  ** [lastUpdatedDate](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-lastUpdatedDate"></a>
 The date that the slot type was updated\. When you create a resource, the creation date and last update date are the same\.  
@@ -94,6 +102,17 @@ The name of the slot type\.
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
+
+ ** [parentSlotTypeSignature](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-parentSlotTypeSignature"></a>
+The built\-in slot type used a the parent of the slot type\.  
+Type: String  
+Length Constraints: Minimum length of 1\. Maximum length of 100\.  
+Pattern: `^((AMAZON\.)_?|[A-Za-z]_?)+` 
+
+ ** [slotTypeConfigurations](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-slotTypeConfigurations"></a>
+Configuration information that extends the parent built\-in slot type\.  
+Type: Array of [SlotTypeConfiguration](API_SlotTypeConfiguration.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 10 items\.
 
  ** [valueSelectionStrategy](#API_CreateSlotTypeVersion_ResponseSyntax) **   <a name="lex-CreateSlotTypeVersion-response-valueSelectionStrategy"></a>
 The strategy that Amazon Lex uses to determine the value of the slot\. For more information, see [PutSlotType](API_PutSlotType.md)\.  

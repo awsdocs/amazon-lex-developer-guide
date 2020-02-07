@@ -2,7 +2,7 @@
 
 Create a custom slot type with enumeration values for the flowers that can be ordered\. You use this type in the next step when you create the `OrderFlowers` intent\. A *slot type* defines the possible values for a slot, or parameter, of the intent\.
 
-To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Limits ](gl-limits.md#gl-limits-model-building)\.
+To run the commands in this exercise, you need to know the region where the commands will be run\. For a list of regions, see [ Model Building Quotas ](gl-limits.md#gl-limits-model-building)\.
 
 **To create a custom slot type \(AWS CLI\)**
 

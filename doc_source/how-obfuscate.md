@@ -20,13 +20,11 @@ After:
     My name is \\{{full_name}\\}
 ```
 
-Slot values are obfuscated in conversation logs\. The slot values are still available in the response from the `PostContent` and `PostText` operations, and the slot values are available to your validation and fulfillment Lambda functions\. 
+Slot values are obfuscated in conversation logs\. The slot values are still available in the response from the `PostContent` and `PostText` operations, and the slot values are available to your validation and fulfillment Lambda functions\. If you are using slot values in your prompts or responses, those slot values are not obfuscated in conversation logs\.
 
 In the first turn of a conversation, Amazon Lex obfuscates slot values if it recognizes a slot and slot value in the utterance\. If no slot value is recognized, Amazon Lex does not obfuscate the utterance\.
 
 On the second and later turns, Amazon Lex knows the slot to elicit and if the slot value should be obfuscated\. If Amazon Lex recognizes the slot value, the value is obfuscated\. If Amazon Lex does not recognize a value, the entire utterance is obfuscated\. Any slot values in missed utterances won't be obfuscated\.
-
-Amazon Lex enables you to use slot values in prompts by enclosing the slot name with braces \(\{\}\)\. If you use an obfuscated slot value in a prompt, Amazon Lex logs the value in the prompt without obfuscating it\. 
 
 Amazon Lex also doesn't obfuscate slot values that you store in request or session attributes\. If you are storing slot values that should be obfuscated as an attribute, you must encrypt or otherwise obfuscate the value\.
 

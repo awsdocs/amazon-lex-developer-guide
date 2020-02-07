@@ -2,8 +2,6 @@
 
 Amazon Lex stores audio logs for your conversations in an S3 bucket\. 
 
-You must provide a role and policy that enables Amazon Lex to write to the bucket\. For more information, see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)\.
-
 **To access audio logs using the console**
 
 1. Open the Amazon Lex console [https://console\.aws\.amazon\.com/lex](https://console.aws.amazon.com/lex)\.

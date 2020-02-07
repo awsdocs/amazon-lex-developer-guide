@@ -24,6 +24,14 @@ Content-type: application/json
          "[value](API_EnumerationValue.md#lex-Type-EnumerationValue-value)": "string"
       }
    ],
+   "[parentSlotTypeSignature](#lex-PutSlotType-request-parentSlotTypeSignature)": "string",
+   "[slotTypeConfigurations](#lex-PutSlotType-request-slotTypeConfigurations)": [ 
+      { 
+         "[regexConfiguration](API_SlotTypeConfiguration.md#lex-Type-SlotTypeConfiguration-regexConfiguration)": { 
+            "[pattern](API_SlotTypeRegexConfiguration.md#lex-Type-SlotTypeRegexConfiguration-pattern)": "string"
+         }
+      }
+   ],
    "[valueSelectionStrategy](#lex-PutSlotType-request-valueSelectionStrategy)": "string"
 }
 ```
@@ -65,7 +73,21 @@ Required: No
 A list of `EnumerationValue` objects that defines the values that the slot type can take\. Each value can have a list of `synonyms`, which are additional values that help train the machine learning model about the values that it resolves for a slot\.   
 When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot\. If you are using a Lambda function, this resolution list is passed to the function\. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value\. The `valueSelectionStrategy` field indicates the option to use\.   
 Type: Array of [EnumerationValue](API_EnumerationValue.md) objects  
-Array Members: Minimum number of 1 item\. Maximum number of 10000 items\.  
+Array Members: Minimum number of 0 items\. Maximum number of 10000 items\.  
+Required: No
+
+ ** [parentSlotTypeSignature](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-parentSlotTypeSignature"></a>
+The built\-in slot type used as the parent of the slot type\. When you define a parent slot type, the new slot type has all of the same configuration as the parent\.  
+Only `AMAZON.AlphaNumeric` is supported\.  
+Type: String  
+Length Constraints: Minimum length of 1\. Maximum length of 100\.  
+Pattern: `^((AMAZON\.)_?|[A-Za-z]_?)+`   
+Required: No
+
+ ** [slotTypeConfigurations](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-slotTypeConfigurations"></a>
+Configuration information that extends the parent built\-in slot type\. The configuration is added to the settings for the parent slot type\.  
+Type: Array of [SlotTypeConfiguration](API_SlotTypeConfiguration.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 10 items\.  
 Required: No
 
  ** [valueSelectionStrategy](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-valueSelectionStrategy"></a>
@@ -96,6 +118,14 @@ Content-type: application/json
    ],
    "[lastUpdatedDate](#lex-PutSlotType-response-lastUpdatedDate)": number,
    "[name](#lex-PutSlotType-response-name)": "string",
+   "[parentSlotTypeSignature](#lex-PutSlotType-response-parentSlotTypeSignature)": "string",
+   "[slotTypeConfigurations](#lex-PutSlotType-response-slotTypeConfigurations)": [ 
+      { 
+         "[regexConfiguration](API_SlotTypeConfiguration.md#lex-Type-SlotTypeConfiguration-regexConfiguration)": { 
+            "[pattern](API_SlotTypeRegexConfiguration.md#lex-Type-SlotTypeRegexConfiguration-pattern)": "string"
+         }
+      }
+   ],
    "[valueSelectionStrategy](#lex-PutSlotType-response-valueSelectionStrategy)": "string",
    "[version](#lex-PutSlotType-response-version)": "string"
 }
@@ -127,7 +157,7 @@ Length Constraints: Minimum length of 0\. Maximum length of 200\.
  ** [enumerationValues](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-enumerationValues"></a>
 A list of `EnumerationValue` objects that defines the values that the slot type can take\.  
 Type: Array of [EnumerationValue](API_EnumerationValue.md) objects  
-Array Members: Minimum number of 1 item\. Maximum number of 10000 items\.
+Array Members: Minimum number of 0 items\. Maximum number of 10000 items\.
 
  ** [lastUpdatedDate](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-lastUpdatedDate"></a>
 The date that the slot type was updated\. When you create a slot type, the creation date and last update date are the same\.  
@@ -138,6 +168,17 @@ The name of the slot type\.
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
+
+ ** [parentSlotTypeSignature](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-parentSlotTypeSignature"></a>
+The built\-in slot type used as the parent of the slot type\.  
+Type: String  
+Length Constraints: Minimum length of 1\. Maximum length of 100\.  
+Pattern: `^((AMAZON\.)_?|[A-Za-z]_?)+` 
+
+ ** [slotTypeConfigurations](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-slotTypeConfigurations"></a>
+Configuration information that extends the parent built\-in slot type\.  
+Type: Array of [SlotTypeConfiguration](API_SlotTypeConfiguration.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 10 items\.
 
  ** [valueSelectionStrategy](#API_PutSlotType_ResponseSyntax) **   <a name="lex-PutSlotType-response-valueSelectionStrategy"></a>
 The slot resolution strategy that Amazon Lex uses to determine the value of the slot\. For more information, see [PutSlotType](#API_PutSlotType)\.  
