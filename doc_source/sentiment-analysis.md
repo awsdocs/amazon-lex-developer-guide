@@ -8,16 +8,17 @@ Amazon Lex integrates with Amazon Comprehend to detect user sentiment\. The resp
 
 When sentiment analysis is enabled, the response from the [PostContent](API_runtime_PostContent.md) and [PostText](API_runtime_PostText.md) operations return a field called `sentimentResponse` in the bot response with other metadata\. The `sentimentResponse` field has two fields, `SentimentLabel` and `SentimentScore`, that contain the result of the sentiment analysis\. If you are using a Lambda function, the `sentimentResponse` field is included in the event data sent to your function\.
 
-The following is an example of the `sentimentResponse` field returned as part of the `PostText` or `PostContent` response\.
+The following is an example of the `sentimentResponse` field returned as part of the `PostText` or `PostContent` response\. The `SentimentScore` field is a string that contains the scores for the response\.
 
 ```
 {
-    "SentimentScore": {
+    "SentimentScore": 
+        "{
         Mixed: 0.030585512690246105,
         Positive: 0.94992071056365967,
         Neutral: 0.0141543131828308,
         Negative: 0.00893945890665054
-    },
+        }",
     "SentimentLabel": "POSITIVE"
 }
 ```

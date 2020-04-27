@@ -10,8 +10,8 @@ In this section, use the Slack API console to complete integration of the Slack 
 
    1. In the **Redirect URLs** section, add the OAuth URL that Amazon Lex provided in the preceding step\. Choose **Add a new Redirect URL**, and then choose **Save URLs**\.
 
-   1. In the **Scopes** section, choose two permissions in the **Select Permission Scopes** drop\-down\. Filter the list with the following text:
-      + **chat:write:bot**
+   1. In the **Bot Token Scopes** section, choose two permissions in the **Select Permission Scopes** drop\-down\. Filter the list with the following text:
+      + **chat:write**
       + **team:read**
 
       Choose **Save Changes**\.

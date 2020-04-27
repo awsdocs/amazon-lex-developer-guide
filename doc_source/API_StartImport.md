@@ -11,7 +11,13 @@ Content-type: application/json
 {
    "[mergeStrategy](#lex-StartImport-request-mergeStrategy)": "string",
    "[payload](#lex-StartImport-request-payload)": blob,
-   "[resourceType](#lex-StartImport-request-resourceType)": "string"
+   "[resourceType](#lex-StartImport-request-resourceType)": "string",
+   "[tags](#lex-StartImport-request-tags)": [ 
+      { 
+         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
+         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+      }
+   ]
 }
 ```
 
@@ -45,6 +51,12 @@ Type: String
 Valid Values:` BOT | INTENT | SLOT_TYPE`   
 Required: Yes
 
+ ** [tags](#API_StartImport_RequestSyntax) **   <a name="lex-StartImport-request-tags"></a>
+A list of tags to add to the imported bot\. You can only add tags when you import a bot, you can't add tags to an intent or slot type\.  
+Type: Array of [Tag](API_Tag.md) objects  
+Array Members: Minimum number of 1 item\. Maximum number of 50 items\.  
+Required: No
+
 ## Response Syntax<a name="API_StartImport_ResponseSyntax"></a>
 
 ```
@@ -57,7 +69,13 @@ Content-type: application/json
    "[importStatus](#lex-StartImport-response-importStatus)": "string",
    "[mergeStrategy](#lex-StartImport-response-mergeStrategy)": "string",
    "[name](#lex-StartImport-response-name)": "string",
-   "[resourceType](#lex-StartImport-response-resourceType)": "string"
+   "[resourceType](#lex-StartImport-response-resourceType)": "string",
+   "[tags](#lex-StartImport-response-tags)": [ 
+      { 
+         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
+         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+      }
+   ]
 }
 ```
 
@@ -96,6 +114,11 @@ The type of resource to import\.
 Type: String  
 Valid Values:` BOT | INTENT | SLOT_TYPE` 
 
+ ** [tags](#API_StartImport_ResponseSyntax) **   <a name="lex-StartImport-response-tags"></a>
+A list of tags added to the imported bot\.  
+Type: Array of [Tag](API_Tag.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 50 items\.
+
 ## Errors<a name="API_StartImport_Errors"></a>
 
  **BadRequestException**   
@@ -121,4 +144,4 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/StartImport) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/StartImport) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/StartImport) 
-+  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/StartImport) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/lex-models-2017-04-19/StartImport) 

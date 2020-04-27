@@ -43,7 +43,7 @@ The `Resource` element specifies the object or objects to which the action appli
 An Amazon Lex bot resource ARN has the following format\.
 
 ```
-arn:aws:lex:${Region}:${Account}:bot/${Bot-Name}
+arn:aws:lex:${Region}:${Account}:bot:${Bot-Name}
 ```
 
 For more information about the format of ARNs, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\.
@@ -51,13 +51,13 @@ For more information about the format of ARNs, see [Amazon Resource Names \(ARNs
 For example, to specify the `OrderFlowers` bot in your statement, use the following ARN\.
 
 ```
-"Resource": "arn:aws:lex:us-east-2:123456789012:bot/OrderFlowers"
+"Resource": "arn:aws:lex:us-east-2:123456789012:bot:OrderFlowers"
 ```
 
 To specify all bots that belong to a specific account, use the wildcard \(\*\)\.
 
 ```
-"Resource": "arn:aws:lex:us-east-2:123456789012:bot/*"
+"Resource": "arn:aws:lex:us-east-2:123456789012:bot:*"
 ```
 
 Some Amazon Lex actions, such as those for creating resources, can't be performed on a specific resource\. In those cases, you must use the wildcard, \(\*\)\.
@@ -111,7 +111,39 @@ For examples of Amazon Lex resource\-based policies, see [Amazon Lex Resource\-B
 
 ## Authorization Based on Amazon Lex Tags<a name="security_iam_service-with-iam-tags"></a>
 
-Amazon Lex doesn't support tagging resources or controlling access based on tags\.
+You can associate tags with certain types of Amazon Lex resources for authorization\. To control access based on tags, provide tag information in the condition element of a policy by using the `lex:ResourceTag/${TagKey}`, `aws:RequestTag/${TagKey}`, or `aws:TagKeys` condition keys\.
+
+For information about tagging Amazon Lex resources, see [Tagging Your Amazon Lex Resources](how-it-works-tags.md)\. For an example identity\-based policy that limits access to a resource based on the resource tags, see [Example: Use a Tag to Access a Resource](security_iam_id-based-policy-examples.md#security_iam_id-based-policy-examples-tag)\. For more information about using tags to limit access to resources, see [Controlling Access Using Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html) in the *IAM User Guide*\. 
+
+The following table lists the actions and corresponding resource types for tag\-based access control\. Each action is authorized based on the tags associated with the corresponding resource type\.
+
+
+| Action | Resource type | Condition keys | Notes | 
+| --- | --- | --- | --- | 
+| [CreateBotVersion](API_CreateBotVersion.md) | bot | lex:ResourceTag |   | 
+| [DeleteBot](API_DeleteBot.md) | bot | lex:ResourceTag |   | 
+| [DeleteBotAlias](API_DeleteBotAlias.md) | alias | lex:ResourceTag |   | 
+| [DeleteBotChannelAssociation](API_DeleteBotChannelAssociation.md) | channel | lex:ResourceTag |   | 
+| [DeleteBotVersion](API_DeleteBotVersion.md) | bot | lex:ResourceTag |   | 
+| [DeleteSession](API_runtime_DeleteSession.md) | bot or alias | lex:ResourceTag | Uses tags associated with the bot when alias is set to $LATEST\. Uses tags associated with the specified alias when used with other aliases\. | 
+| [DeleteUtterances](API_DeleteUtterances.md) | bot | lex:ResourceTag |   | 
+| [GetBot](API_GetBot.md) | bot or alias | lex:ResourceTag | Uses tags associated with the bot when versionOrAlias is set to $LATEST or numeric version\. Uses tags associated with the specified alias when used with aliases | 
+| [GetBotAlias](API_GetBotAlias.md) | alias | lex:ResourceTag |   | 
+| [GetBotChannelAssociation](API_GetBotChannelAssociation.md) | chanel | lex:ResourceTag |   | 
+| [GetBotChannelAssociations](API_GetBotChannelAssociations.md) | chanel | lex:ResourceTag | Uses tags associated with the bot when alias is set to "\-"\. Uses tags associated with the specified alias when a bot alias is specified | 
+| [GetBotVersions](API_GetBotVersions.md) | bot | lex:ResourceTag |   | 
+| [GetExport](API_GetExport.md) | bot | lex:ResourceTag |   | 
+| [GetSession](API_runtime_GetSession.md) | bot or alias | lex:ResourceTag | Uses tags associated with the bot when alias is set to $LATEST\. Uses tags associated with the specified alias when used with other aliases\. | 
+| [GetUtterancesView](API_GetUtterancesView.md) | bot | lex:ResourceTag |   | 
+| [ListTagsForResource](API_ListTagsForResource.md) | bot, alias, or channel | lex:ResourceTag |   | 
+| [PostContent](API_runtime_PostContent.md) | bot or alias | lex:ResourceTag | Uses tags associated with the bot when alias is set to $LATEST\. Uses tags associated with the specified alias when used with other aliases\. | 
+| [PostText](API_runtime_PostText.md) | bot or alias | lex:ResourceTag | Uses tags associated with the bot when alias is set to $LATEST\. Uses tags associated with the specified alias when used with other aliases\. | 
+| [PutBot](API_PutBot.md) | bot | lex:ResourceTag, aws:RequestTag, aws:TagKeys |   | 
+| [PutBotAlias](API_PutBotAlias.md) | alias | lex:ResourceTag, aws:RequestTag, aws:TagKeys |   | 
+| [PutSession](API_runtime_PutSession.md) | bot or alias | lex:ResourceTag | Uses tags associated with the bot when alias is set to $LATEST\. Uses tags associated with the specified alias when used with other aliases\. | 
+| [StartImport](API_StartImport.md) | bot | lex:ResourceTag | Relies on access policy for the PutBot operation\. Tags and permissions specific to the StartImport operation are ignored\. | 
+| [TagResource](API_TagResource.md) | bot, alias, or channel | lex:ResourceTag, aws:RequestTag, aws:TagKeys |   | 
+| [UntagResource](API_UntagResource.md) | bot, alias, or channel | lex:ResourceTag, aws:RequestTag, aws:TagKeys |   | 
 
 ## Amazon Lex IAM Roles<a name="security_iam_service-with-iam-roles"></a>
 
@@ -137,4 +169,6 @@ Amazon Lex supports service roles\.
 
 ### Choosing an IAM Role in Amazon Lex<a name="security_iam_service-with-iam-roles-choose"></a>
 
-When you create a bot resource in Amazon Lex, you must choose a role to allow Amazon Lex to access AWS Lambda, AWS Key Management Servicel, Amazon CloudWatch, and Amazon Polly on your behalf\. If you have previously created a service role or service\-linked role, the Amazon Lex console provides you with a list of roles to choose from\. For more information, see [Service Permissions](howitworks-service-permissions.md)\.
+Amazon Lex uses service\-linked roles to call Amazon Comprehend and Amazon Polly\. It uses resource\-level permissions on your AWS Lambda functions to invoke them\.
+
+You must provide an IAM role to enable conversation tagging\. For more information, see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)\.

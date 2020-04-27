@@ -24,7 +24,13 @@ Content-type: application/json
          }
       ]
    },
-   "[description](#lex-PutBotAlias-request-description)": "string"
+   "[description](#lex-PutBotAlias-request-description)": "string",
+   "[tags](#lex-PutBotAlias-request-tags)": [ 
+      { 
+         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
+         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+      }
+   ]
 }
 ```
 
@@ -71,6 +77,12 @@ Type: String
 Length Constraints: Minimum length of 0\. Maximum length of 200\.  
 Required: No
 
+ ** [tags](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-tags"></a>
+A list of tags to add to the bot alias\. You can only add tags when you create an alias, you can't use the `PutBotAlias` operation to update the tags on a bot alias\. To update tags, use the `TagResource` operation\.  
+Type: Array of [Tag](API_Tag.md) objects  
+Array Members: Minimum number of 1 item\. Maximum number of 50 items\.  
+Required: No
+
 ## Response Syntax<a name="API_PutBotAlias_ResponseSyntax"></a>
 
 ```
@@ -96,7 +108,13 @@ Content-type: application/json
    "[createdDate](#lex-PutBotAlias-response-createdDate)": number,
    "[description](#lex-PutBotAlias-response-description)": "string",
    "[lastUpdatedDate](#lex-PutBotAlias-response-lastUpdatedDate)": number,
-   "[name](#lex-PutBotAlias-response-name)": "string"
+   "[name](#lex-PutBotAlias-response-name)": "string",
+   "[tags](#lex-PutBotAlias-response-tags)": [ 
+      { 
+         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
+         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+      }
+   ]
 }
 ```
 
@@ -145,6 +163,11 @@ Type: String
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
+ ** [tags](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-tags"></a>
+A list of tags associated with a bot\.  
+Type: Array of [Tag](API_Tag.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 50 items\.
+
 ## Errors<a name="API_PutBotAlias_Errors"></a>
 
  **BadRequestException**   
@@ -178,4 +201,4 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutBotAlias) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutBotAlias) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutBotAlias) 
-+  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/PutBotAlias) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/lex-models-2017-04-19/PutBotAlias) 

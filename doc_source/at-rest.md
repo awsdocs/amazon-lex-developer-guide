@@ -10,7 +10,7 @@ Amazon Lex encrypts the user utterances that it stores\.
 
 ## Sample Utterances<a name="at-rest-sample"></a>
 
-When you develops a bot, you can provide sample utterances for each intent and slot\. You can also provide custom values and synonyms for slots\. This information is used only to build the bot and to create the user experience\. It isn't encrypted\. 
+When you develop a bot, you can provide sample utterances for each intent and slot\. You can also provide custom values and synonyms for slots\. This information is used only to build the bot and to create the user experience\. It isn't encrypted\. 
 
 ## Customer Utterances<a name="at-rest-utterances"></a>
 
@@ -34,4 +34,4 @@ Session attributes persist in an encrypted store for the duration of the session
 
 Request attributes contain request\-specific information and apply only to the current request\. A client application uses request attributes to send information to Amazon Lex at runtime\. 
 
-You uses request attributes to pass information that doesn't need to persist for the entire session\. Because request attributes don't persist across requests, they aren't stored\.
+You use request attributes to pass information that doesn't need to persist for the entire session\. Because request attributes don't persist across requests, they aren't stored\.

@@ -25,6 +25,7 @@ The following data types are supported by Amazon Lex Model Building Service:
 +  [SlotTypeMetadata](API_SlotTypeMetadata.md) 
 +  [SlotTypeRegexConfiguration](API_SlotTypeRegexConfiguration.md) 
 +  [Statement](API_Statement.md) 
++  [Tag](API_Tag.md) 
 +  [UtteranceData](API_UtteranceData.md) 
 +  [UtteranceList](API_UtteranceList.md) 
 

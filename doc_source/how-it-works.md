@@ -69,3 +69,4 @@ The following topics provide additional information\. We recommend that you revi
 + [Custom Slot Types](howitworks-custom-slots.md)
 + [Slot Obfuscation](how-obfuscate.md)
 + [Sentiment Analysis](sentiment-analysis.md)
++ [Tagging Your Amazon Lex Resources](how-it-works-tags.md)

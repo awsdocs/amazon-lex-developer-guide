@@ -22,6 +22,8 @@ When you create an Amazon Lex bot, intent, or slot type there is only one versio
 
 Only the `$LATEST` version of a resource can use the `$LATEST` version of another resource\. For example, the `$LATEST` version of a bot can use the `$LATEST` version of an intent, and the `$LATEST` version of an intent can use the `$LATEST` version of a slot type\.
 
+The `$LATEST` version of your bot should only be used for manual testing\. Amazon Lex limits the number of runtime requests that you can make to the `$LATEST` version of the bot\.
+
 ### Publishing an Amazon Lex Resource Version<a name="versioning-intro-publish-version"></a>
 
 When you publish a resource, Amazon Lex makes a copy of the `$LATEST` version and saves it as a numbered version\. The published version can't be changed\. 
@@ -59,7 +61,7 @@ Amazon Lex supports deleting a resource or version using the console or one of t
 
 An alias is a pointer to a specific version of an Amazon Lex bot\. Use an alias to allow client applications to use a specific version of the bot without requiring the application to track which version that is\.
 
-The following example shows two versions of an Amazon Lex bot, version `$LATEST` and version 1\. Each of these bot versions has an associated alias, DEV and PROD, respectively\. Client applications use the PROD alias to access the bot\.
+The following example shows two versions of an Amazon Lex bot, version version 1 and version 2\. Each of these bot versions has an associated alias, BETA and PROD, respectively\. Client applications use the PROD alias to access the bot\.
 
 ![\[Point a client application to a version by using an alias.\]](http://docs.aws.amazon.com/lex/latest/dg/images/lex-publish-alias-bot.png) 
 

@@ -10,6 +10,7 @@ To learn how to create an IAM identity\-based policy using example JSON policy d
 + [AWS Managed \(Predefined\) Policies for Amazon Lex](#access-policy-examples-aws-managed)
 + [Example: Allow Users to View Their Own Permissions](#security_iam_id-based-policy-examples-view-own-permissions)
 + [Example: Delete All Amazon Lex Bots](#security_iam_id-based-policy-examples-access-one-bot)
++ [Example: Use a Tag to Access a Resource](#security_iam_id-based-policy-examples-tag)
 
 ## Policy Best Practices<a name="security_iam_service-with-iam-policy-best-practices"></a>
 
@@ -214,6 +215,28 @@ This example policy grants an IAM user in your AWS account permission to delete 
             "Resource": [
                 "*"
             ]
+        }
+    ]
+}
+```
+
+## Example: Use a Tag to Access a Resource<a name="security_iam_id-based-policy-examples-tag"></a>
+
+This example policy grants an IAM user or role in your AWS account permission to use the `PostText` operation with any resource tagged with the key **Department** and the value **Support**\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "lex:PostText",
+            "Effect": "Allow",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "lex:ResourceTag/Department": "Support"
+                }
+            }
         }
     ]
 }

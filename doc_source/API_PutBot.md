@@ -48,6 +48,12 @@ Content-type: application/json
    ],
    "[locale](#lex-PutBot-request-locale)": "string",
    "[processBehavior](#lex-PutBot-request-processBehavior)": "string",
+   "[tags](#lex-PutBot-request-tags)": [ 
+      { 
+         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
+         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+      }
+   ],
    "[voiceId](#lex-PutBot-request-voiceId)": "string"
 }
 ```
@@ -142,6 +148,12 @@ Type: String
 Valid Values:` SAVE | BUILD`   
 Required: No
 
+ ** [tags](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-tags"></a>
+A list of tags to add to the bot\. You can only add tags when you create a bot, you can't use the `PutBot` operation to update the tags on a bot\. To update tags, use the `TagResource` operation\.  
+Type: Array of [Tag](API_Tag.md) objects  
+Array Members: Minimum number of 1 item\. Maximum number of 50 items\.  
+Required: No
+
  ** [voiceId](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-voiceId"></a>
 The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user\. The locale configured for the voice must match the locale of the bot\. For more information, see [Voices in Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/voicelist.html) in the *Amazon Polly Developer Guide*\.  
 Type: String  
@@ -193,6 +205,12 @@ Content-type: application/json
    "[locale](#lex-PutBot-response-locale)": "string",
    "[name](#lex-PutBot-response-name)": "string",
    "[status](#lex-PutBot-response-status)": "string",
+   "[tags](#lex-PutBot-response-tags)": [ 
+      { 
+         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
+         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+      }
+   ],
    "[version](#lex-PutBot-response-version)": "string",
    "[voiceId](#lex-PutBot-response-voiceId)": "string"
 }
@@ -275,6 +293,11 @@ When the bot is in the `READY` state you can test and publish the bot\.
 Type: String  
 Valid Values:` BUILDING | READY | READY_BASIC_TESTING | FAILED | NOT_BUILT` 
 
+ ** [tags](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-tags"></a>
+A list of tags associated with the bot\.  
+Type: Array of [Tag](API_Tag.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 50 items\.
+
  ** [version](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-version"></a>
 The version of the bot\. For a new bot, the version is always `$LATEST`\.  
 Type: String  
@@ -318,4 +341,4 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutBot) 
-+  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/lex-models-2017-04-19/PutBot) 

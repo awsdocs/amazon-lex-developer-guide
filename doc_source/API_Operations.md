@@ -32,11 +32,14 @@ The following actions are supported by Amazon Lex Model Building Service:
 +  [GetSlotTypes](API_GetSlotTypes.md) 
 +  [GetSlotTypeVersions](API_GetSlotTypeVersions.md) 
 +  [GetUtterancesView](API_GetUtterancesView.md) 
++  [ListTagsForResource](API_ListTagsForResource.md) 
 +  [PutBot](API_PutBot.md) 
 +  [PutBotAlias](API_PutBotAlias.md) 
 +  [PutIntent](API_PutIntent.md) 
 +  [PutSlotType](API_PutSlotType.md) 
 +  [StartImport](API_StartImport.md) 
++  [TagResource](API_TagResource.md) 
++  [UntagResource](API_UntagResource.md) 
 
 The following actions are supported by Amazon Lex Runtime Service:
 +  [DeleteSession](API_runtime_DeleteSession.md) 
