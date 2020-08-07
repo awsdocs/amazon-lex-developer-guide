@@ -8,7 +8,7 @@ Provides the settings needed for conversation logs\.
 The Amazon Resource Name \(ARN\) of an IAM role with permission to write to your CloudWatch Logs for text logs and your S3 bucket for audio logs\. If audio encryption is enabled, this role also provides access permission for the AWS KMS key used for encrypting audio logs\. For more information, see [Creating an IAM Role and Policy for Conversation Logs](https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html)\.  
 Type: String  
 Length Constraints: Minimum length of 20\. Maximum length of 2048\.  
-Pattern: `^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$`   
+Pattern: `^arn:[\w\-]+:iam::[\d]{12}:role/.+$`   
 Required: Yes
 
  **logSettings**   <a name="lex-Type-ConversationLogsRequest-logSettings"></a>

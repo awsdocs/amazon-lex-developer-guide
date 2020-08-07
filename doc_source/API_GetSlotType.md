@@ -12,17 +12,19 @@ GET /slottypes/name/versions/version HTTP/1.1
 
 ## URI Request Parameters<a name="API_GetSlotType_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_GetSlotType_RequestSyntax) **   <a name="lex-GetSlotType-request-name"></a>
 The name of the slot type\. The name is case sensitive\.   
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [version](#API_GetSlotType_RequestSyntax) **   <a name="lex-GetSlotType-request-version"></a>
 The version of the slot type\.   
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
-Pattern: `\$LATEST|[0-9]+` 
+Pattern: `\$LATEST|[0-9]+`   
+Required: Yes
 
 ## Request Body<a name="API_GetSlotType_RequestBody"></a>
 
@@ -35,27 +37,27 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[checksum](#lex-GetSlotType-response-checksum)": "string",
-   "[createdDate](#lex-GetSlotType-response-createdDate)": number,
-   "[description](#lex-GetSlotType-response-description)": "string",
-   "[enumerationValues](#lex-GetSlotType-response-enumerationValues)": [ 
+   "checksum": "string",
+   "createdDate": number,
+   "description": "string",
+   "enumerationValues": [ 
       { 
-         "[synonyms](API_EnumerationValue.md#lex-Type-EnumerationValue-synonyms)": [ "string" ],
-         "[value](API_EnumerationValue.md#lex-Type-EnumerationValue-value)": "string"
+         "synonyms": [ "string" ],
+         "value": "string"
       }
    ],
-   "[lastUpdatedDate](#lex-GetSlotType-response-lastUpdatedDate)": number,
-   "[name](#lex-GetSlotType-response-name)": "string",
-   "[parentSlotTypeSignature](#lex-GetSlotType-response-parentSlotTypeSignature)": "string",
-   "[slotTypeConfigurations](#lex-GetSlotType-response-slotTypeConfigurations)": [ 
+   "lastUpdatedDate": number,
+   "name": "string",
+   "parentSlotTypeSignature": "string",
+   "slotTypeConfigurations": [ 
       { 
-         "[regexConfiguration](API_SlotTypeConfiguration.md#lex-Type-SlotTypeConfiguration-regexConfiguration)": { 
-            "[pattern](API_SlotTypeRegexConfiguration.md#lex-Type-SlotTypeRegexConfiguration-pattern)": "string"
+         "regexConfiguration": { 
+            "pattern": "string"
          }
       }
    ],
-   "[valueSelectionStrategy](#lex-GetSlotType-response-valueSelectionStrategy)": "string",
-   "[version](#lex-GetSlotType-response-version)": "string"
+   "valueSelectionStrategy": "string",
+   "version": "string"
 }
 ```
 

@@ -171,4 +171,4 @@ Amazon Lex supports service roles\.
 
 Amazon Lex uses service\-linked roles to call Amazon Comprehend and Amazon Polly\. It uses resource\-level permissions on your AWS Lambda functions to invoke them\.
 
-You must provide an IAM role to enable conversation tagging\. For more information, see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)\.
+You must provide an IAM role to enable conversation tagging\. For more information, see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-policies.md#conversation-logs-role-and-policy)\.

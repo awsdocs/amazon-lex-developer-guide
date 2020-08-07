@@ -17,12 +17,13 @@ DELETE /intents/name HTTP/1.1
 
 ## URI Request Parameters<a name="API_DeleteIntent_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_DeleteIntent_RequestSyntax) **   <a name="lex-DeleteIntent-request-name"></a>
 The name of the intent\. The name is case sensitive\.   
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_DeleteIntent_RequestBody"></a>
 

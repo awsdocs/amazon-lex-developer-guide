@@ -12,17 +12,19 @@ DELETE /slottypes/name/version/version HTTP/1.1
 
 ## URI Request Parameters<a name="API_DeleteSlotTypeVersion_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_DeleteSlotTypeVersion_RequestSyntax) **   <a name="lex-DeleteSlotTypeVersion-request-name"></a>
 The name of the slot type\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [version](#API_DeleteSlotTypeVersion_RequestSyntax) **   <a name="lex-DeleteSlotTypeVersion-request-version"></a>
 The version of the slot type to delete\. You cannot delete the `$LATEST` version of the slot type\. To delete the `$LATEST` version, use the [DeleteSlotType](API_DeleteSlotType.md) operation\.  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
-Pattern: `[0-9]+` 
+Pattern: `[0-9]+`   
+Required: Yes
 
 ## Request Body<a name="API_DeleteSlotTypeVersion_RequestBody"></a>
 

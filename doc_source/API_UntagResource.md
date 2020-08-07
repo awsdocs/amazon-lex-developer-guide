@@ -10,16 +10,18 @@ DELETE /tags/resourceArn?tagKeys=tagKeys HTTP/1.1
 
 ## URI Request Parameters<a name="API_UntagResource_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [resourceArn](#API_UntagResource_RequestSyntax) **   <a name="lex-UntagResource-request-resourceArn"></a>
 The Amazon Resource Name \(ARN\) of the resource to remove the tags from\.  
-Length Constraints: Minimum length of 1\. Maximum length of 1011\.
+Length Constraints: Minimum length of 1\. Maximum length of 1011\.  
+Required: Yes
 
  ** [tagKeys](#API_UntagResource_RequestSyntax) **   <a name="lex-UntagResource-request-tagKeys"></a>
 A list of tag keys to remove from the resource\. If a tag key does not exist on the resource, it is ignored\.  
-Array Members: Minimum number of 1 item\. Maximum number of 50 items\.  
-Length Constraints: Minimum length of 1\. Maximum length of 128\.
+Array Members: Minimum number of 0 items\. Maximum number of 200 items\.  
+Length Constraints: Minimum length of 1\. Maximum length of 128\.  
+Required: Yes
 
 ## Request Body<a name="API_UntagResource_RequestBody"></a>
 

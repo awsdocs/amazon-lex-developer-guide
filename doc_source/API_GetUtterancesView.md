@@ -20,22 +20,25 @@ GET /bots/botname/utterances?view=aggregation&bot_versions=botVersions&status_ty
 
 ## URI Request Parameters<a name="API_GetUtterancesView_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [botname](#API_GetUtterancesView_RequestSyntax) **   <a name="lex-GetUtterancesView-request-botName"></a>
 The name of the bot for which utterance information should be returned\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [botVersions](#API_GetUtterancesView_RequestSyntax) **   <a name="lex-GetUtterancesView-request-botVersions"></a>
 An array of bot versions for which utterance information should be returned\. The limit is 5 versions per request\.  
 Array Members: Minimum number of 1 item\. Maximum number of 5 items\.  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
-Pattern: `\$LATEST|[0-9]+` 
+Pattern: `\$LATEST|[0-9]+`   
+Required: Yes
 
  ** [statusType](#API_GetUtterancesView_RequestSyntax) **   <a name="lex-GetUtterancesView-request-statusType"></a>
 To return utterances that were recognized and handled, use `Detected`\. To return utterances that were not recognized, use `Missed`\.  
-Valid Values:` Detected | Missed` 
+Valid Values:` Detected | Missed`   
+Required: Yes
 
 ## Request Body<a name="API_GetUtterancesView_RequestBody"></a>
 
@@ -48,17 +51,17 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[botName](#lex-GetUtterancesView-response-botName)": "string",
-   "[utterances](#lex-GetUtterancesView-response-utterances)": [ 
+   "botName": "string",
+   "utterances": [ 
       { 
-         "[botVersion](API_UtteranceList.md#lex-Type-UtteranceList-botVersion)": "string",
-         "[utterances](API_UtteranceList.md#lex-Type-UtteranceList-utterances)": [ 
+         "botVersion": "string",
+         "utterances": [ 
             { 
-               "[count](API_UtteranceData.md#lex-Type-UtteranceData-count)": number,
-               "[distinctUsers](API_UtteranceData.md#lex-Type-UtteranceData-distinctUsers)": number,
-               "[firstUtteredDate](API_UtteranceData.md#lex-Type-UtteranceData-firstUtteredDate)": number,
-               "[lastUtteredDate](API_UtteranceData.md#lex-Type-UtteranceData-lastUtteredDate)": number,
-               "[utteranceString](API_UtteranceData.md#lex-Type-UtteranceData-utteranceString)": "string"
+               "count": number,
+               "distinctUsers": number,
+               "firstUtteredDate": number,
+               "lastUtteredDate": number,
+               "utteranceString": "string"
             }
          ]
       }

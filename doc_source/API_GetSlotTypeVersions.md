@@ -16,7 +16,7 @@ GET /slottypes/name/versions/?maxResults=maxResults&nextToken=nextToken HTTP/1.1
 
 ## URI Request Parameters<a name="API_GetSlotTypeVersions_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [maxResults](#API_GetSlotTypeVersions_RequestSyntax) **   <a name="lex-GetSlotTypeVersions-request-maxResults"></a>
 The maximum number of slot type versions to return in the response\. The default is 10\.  
@@ -25,7 +25,8 @@ Valid Range: Minimum value of 1\. Maximum value of 50\.
  ** [name](#API_GetSlotTypeVersions_RequestSyntax) **   <a name="lex-GetSlotTypeVersions-request-name"></a>
 The name of the slot type for which versions should be returned\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [nextToken](#API_GetSlotTypeVersions_RequestSyntax) **   <a name="lex-GetSlotTypeVersions-request-nextToken"></a>
 A pagination token for fetching the next page of slot type versions\. If the response to this call is truncated, Amazon Lex returns a pagination token in the response\. To fetch the next page of versions, specify the pagination token in the next request\. 
@@ -41,14 +42,14 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[nextToken](#lex-GetSlotTypeVersions-response-nextToken)": "string",
-   "[slotTypes](#lex-GetSlotTypeVersions-response-slotTypes)": [ 
+   "nextToken": "string",
+   "slotTypes": [ 
       { 
-         "[createdDate](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-createdDate)": number,
-         "[description](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-description)": "string",
-         "[lastUpdatedDate](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-lastUpdatedDate)": number,
-         "[name](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-name)": "string",
-         "[version](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-version)": "string"
+         "createdDate": number,
+         "description": "string",
+         "lastUpdatedDate": number,
+         "name": "string",
+         "version": "string"
       }
    ]
 }

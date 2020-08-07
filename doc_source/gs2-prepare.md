@@ -122,7 +122,7 @@ In the console, test the Lambda function by using sample event data to manually 
 
 1. Choose **Create**\.
 
-AWS Lambda creates the test and you go back to the function page\. Choose **Test** and Lambda executes your Lambda function\.
+AWS Lambda creates the test and you go back to the function page\. Choose **Test** and Lambda runs your Lambda function\.
 
 In the result box, choose **Details**\. The console displays the following output in the **Execution result** pane\. 
 

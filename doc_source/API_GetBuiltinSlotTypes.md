@@ -14,7 +14,7 @@ GET /builtins/slottypes/?locale=locale&maxResults=maxResults&nextToken=nextToken
 
 ## URI Request Parameters<a name="API_GetBuiltinSlotTypes_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [locale](#API_GetBuiltinSlotTypes_RequestSyntax) **   <a name="lex-GetBuiltinSlotTypes-request-locale"></a>
 A list of locales that the slot type supports\.  
@@ -41,11 +41,11 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[nextToken](#lex-GetBuiltinSlotTypes-response-nextToken)": "string",
-   "[slotTypes](#lex-GetBuiltinSlotTypes-response-slotTypes)": [ 
+   "nextToken": "string",
+   "slotTypes": [ 
       { 
-         "[signature](API_BuiltinSlotTypeMetadata.md#lex-Type-BuiltinSlotTypeMetadata-signature)": "string",
-         "[supportedLocales](API_BuiltinSlotTypeMetadata.md#lex-Type-BuiltinSlotTypeMetadata-supportedLocales)": [ "string" ]
+         "signature": "string",
+         "supportedLocales": [ "string" ]
       }
    ]
 }

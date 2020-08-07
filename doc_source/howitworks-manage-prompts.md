@@ -35,7 +35,7 @@ A message can be a prompt or a statement\.
 + A *prompt* is typically a question and expects a user response\. 
 + A *statement* is informational\. It doesn’t expect a response\.
 
-A message can include references to slot and session attributes\. At runtime, Amazon Lex substitutes these references with actual values\. 
+A message can include references to slot, session attributes, and request attributes\. At runtime, Amazon Lex substitutes these references with actual values\. 
 
 To refer to slots values that have been set, use the following syntax:
 
@@ -46,10 +46,16 @@ To refer to slots values that have been set, use the following syntax:
 To refer to session attributes, use the following syntax:
 
 ```
-[AttributeName] 
+[SessionAttributeName] 
 ```
 
-Messages can include both slot values and session attributes\. 
+To refer to request attributes, use the following syntax:
+
+```
+((RequestAttributeName)) 
+```
+
+Messages can include both slot values, session attributes and request attributes\. 
 
 For example, suppose that you configure the following message in your bot's OrderPizza intent:
 
@@ -87,7 +93,7 @@ If you have a Lambda function associated with an intent, you can override any of
 
 ### Bot Messages<a name="msg-prompts-bot"></a>
 
-You can configure your bot with clarification prompts and hang\-up messages\. At runtime, Amazon Lex uses the clarification prompt** if it doesn't understand the user's intent\. You can configure the number of times that Amazon Lex requests clarification before hanging up with the hang\-up message\. You configure bot\-level messages in the **Error Handling** section of the Amazon Lex console, as follows:
+You can configure your bot with clarification prompts and session end messages\. At runtime, Amazon Lex uses the clarification prompt** if it doesn't understand the user's intent\. You can configure the number of times that Amazon Lex requests clarification before sending the session end message\. You configure bot\-level messages in the **Error Handling** section of the Amazon Lex console, as follows:
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/how-works-20.png)
 

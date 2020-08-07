@@ -3,5 +3,6 @@
 The following sections provide guidelines and quotas when using Amazon Lex\.
 
 **Topics**
++ [Supported Regions](supported-regions.md)
 + [General Guidelines](gl-guidelines.md)
 + [Quotas](gl-limits.md)

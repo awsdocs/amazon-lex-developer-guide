@@ -9,10 +9,10 @@ POST /tags/resourceArn HTTP/1.1
 Content-type: application/json
 
 {
-   "[tags](#lex-TagResource-request-tags)": [ 
+   "tags": [ 
       { 
-         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
-         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+         "key": "string",
+         "value": "string"
       }
    ]
 }
@@ -20,11 +20,12 @@ Content-type: application/json
 
 ## URI Request Parameters<a name="API_TagResource_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [resourceArn](#API_TagResource_RequestSyntax) **   <a name="lex-TagResource-request-resourceArn"></a>
 The Amazon Resource Name \(ARN\) of the bot, bot alias, or bot channel to tag\.  
-Length Constraints: Minimum length of 1\. Maximum length of 1011\.
+Length Constraints: Minimum length of 1\. Maximum length of 1011\.  
+Required: Yes
 
 ## Request Body<a name="API_TagResource_RequestBody"></a>
 
@@ -33,7 +34,7 @@ The request accepts the following data in JSON format\.
  ** [tags](#API_TagResource_RequestSyntax) **   <a name="lex-TagResource-request-tags"></a>
 A list of tag keys to add to the resource\. If a tag key already exists, the existing value is replaced with the new value\.  
 Type: Array of [Tag](API_Tag.md) objects  
-Array Members: Minimum number of 1 item\. Maximum number of 50 items\.  
+Array Members: Minimum number of 0 items\. Maximum number of 200 items\.  
 Required: Yes
 
 ## Response Syntax<a name="API_TagResource_ResponseSyntax"></a>

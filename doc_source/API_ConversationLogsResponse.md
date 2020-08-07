@@ -8,7 +8,7 @@ Contains information about conversation log settings\.
 The Amazon Resource Name \(ARN\) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket\.  
 Type: String  
 Length Constraints: Minimum length of 20\. Maximum length of 2048\.  
-Pattern: `^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$`   
+Pattern: `^arn:[\w\-]+:iam::[\d]{12}:role/.+$`   
 Required: No
 
  **logSettings**   <a name="lex-Type-ConversationLogsResponse-logSettings"></a>

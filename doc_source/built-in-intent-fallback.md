@@ -27,7 +27,7 @@ You can't add the following to a fallback intent:
 + An initialization and validation Lambda function 
 + A confirmation prompt
 
-If you have configured both an abort statement and a fallback intent for a bot, Amazon Lex uses the fallback intent\. If you need your bot to have an abort statement, you can use the fulfillment function for the fallback intent to provide the same behavior as an abort statement\. For more information, see the `abortStatement` parameter of the [PutBot](API_PutBot.md) operation\.
+If you have configured both a cancel statement and a fallback intent for a bot, Amazon Lex uses the fallback intent\. If you need your bot to have a cancel statement, you can use the fulfillment function for the fallback intent to provide the same behavior as a cancel statement\. For more information, see the `abortStatement` parameter of the [PutBot](API_PutBot.md) operation\.
 
 ## Using Clarification Prompts<a name="fallback-clarification"></a>
 
@@ -40,7 +40,7 @@ When you use a fallback intent without a clarification prompt, Amazon Lex doesn'
 + When using an AWS Lambda function, you return an `ElicitIntent` dialog type\. Because Amazon Lex doesn't have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception\.
 + When using the `PutSession` operation, you send an `ElicitIntent` dialog type\. Because Amazon Lex doesn't have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception\.
 
-## Using a Lambda Function With a Fallback Intent<a name="invoke-fallback"></a>
+## Using a Lambda Function with a Fallback Intent<a name="invoke-fallback"></a>
 
 When a fallback intent is invoked, the response depends on the setting of the `fulfillmentActivity` parameter to the [PutIntent](API_PutIntent.md) operation\. The bot does one of the following:
 + Returns the intent information to the client application\.

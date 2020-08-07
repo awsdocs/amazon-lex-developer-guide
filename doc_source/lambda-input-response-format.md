@@ -17,6 +17,7 @@ The input format may change without a corresponding change in the `messageVersio
 {
   "currentIntent": {
     "name": "intent-name",
+    "nluIntentConfidenceScore": score,
     "slots": {
       "slot name": "value",
       "slot name": "value"
@@ -39,6 +40,33 @@ The input format may change without a corresponding change in the `messageVersio
     },
     "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)"
   },
+  "alternativeIntents": [
+    {
+      "name": "intent-name",
+      "nluIntentConfidenceScore": score,
+      "slots": {
+        "slot name": "value",
+        "slot name": "value"
+      },
+      "slotDetails": {
+        "slot name": {
+          "resolutions" : [
+            { "value": "resolved value" },
+            { "value": "resolved value" }
+          ],
+          "originalValue": "original text"
+        },
+        "slot name": {
+          "resolutions" : [
+            { "value": "resolved value" },
+            { "value": "resolved value" }
+          ],
+          "originalValue": "original text"
+        }
+      },
+      "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)"
+    }
+  ],
   "bot": {
     "name": "bot name",
     "alias": "bot alias",
@@ -74,12 +102,19 @@ The input format may change without a corresponding change in the `messageVersio
    "sentimentResponse": { 
       "sentimentLabel": "sentiment",
       "sentimentScore": "score"
+   },
+   "kendraResponse": {
+       Complete query response from Amazon Kendra
    }
 }
 ```
 
 Note the following additional information about the event fields:
 + **currentIntent** – Provides the intent `name`, `slots`, `slotDetails` and `confirmationStatus` fields\.
+
+   
+
+  `nluIntentConfidenceScore` is the confidence that Amazon Lex has that the current intent is the one that best matches the user's current intent\.
 
    
 
@@ -108,6 +143,13 @@ Note the following additional information about the event fields:
    
 
   In the confirmation response, a user utterance might provide slot updates\. For example, the user might say "yes, change size to medium\." In this case, the subsequent Lambda event has the updated slot value, `PizzaSize` set to `medium`\. Amazon Lex sets the `confirmationStatus` to `None`, because the user modified some slot data, requiring the Lambda function to perform user data validation\.
+
+   
++ **alternativeIntents** – If you enable confidence scores, Amazon Lex returns up to four alternative intents\. Each intent includes a score that indicates the level of confidence that Amazon Lex has that the intent is the correct intent based on the user's utterance\. 
+
+   
+
+  The contents of the alternative intents is the same as the contents of the `currentIntent` field\. For more information, see [Using Confidence Scores](confidence-scores.md)\.
 
    
 + **bot** – Information about the bot that processed the request\.
@@ -169,6 +211,9 @@ You configure this value when you define an intent\. In the current implementati
 
    
 + **sentimentResponse** – The result of an Amazon Comprehend sentiment analysis of the last utterance\. You can use this information to manage the conversation flow of your bot depending on the sentiment expressed by the user\. For more information, see [Sentiment Analysis](sentiment-analysis.md)\. 
+
+   
++ **kendraResponse** – The result of a query to an Amazon Kendra index\. Only present in the input to a fulfillment code hook and only when the intent extends the `AMAZON.KendraSearchIntent` built\-in intent\. The field contains the entire response from the Amazon Kendra search\. For more information, see [AMAZON\.KendraSearchIntent](built-in-intent-kendra-search.md)\.
 
 ## Response Format<a name="using-lambda-response-format"></a>
 
@@ -314,7 +359,9 @@ The `type` field indicates the next course of action\. It also determines the ot
        }
     }
   ```
-+ `Delegate` — Directs Amazon Lex to choose the next course of action based on the bot configuration\. If the response does not include any session attributes Amazon Lex retains the existing attributes\. If you want a slot value to be null, you don't need to include the slot field in the request\. You will get a `DependencyFailedException` exception if your fulfilment function returns the `Delegate` dialog action without removing any slots\.
++ `Delegate` — Directs Amazon Lex to choose the next course of action based on the bot configuration\. If the response does not include any session attributes Amazon Lex retains the existing attributes\. If you want a slot value to be null, you don't need to include the slot field in the request\. You will get a `DependencyFailedException` exception if your fulfillment function returns the `Delegate` dialog action without removing any slots\.
+
+  The `kendraQueryRequestPayload` and `kendraQueryFilterString` fields are optional and only used when the intent is derived from the `AMAZON.KendraSearchIntent` built\-in intent\. for more information, see [AMAZON\.KendraSearchIntent](built-in-intent-kendra-search.md)\.
 
   ```
     "dialogAction": {
@@ -323,7 +370,9 @@ The `type` field indicates the next course of action\. It also determines the ot
         "slot-name": "value",
         "slot-name": "value",
         "slot-name": "value"  
-     }
+     },
+     "kendraQueryRequestPayload": "Amazon Kendra query",
+     "kendraQueryFilterString": "Amazon Kendra attribute filters"
     }
   ```
 + `ElicitIntent` — Informs Amazon Lex that the user is expected to respond with an utterance that includes an intent\. For example, "I want a large pizza," which indicates the `OrderPizzaIntent`\. The utterance "large," on the other hand, is not sufficient for Amazon Lex to infer the user's intent\.

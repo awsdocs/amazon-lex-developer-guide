@@ -10,25 +10,29 @@ GET /exports/?exportType=exportType&name=name&resourceType=resourceType&version=
 
 ## URI Request Parameters<a name="API_GetExport_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [exportType](#API_GetExport_RequestSyntax) **   <a name="lex-GetExport-request-exportType"></a>
 The format of the exported data\.  
-Valid Values:` ALEXA_SKILLS_KIT | LEX` 
+Valid Values:` ALEXA_SKILLS_KIT | LEX`   
+Required: Yes
 
  ** [name](#API_GetExport_RequestSyntax) **   <a name="lex-GetExport-request-name"></a>
 The name of the bot to export\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `[a-zA-Z_]+` 
+Pattern: `[a-zA-Z_]+`   
+Required: Yes
 
  ** [resourceType](#API_GetExport_RequestSyntax) **   <a name="lex-GetExport-request-resourceType"></a>
 The type of resource to export\.   
-Valid Values:` BOT | INTENT | SLOT_TYPE` 
+Valid Values:` BOT | INTENT | SLOT_TYPE`   
+Required: Yes
 
  ** [version](#API_GetExport_RequestSyntax) **   <a name="lex-GetExport-request-version"></a>
 The version of the bot to export\.  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
-Pattern: `[0-9]+` 
+Pattern: `[0-9]+`   
+Required: Yes
 
 ## Request Body<a name="API_GetExport_RequestBody"></a>
 
@@ -41,13 +45,13 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[exportStatus](#lex-GetExport-response-exportStatus)": "string",
-   "[exportType](#lex-GetExport-response-exportType)": "string",
-   "[failureReason](#lex-GetExport-response-failureReason)": "string",
-   "[name](#lex-GetExport-response-name)": "string",
-   "[resourceType](#lex-GetExport-response-resourceType)": "string",
-   "[url](#lex-GetExport-response-url)": "string",
-   "[version](#lex-GetExport-response-version)": "string"
+   "exportStatus": "string",
+   "exportType": "string",
+   "failureReason": "string",
+   "name": "string",
+   "resourceType": "string",
+   "url": "string",
+   "version": "string"
 }
 ```
 

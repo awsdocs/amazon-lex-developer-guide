@@ -12,22 +12,25 @@ DELETE /bots/botName/aliases/aliasName/channels/name HTTP/1.1
 
 ## URI Request Parameters<a name="API_DeleteBotChannelAssociation_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [aliasName](#API_DeleteBotChannelAssociation_RequestSyntax) **   <a name="lex-DeleteBotChannelAssociation-request-botAlias"></a>
 An alias that points to the specific version of the Amazon Lex bot to which this association is being made\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [botName](#API_DeleteBotChannelAssociation_RequestSyntax) **   <a name="lex-DeleteBotChannelAssociation-request-botName"></a>
 The name of the Amazon Lex bot\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [name](#API_DeleteBotChannelAssociation_RequestSyntax) **   <a name="lex-DeleteBotChannelAssociation-request-name"></a>
 The name of the association\. The name is case sensitive\.   
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_DeleteBotChannelAssociation_RequestBody"></a>
 

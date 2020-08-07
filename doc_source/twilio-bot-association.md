@@ -1,11 +1,5 @@
 # Integrating an Amazon Lex Bot with Twilio Programmable SMS<a name="twilio-bot-association"></a>
 
-**Topics**
-+ [Step 1: Create an Amazon Lex Bot](#twilio-bot-assoc-create-bot)
-+ [Step 2: Create a Twilio SMS Account](#twilio-bot-assoc-create-fb-app)
-+ [Step 3: Integrate the Twilio Messaging Service Endpoint with the Amazon Lex Bot](#twilio-bot-assoc-create-assoc)
-+ [Step 4: Test the Integration](#twilio-bot-test)
-
 This exercise provides instructions for integrating an Amazon Lex bot with the Twilio simple messaging service \(SMS\)\. You perform the following steps:
 
 1. Create an Amazon Lex bot
@@ -15,6 +9,12 @@ This exercise provides instructions for integrating an Amazon Lex bot with the T
 1. Engage in an interaction with the Amazon Lex bot by testing the setup using the SMS service on your mobile phone
 
 1. Test the integration 
+
+**Topics**
++ [Step 1: Create an Amazon Lex Bot](#twilio-bot-assoc-create-bot)
++ [Step 2: Create a Twilio SMS Account](#twilio-bot-assoc-create-fb-app)
++ [Step 3: Integrate the Twilio Messaging Service Endpoint with the Amazon Lex Bot](#twilio-bot-assoc-create-assoc)
++ [Step 4: Test the Integration](#twilio-bot-test)
 
 ## Step 1: Create an Amazon Lex Bot<a name="twilio-bot-assoc-create-bot"></a>
 
@@ -78,9 +78,9 @@ Use your mobile phone to test the integration between Twilio SMS and your bot\.
 
       You send messages to this number and engage in SMS interaction with the Amazon Lex bot from your mobile phone\. 
 
-   1. Verify that your mobile phone is whitelisted as **Verified Caller ID**\. 
+   1. Verify that your mobile phone is listed as **Verified Caller ID**\. 
 
-      If it isn't, follow instructions on the Twilio console to whitelist the mobile phone that you plan to use for testing\. 
+      If it isn't, follow instructions on the Twilio console to enable the mobile phone that you plan to use for testing\. 
 
       Now you can use your mobile phone to send messages to the Twilio SMS endpoint, which is mapped to the Amazon Lex bot\. 
 

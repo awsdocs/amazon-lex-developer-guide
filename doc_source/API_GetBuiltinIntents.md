@@ -12,7 +12,7 @@ GET /builtins/intents/?locale=locale&maxResults=maxResults&nextToken=nextToken&s
 
 ## URI Request Parameters<a name="API_GetBuiltinIntents_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [locale](#API_GetBuiltinIntents_RequestSyntax) **   <a name="lex-GetBuiltinIntents-request-locale"></a>
 A list of locales that the intent supports\.  
@@ -39,13 +39,13 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[intents](#lex-GetBuiltinIntents-response-intents)": [ 
+   "intents": [ 
       { 
-         "[signature](API_BuiltinIntentMetadata.md#lex-Type-BuiltinIntentMetadata-signature)": "string",
-         "[supportedLocales](API_BuiltinIntentMetadata.md#lex-Type-BuiltinIntentMetadata-supportedLocales)": [ "string" ]
+         "signature": "string",
+         "supportedLocales": [ "string" ]
       }
    ],
-   "[nextToken](#lex-GetBuiltinIntents-response-nextToken)": "string"
+   "nextToken": "string"
 }
 ```
 

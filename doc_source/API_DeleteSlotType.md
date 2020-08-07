@@ -17,12 +17,13 @@ DELETE /slottypes/name HTTP/1.1
 
 ## URI Request Parameters<a name="API_DeleteSlotType_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_DeleteSlotType_RequestSyntax) **   <a name="lex-DeleteSlotType-request-name"></a>
 The name of the slot type\. The name is case sensitive\.   
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_DeleteSlotType_RequestBody"></a>
 

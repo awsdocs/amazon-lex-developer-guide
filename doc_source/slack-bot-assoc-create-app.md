@@ -16,7 +16,7 @@ At the end of this section, you get application credentials \(Client Id, Client 
 
 1. Configure the application features as follows:
 
-   1. In the left menu, choose **Interactive Components**\.
+   1. In the left menu, choose **Interactivity & Shortcuts**\.
      + Choose the toggle to turn interactive components on\.
      + In the **Request URL** box, specify any valid URL\. For example, you can use **https://slack\.com**\.
 **Note**  

@@ -12,10 +12,11 @@ GET /builtins/intents/signature HTTP/1.1
 
 ## URI Request Parameters<a name="API_GetBuiltinIntent_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [signature](#API_GetBuiltinIntent_RequestSyntax) **   <a name="lex-GetBuiltinIntent-request-signature"></a>
-The unique identifier for a built\-in intent\. To find the signature for an intent, see [Standard Built\-in Intents](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents) in the *Alexa Skills Kit*\.
+The unique identifier for a built\-in intent\. To find the signature for an intent, see [Standard Built\-in Intents](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents) in the *Alexa Skills Kit*\.  
+Required: Yes
 
 ## Request Body<a name="API_GetBuiltinIntent_RequestBody"></a>
 
@@ -28,13 +29,13 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[signature](#lex-GetBuiltinIntent-response-signature)": "string",
-   "[slots](#lex-GetBuiltinIntent-response-slots)": [ 
+   "signature": "string",
+   "slots": [ 
       { 
-         "[name](API_BuiltinIntentSlot.md#lex-Type-BuiltinIntentSlot-name)": "string"
+         "name": "string"
       }
    ],
-   "[supportedLocales](#lex-GetBuiltinIntent-response-supportedLocales)": [ "string" ]
+   "supportedLocales": [ "string" ]
 }
 ```
 

@@ -24,7 +24,7 @@ In this section, you update the configuration of the OrderFlowers intent to use 
 
 1. Add the Lambda function as an initialization and validation code hook, and test\.
 
-   The sample Lambda function code that you are using can both perform user input validation and fulfillment\. The input event the Lambda function receives has a field \(`invocationSource`\) that the code uses to determine what portion of the code to execute\. For more information, see [Lambda Function Input Event and Response Format](lambda-input-response-format.md)\.
+   The sample Lambda function code that you are using can both perform user input validation and fulfillment\. The input event the Lambda function receives has a field \(`invocationSource`\) that the code uses to determine what portion of the code to run\. For more information, see [Lambda Function Input Event and Response Format](lambda-input-response-format.md)\.
 
    1. Select the $LATEST version of the `OrderFlowers` intent\. That's is the only version that you can update\. 
 

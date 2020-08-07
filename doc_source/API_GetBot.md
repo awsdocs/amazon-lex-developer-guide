@@ -12,15 +12,17 @@ GET /bots/name/versions/versionoralias HTTP/1.1
 
 ## URI Request Parameters<a name="API_GetBot_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_GetBot_RequestSyntax) **   <a name="lex-GetBot-request-name"></a>
 The name of the bot\. The name is case sensitive\.   
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [versionoralias](#API_GetBot_RequestSyntax) **   <a name="lex-GetBot-request-versionOrAlias"></a>
-The version or alias of the bot\.
+The version or alias of the bot\.  
+Required: Yes
 
 ## Request Body<a name="API_GetBot_RequestBody"></a>
 
@@ -33,46 +35,48 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[abortStatement](#lex-GetBot-response-abortStatement)": { 
-      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+   "abortStatement": { 
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[checksum](#lex-GetBot-response-checksum)": "string",
-   "[childDirected](#lex-GetBot-response-childDirected)": boolean,
-   "[clarificationPrompt](#lex-GetBot-response-clarificationPrompt)": { 
-      "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-      "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+   "checksum": "string",
+   "childDirected": boolean,
+   "clarificationPrompt": { 
+      "maxAttempts": number,
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[createdDate](#lex-GetBot-response-createdDate)": number,
-   "[description](#lex-GetBot-response-description)": "string",
-   "[detectSentiment](#lex-GetBot-response-detectSentiment)": boolean,
-   "[failureReason](#lex-GetBot-response-failureReason)": "string",
-   "[idleSessionTTLInSeconds](#lex-GetBot-response-idleSessionTTLInSeconds)": number,
-   "[intents](#lex-GetBot-response-intents)": [ 
+   "createdDate": number,
+   "description": "string",
+   "detectSentiment": boolean,
+   "enableModelImprovements": boolean,
+   "failureReason": "string",
+   "idleSessionTTLInSeconds": number,
+   "intents": [ 
       { 
-         "[intentName](API_Intent.md#lex-Type-Intent-intentName)": "string",
-         "[intentVersion](API_Intent.md#lex-Type-Intent-intentVersion)": "string"
+         "intentName": "string",
+         "intentVersion": "string"
       }
    ],
-   "[lastUpdatedDate](#lex-GetBot-response-lastUpdatedDate)": number,
-   "[locale](#lex-GetBot-response-locale)": "string",
-   "[name](#lex-GetBot-response-name)": "string",
-   "[status](#lex-GetBot-response-status)": "string",
-   "[version](#lex-GetBot-response-version)": "string",
-   "[voiceId](#lex-GetBot-response-voiceId)": "string"
+   "lastUpdatedDate": number,
+   "locale": "string",
+   "name": "string",
+   "nluIntentConfidenceThreshold": number,
+   "status": "string",
+   "version": "string",
+   "voiceId": "string"
 }
 ```
 
@@ -112,6 +116,10 @@ Length Constraints: Minimum length of 0\. Maximum length of 200\.
 Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis\.  
 Type: Boolean
 
+ ** [enableModelImprovements](#API_GetBot_ResponseSyntax) **   <a name="lex-GetBot-response-enableModelImprovements"></a>
+Indicates whether the bot uses accuracy improvements\. `true` indicates that the bot is using the imoprovements, otherwise, `false`\.  
+Type: Boolean
+
  ** [failureReason](#API_GetBot_ResponseSyntax) **   <a name="lex-GetBot-response-failureReason"></a>
 If `status` is `FAILED`, Amazon Lex explains why it failed to build the bot\.  
 Type: String
@@ -139,6 +147,11 @@ The name of the bot\.
 Type: String  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
+
+ ** [nluIntentConfidenceThreshold](#API_GetBot_ResponseSyntax) **   <a name="lex-GetBot-response-nluIntentConfidenceThreshold"></a>
+The score that determines where Amazon Lex inserts the `AMAZON.FallbackIntent`, `AMAZON.KendraSearchIntent`, or both when returning alternative intents in a [PostContent](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html) or [PostText](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html) response\. `AMAZON.FallbackIntent` is inserted if the confidence score for all intents is below this value\. `AMAZON.KendraSearchIntent` is only inserted if it is configured for the bot\.  
+Type: Double  
+Valid Range: Minimum value of 0\. Maximum value of 1\.
 
  ** [status](#API_GetBot_ResponseSyntax) **   <a name="lex-GetBot-response-status"></a>
 The status of the bot\.   

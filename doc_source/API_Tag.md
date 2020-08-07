@@ -13,7 +13,7 @@ Required: Yes
  **value**   <a name="lex-Type-Tag-value"></a>
 The value associated with a key\. The value may be an empty string but it can't be null\.  
 Type: String  
-Length Constraints: Minimum length of 1\. Maximum length of 256\.  
+Length Constraints: Minimum length of 0\. Maximum length of 256\.  
 Required: Yes
 
 ## See Also<a name="API_Tag_SeeAlso"></a>

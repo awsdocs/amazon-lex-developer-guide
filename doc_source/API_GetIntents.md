@@ -14,7 +14,7 @@ GET /intents/?maxResults=maxResults&nameContains=nameContains&nextToken=nextToke
 
 ## URI Request Parameters<a name="API_GetIntents_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [maxResults](#API_GetIntents_RequestSyntax) **   <a name="lex-GetIntents-request-maxResults"></a>
 The maximum number of intents to return in the response\. The default is 10\.  
@@ -39,16 +39,16 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[intents](#lex-GetIntents-response-intents)": [ 
+   "intents": [ 
       { 
-         "[createdDate](API_IntentMetadata.md#lex-Type-IntentMetadata-createdDate)": number,
-         "[description](API_IntentMetadata.md#lex-Type-IntentMetadata-description)": "string",
-         "[lastUpdatedDate](API_IntentMetadata.md#lex-Type-IntentMetadata-lastUpdatedDate)": number,
-         "[name](API_IntentMetadata.md#lex-Type-IntentMetadata-name)": "string",
-         "[version](API_IntentMetadata.md#lex-Type-IntentMetadata-version)": "string"
+         "createdDate": number,
+         "description": "string",
+         "lastUpdatedDate": number,
+         "name": "string",
+         "version": "string"
       }
    ],
-   "[nextToken](#lex-GetIntents-response-nextToken)": "string"
+   "nextToken": "string"
 }
 ```
 

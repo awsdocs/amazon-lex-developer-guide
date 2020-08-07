@@ -12,12 +12,13 @@ GET /bots/botName/aliases/?maxResults=maxResults&nameContains=nameContains&nextT
 
 ## URI Request Parameters<a name="API_GetBotAliases_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [botName](#API_GetBotAliases_RequestSyntax) **   <a name="lex-GetBotAliases-request-botName"></a>
 The name of the bot\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [maxResults](#API_GetBotAliases_RequestSyntax) **   <a name="lex-GetBotAliases-request-maxResults"></a>
 The maximum number of aliases to return in the response\. The default is 50\. \.   
@@ -42,30 +43,30 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[BotAliases](#lex-GetBotAliases-response-BotAliases)": [ 
+   "BotAliases": [ 
       { 
-         "[botName](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-botName)": "string",
-         "[botVersion](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-botVersion)": "string",
-         "[checksum](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-checksum)": "string",
-         "[conversationLogs](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-conversationLogs)": { 
-            "[iamRoleArn](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-iamRoleArn)": "string",
-            "[logSettings](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-logSettings)": [ 
+         "botName": "string",
+         "botVersion": "string",
+         "checksum": "string",
+         "conversationLogs": { 
+            "iamRoleArn": "string",
+            "logSettings": [ 
                { 
-                  "[destination](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-destination)": "string",
-                  "[kmsKeyArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-kmsKeyArn)": "string",
-                  "[logType](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-logType)": "string",
-                  "[resourceArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourceArn)": "string",
-                  "[resourcePrefix](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourcePrefix)": "string"
+                  "destination": "string",
+                  "kmsKeyArn": "string",
+                  "logType": "string",
+                  "resourceArn": "string",
+                  "resourcePrefix": "string"
                }
             ]
          },
-         "[createdDate](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-createdDate)": number,
-         "[description](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-description)": "string",
-         "[lastUpdatedDate](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-lastUpdatedDate)": number,
-         "[name](API_BotAliasMetadata.md#lex-Type-BotAliasMetadata-name)": "string"
+         "createdDate": number,
+         "description": "string",
+         "lastUpdatedDate": number,
+         "name": "string"
       }
    ],
-   "[nextToken](#lex-GetBotAliases-response-nextToken)": "string"
+   "nextToken": "string"
 }
 ```
 

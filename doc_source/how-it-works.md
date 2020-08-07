@@ -59,9 +59,9 @@ The following topics provide additional information\. We recommend that you revi
 
 **Topics**
 + [Programming Model](programming-model.md)
-+ [Service Permissions](howitworks-service-permissions.md)
 + [Managing Messages](howitworks-manage-prompts.md)
 + [Managing Conversation Context](context-mgmt.md)
++ [Using Confidence Scores](confidence-scores.md)
 + [Conversation Logs](conversation-logs.md)
 + [Managing Sessions With the Amazon Lex API](how-session-api.md)
 + [Bot Deployment Options](chatbot-service.md)

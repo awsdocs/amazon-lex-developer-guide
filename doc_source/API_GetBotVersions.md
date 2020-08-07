@@ -16,7 +16,7 @@ GET /bots/name/versions/?maxResults=maxResults&nextToken=nextToken HTTP/1.1
 
 ## URI Request Parameters<a name="API_GetBotVersions_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [maxResults](#API_GetBotVersions_RequestSyntax) **   <a name="lex-GetBotVersions-request-maxResults"></a>
 The maximum number of bot versions to return in the response\. The default is 10\.  
@@ -25,7 +25,8 @@ Valid Range: Minimum value of 1\. Maximum value of 50\.
  ** [name](#API_GetBotVersions_RequestSyntax) **   <a name="lex-GetBotVersions-request-name"></a>
 The name of the bot for which versions should be returned\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [nextToken](#API_GetBotVersions_RequestSyntax) **   <a name="lex-GetBotVersions-request-nextToken"></a>
 A pagination token for fetching the next page of bot versions\. If the response to this call is truncated, Amazon Lex returns a pagination token in the response\. To fetch the next page of versions, specify the pagination token in the next request\. 
@@ -41,17 +42,17 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[bots](#lex-GetBotVersions-response-bots)": [ 
+   "bots": [ 
       { 
-         "[createdDate](API_BotMetadata.md#lex-Type-BotMetadata-createdDate)": number,
-         "[description](API_BotMetadata.md#lex-Type-BotMetadata-description)": "string",
-         "[lastUpdatedDate](API_BotMetadata.md#lex-Type-BotMetadata-lastUpdatedDate)": number,
-         "[name](API_BotMetadata.md#lex-Type-BotMetadata-name)": "string",
-         "[status](API_BotMetadata.md#lex-Type-BotMetadata-status)": "string",
-         "[version](API_BotMetadata.md#lex-Type-BotMetadata-version)": "string"
+         "createdDate": number,
+         "description": "string",
+         "lastUpdatedDate": number,
+         "name": "string",
+         "status": "string",
+         "version": "string"
       }
    ],
-   "[nextToken](#lex-GetBotVersions-response-nextToken)": "string"
+   "nextToken": "string"
 }
 ```
 

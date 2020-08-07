@@ -14,7 +14,7 @@ GET /bots/?maxResults=maxResults&nameContains=nameContains&nextToken=nextToken H
 
 ## URI Request Parameters<a name="API_GetBots_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [maxResults](#API_GetBots_RequestSyntax) **   <a name="lex-GetBots-request-maxResults"></a>
 The maximum number of bots to return in the response that the request will return\. The default is 10\.  
@@ -39,17 +39,17 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[bots](#lex-GetBots-response-bots)": [ 
+   "bots": [ 
       { 
-         "[createdDate](API_BotMetadata.md#lex-Type-BotMetadata-createdDate)": number,
-         "[description](API_BotMetadata.md#lex-Type-BotMetadata-description)": "string",
-         "[lastUpdatedDate](API_BotMetadata.md#lex-Type-BotMetadata-lastUpdatedDate)": number,
-         "[name](API_BotMetadata.md#lex-Type-BotMetadata-name)": "string",
-         "[status](API_BotMetadata.md#lex-Type-BotMetadata-status)": "string",
-         "[version](API_BotMetadata.md#lex-Type-BotMetadata-version)": "string"
+         "createdDate": number,
+         "description": "string",
+         "lastUpdatedDate": number,
+         "name": "string",
+         "status": "string",
+         "version": "string"
       }
    ],
-   "[nextToken](#lex-GetBots-response-nextToken)": "string"
+   "nextToken": "string"
 }
 ```
 

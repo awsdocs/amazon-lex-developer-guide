@@ -12,31 +12,31 @@ Accept: accept
 Content-type: application/json
 
 {
-   "[dialogAction](#lex-runtime_PutSession-request-dialogAction)": { 
-      "[fulfillmentState](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-fulfillmentState)": "string",
-      "[intentName](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-intentName)": "string",
-      "[message](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-message)": "string",
-      "[messageFormat](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-messageFormat)": "string",
-      "[slots](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-slots)": { 
+   "dialogAction": { 
+      "fulfillmentState": "string",
+      "intentName": "string",
+      "message": "string",
+      "messageFormat": "string",
+      "slots": { 
          "string" : "string" 
       },
-      "[slotToElicit](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-slotToElicit)": "string",
-      "[type](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-type)": "string"
+      "slotToElicit": "string",
+      "type": "string"
    },
-   "[recentIntentSummaryView](#lex-runtime_PutSession-request-recentIntentSummaryView)": [ 
+   "recentIntentSummaryView": [ 
       { 
-         "[checkpointLabel](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-checkpointLabel)": "string",
-         "[confirmationStatus](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-confirmationStatus)": "string",
-         "[dialogActionType](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-dialogActionType)": "string",
-         "[fulfillmentState](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-fulfillmentState)": "string",
-         "[intentName](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-intentName)": "string",
-         "[slots](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-slots)": { 
+         "checkpointLabel": "string",
+         "confirmationStatus": "string",
+         "dialogActionType": "string",
+         "fulfillmentState": "string",
+         "intentName": "string",
+         "slots": { 
             "string" : "string" 
          },
-         "[slotToElicit](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-slotToElicit)": "string"
+         "slotToElicit": "string"
       }
    ],
-   "[sessionAttributes](#lex-runtime_PutSession-request-sessionAttributes)": { 
+   "sessionAttributes": { 
       "string" : "string" 
    }
 }
@@ -44,7 +44,7 @@ Content-type: application/json
 
 ## URI Request Parameters<a name="API_runtime_PutSession_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [accept](#API_runtime_PutSession_RequestSyntax) **   <a name="lex-runtime_PutSession-request-accept"></a>
 The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field\.  
@@ -59,15 +59,18 @@ The message that Amazon Lex returns in the response can be either text or speech
   +  `text/plain; charset=utf-8` 
 
  ** [botAlias](#API_runtime_PutSession_RequestSyntax) **   <a name="lex-runtime_PutSession-request-botAlias"></a>
-The alias in use for the bot that contains the session data\.
+The alias in use for the bot that contains the session data\.  
+Required: Yes
 
  ** [botName](#API_runtime_PutSession_RequestSyntax) **   <a name="lex-runtime_PutSession-request-botName"></a>
-The name of the bot that contains the session data\.
+The name of the bot that contains the session data\.  
+Required: Yes
 
  ** [userId](#API_runtime_PutSession_RequestSyntax) **   <a name="lex-runtime_PutSession-request-userId"></a>
 The ID of the client application user\. Amazon Lex uses this to identify a user's conversation with your bot\.   
 Length Constraints: Minimum length of 2\. Maximum length of 100\.  
-Pattern: `[0-9a-zA-Z._:-]+` 
+Pattern: `[0-9a-zA-Z._:-]+`   
+Required: Yes
 
 ## Request Body<a name="API_runtime_PutSession_RequestBody"></a>
 

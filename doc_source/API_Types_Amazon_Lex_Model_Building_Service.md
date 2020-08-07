@@ -15,6 +15,7 @@ The following data types are supported by Amazon Lex Model Building Service:
 +  [FulfillmentActivity](API_FulfillmentActivity.md) 
 +  [Intent](API_Intent.md) 
 +  [IntentMetadata](API_IntentMetadata.md) 
++  [KendraConfiguration](API_KendraConfiguration.md) 
 +  [LogSettingsRequest](API_LogSettingsRequest.md) 
 +  [LogSettingsResponse](API_LogSettingsResponse.md) 
 +  [Message](API_Message.md) 

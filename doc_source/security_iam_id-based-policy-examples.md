@@ -49,12 +49,17 @@ The following are the minimum permissions required to use the Amazon Lex console
             ]
         },
         {
+          "Effect": "Allow",
+          "Action": "kendra:ListIndices",
+          "Resource": "*"
+       },
+        {
             "Effect": "Allow",
             "Action": [
                 "lambda:AddPermission",
                 "lambda:RemovePermission"
             ],
-            "Resource": "*",
+            "Resource": "arn:aws:lambda:*:*:function:AmazonLex*",
             "Condition": {
                 "StringLike": {
                     "lambda:Principal": "lex.amazonaws.com"
@@ -84,7 +89,17 @@ The following are the minimum permissions required to use the Amazon Lex console
                 "StringLike": {
                     "iam:AWSServiceName": "lex.amazonaws.com"
                 }
-           }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:DeleteServiceLinkedRole",
+                "iam:GetServiceLinkedRoleDeletionStatus"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:role/aws-service-role/lex.amazonaws.com/AWSServiceRoleForLexBots"
+            ]
         },
         {
             "Effect": "Allow",
@@ -117,6 +132,32 @@ The following are the minimum permissions required to use the Amazon Lex console
         {
             "Effect": "Allow",
             "Action": [
+                "iam:DeleteServiceLinkedRole",
+                "iam:GetServiceLinkedRoleDeletionStatus"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:role/aws-service-role/channels.lex.amazonaws.com/AWSServiceRoleForLexChannels"
+            ]
+        },
+        {
+          "Action": [
+            "iam:PassRole"
+          ],
+            "Effect": "Allow",
+          "Resource": [
+                "arn:aws:iam::*:role/aws-service-role/lex.amazonaws.com/AWSServiceRoleForLexBots"
+            ],
+          "Condition": {
+            "StringLike": {
+               "iam:PassedToService": [
+                  "lex.amazonaws.com"
+              ]
+            }
+          }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "iam:DetachRolePolicy"
             ],
             "Resource": [
@@ -129,21 +170,22 @@ The following are the minimum permissions required to use the Amazon Lex console
             }
         }
     ]
- }
+}
 ```
 
 The Amazon Lex console needs these additional permissions for the following reasons:
 + `cloudwatch` permissions allow you to view performance and monitoring information in the console\.
 + `iam` actions allow Amazon Lex to assume IAM roles for making calls to Lambda functions and processing data for a bot channel association\.
++ `iam` actions allow you to use the console to manage server\-linked roles that grant permission to use other AWS resources\.
++ `kendra` actions allow you to list the Amazon Kendra indexes in your account\.
 + `kms` actions allow you to manage the AWS Key Management Service keys used to encrypt data when creating a bot channel association\.
 + `lambda` actions allow you to display the Lambda functions that your bot can use, and to grant Amazon Lex the necessary permissions for your bot to invoke these functions\.
 + `lex` actions allow the console to display the Amazon Lex resources in the account\.
 + `polly` actions allow the console to display the available Amazon Polly voices and translate text to speech\.
-+ `iam` actions allow you to use the console to manage server\-linked roles that grant permission to use other AWS resources\.
 
 You don't need to allow minimum console permissions for users that are making calls only to the AWS CLI or the AWS API\. Instead, allow access to only the actions that match the API operation that you're trying to perform\.
 
-For more information, see [Adding Permissions to a User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html#users_change_permissions-add-console) in the *IAM User Guide*:
+For more information, see [Adding Permissions to a User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html#users_change_permissions-add-console) in the *IAM User Guide*\.
 
 ## AWS Managed \(Predefined\) Policies for Amazon Lex<a name="access-policy-examples-aws-managed"></a>
 

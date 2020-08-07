@@ -91,11 +91,11 @@ The following is the JSON structure for intents\. Use this structure when you im
           "content": "string"
         }
       ],
-      "maxAttempts": 2
+      "maxAttempts": value
     },
     "slotTypes": [
         List of slot type JSON structures.
-        For more information, see [Slot Type structure](#import-export-slot-type).
+        For more information, see .
     ]
   }
 }
@@ -114,14 +114,16 @@ The following is the JSON structure for bots\. Use this structure when you impor
   },
   "resource": {
     "name": "bot name",
-    "version": "version number",
+    "version": "version number",,
+    "nluIntentConfidenceThreshold": 0.00-1.00,
+    "enableModelImprovements": true | false,
     "intents": [
         List of intent JSON structures.
-        For more information, see [Intent structure](#import-export-intent).
+        For more information, see .
     ],
     "slotTypes": [
         List of slot type JSON structures.
-        For more information, see [Slot Type structure](#import-export-slot-type).
+        For more information, see .
     ],
     "voiceId": "output voice ID",
     "childDirected": boolean,

@@ -16,17 +16,19 @@ DELETE /bots/botName/utterances/userId HTTP/1.1
 
 ## URI Request Parameters<a name="API_DeleteUtterances_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [botName](#API_DeleteUtterances_RequestSyntax) **   <a name="lex-DeleteUtterances-request-botName"></a>
 The name of the bot that stored the utterances\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [userId](#API_DeleteUtterances_RequestSyntax) **   <a name="lex-DeleteUtterances-request-userId"></a>
  The unique identifier for the user that made the utterances\. This is the user ID that was sent in the [PostContent](http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html) or [PostText](http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html) operation request that contained the utterance\.  
 Length Constraints: Minimum length of 2\. Maximum length of 100\.  
-Pattern: `[0-9a-zA-Z._:-]+` 
+Pattern: `[0-9a-zA-Z._:-]+`   
+Required: Yes
 
 ## Request Body<a name="API_DeleteUtterances_RequestBody"></a>
 

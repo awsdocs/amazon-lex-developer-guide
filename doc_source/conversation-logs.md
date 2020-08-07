@@ -12,7 +12,7 @@ Conversation logs are configured for an alias\. Each alias can have different se
 To configure logging, use the console or the [PutBotAlias](API_PutBotAlias.md) operation\. You can't log conversations for the `$LATEST` alias of your bot or for the test bot available in the Amazon Lex console\. After enabling conversation logs for an alias, [PostContent](API_runtime_PostContent.md) or [PostText](API_runtime_PostText.md) operation for that alias logs the text or audio utterances in the configured CloudWatch Logs log group or S3 bucket\.
 
 **Topics**
-+ [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)
++ [IAM Policies for Conversation Logs](conversation-logs-policies.md)
 + [Configuring Conversation Logs](conversation-logs-configure.md)
 + [Encrypting Conversation Logs](conversation-logs-encrypting.md)
 + [Viewing Text Logs in Amazon CloudWatch Logs](conversation-logs-cw.md)

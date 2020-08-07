@@ -10,18 +10,21 @@ DELETE /bot/botName/alias/botAlias/user/userId/session HTTP/1.1
 
 ## URI Request Parameters<a name="API_runtime_DeleteSession_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [botAlias](#API_runtime_DeleteSession_RequestSyntax) **   <a name="lex-runtime_DeleteSession-request-botAlias"></a>
-The alias in use for the bot that contains the session data\.
+The alias in use for the bot that contains the session data\.  
+Required: Yes
 
  ** [botName](#API_runtime_DeleteSession_RequestSyntax) **   <a name="lex-runtime_DeleteSession-request-botName"></a>
-The name of the bot that contains the session data\.
+The name of the bot that contains the session data\.  
+Required: Yes
 
  ** [userId](#API_runtime_DeleteSession_RequestSyntax) **   <a name="lex-runtime_DeleteSession-request-userId"></a>
 The identifier of the user associated with the session data\.  
 Length Constraints: Minimum length of 2\. Maximum length of 100\.  
-Pattern: `[0-9a-zA-Z._:-]+` 
+Pattern: `[0-9a-zA-Z._:-]+`   
+Required: Yes
 
 ## Request Body<a name="API_runtime_DeleteSession_RequestBody"></a>
 
@@ -34,10 +37,10 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[botAlias](#lex-runtime_DeleteSession-response-botAlias)": "string",
-   "[botName](#lex-runtime_DeleteSession-response-botName)": "string",
-   "[sessionId](#lex-runtime_DeleteSession-response-sessionId)": "string",
-   "[userId](#lex-runtime_DeleteSession-response-userId)": "string"
+   "botAlias": "string",
+   "botName": "string",
+   "sessionId": "string",
+   "userId": "string"
 }
 ```
 

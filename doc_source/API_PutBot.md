@@ -13,69 +13,72 @@ PUT /bots/name/versions/$LATEST HTTP/1.1
 Content-type: application/json
 
 {
-   "[abortStatement](#lex-PutBot-request-abortStatement)": { 
-      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+   "abortStatement": { 
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[checksum](#lex-PutBot-request-checksum)": "string",
-   "[childDirected](#lex-PutBot-request-childDirected)": boolean,
-   "[clarificationPrompt](#lex-PutBot-request-clarificationPrompt)": { 
-      "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-      "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+   "checksum": "string",
+   "childDirected": boolean,
+   "clarificationPrompt": { 
+      "maxAttempts": number,
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[createVersion](#lex-PutBot-request-createVersion)": boolean,
-   "[description](#lex-PutBot-request-description)": "string",
-   "[detectSentiment](#lex-PutBot-request-detectSentiment)": boolean,
-   "[idleSessionTTLInSeconds](#lex-PutBot-request-idleSessionTTLInSeconds)": number,
-   "[intents](#lex-PutBot-request-intents)": [ 
+   "createVersion": boolean,
+   "description": "string",
+   "detectSentiment": boolean,
+   "enableModelImprovements": boolean,
+   "idleSessionTTLInSeconds": number,
+   "intents": [ 
       { 
-         "[intentName](API_Intent.md#lex-Type-Intent-intentName)": "string",
-         "[intentVersion](API_Intent.md#lex-Type-Intent-intentVersion)": "string"
+         "intentName": "string",
+         "intentVersion": "string"
       }
    ],
-   "[locale](#lex-PutBot-request-locale)": "string",
-   "[processBehavior](#lex-PutBot-request-processBehavior)": "string",
-   "[tags](#lex-PutBot-request-tags)": [ 
+   "locale": "string",
+   "nluIntentConfidenceThreshold": number,
+   "processBehavior": "string",
+   "tags": [ 
       { 
-         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
-         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+         "key": "string",
+         "value": "string"
       }
    ],
-   "[voiceId](#lex-PutBot-request-voiceId)": "string"
+   "voiceId": "string"
 }
 ```
 
 ## URI Request Parameters<a name="API_PutBot_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-name"></a>
 The name of the bot\. The name is *not* case sensitive\.   
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_PutBot_RequestBody"></a>
 
 The request accepts the following data in JSON format\.
 
  ** [abortStatement](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-abortStatement"></a>
-When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times\. After that, Amazon Lex sends the message defined in `abortStatement` to the user, and then aborts the conversation\. To set the number of retries, use the `valueElicitationPrompt` field for the slot type\.   
+When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times\. After that, Amazon Lex sends the message defined in `abortStatement` to the user, and then cancels the conversation\. To set the number of retries, use the `valueElicitationPrompt` field for the slot type\.   
 For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses \(for example, "thin crust, "deep dish," etc\.\), Amazon Lex tries to elicit a correct response a few more times\.   
 For example, in a pizza ordering application, `OrderPizza` might be one of the intents\. This intent might require the `CrustType` slot\. You specify the `valueElicitationPrompt` field when you create the `CrustType` slot\.  
-If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is used instead\. For more information, see [ AMAZON\.FallbackIntent](https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html)\.  
+If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead\. For more information, see [ AMAZON\.FallbackIntent](https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html)\.  
 Type: [Statement](API_Statement.md) object  
 Required: No
 
@@ -119,6 +122,23 @@ When set to `true` user utterances are sent to Amazon Comprehend for sentiment a
 Type: Boolean  
 Required: No
 
+ ** [enableModelImprovements](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-enableModelImprovements"></a>
+Set to `true` to enable access to natural language understanding improvements\.   
+When you set the `enableModelImprovements` parameter to `true` you can use the `nluIntentConfidenceThreshold` parameter to configure confidence scores\. For more information, see [Confidence Scores](https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html)\.  
+You can only set the `enableModelImprovements` parameter in certain Regions\. If you set the parameter to `true`, your bot has access to accuracy improvements\.  
+The Regions where you can set the `enableModelImprovements` parameter to `true` are:  
++ US East \(N\. Virginia\) \(us\-east\-1\)
++ US West \(Oregon\) \(us\-west\-2\)
++ Asia Pacific \(Sydney\) \(ap\-southeast\-2\)
++ EU \(Ireland\) \(eu\-west\-1\)
+In other Regions, the `enableModelImprovements` parameter is set to `true` by default\. In these Regions setting the parameter to `false` throws a `ValidationException` exception\.  
++ Asia Pacific \(Singapore\) \(ap\-southeast\-1\)
++ Asia Pacific \(Tokyo\) \(ap\-northeast\-1\)
++ EU \(Frankfurt\) \(eu\-central\-1\)
++ EU \(London\) \(eu\-west\-2\)
+Type: Boolean  
+Required: No
+
  ** [idleSessionTTLInSeconds](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-idleSessionTTLInSeconds"></a>
 The maximum time in seconds that Amazon Lex retains the data gathered in a conversation\.  
 A user interaction session remains active for the amount of time specified\. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout\.  
@@ -141,6 +161,23 @@ Type: String
 Valid Values:` en-US`   
 Required: Yes
 
+ ** [nluIntentConfidenceThreshold](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-nluIntentConfidenceThreshold"></a>
+Determines the threshold where Amazon Lex will insert the `AMAZON.FallbackIntent`, `AMAZON.KendraSearchIntent`, or both when returning alternative intents in a [PostContent](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html) or [PostText](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html) response\. `AMAZON.FallbackIntent` and `AMAZON.KendraSearchIntent` are only inserted if they are configured for the bot\.  
+You must set the `enableModelImprovements` parameter to `true` to use confidence scores\.  
++ US East \(N\. Virginia\) \(us\-east\-1\)
++ US West \(Oregon\) \(us\-west\-2\)
++ Asia Pacific \(Sydney\) \(ap\-southeast\-2\)
++ EU \(Ireland\) \(eu\-west\-1\)
+In other Regions, the `enableModelImprovements` parameter is set to `true` by default\.  
+For example, suppose a bot is configured with the confidence threshold of 0\.80 and the `AMAZON.FallbackIntent`\. Amazon Lex returns three alternative intents with the following confidence scores: IntentA \(0\.70\), IntentB \(0\.60\), IntentC \(0\.50\)\. The response from the `PostText` operation would be:  
++ AMAZON\.FallbackIntent
++ IntentA
++ IntentB
++ IntentC
+Type: Double  
+Valid Range: Minimum value of 0\. Maximum value of 1\.  
+Required: No
+
  ** [processBehavior](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-processBehavior"></a>
 If you set the `processBehavior` element to `BUILD`, Amazon Lex builds the bot so that it can be run\. If you set the element to `SAVE` Amazon Lex saves the bot, but doesn't build it\.   
 If you don't specify this value, the default value is `BUILD`\.  
@@ -151,7 +188,7 @@ Required: No
  ** [tags](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-tags"></a>
 A list of tags to add to the bot\. You can only add tags when you create a bot, you can't use the `PutBot` operation to update the tags on a bot\. To update tags, use the `TagResource` operation\.  
 Type: Array of [Tag](API_Tag.md) objects  
-Array Members: Minimum number of 1 item\. Maximum number of 50 items\.  
+Array Members: Minimum number of 0 items\. Maximum number of 200 items\.  
 Required: No
 
  ** [voiceId](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-voiceId"></a>
@@ -166,53 +203,55 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[abortStatement](#lex-PutBot-response-abortStatement)": { 
-      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+   "abortStatement": { 
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[checksum](#lex-PutBot-response-checksum)": "string",
-   "[childDirected](#lex-PutBot-response-childDirected)": boolean,
-   "[clarificationPrompt](#lex-PutBot-response-clarificationPrompt)": { 
-      "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-      "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+   "checksum": "string",
+   "childDirected": boolean,
+   "clarificationPrompt": { 
+      "maxAttempts": number,
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[createdDate](#lex-PutBot-response-createdDate)": number,
-   "[createVersion](#lex-PutBot-response-createVersion)": boolean,
-   "[description](#lex-PutBot-response-description)": "string",
-   "[detectSentiment](#lex-PutBot-response-detectSentiment)": boolean,
-   "[failureReason](#lex-PutBot-response-failureReason)": "string",
-   "[idleSessionTTLInSeconds](#lex-PutBot-response-idleSessionTTLInSeconds)": number,
-   "[intents](#lex-PutBot-response-intents)": [ 
+   "createdDate": number,
+   "createVersion": boolean,
+   "description": "string",
+   "detectSentiment": boolean,
+   "enableModelImprovements": boolean,
+   "failureReason": "string",
+   "idleSessionTTLInSeconds": number,
+   "intents": [ 
       { 
-         "[intentName](API_Intent.md#lex-Type-Intent-intentName)": "string",
-         "[intentVersion](API_Intent.md#lex-Type-Intent-intentVersion)": "string"
+         "intentName": "string",
+         "intentVersion": "string"
       }
    ],
-   "[lastUpdatedDate](#lex-PutBot-response-lastUpdatedDate)": number,
-   "[locale](#lex-PutBot-response-locale)": "string",
-   "[name](#lex-PutBot-response-name)": "string",
-   "[status](#lex-PutBot-response-status)": "string",
-   "[tags](#lex-PutBot-response-tags)": [ 
+   "lastUpdatedDate": number,
+   "locale": "string",
+   "name": "string",
+   "nluIntentConfidenceThreshold": number,
+   "status": "string",
+   "tags": [ 
       { 
-         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
-         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+         "key": "string",
+         "value": "string"
       }
    ],
-   "[version](#lex-PutBot-response-version)": "string",
-   "[voiceId](#lex-PutBot-response-voiceId)": "string"
+   "version": "string",
+   "voiceId": "string"
 }
 ```
 
@@ -223,7 +262,7 @@ If the action is successful, the service sends back an HTTP 200 response\.
 The following data is returned in JSON format by the service\.
 
  ** [abortStatement](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-abortStatement"></a>
-The message that Amazon Lex uses to abort a conversation\. For more information, see [PutBot](#API_PutBot)\.  
+The message that Amazon Lex uses to cancel a conversation\. For more information, see [PutBot](#API_PutBot)\.  
 Type: [Statement](API_Statement.md) object
 
  ** [checksum](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-checksum"></a>
@@ -256,6 +295,10 @@ Length Constraints: Minimum length of 0\. Maximum length of 200\.
  `true` if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis\. If the `detectSentiment` field was not specified in the request, the `detectSentiment` field is `false` in the response\.  
 Type: Boolean
 
+ ** [enableModelImprovements](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-enableModelImprovements"></a>
+Indicates whether the bot uses accuracy improvements\. `true` indicates that the bot is using the imoprovements, otherwise, `false`\.  
+Type: Boolean
+
  ** [failureReason](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-failureReason"></a>
 If `status` is `FAILED`, Amazon Lex provides the reason that it failed to build the bot\.  
 Type: String
@@ -284,6 +327,11 @@ Type: String
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
 Pattern: `^([A-Za-z]_?)+$` 
 
+ ** [nluIntentConfidenceThreshold](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-nluIntentConfidenceThreshold"></a>
+The score that determines where Amazon Lex inserts the `AMAZON.FallbackIntent`, `AMAZON.KendraSearchIntent`, or both when returning alternative intents in a [PostContent](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html) or [PostText](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html) response\. `AMAZON.FallbackIntent` is inserted if the confidence score for all intents is below this value\. `AMAZON.KendraSearchIntent` is only inserted if it is configured for the bot\.  
+Type: Double  
+Valid Range: Minimum value of 0\. Maximum value of 1\.
+
  ** [status](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-status"></a>
  When you send a request to create a bot with `processBehavior` set to `BUILD`, Amazon Lex sets the `status` response element to `BUILDING`\.  
 In the `READY_BASIC_TESTING` state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types\.  
@@ -296,7 +344,7 @@ Valid Values:` BUILDING | READY | READY_BASIC_TESTING | FAILED | NOT_BUILT`
  ** [tags](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-tags"></a>
 A list of tags associated with the bot\.  
 Type: Array of [Tag](API_Tag.md) objects  
-Array Members: Minimum number of 0 items\. Maximum number of 50 items\.
+Array Members: Minimum number of 0 items\. Maximum number of 200 items\.
 
  ** [version](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-version"></a>
 The version of the bot\. For a new bot, the version is always `$LATEST`\.  

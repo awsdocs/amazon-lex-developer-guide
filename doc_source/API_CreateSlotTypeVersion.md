@@ -16,18 +16,19 @@ POST /slottypes/name/versions HTTP/1.1
 Content-type: application/json
 
 {
-   "[checksum](#lex-CreateSlotTypeVersion-request-checksum)": "string"
+   "checksum": "string"
 }
 ```
 
 ## URI Request Parameters<a name="API_CreateSlotTypeVersion_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_CreateSlotTypeVersion_RequestSyntax) **   <a name="lex-CreateSlotTypeVersion-request-name"></a>
 The name of the slot type that you want to create a new version for\. The name is case sensitive\.   
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_CreateSlotTypeVersion_RequestBody"></a>
 
@@ -45,27 +46,27 @@ HTTP/1.1 201
 Content-type: application/json
 
 {
-   "[checksum](#lex-CreateSlotTypeVersion-response-checksum)": "string",
-   "[createdDate](#lex-CreateSlotTypeVersion-response-createdDate)": number,
-   "[description](#lex-CreateSlotTypeVersion-response-description)": "string",
-   "[enumerationValues](#lex-CreateSlotTypeVersion-response-enumerationValues)": [ 
+   "checksum": "string",
+   "createdDate": number,
+   "description": "string",
+   "enumerationValues": [ 
       { 
-         "[synonyms](API_EnumerationValue.md#lex-Type-EnumerationValue-synonyms)": [ "string" ],
-         "[value](API_EnumerationValue.md#lex-Type-EnumerationValue-value)": "string"
+         "synonyms": [ "string" ],
+         "value": "string"
       }
    ],
-   "[lastUpdatedDate](#lex-CreateSlotTypeVersion-response-lastUpdatedDate)": number,
-   "[name](#lex-CreateSlotTypeVersion-response-name)": "string",
-   "[parentSlotTypeSignature](#lex-CreateSlotTypeVersion-response-parentSlotTypeSignature)": "string",
-   "[slotTypeConfigurations](#lex-CreateSlotTypeVersion-response-slotTypeConfigurations)": [ 
+   "lastUpdatedDate": number,
+   "name": "string",
+   "parentSlotTypeSignature": "string",
+   "slotTypeConfigurations": [ 
       { 
-         "[regexConfiguration](API_SlotTypeConfiguration.md#lex-Type-SlotTypeConfiguration-regexConfiguration)": { 
-            "[pattern](API_SlotTypeRegexConfiguration.md#lex-Type-SlotTypeRegexConfiguration-pattern)": "string"
+         "regexConfiguration": { 
+            "pattern": "string"
          }
       }
    ],
-   "[valueSelectionStrategy](#lex-CreateSlotTypeVersion-response-valueSelectionStrategy)": "string",
-   "[version](#lex-CreateSlotTypeVersion-response-version)": "string"
+   "valueSelectionStrategy": "string",
+   "version": "string"
 }
 ```
 

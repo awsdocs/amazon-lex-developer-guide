@@ -28,97 +28,102 @@ PUT /intents/name/versions/$LATEST HTTP/1.1
 Content-type: application/json
 
 {
-   "[checksum](#lex-PutIntent-request-checksum)": "string",
-   "[conclusionStatement](#lex-PutIntent-request-conclusionStatement)": { 
-      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+   "checksum": "string",
+   "conclusionStatement": { 
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[confirmationPrompt](#lex-PutIntent-request-confirmationPrompt)": { 
-      "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-      "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+   "confirmationPrompt": { 
+      "maxAttempts": number,
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[createVersion](#lex-PutIntent-request-createVersion)": boolean,
-   "[description](#lex-PutIntent-request-description)": "string",
-   "[dialogCodeHook](#lex-PutIntent-request-dialogCodeHook)": { 
-      "[messageVersion](API_CodeHook.md#lex-Type-CodeHook-messageVersion)": "string",
-      "[uri](API_CodeHook.md#lex-Type-CodeHook-uri)": "string"
+   "createVersion": boolean,
+   "description": "string",
+   "dialogCodeHook": { 
+      "messageVersion": "string",
+      "uri": "string"
    },
-   "[followUpPrompt](#lex-PutIntent-request-followUpPrompt)": { 
-      "[prompt](API_FollowUpPrompt.md#lex-Type-FollowUpPrompt-prompt)": { 
-         "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-         "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+   "followUpPrompt": { 
+      "prompt": { 
+         "maxAttempts": number,
+         "messages": [ 
             { 
-               "[content](API_Message.md#lex-Type-Message-content)": "string",
-               "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-               "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+               "content": "string",
+               "contentType": "string",
+               "groupNumber": number
             }
          ],
-         "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+         "responseCard": "string"
       },
-      "[rejectionStatement](API_FollowUpPrompt.md#lex-Type-FollowUpPrompt-rejectionStatement)": { 
-         "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+      "rejectionStatement": { 
+         "messages": [ 
             { 
-               "[content](API_Message.md#lex-Type-Message-content)": "string",
-               "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-               "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+               "content": "string",
+               "contentType": "string",
+               "groupNumber": number
             }
          ],
-         "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+         "responseCard": "string"
       }
    },
-   "[fulfillmentActivity](#lex-PutIntent-request-fulfillmentActivity)": { 
-      "[codeHook](API_FulfillmentActivity.md#lex-Type-FulfillmentActivity-codeHook)": { 
-         "[messageVersion](API_CodeHook.md#lex-Type-CodeHook-messageVersion)": "string",
-         "[uri](API_CodeHook.md#lex-Type-CodeHook-uri)": "string"
+   "fulfillmentActivity": { 
+      "codeHook": { 
+         "messageVersion": "string",
+         "uri": "string"
       },
-      "[type](API_FulfillmentActivity.md#lex-Type-FulfillmentActivity-type)": "string"
+      "type": "string"
    },
-   "[parentIntentSignature](#lex-PutIntent-request-parentIntentSignature)": "string",
-   "[rejectionStatement](#lex-PutIntent-request-rejectionStatement)": { 
-      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+   "kendraConfiguration": { 
+      "kendraIndex": "string",
+      "queryFilterString": "string",
+      "role": "string"
+   },
+   "parentIntentSignature": "string",
+   "rejectionStatement": { 
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[sampleUtterances](#lex-PutIntent-request-sampleUtterances)": [ "string" ],
-   "[slots](#lex-PutIntent-request-slots)": [ 
+   "sampleUtterances": [ "string" ],
+   "slots": [ 
       { 
-         "[description](API_Slot.md#lex-Type-Slot-description)": "string",
-         "[name](API_Slot.md#lex-Type-Slot-name)": "string",
-         "[obfuscationSetting](API_Slot.md#lex-Type-Slot-obfuscationSetting)": "string",
-         "[priority](API_Slot.md#lex-Type-Slot-priority)": number,
-         "[responseCard](API_Slot.md#lex-Type-Slot-responseCard)": "string",
-         "[sampleUtterances](API_Slot.md#lex-Type-Slot-sampleUtterances)": [ "string" ],
-         "[slotConstraint](API_Slot.md#lex-Type-Slot-slotConstraint)": "string",
-         "[slotType](API_Slot.md#lex-Type-Slot-slotType)": "string",
-         "[slotTypeVersion](API_Slot.md#lex-Type-Slot-slotTypeVersion)": "string",
-         "[valueElicitationPrompt](API_Slot.md#lex-Type-Slot-valueElicitationPrompt)": { 
-            "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-            "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+         "description": "string",
+         "name": "string",
+         "obfuscationSetting": "string",
+         "priority": number,
+         "responseCard": "string",
+         "sampleUtterances": [ "string" ],
+         "slotConstraint": "string",
+         "slotType": "string",
+         "slotTypeVersion": "string",
+         "valueElicitationPrompt": { 
+            "maxAttempts": number,
+            "messages": [ 
                { 
-                  "[content](API_Message.md#lex-Type-Message-content)": "string",
-                  "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-                  "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+                  "content": "string",
+                  "contentType": "string",
+                  "groupNumber": number
                }
             ],
-            "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+            "responseCard": "string"
          }
       }
    ]
@@ -127,14 +132,15 @@ Content-type: application/json
 
 ## URI Request Parameters<a name="API_PutIntent_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_PutIntent_RequestSyntax) **   <a name="lex-PutIntent-request-name"></a>
 The name of the intent\. The name is *not* case sensitive\.   
 The name can't match a built\-in intent name, or a built\-in intent name with "AMAZON\." removed\. For example, because there is a built\-in intent called `AMAZON.HelpIntent`, you can't create a custom intent called `HelpIntent`\.  
 For a list of built\-in intents, see [Standard Built\-in Intents](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents) in the *Alexa Skills Kit*\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_PutIntent_RequestBody"></a>
 
@@ -195,6 +201,11 @@ Required\. Describes how the intent is fulfilled\. For example, after a user pro
 Type: [FulfillmentActivity](API_FulfillmentActivity.md) object  
 Required: No
 
+ ** [kendraConfiguration](#API_PutIntent_RequestSyntax) **   <a name="lex-PutIntent-request-kendraConfiguration"></a>
+Configuration information required to use the `AMAZON.KendraSearchIntent` intent to connect to an Amazon Kendra index\. For more information, see [ AMAZON\.KendraSearchIntent](http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html)\.  
+Type: [KendraConfiguration](API_KendraConfiguration.md) object  
+Required: No
+
  ** [parentIntentSignature](#API_PutIntent_RequestSyntax) **   <a name="lex-PutIntent-request-parentIntentSignature"></a>
 A unique identifier for the built\-in intent to base this intent on\. To find the signature for an intent, see [Standard Built\-in Intents](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents) in the *Alexa Skills Kit*\.  
 Type: String  
@@ -227,104 +238,109 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[checksum](#lex-PutIntent-response-checksum)": "string",
-   "[conclusionStatement](#lex-PutIntent-response-conclusionStatement)": { 
-      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+   "checksum": "string",
+   "conclusionStatement": { 
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[confirmationPrompt](#lex-PutIntent-response-confirmationPrompt)": { 
-      "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-      "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+   "confirmationPrompt": { 
+      "maxAttempts": number,
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[createdDate](#lex-PutIntent-response-createdDate)": number,
-   "[createVersion](#lex-PutIntent-response-createVersion)": boolean,
-   "[description](#lex-PutIntent-response-description)": "string",
-   "[dialogCodeHook](#lex-PutIntent-response-dialogCodeHook)": { 
-      "[messageVersion](API_CodeHook.md#lex-Type-CodeHook-messageVersion)": "string",
-      "[uri](API_CodeHook.md#lex-Type-CodeHook-uri)": "string"
+   "createdDate": number,
+   "createVersion": boolean,
+   "description": "string",
+   "dialogCodeHook": { 
+      "messageVersion": "string",
+      "uri": "string"
    },
-   "[followUpPrompt](#lex-PutIntent-response-followUpPrompt)": { 
-      "[prompt](API_FollowUpPrompt.md#lex-Type-FollowUpPrompt-prompt)": { 
-         "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-         "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+   "followUpPrompt": { 
+      "prompt": { 
+         "maxAttempts": number,
+         "messages": [ 
             { 
-               "[content](API_Message.md#lex-Type-Message-content)": "string",
-               "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-               "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+               "content": "string",
+               "contentType": "string",
+               "groupNumber": number
             }
          ],
-         "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+         "responseCard": "string"
       },
-      "[rejectionStatement](API_FollowUpPrompt.md#lex-Type-FollowUpPrompt-rejectionStatement)": { 
-         "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+      "rejectionStatement": { 
+         "messages": [ 
             { 
-               "[content](API_Message.md#lex-Type-Message-content)": "string",
-               "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-               "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+               "content": "string",
+               "contentType": "string",
+               "groupNumber": number
             }
          ],
-         "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+         "responseCard": "string"
       }
    },
-   "[fulfillmentActivity](#lex-PutIntent-response-fulfillmentActivity)": { 
-      "[codeHook](API_FulfillmentActivity.md#lex-Type-FulfillmentActivity-codeHook)": { 
-         "[messageVersion](API_CodeHook.md#lex-Type-CodeHook-messageVersion)": "string",
-         "[uri](API_CodeHook.md#lex-Type-CodeHook-uri)": "string"
+   "fulfillmentActivity": { 
+      "codeHook": { 
+         "messageVersion": "string",
+         "uri": "string"
       },
-      "[type](API_FulfillmentActivity.md#lex-Type-FulfillmentActivity-type)": "string"
+      "type": "string"
    },
-   "[lastUpdatedDate](#lex-PutIntent-response-lastUpdatedDate)": number,
-   "[name](#lex-PutIntent-response-name)": "string",
-   "[parentIntentSignature](#lex-PutIntent-response-parentIntentSignature)": "string",
-   "[rejectionStatement](#lex-PutIntent-response-rejectionStatement)": { 
-      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+   "kendraConfiguration": { 
+      "kendraIndex": "string",
+      "queryFilterString": "string",
+      "role": "string"
+   },
+   "lastUpdatedDate": number,
+   "name": "string",
+   "parentIntentSignature": "string",
+   "rejectionStatement": { 
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[sampleUtterances](#lex-PutIntent-response-sampleUtterances)": [ "string" ],
-   "[slots](#lex-PutIntent-response-slots)": [ 
+   "sampleUtterances": [ "string" ],
+   "slots": [ 
       { 
-         "[description](API_Slot.md#lex-Type-Slot-description)": "string",
-         "[name](API_Slot.md#lex-Type-Slot-name)": "string",
-         "[obfuscationSetting](API_Slot.md#lex-Type-Slot-obfuscationSetting)": "string",
-         "[priority](API_Slot.md#lex-Type-Slot-priority)": number,
-         "[responseCard](API_Slot.md#lex-Type-Slot-responseCard)": "string",
-         "[sampleUtterances](API_Slot.md#lex-Type-Slot-sampleUtterances)": [ "string" ],
-         "[slotConstraint](API_Slot.md#lex-Type-Slot-slotConstraint)": "string",
-         "[slotType](API_Slot.md#lex-Type-Slot-slotType)": "string",
-         "[slotTypeVersion](API_Slot.md#lex-Type-Slot-slotTypeVersion)": "string",
-         "[valueElicitationPrompt](API_Slot.md#lex-Type-Slot-valueElicitationPrompt)": { 
-            "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-            "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+         "description": "string",
+         "name": "string",
+         "obfuscationSetting": "string",
+         "priority": number,
+         "responseCard": "string",
+         "sampleUtterances": [ "string" ],
+         "slotConstraint": "string",
+         "slotType": "string",
+         "slotTypeVersion": "string",
+         "valueElicitationPrompt": { 
+            "maxAttempts": number,
+            "messages": [ 
                { 
-                  "[content](API_Message.md#lex-Type-Message-content)": "string",
-                  "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-                  "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+                  "content": "string",
+                  "contentType": "string",
+                  "groupNumber": number
                }
             ],
-            "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+            "responseCard": "string"
          }
       }
    ],
-   "[version](#lex-PutIntent-response-version)": "string"
+   "version": "string"
 }
 ```
 
@@ -370,6 +386,10 @@ Type: [FollowUpPrompt](API_FollowUpPrompt.md) object
  ** [fulfillmentActivity](#API_PutIntent_ResponseSyntax) **   <a name="lex-PutIntent-response-fulfillmentActivity"></a>
 If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent\.  
 Type: [FulfillmentActivity](API_FulfillmentActivity.md) object
+
+ ** [kendraConfiguration](#API_PutIntent_ResponseSyntax) **   <a name="lex-PutIntent-response-kendraConfiguration"></a>
+Configuration information, if any, required to connect to an Amazon Kendra index and use the `AMAZON.KendraSearchIntent` intent\.  
+Type: [KendraConfiguration](API_KendraConfiguration.md) object
 
  ** [lastUpdatedDate](#API_PutIntent_ResponseSyntax) **   <a name="lex-PutIntent-response-lastUpdatedDate"></a>
 The date that the intent was updated\. When you create a resource, the creation date and last update dates are the same\.  

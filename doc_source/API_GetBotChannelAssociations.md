@@ -12,17 +12,19 @@ GET /bots/botName/aliases/aliasName/channels/?maxResults=maxResults&nameContains
 
 ## URI Request Parameters<a name="API_GetBotChannelAssociations_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [aliasName](#API_GetBotChannelAssociations_RequestSyntax) **   <a name="lex-GetBotChannelAssociations-request-botAlias"></a>
 An alias pointing to the specific version of the Amazon Lex bot to which this association is being made\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^(-|^([A-Za-z]_?)+$)$` 
+Pattern: `^(-|^([A-Za-z]_?)+$)$`   
+Required: Yes
 
  ** [botName](#API_GetBotChannelAssociations_RequestSyntax) **   <a name="lex-GetBotChannelAssociations-request-botName"></a>
 The name of the Amazon Lex bot in the association\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [maxResults](#API_GetBotChannelAssociations_RequestSyntax) **   <a name="lex-GetBotChannelAssociations-request-maxResults"></a>
 The maximum number of associations to return in the response\. The default is 50\.   
@@ -47,22 +49,22 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[botChannelAssociations](#lex-GetBotChannelAssociations-response-botChannelAssociations)": [ 
+   "botChannelAssociations": [ 
       { 
-         "[botAlias](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-botAlias)": "string",
-         "[botConfiguration](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-botConfiguration)": { 
+         "botAlias": "string",
+         "botConfiguration": { 
             "string" : "string" 
          },
-         "[botName](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-botName)": "string",
-         "[createdDate](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-createdDate)": number,
-         "[description](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-description)": "string",
-         "[failureReason](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-failureReason)": "string",
-         "[name](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-name)": "string",
-         "[status](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-status)": "string",
-         "[type](API_BotChannelAssociation.md#lex-Type-BotChannelAssociation-type)": "string"
+         "botName": "string",
+         "createdDate": number,
+         "description": "string",
+         "failureReason": "string",
+         "name": "string",
+         "status": "string",
+         "type": "string"
       }
    ],
-   "[nextToken](#lex-GetBotChannelAssociations-response-nextToken)": "string"
+   "nextToken": "string"
 }
 ```
 

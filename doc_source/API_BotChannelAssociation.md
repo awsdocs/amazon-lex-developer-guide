@@ -14,6 +14,7 @@ Required: No
  **botConfiguration**   <a name="lex-Type-BotChannelAssociation-botConfiguration"></a>
 Provides information necessary to communicate with the messaging platform\.   
 Type: String to string map  
+Map Entries: Maximum number of 10 items\.  
 Required: No
 
  **botName**   <a name="lex-Type-BotChannelAssociation-botName"></a>

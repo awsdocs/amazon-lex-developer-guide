@@ -15,37 +15,38 @@ PUT /slottypes/name/versions/$LATEST HTTP/1.1
 Content-type: application/json
 
 {
-   "[checksum](#lex-PutSlotType-request-checksum)": "string",
-   "[createVersion](#lex-PutSlotType-request-createVersion)": boolean,
-   "[description](#lex-PutSlotType-request-description)": "string",
-   "[enumerationValues](#lex-PutSlotType-request-enumerationValues)": [ 
+   "checksum": "string",
+   "createVersion": boolean,
+   "description": "string",
+   "enumerationValues": [ 
       { 
-         "[synonyms](API_EnumerationValue.md#lex-Type-EnumerationValue-synonyms)": [ "string" ],
-         "[value](API_EnumerationValue.md#lex-Type-EnumerationValue-value)": "string"
+         "synonyms": [ "string" ],
+         "value": "string"
       }
    ],
-   "[parentSlotTypeSignature](#lex-PutSlotType-request-parentSlotTypeSignature)": "string",
-   "[slotTypeConfigurations](#lex-PutSlotType-request-slotTypeConfigurations)": [ 
+   "parentSlotTypeSignature": "string",
+   "slotTypeConfigurations": [ 
       { 
-         "[regexConfiguration](API_SlotTypeConfiguration.md#lex-Type-SlotTypeConfiguration-regexConfiguration)": { 
-            "[pattern](API_SlotTypeRegexConfiguration.md#lex-Type-SlotTypeRegexConfiguration-pattern)": "string"
+         "regexConfiguration": { 
+            "pattern": "string"
          }
       }
    ],
-   "[valueSelectionStrategy](#lex-PutSlotType-request-valueSelectionStrategy)": "string"
+   "valueSelectionStrategy": "string"
 }
 ```
 
 ## URI Request Parameters<a name="API_PutSlotType_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-name"></a>
 The name of the slot type\. The name is *not* case sensitive\.   
 The name can't match a built\-in slot type name, or a built\-in slot type name with "AMAZON\." removed\. For example, because there is a built\-in slot type called `AMAZON.DATE`, you can't create a custom slot type called `DATE`\.  
 For a list of built\-in slot types, see [Slot Type Reference](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference) in the *Alexa Skills Kit*\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_PutSlotType_RequestBody"></a>
 
@@ -71,6 +72,7 @@ Required: No
 
  ** [enumerationValues](#API_PutSlotType_RequestSyntax) **   <a name="lex-PutSlotType-request-enumerationValues"></a>
 A list of `EnumerationValue` objects that defines the values that the slot type can take\. Each value can have a list of `synonyms`, which are additional values that help train the machine learning model about the values that it resolves for a slot\.   
+A regular expression slot type doesn't require enumeration values\. All other slot types require a list of enumeration values\.  
 When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot\. If you are using a Lambda function, this resolution list is passed to the function\. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value\. The `valueSelectionStrategy` field indicates the option to use\.   
 Type: Array of [EnumerationValue](API_EnumerationValue.md) objects  
 Array Members: Minimum number of 0 items\. Maximum number of 10000 items\.  
@@ -106,28 +108,28 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[checksum](#lex-PutSlotType-response-checksum)": "string",
-   "[createdDate](#lex-PutSlotType-response-createdDate)": number,
-   "[createVersion](#lex-PutSlotType-response-createVersion)": boolean,
-   "[description](#lex-PutSlotType-response-description)": "string",
-   "[enumerationValues](#lex-PutSlotType-response-enumerationValues)": [ 
+   "checksum": "string",
+   "createdDate": number,
+   "createVersion": boolean,
+   "description": "string",
+   "enumerationValues": [ 
       { 
-         "[synonyms](API_EnumerationValue.md#lex-Type-EnumerationValue-synonyms)": [ "string" ],
-         "[value](API_EnumerationValue.md#lex-Type-EnumerationValue-value)": "string"
+         "synonyms": [ "string" ],
+         "value": "string"
       }
    ],
-   "[lastUpdatedDate](#lex-PutSlotType-response-lastUpdatedDate)": number,
-   "[name](#lex-PutSlotType-response-name)": "string",
-   "[parentSlotTypeSignature](#lex-PutSlotType-response-parentSlotTypeSignature)": "string",
-   "[slotTypeConfigurations](#lex-PutSlotType-response-slotTypeConfigurations)": [ 
+   "lastUpdatedDate": number,
+   "name": "string",
+   "parentSlotTypeSignature": "string",
+   "slotTypeConfigurations": [ 
       { 
-         "[regexConfiguration](API_SlotTypeConfiguration.md#lex-Type-SlotTypeConfiguration-regexConfiguration)": { 
-            "[pattern](API_SlotTypeRegexConfiguration.md#lex-Type-SlotTypeRegexConfiguration-pattern)": "string"
+         "regexConfiguration": { 
+            "pattern": "string"
          }
       }
    ],
-   "[valueSelectionStrategy](#lex-PutSlotType-response-valueSelectionStrategy)": "string",
-   "[version](#lex-PutSlotType-response-version)": "string"
+   "valueSelectionStrategy": "string",
+   "version": "string"
 }
 ```
 

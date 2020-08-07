@@ -12,17 +12,19 @@ DELETE /bots/name/versions/version HTTP/1.1
 
 ## URI Request Parameters<a name="API_DeleteBotVersion_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_DeleteBotVersion_RequestSyntax) **   <a name="lex-DeleteBotVersion-request-name"></a>
 The name of the bot\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [version](#API_DeleteBotVersion_RequestSyntax) **   <a name="lex-DeleteBotVersion-request-version"></a>
 The version of the bot to delete\. You cannot delete the `$LATEST` version of the bot\. To delete the `$LATEST` version, use the [DeleteBot](API_DeleteBot.md) operation\.  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
-Pattern: `[0-9]+` 
+Pattern: `[0-9]+`   
+Required: Yes
 
 ## Request Body<a name="API_DeleteBotVersion_RequestBody"></a>
 

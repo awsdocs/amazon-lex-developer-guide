@@ -16,18 +16,19 @@ POST /bots/name/versions HTTP/1.1
 Content-type: application/json
 
 {
-   "[checksum](#lex-CreateBotVersion-request-checksum)": "string"
+   "checksum": "string"
 }
 ```
 
 ## URI Request Parameters<a name="API_CreateBotVersion_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [name](#API_CreateBotVersion_RequestSyntax) **   <a name="lex-CreateBotVersion-request-name"></a>
 The name of the bot that you want to create a new version of\. The name is case sensitive\.   
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_CreateBotVersion_RequestBody"></a>
 
@@ -45,46 +46,47 @@ HTTP/1.1 201
 Content-type: application/json
 
 {
-   "[abortStatement](#lex-CreateBotVersion-response-abortStatement)": { 
-      "[messages](API_Statement.md#lex-Type-Statement-messages)": [ 
+   "abortStatement": { 
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Statement.md#lex-Type-Statement-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[checksum](#lex-CreateBotVersion-response-checksum)": "string",
-   "[childDirected](#lex-CreateBotVersion-response-childDirected)": boolean,
-   "[clarificationPrompt](#lex-CreateBotVersion-response-clarificationPrompt)": { 
-      "[maxAttempts](API_Prompt.md#lex-Type-Prompt-maxAttempts)": number,
-      "[messages](API_Prompt.md#lex-Type-Prompt-messages)": [ 
+   "checksum": "string",
+   "childDirected": boolean,
+   "clarificationPrompt": { 
+      "maxAttempts": number,
+      "messages": [ 
          { 
-            "[content](API_Message.md#lex-Type-Message-content)": "string",
-            "[contentType](API_Message.md#lex-Type-Message-contentType)": "string",
-            "[groupNumber](API_Message.md#lex-Type-Message-groupNumber)": number
+            "content": "string",
+            "contentType": "string",
+            "groupNumber": number
          }
       ],
-      "[responseCard](API_Prompt.md#lex-Type-Prompt-responseCard)": "string"
+      "responseCard": "string"
    },
-   "[createdDate](#lex-CreateBotVersion-response-createdDate)": number,
-   "[description](#lex-CreateBotVersion-response-description)": "string",
-   "[detectSentiment](#lex-CreateBotVersion-response-detectSentiment)": boolean,
-   "[failureReason](#lex-CreateBotVersion-response-failureReason)": "string",
-   "[idleSessionTTLInSeconds](#lex-CreateBotVersion-response-idleSessionTTLInSeconds)": number,
-   "[intents](#lex-CreateBotVersion-response-intents)": [ 
+   "createdDate": number,
+   "description": "string",
+   "detectSentiment": boolean,
+   "enableModelImprovements": boolean,
+   "failureReason": "string",
+   "idleSessionTTLInSeconds": number,
+   "intents": [ 
       { 
-         "[intentName](API_Intent.md#lex-Type-Intent-intentName)": "string",
-         "[intentVersion](API_Intent.md#lex-Type-Intent-intentVersion)": "string"
+         "intentName": "string",
+         "intentVersion": "string"
       }
    ],
-   "[lastUpdatedDate](#lex-CreateBotVersion-response-lastUpdatedDate)": number,
-   "[locale](#lex-CreateBotVersion-response-locale)": "string",
-   "[name](#lex-CreateBotVersion-response-name)": "string",
-   "[status](#lex-CreateBotVersion-response-status)": "string",
-   "[version](#lex-CreateBotVersion-response-version)": "string",
-   "[voiceId](#lex-CreateBotVersion-response-voiceId)": "string"
+   "lastUpdatedDate": number,
+   "locale": "string",
+   "name": "string",
+   "status": "string",
+   "version": "string",
+   "voiceId": "string"
 }
 ```
 
@@ -95,7 +97,7 @@ If the action is successful, the service sends back an HTTP 201 response\.
 The following data is returned in JSON format by the service\.
 
  ** [abortStatement](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-abortStatement"></a>
-The message that Amazon Lex uses to abort a conversation\. For more information, see [PutBot](API_PutBot.md)\.  
+The message that Amazon Lex uses to cancel a conversation\. For more information, see [PutBot](API_PutBot.md)\.  
 Type: [Statement](API_Statement.md) object
 
  ** [checksum](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-checksum"></a>
@@ -122,6 +124,10 @@ Length Constraints: Minimum length of 0\. Maximum length of 200\.
 
  ** [detectSentiment](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-detectSentiment"></a>
 Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis\.  
+Type: Boolean
+
+ ** [enableModelImprovements](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-enableModelImprovements"></a>
+Indicates whether the bot uses accuracy improvements\. `true` indicates that the bot is using the imoprovements, otherwise, `false`\.  
 Type: Boolean
 
  ** [failureReason](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-failureReason"></a>

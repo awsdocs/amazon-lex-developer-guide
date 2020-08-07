@@ -1,11 +1,5 @@
 # Integrating an Amazon Lex Bot with Facebook Messenger<a name="fb-bot-association"></a>
 
-**Topics**
-+ [Step 1: Create an Amazon Lex Bot](#fb-bot-assoc-create-bot)
-+ [Step 2: Create a Facebook Application](#fb-bot-assoc-create-fb-app)
-+ [Step 3: Integrate Facebook Messenger with the Amazon Lex Bot](#fb-bot-assoc-create-assoc)
-+ [Step 4: Test the Integration](#fb-bot-test)
-
 This exercise shows how to integrate Facebook Messenger with your Amazon Lex bot\. You perform the following steps:
 
 1. Create an Amazon Lex bot
@@ -15,6 +9,12 @@ This exercise shows how to integrate Facebook Messenger with your Amazon Lex bot
 1. Integrate Facebook Messenger with your Amazon Lex bot
 
 1. Validate the integration
+
+**Topics**
++ [Step 1: Create an Amazon Lex Bot](#fb-bot-assoc-create-bot)
++ [Step 2: Create a Facebook Application](#fb-bot-assoc-create-fb-app)
++ [Step 3: Integrate Facebook Messenger with the Amazon Lex Bot](#fb-bot-assoc-create-assoc)
++ [Step 4: Test the Integration](#fb-bot-test)
 
 ## Step 1: Create an Amazon Lex Bot<a name="fb-bot-assoc-create-bot"></a>
 

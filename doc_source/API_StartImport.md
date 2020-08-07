@@ -9,13 +9,13 @@ POST /imports/ HTTP/1.1
 Content-type: application/json
 
 {
-   "[mergeStrategy](#lex-StartImport-request-mergeStrategy)": "string",
-   "[payload](#lex-StartImport-request-payload)": blob,
-   "[resourceType](#lex-StartImport-request-resourceType)": "string",
-   "[tags](#lex-StartImport-request-tags)": [ 
+   "mergeStrategy": "string",
+   "payload": blob,
+   "resourceType": "string",
+   "tags": [ 
       { 
-         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
-         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+         "key": "string",
+         "value": "string"
       }
    ]
 }
@@ -54,7 +54,7 @@ Required: Yes
  ** [tags](#API_StartImport_RequestSyntax) **   <a name="lex-StartImport-request-tags"></a>
 A list of tags to add to the imported bot\. You can only add tags when you import a bot, you can't add tags to an intent or slot type\.  
 Type: Array of [Tag](API_Tag.md) objects  
-Array Members: Minimum number of 1 item\. Maximum number of 50 items\.  
+Array Members: Minimum number of 0 items\. Maximum number of 200 items\.  
 Required: No
 
 ## Response Syntax<a name="API_StartImport_ResponseSyntax"></a>
@@ -64,16 +64,16 @@ HTTP/1.1 201
 Content-type: application/json
 
 {
-   "[createdDate](#lex-StartImport-response-createdDate)": number,
-   "[importId](#lex-StartImport-response-importId)": "string",
-   "[importStatus](#lex-StartImport-response-importStatus)": "string",
-   "[mergeStrategy](#lex-StartImport-response-mergeStrategy)": "string",
-   "[name](#lex-StartImport-response-name)": "string",
-   "[resourceType](#lex-StartImport-response-resourceType)": "string",
-   "[tags](#lex-StartImport-response-tags)": [ 
+   "createdDate": number,
+   "importId": "string",
+   "importStatus": "string",
+   "mergeStrategy": "string",
+   "name": "string",
+   "resourceType": "string",
+   "tags": [ 
       { 
-         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
-         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+         "key": "string",
+         "value": "string"
       }
    ]
 }
@@ -117,7 +117,7 @@ Valid Values:` BOT | INTENT | SLOT_TYPE`
  ** [tags](#API_StartImport_ResponseSyntax) **   <a name="lex-StartImport-response-tags"></a>
 A list of tags added to the imported bot\.  
 Type: Array of [Tag](API_Tag.md) objects  
-Array Members: Minimum number of 0 items\. Maximum number of 50 items\.
+Array Members: Minimum number of 0 items\. Maximum number of 200 items\.
 
 ## Errors<a name="API_StartImport_Errors"></a>
 

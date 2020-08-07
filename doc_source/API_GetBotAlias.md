@@ -12,17 +12,19 @@ GET /bots/botName/aliases/name HTTP/1.1
 
 ## URI Request Parameters<a name="API_GetBotAlias_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [botName](#API_GetBotAlias_RequestSyntax) **   <a name="lex-GetBotAlias-request-botName"></a>
 The name of the bot\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [name](#API_GetBotAlias_RequestSyntax) **   <a name="lex-GetBotAlias-request-name"></a>
 The name of the bot alias\. The name is case sensitive\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_GetBotAlias_RequestBody"></a>
 
@@ -35,25 +37,25 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[botName](#lex-GetBotAlias-response-botName)": "string",
-   "[botVersion](#lex-GetBotAlias-response-botVersion)": "string",
-   "[checksum](#lex-GetBotAlias-response-checksum)": "string",
-   "[conversationLogs](#lex-GetBotAlias-response-conversationLogs)": { 
-      "[iamRoleArn](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-iamRoleArn)": "string",
-      "[logSettings](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-logSettings)": [ 
+   "botName": "string",
+   "botVersion": "string",
+   "checksum": "string",
+   "conversationLogs": { 
+      "iamRoleArn": "string",
+      "logSettings": [ 
          { 
-            "[destination](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-destination)": "string",
-            "[kmsKeyArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-kmsKeyArn)": "string",
-            "[logType](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-logType)": "string",
-            "[resourceArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourceArn)": "string",
-            "[resourcePrefix](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourcePrefix)": "string"
+            "destination": "string",
+            "kmsKeyArn": "string",
+            "logType": "string",
+            "resourceArn": "string",
+            "resourcePrefix": "string"
          }
       ]
    },
-   "[createdDate](#lex-GetBotAlias-response-createdDate)": number,
-   "[description](#lex-GetBotAlias-response-description)": "string",
-   "[lastUpdatedDate](#lex-GetBotAlias-response-lastUpdatedDate)": number,
-   "[name](#lex-GetBotAlias-response-name)": "string"
+   "createdDate": number,
+   "description": "string",
+   "lastUpdatedDate": number,
+   "name": "string"
 }
 ```
 

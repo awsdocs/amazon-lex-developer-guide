@@ -10,13 +10,15 @@ GET /bot/botName/alias/botAlias/user/userId/session/?checkpointLabelFilter=check
 
 ## URI Request Parameters<a name="API_runtime_GetSession_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [botAlias](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-botAlias"></a>
-The alias in use for the bot that contains the session data\.
+The alias in use for the bot that contains the session data\.  
+Required: Yes
 
  ** [botName](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-botName"></a>
-The name of the bot that contains the session data\.
+The name of the bot that contains the session data\.  
+Required: Yes
 
  ** [checkpointLabelFilter](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-checkpointLabelFilter"></a>
 A string used to filter the intents returned in the `recentIntentSummaryView` structure\.   
@@ -27,7 +29,8 @@ Pattern: `[a-zA-Z0-9-]+`
  ** [userId](#API_runtime_GetSession_RequestSyntax) **   <a name="lex-runtime_GetSession-request-userId"></a>
 The ID of the client application user\. Amazon Lex uses this to identify a user's conversation with your bot\.   
 Length Constraints: Minimum length of 2\. Maximum length of 100\.  
-Pattern: `[0-9a-zA-Z._:-]+` 
+Pattern: `[0-9a-zA-Z._:-]+`   
+Required: Yes
 
 ## Request Body<a name="API_runtime_GetSession_RequestBody"></a>
 
@@ -40,34 +43,34 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[dialogAction](#lex-runtime_GetSession-response-dialogAction)": { 
-      "[fulfillmentState](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-fulfillmentState)": "string",
-      "[intentName](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-intentName)": "string",
-      "[message](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-message)": "string",
-      "[messageFormat](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-messageFormat)": "string",
-      "[slots](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-slots)": { 
+   "dialogAction": { 
+      "fulfillmentState": "string",
+      "intentName": "string",
+      "message": "string",
+      "messageFormat": "string",
+      "slots": { 
          "string" : "string" 
       },
-      "[slotToElicit](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-slotToElicit)": "string",
-      "[type](API_runtime_DialogAction.md#lex-Type-runtime_DialogAction-type)": "string"
+      "slotToElicit": "string",
+      "type": "string"
    },
-   "[recentIntentSummaryView](#lex-runtime_GetSession-response-recentIntentSummaryView)": [ 
+   "recentIntentSummaryView": [ 
       { 
-         "[checkpointLabel](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-checkpointLabel)": "string",
-         "[confirmationStatus](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-confirmationStatus)": "string",
-         "[dialogActionType](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-dialogActionType)": "string",
-         "[fulfillmentState](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-fulfillmentState)": "string",
-         "[intentName](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-intentName)": "string",
-         "[slots](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-slots)": { 
+         "checkpointLabel": "string",
+         "confirmationStatus": "string",
+         "dialogActionType": "string",
+         "fulfillmentState": "string",
+         "intentName": "string",
+         "slots": { 
             "string" : "string" 
          },
-         "[slotToElicit](API_runtime_IntentSummary.md#lex-Type-runtime_IntentSummary-slotToElicit)": "string"
+         "slotToElicit": "string"
       }
    ],
-   "[sessionAttributes](#lex-runtime_GetSession-response-sessionAttributes)": { 
+   "sessionAttributes": { 
       "string" : "string" 
    },
-   "[sessionId](#lex-runtime_GetSession-response-sessionId)": "string"
+   "sessionId": "string"
 }
 ```
 

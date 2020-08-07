@@ -10,10 +10,11 @@ GET /imports/importId HTTP/1.1
 
 ## URI Request Parameters<a name="API_GetImport_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [importId](#API_GetImport_RequestSyntax) **   <a name="lex-GetImport-request-importId"></a>
-The identifier of the import job information to return\.
+The identifier of the import job information to return\.  
+Required: Yes
 
 ## Request Body<a name="API_GetImport_RequestBody"></a>
 
@@ -26,13 +27,13 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[createdDate](#lex-GetImport-response-createdDate)": number,
-   "[failureReason](#lex-GetImport-response-failureReason)": [ "string" ],
-   "[importId](#lex-GetImport-response-importId)": "string",
-   "[importStatus](#lex-GetImport-response-importStatus)": "string",
-   "[mergeStrategy](#lex-GetImport-response-mergeStrategy)": "string",
-   "[name](#lex-GetImport-response-name)": "string",
-   "[resourceType](#lex-GetImport-response-resourceType)": "string"
+   "createdDate": number,
+   "failureReason": [ "string" ],
+   "importId": "string",
+   "importStatus": "string",
+   "mergeStrategy": "string",
+   "name": "string",
+   "resourceType": "string"
 }
 ```
 

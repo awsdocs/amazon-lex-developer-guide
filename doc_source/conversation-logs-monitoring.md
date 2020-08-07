@@ -17,4 +17,4 @@ The failure metrics show that Amazon Lex couldn't deliver audio or text logs to 
 + For text logging, make sure that the CloudWatch Logs log group exists\. For audio logging, make sure that the S3 bucket exists\.
 + Make sure that the IAM role that Amazon Lex uses to access the CloudWatch Logs log group or S3 bucket has write permission for the log group or bucket\.
 + Make sure that the S3 bucket exists in the same region as the Amazon Lex bot and belongs to your account\.
-+ If you are using an AWS KMS key for S3 encryption, make sure that there are no policies that prevent Amazon Lex from using your key and make sure that the IAM role you provide has the necessary AWS KMS permissions\. For more information, see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)\.
++ If you are using an AWS KMS key for S3 encryption, make sure that there are no policies that prevent Amazon Lex from using your key and make sure that the IAM role you provide has the necessary AWS KMS permissions\. For more information, see [IAM Policies for Conversation Logs](conversation-logs-policies.md)\.

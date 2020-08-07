@@ -11,6 +11,7 @@ This documentation will help you understand how to apply the shared responsibili
 **Topics**
 + [Data Protection in Amazon Lex](data-protection.md)
 + [Identity and Access Management for Amazon Lex](security-iam.md)
++ [Using Service\-Linked Roles for Amazon Lex](using-service-linked-roles.md)
 + [Monitoring in Amazon Lex](monitoring-aws-lex.md)
 + [Compliance Validation for Amazon Lex](compliance.md)
 + [Resilience in Amazon Lex](disaster-recovery-resiliency.md)

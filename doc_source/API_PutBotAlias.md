@@ -11,24 +11,24 @@ PUT /bots/botName/aliases/name HTTP/1.1
 Content-type: application/json
 
 {
-   "[botVersion](#lex-PutBotAlias-request-botVersion)": "string",
-   "[checksum](#lex-PutBotAlias-request-checksum)": "string",
-   "[conversationLogs](#lex-PutBotAlias-request-conversationLogs)": { 
-      "[iamRoleArn](API_ConversationLogsRequest.md#lex-Type-ConversationLogsRequest-iamRoleArn)": "string",
-      "[logSettings](API_ConversationLogsRequest.md#lex-Type-ConversationLogsRequest-logSettings)": [ 
+   "botVersion": "string",
+   "checksum": "string",
+   "conversationLogs": { 
+      "iamRoleArn": "string",
+      "logSettings": [ 
          { 
-            "[destination](API_LogSettingsRequest.md#lex-Type-LogSettingsRequest-destination)": "string",
-            "[kmsKeyArn](API_LogSettingsRequest.md#lex-Type-LogSettingsRequest-kmsKeyArn)": "string",
-            "[logType](API_LogSettingsRequest.md#lex-Type-LogSettingsRequest-logType)": "string",
-            "[resourceArn](API_LogSettingsRequest.md#lex-Type-LogSettingsRequest-resourceArn)": "string"
+            "destination": "string",
+            "kmsKeyArn": "string",
+            "logType": "string",
+            "resourceArn": "string"
          }
       ]
    },
-   "[description](#lex-PutBotAlias-request-description)": "string",
-   "[tags](#lex-PutBotAlias-request-tags)": [ 
+   "description": "string",
+   "tags": [ 
       { 
-         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
-         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+         "key": "string",
+         "value": "string"
       }
    ]
 }
@@ -36,17 +36,19 @@ Content-type: application/json
 
 ## URI Request Parameters<a name="API_PutBotAlias_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [botName](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-botName"></a>
 The name of the bot\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [name](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-name"></a>
 The name of the alias\. The name is *not* case sensitive\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_PutBotAlias_RequestBody"></a>
 
@@ -80,7 +82,7 @@ Required: No
  ** [tags](#API_PutBotAlias_RequestSyntax) **   <a name="lex-PutBotAlias-request-tags"></a>
 A list of tags to add to the bot alias\. You can only add tags when you create an alias, you can't use the `PutBotAlias` operation to update the tags on a bot alias\. To update tags, use the `TagResource` operation\.  
 Type: Array of [Tag](API_Tag.md) objects  
-Array Members: Minimum number of 1 item\. Maximum number of 50 items\.  
+Array Members: Minimum number of 0 items\. Maximum number of 200 items\.  
 Required: No
 
 ## Response Syntax<a name="API_PutBotAlias_ResponseSyntax"></a>
@@ -90,29 +92,29 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[botName](#lex-PutBotAlias-response-botName)": "string",
-   "[botVersion](#lex-PutBotAlias-response-botVersion)": "string",
-   "[checksum](#lex-PutBotAlias-response-checksum)": "string",
-   "[conversationLogs](#lex-PutBotAlias-response-conversationLogs)": { 
-      "[iamRoleArn](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-iamRoleArn)": "string",
-      "[logSettings](API_ConversationLogsResponse.md#lex-Type-ConversationLogsResponse-logSettings)": [ 
+   "botName": "string",
+   "botVersion": "string",
+   "checksum": "string",
+   "conversationLogs": { 
+      "iamRoleArn": "string",
+      "logSettings": [ 
          { 
-            "[destination](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-destination)": "string",
-            "[kmsKeyArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-kmsKeyArn)": "string",
-            "[logType](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-logType)": "string",
-            "[resourceArn](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourceArn)": "string",
-            "[resourcePrefix](API_LogSettingsResponse.md#lex-Type-LogSettingsResponse-resourcePrefix)": "string"
+            "destination": "string",
+            "kmsKeyArn": "string",
+            "logType": "string",
+            "resourceArn": "string",
+            "resourcePrefix": "string"
          }
       ]
    },
-   "[createdDate](#lex-PutBotAlias-response-createdDate)": number,
-   "[description](#lex-PutBotAlias-response-description)": "string",
-   "[lastUpdatedDate](#lex-PutBotAlias-response-lastUpdatedDate)": number,
-   "[name](#lex-PutBotAlias-response-name)": "string",
-   "[tags](#lex-PutBotAlias-response-tags)": [ 
+   "createdDate": number,
+   "description": "string",
+   "lastUpdatedDate": number,
+   "name": "string",
+   "tags": [ 
       { 
-         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
-         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+         "key": "string",
+         "value": "string"
       }
    ]
 }
@@ -166,7 +168,7 @@ Pattern: `^([A-Za-z]_?)+$`
  ** [tags](#API_PutBotAlias_ResponseSyntax) **   <a name="lex-PutBotAlias-response-tags"></a>
 A list of tags associated with a bot\.  
 Type: Array of [Tag](API_Tag.md) objects  
-Array Members: Minimum number of 0 items\. Maximum number of 50 items\.
+Array Members: Minimum number of 0 items\. Maximum number of 200 items\.
 
 ## Errors<a name="API_PutBotAlias_Errors"></a>
 

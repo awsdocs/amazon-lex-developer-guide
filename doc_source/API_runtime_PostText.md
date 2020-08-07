@@ -25,11 +25,11 @@ POST /bot/botName/alias/botAlias/user/userId/text HTTP/1.1
 Content-type: application/json
 
 {
-   "[inputText](#lex-runtime_PostText-request-inputText)": "string",
-   "[requestAttributes](#lex-runtime_PostText-request-requestAttributes)": { 
+   "inputText": "string",
+   "requestAttributes": { 
       "string" : "string" 
    },
-   "[sessionAttributes](#lex-runtime_PostText-request-sessionAttributes)": { 
+   "sessionAttributes": { 
       "string" : "string" 
    }
 }
@@ -37,13 +37,15 @@ Content-type: application/json
 
 ## URI Request Parameters<a name="API_runtime_PostText_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [botAlias](#API_runtime_PostText_RequestSyntax) **   <a name="lex-runtime_PostText-request-botAlias"></a>
-The alias of the Amazon Lex bot\.
+The alias of the Amazon Lex bot\.  
+Required: Yes
 
  ** [botName](#API_runtime_PostText_RequestSyntax) **   <a name="lex-runtime_PostText-request-botName"></a>
-The name of the Amazon Lex bot\.
+The name of the Amazon Lex bot\.  
+Required: Yes
 
  ** [userId](#API_runtime_PostText_RequestSyntax) **   <a name="lex-runtime_PostText-request-userId"></a>
 The ID of the client application user\. Amazon Lex uses this to identify a user's conversation with your bot\. At runtime, each request must contain the `userID` field\.  
@@ -53,7 +55,8 @@ To decide the user ID to use for your application, consider the following factor
 + If you want the same user to be able to have two independent conversations on two different devices, choose a device\-specific identifier\.
 + A user can't have two independent conversations with two different versions of the same bot\. For example, a user can't have a conversation with the PROD and BETA versions of the same bot\. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations\.
 Length Constraints: Minimum length of 2\. Maximum length of 100\.  
-Pattern: `[0-9a-zA-Z._:-]+` 
+Pattern: `[0-9a-zA-Z._:-]+`   
+Required: Yes
 
 ## Request Body<a name="API_runtime_PostText_RequestBody"></a>
 
@@ -86,40 +89,55 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[dialogState](#lex-runtime_PostText-response-dialogState)": "string",
-   "[intentName](#lex-runtime_PostText-response-intentName)": "string",
-   "[message](#lex-runtime_PostText-response-message)": "string",
-   "[messageFormat](#lex-runtime_PostText-response-messageFormat)": "string",
-   "[responseCard](#lex-runtime_PostText-response-responseCard)": { 
-      "[contentType](API_runtime_ResponseCard.md#lex-Type-runtime_ResponseCard-contentType)": "string",
-      "[genericAttachments](API_runtime_ResponseCard.md#lex-Type-runtime_ResponseCard-genericAttachments)": [ 
+   "alternativeIntents": [ 
+      { 
+         "intentName": "string",
+         "nluIntentConfidence": { 
+            "score": number
+         },
+         "slots": { 
+            "string" : "string" 
+         }
+      }
+   ],
+   "botVersion": "string",
+   "dialogState": "string",
+   "intentName": "string",
+   "message": "string",
+   "messageFormat": "string",
+   "nluIntentConfidence": { 
+      "score": number
+   },
+   "responseCard": { 
+      "contentType": "string",
+      "genericAttachments": [ 
          { 
-            "[attachmentLinkUrl](API_runtime_GenericAttachment.md#lex-Type-runtime_GenericAttachment-attachmentLinkUrl)": "string",
-            "[buttons](API_runtime_GenericAttachment.md#lex-Type-runtime_GenericAttachment-buttons)": [ 
+            "attachmentLinkUrl": "string",
+            "buttons": [ 
                { 
-                  "[text](API_runtime_Button.md#lex-Type-runtime_Button-text)": "string",
-                  "[value](API_runtime_Button.md#lex-Type-runtime_Button-value)": "string"
+                  "text": "string",
+                  "value": "string"
                }
             ],
-            "[imageUrl](API_runtime_GenericAttachment.md#lex-Type-runtime_GenericAttachment-imageUrl)": "string",
-            "[subTitle](API_runtime_GenericAttachment.md#lex-Type-runtime_GenericAttachment-subTitle)": "string",
-            "[title](API_runtime_GenericAttachment.md#lex-Type-runtime_GenericAttachment-title)": "string"
+            "imageUrl": "string",
+            "subTitle": "string",
+            "title": "string"
          }
       ],
-      "[version](API_runtime_ResponseCard.md#lex-Type-runtime_ResponseCard-version)": "string"
+      "version": "string"
    },
-   "[sentimentResponse](#lex-runtime_PostText-response-sentimentResponse)": { 
-      "[sentimentLabel](API_runtime_SentimentResponse.md#lex-Type-runtime_SentimentResponse-sentimentLabel)": "string",
-      "[sentimentScore](API_runtime_SentimentResponse.md#lex-Type-runtime_SentimentResponse-sentimentScore)": "string"
+   "sentimentResponse": { 
+      "sentimentLabel": "string",
+      "sentimentScore": "string"
    },
-   "[sessionAttributes](#lex-runtime_PostText-response-sessionAttributes)": { 
+   "sessionAttributes": { 
       "string" : "string" 
    },
-   "[sessionId](#lex-runtime_PostText-response-sessionId)": "string",
-   "[slots](#lex-runtime_PostText-response-slots)": { 
+   "sessionId": "string",
+   "slots": { 
       "string" : "string" 
    },
-   "[slotToElicit](#lex-runtime_PostText-response-slotToElicit)": "string"
+   "slotToElicit": "string"
 }
 ```
 
@@ -128,6 +146,18 @@ Content-type: application/json
 If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
+
+ ** [alternativeIntents](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-alternativeIntents"></a>
+One to four alternative intents that may be applicable to the user's intent\.  
+Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent\. The intents are sorted by the confidence score\.  
+Type: Array of [PredictedIntent](API_runtime_PredictedIntent.md) objects  
+Array Members: Maximum number of 4 items\.
+
+ ** [botVersion](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-botVersion"></a>
+The version of the bot that responded to the conversation\. You can use this information to help determine if one version of a bot is performing better than another version\.  
+Type: String  
+Length Constraints: Minimum length of 1\. Maximum length of 64\.  
+Pattern: `[0-9]+|\$LATEST` 
 
  ** [dialogState](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-dialogState"></a>
  Identifies the current state of the user interaction\. Amazon Lex returns one of the following values as `dialogState`\. The client can optionally use this information to customize the user interface\.   
@@ -170,6 +200,11 @@ The format of the response message\. One of the following values:
 +  `Composite` \- The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created\.
 Type: String  
 Valid Values:` PlainText | CustomPayload | SSML | Composite` 
+
+ ** [nluIntentConfidence](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-nluIntentConfidence"></a>
+Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent\. The score is between 0\.0 and 1\.0\. For more information, see [Confidence Scores](https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html)\.  
+The score is a relative score, not an absolute score\. The score may change based on improvements to Amazon Lex\.  
+Type: [IntentConfidence](API_runtime_IntentConfidence.md) object
 
  ** [responseCard](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-responseCard"></a>
 Represents the options that the user has to respond to the current prompt\. Response Card can come from the bot configuration \(in the Amazon Lex console, choose the settings button next to a slot\) or from a code hook \(Lambda function\)\.   

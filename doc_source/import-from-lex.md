@@ -12,6 +12,13 @@ When you import a resource, all dependent resources are imported to the `$LATEST
 
 A resource is imported only once\. For example, if the bot contains an `OrderPizza` intent and an `OrderDrink` intent that both rely on the custom slot type `Size`, the `Size` slot type is imported once and used for both intents\.
 
+**Note**  
+If you exported your bot with the `enableModelImprovements` parameter set to `false`, you must open the \.zip file containing the bot definition and change the `enableModelImprovements` parameter to `true` in the following Regions:  
+Asia Pacific \(Singapore\) \(ap\-southeast\-1\)
+Asia Pacific \(Tokyo\) \(ap\-northeast\-1\)
+EU \(Frankfurt\) \(eu\-central\-1\)
+EU \(London\) \(eu\-west\-2\)
+
 The process for importing a bot, an intent, or a custom slot type is the same\. In the following procedures, substitute intent or slot type, as appropriate\. 
 
 ## Importing a Bot<a name="import-console"></a>

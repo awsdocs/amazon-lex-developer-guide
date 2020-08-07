@@ -14,7 +14,7 @@ GET /slottypes/?maxResults=maxResults&nameContains=nameContains&nextToken=nextTo
 
 ## URI Request Parameters<a name="API_GetSlotTypes_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [maxResults](#API_GetSlotTypes_RequestSyntax) **   <a name="lex-GetSlotTypes-request-maxResults"></a>
 The maximum number of slot types to return in the response\. The default is 10\.  
@@ -39,14 +39,14 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[nextToken](#lex-GetSlotTypes-response-nextToken)": "string",
-   "[slotTypes](#lex-GetSlotTypes-response-slotTypes)": [ 
+   "nextToken": "string",
+   "slotTypes": [ 
       { 
-         "[createdDate](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-createdDate)": number,
-         "[description](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-description)": "string",
-         "[lastUpdatedDate](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-lastUpdatedDate)": number,
-         "[name](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-name)": "string",
-         "[version](API_SlotTypeMetadata.md#lex-Type-SlotTypeMetadata-version)": "string"
+         "createdDate": number,
+         "description": "string",
+         "lastUpdatedDate": number,
+         "name": "string",
+         "version": "string"
       }
    ]
 }

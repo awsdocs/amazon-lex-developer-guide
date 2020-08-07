@@ -34,7 +34,7 @@ inputStream
 
 ## URI Request Parameters<a name="API_runtime_PostContent_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [accept](#API_runtime_PostContent_RequestSyntax) **   <a name="lex-runtime_PostContent-request-accept"></a>
  You pass this value as the `Accept` HTTP header\.   
@@ -50,10 +50,12 @@ The request requires the following URI parameters\.
   + audio/\* \(defaults to mpeg\)
 
  ** [botAlias](#API_runtime_PostContent_RequestSyntax) **   <a name="lex-runtime_PostContent-request-botAlias"></a>
-Alias of the Amazon Lex bot\.
+Alias of the Amazon Lex bot\.  
+Required: Yes
 
  ** [botName](#API_runtime_PostContent_RequestSyntax) **   <a name="lex-runtime_PostContent-request-botName"></a>
-Name of the Amazon Lex bot\.
+Name of the Amazon Lex bot\.  
+Required: Yes
 
  ** [contentType](#API_runtime_PostContent_RequestSyntax) **   <a name="lex-runtime_PostContent-request-contentType"></a>
  You pass this value as the `Content-Type` HTTP header\.   
@@ -66,6 +68,7 @@ Name of the Amazon Lex bot\.
   + audio/x\-cbr\-opus\-with\-preamble; preamble\-size=0; bit\-rate=256000; frame\-size\-milliseconds=4
 + Text format
   + text/plain; charset=utf\-8
+Required: Yes
 
  ** [requestAttributes](#API_runtime_PostContent_RequestSyntax) **   <a name="lex-runtime_PostContent-request-requestAttributes"></a>
 You pass this value as the `x-amz-lex-request-attributes` HTTP header\.  
@@ -86,7 +89,8 @@ To decide the user ID to use for your application, consider the following factor
 + If you want the same user to be able to have two independent conversations on two different devices, choose a device\-specific identifier\.
 + A user can't have two independent conversations with two different versions of the same bot\. For example, a user can't have a conversation with the PROD and BETA versions of the same bot\. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations\.
 Length Constraints: Minimum length of 2\. Maximum length of 100\.  
-Pattern: `[0-9a-zA-Z._:-]+` 
+Pattern: `[0-9a-zA-Z._:-]+`   
+Required: Yes
 
 ## Request Body<a name="API_runtime_PostContent_RequestBody"></a>
 
@@ -94,7 +98,8 @@ The request accepts the following binary data\.
 
  ** [inputStream](#API_runtime_PostContent_RequestSyntax) **   <a name="lex-runtime_PostContent-request-inputStream"></a>
  User input in PCM or Opus audio format or text format as described in the `Content-Type` HTTP header\.   
-You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending\. In general, you get better performance if you stream audio data rather than buffering the data locally\.
+You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending\. In general, you get better performance if you stream audio data rather than buffering the data locally\.  
+Required: Yes
 
 ## Response Syntax<a name="API_runtime_PostContent_ResponseSyntax"></a>
 
@@ -102,6 +107,8 @@ You can stream audio data to Amazon Lex or you can create a local buffer that ca
 HTTP/1.1 200
 Content-Type: contentType
 x-amz-lex-intent-name: intentName
+x-amz-lex-nlu-intent-confidence: nluIntentConfidence
+x-amz-lex-alternative-intents: alternativeIntents
 x-amz-lex-slots: slots
 x-amz-lex-session-attributes: sessionAttributes
 x-amz-lex-sentiment: sentimentResponse
@@ -110,6 +117,7 @@ x-amz-lex-message-format: messageFormat
 x-amz-lex-dialog-state: dialogState
 x-amz-lex-slot-to-elicit: slotToElicit
 x-amz-lex-input-transcript: inputTranscript
+x-amz-lex-bot-version: botVersion
 x-amz-lex-session-id: sessionId
 
 audioStream
@@ -120,6 +128,15 @@ audioStream
 If the action is successful, the service sends back an HTTP 200 response\.
 
 The response returns the following HTTP headers\.
+
+ ** [alternativeIntents](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-alternativeIntents"></a>
+One to four alternative intents that may be applicable to the user's intent\.  
+Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent\. The intents are sorted by the confidence score\.
+
+ ** [botVersion](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-botVersion"></a>
+The version of the bot that responded to the conversation\. You can use this information to help determine if one version of a bot is performing better than another version\.  
+Length Constraints: Minimum length of 1\. Maximum length of 64\.  
+Pattern: `[0-9]+|\$LATEST` 
 
  ** [contentType](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-contentType"></a>
 Content type as specified in the `Accept` HTTP header in the request\.
@@ -164,8 +181,12 @@ The format of the response message\. One of the following values:
 +  `Composite` \- The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created\.
 Valid Values:` PlainText | CustomPayload | SSML | Composite` 
 
+ ** [nluIntentConfidence](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-nluIntentConfidence"></a>
+Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent\. The score is between 0\.0 and 1\.0\.  
+The score is a relative score, not an absolute score\. The score may change based on improvements to Amazon Lex\. 
+
  ** [sentimentResponse](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-sentimentResponse"></a>
-The sentiment expressed in and utterance\.  
+The sentiment expressed in an utterance\.  
 When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis\.
 
  ** [sessionAttributes](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-sessionAttributes"></a>

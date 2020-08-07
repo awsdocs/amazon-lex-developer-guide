@@ -72,7 +72,7 @@ You choose the intent and set the code hooks in the Amazon Lex console, as shown
 
 You can also set the code hooks using the `dialogCodeHook` and `fulfillmentActivity` fields in the [PutIntent](API_PutIntent.md) operation\.
 
-One Lambda function can perform initialization, validation, and fulfillment\. The event data that the Lambda function receives has a field that identifies the caller as either a dialog or fulfillment code hook\. You can use this information to execute the appropriate portion of your code\.
+One Lambda function can perform initialization, validation, and fulfillment\. The event data that the Lambda function receives has a field that identifies the caller as either a dialog or fulfillment code hook\. You can use this information to run the appropriate portion of your code\.
 
 You can use a Lambda function to build a bot that can navigate complex dialogs\. You use the `dialogAction` field in the Lambda function response to direct Amazon Lex to take specific actions\. For example, you can use the `ElicitSlot` dialog action to tell Amazon Lex to ask the user for a slot value that isn't required\. If you have a clarification prompt defined, you can use the `ElicitIntent` dialog action to elicit a new intent when the user is finished with the previous one\.
 

@@ -11,7 +11,7 @@ For audio logs you use default encryption on your S3 bucket or specify an AWS KM
 
 Amazon Lex requires AWS KMS permissions if you choose to encrypt your audio logs\. You need to attach additional policies to the IAM role used for conversation logs\. If you use default encryption on your S3 bucket, your policy must grant access to the AWS KMS key configured for that bucket\. If you specify an AWS KMS key in your audio log settings, your must grant access to that key\.
 
-If you have not created a role for conversation logs, see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)\.
+If you have not created a role for conversation logs, see [IAM Policies for Conversation Logs](conversation-logs-policies.md)\.
 
 **To create an IAM policy for using an AWS KMS key for encrypting audio logs**
 

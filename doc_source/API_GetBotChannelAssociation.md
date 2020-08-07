@@ -12,22 +12,25 @@ GET /bots/botName/aliases/aliasName/channels/name HTTP/1.1
 
 ## URI Request Parameters<a name="API_GetBotChannelAssociation_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [aliasName](#API_GetBotChannelAssociation_RequestSyntax) **   <a name="lex-GetBotChannelAssociation-request-botAlias"></a>
 An alias pointing to the specific version of the Amazon Lex bot to which this association is being made\.  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [botName](#API_GetBotChannelAssociation_RequestSyntax) **   <a name="lex-GetBotChannelAssociation-request-botName"></a>
 The name of the Amazon Lex bot\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [name](#API_GetBotChannelAssociation_RequestSyntax) **   <a name="lex-GetBotChannelAssociation-request-name"></a>
 The name of the association between the bot and the channel\. The name is case sensitive\.   
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_GetBotChannelAssociation_RequestBody"></a>
 
@@ -40,17 +43,17 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[botAlias](#lex-GetBotChannelAssociation-response-botAlias)": "string",
-   "[botConfiguration](#lex-GetBotChannelAssociation-response-botConfiguration)": { 
+   "botAlias": "string",
+   "botConfiguration": { 
       "string" : "string" 
    },
-   "[botName](#lex-GetBotChannelAssociation-response-botName)": "string",
-   "[createdDate](#lex-GetBotChannelAssociation-response-createdDate)": number,
-   "[description](#lex-GetBotChannelAssociation-response-description)": "string",
-   "[failureReason](#lex-GetBotChannelAssociation-response-failureReason)": "string",
-   "[name](#lex-GetBotChannelAssociation-response-name)": "string",
-   "[status](#lex-GetBotChannelAssociation-response-status)": "string",
-   "[type](#lex-GetBotChannelAssociation-response-type)": "string"
+   "botName": "string",
+   "createdDate": number,
+   "description": "string",
+   "failureReason": "string",
+   "name": "string",
+   "status": "string",
+   "type": "string"
 }
 ```
 
@@ -68,7 +71,8 @@ Pattern: `^([A-Za-z]_?)+$`
 
  ** [botConfiguration](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-botConfiguration"></a>
 Provides information that the messaging platform needs to communicate with the Amazon Lex bot\.  
-Type: String to string map
+Type: String to string map  
+Map Entries: Maximum number of 10 items\.
 
  ** [botName](#API_GetBotChannelAssociation_ResponseSyntax) **   <a name="lex-GetBotChannelAssociation-response-botName"></a>
 The name of the Amazon Lex bot\.  

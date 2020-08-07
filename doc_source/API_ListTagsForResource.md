@@ -10,11 +10,12 @@ GET /tags/resourceArn HTTP/1.1
 
 ## URI Request Parameters<a name="API_ListTagsForResource_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [resourceArn](#API_ListTagsForResource_RequestSyntax) **   <a name="lex-ListTagsForResource-request-resourceArn"></a>
 The Amazon Resource Name \(ARN\) of the resource to get a list of tags for\.  
-Length Constraints: Minimum length of 1\. Maximum length of 1011\.
+Length Constraints: Minimum length of 1\. Maximum length of 1011\.  
+Required: Yes
 
 ## Request Body<a name="API_ListTagsForResource_RequestBody"></a>
 
@@ -27,10 +28,10 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
-   "[tags](#lex-ListTagsForResource-response-tags)": [ 
+   "tags": [ 
       { 
-         "[key](API_Tag.md#lex-Type-Tag-key)": "string",
-         "[value](API_Tag.md#lex-Type-Tag-value)": "string"
+         "key": "string",
+         "value": "string"
       }
    ]
 }
@@ -45,7 +46,7 @@ The following data is returned in JSON format by the service\.
  ** [tags](#API_ListTagsForResource_ResponseSyntax) **   <a name="lex-ListTagsForResource-response-tags"></a>
 The tags associated with a resource\.  
 Type: Array of [Tag](API_Tag.md) objects  
-Array Members: Minimum number of 0 items\. Maximum number of 50 items\.
+Array Members: Minimum number of 0 items\. Maximum number of 200 items\.
 
 ## Errors<a name="API_ListTagsForResource_Errors"></a>
 

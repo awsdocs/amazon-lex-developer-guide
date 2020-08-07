@@ -12,17 +12,19 @@ DELETE /bots/botName/aliases/name HTTP/1.1
 
 ## URI Request Parameters<a name="API_DeleteBotAlias_RequestParameters"></a>
 
-The request requires the following URI parameters\.
+The request uses the following URI parameters\.
 
  ** [botName](#API_DeleteBotAlias_RequestSyntax) **   <a name="lex-DeleteBotAlias-request-botName"></a>
 The name of the bot that the alias points to\.  
 Length Constraints: Minimum length of 2\. Maximum length of 50\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
  ** [name](#API_DeleteBotAlias_RequestSyntax) **   <a name="lex-DeleteBotAlias-request-name"></a>
 The name of the alias to delete\. The name is case sensitive\.   
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
-Pattern: `^([A-Za-z]_?)+$` 
+Pattern: `^([A-Za-z]_?)+$`   
+Required: Yes
 
 ## Request Body<a name="API_DeleteBotAlias_RequestBody"></a>
 

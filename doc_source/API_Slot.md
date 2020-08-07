@@ -24,8 +24,8 @@ Valid Values:` NONE | DEFAULT_OBFUSCATION`
 Required: No
 
  **priority**   <a name="lex-Type-Slot-priority"></a>
- Directs Lex the order in which to elicit this slot value from the user\. For example, if the intent has two slots with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1\.  
-If multiple slots share the same priority, the order in which Lex elicits values is arbitrary\.  
+ Directs Amazon Lex the order in which to elicit this slot value from the user\. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1\.  
+If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary\.  
 Type: Integer  
 Valid Range: Minimum value of 0\. Maximum value of 100\.  
 Required: No

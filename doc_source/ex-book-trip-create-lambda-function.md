@@ -25,7 +25,7 @@ This Lambda function is written in Python\.
 
    1. Choose **Save and test**\.
 
-   1. Verify that the Lambda function successfully executed\. The response in this case matches the Amazon Lex response model\.
+   1. Verify that the Lambda function ran successfully\. The response in this case matches the Amazon Lex response model\.
 
    1. Repeat the step\. This time you choose the **Amazon Lex Book Car** from the **Sample event template** list\. The Lambda function processes the car reservation\.
 

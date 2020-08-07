@@ -6,7 +6,22 @@ To store text logs, use an Amazon CloudWatch Logs log group in your AWS account\
 
 To store audio logs, use an Amazon S3 bucket in your AWS account\. You can use any valid S3 bucket\. The bucket must be in the same region as the Amazon Lex bot\. For more information about creating an S3 bucket, see [ Create a Bucket ](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service Getting Started Guide*\.
 
-You must provide an IAM role with policies that enable Amazon Lex to write to the configured log group or bucket\. For more information, see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-role-and-policy.md)\.
+You must provide an IAM role with policies that enable Amazon Lex to write to the configured log group or bucket\. For more information, see [Creating an IAM Role and Policies for Conversation Logs](conversation-logs-policies.md#conversation-logs-role-and-policy)\.
+
+The IAM role that you use to enable conversation logs must have the `iam:PassRole` permission\. The following policy should be attached to the role\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "arn:aws:iam::account:role/role"
+        }
+    ]
+}
+```
 
 ## Enabling Conversation Logs<a name="conversation-logs-enable"></a>
 
