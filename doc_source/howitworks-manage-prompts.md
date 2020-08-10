@@ -81,7 +81,7 @@ The text returned to the client application looks like this:
 {Text} [Text]
 ```
 
-For information about session attributes, see the runtime API operations [PostText](API_runtime_PostText.md) and [PostContent](API_runtime_PostContent.md)\. For an example, see [Example Bot: BookTrip](ex-book-trip.md)\. 
+For information about session attributes, see the runtime API operations [PostText](API_runtime_PostText.md) and [PostContent](API_runtime_PostContent.md)\. For an example, see [Example: BookTrip](ex-book-trip.md)\. 
 
 Lambda functions can also generate messages and return them to Amazon Lex to send to the user\. If you add Lambda functions when you configure your intent, you can create messages dynamically\. By providing the messages while configuring your bot, you can eliminate the need to construct a prompt in your Lambda function\.
 
@@ -257,4 +257,4 @@ responseCard: {
 }
 ```
 
-For an example, see [Example Bot: ScheduleAppointment](ex1-sch-appt.md)\.
+For an example, see [Example: ScheduleAppointment](ex1-sch-appt.md)\.

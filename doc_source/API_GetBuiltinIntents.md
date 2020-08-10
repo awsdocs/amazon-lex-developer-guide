@@ -16,7 +16,7 @@ The request uses the following URI parameters\.
 
  ** [locale](#API_GetBuiltinIntents_RequestSyntax) **   <a name="lex-GetBuiltinIntents-request-locale"></a>
 A list of locales that the intent supports\.  
-Valid Values:` en-US` 
+Valid Values:` en-US | en-GB | de-DE` 
 
  ** [maxResults](#API_GetBuiltinIntents_RequestSyntax) **   <a name="lex-GetBuiltinIntents-request-maxResults"></a>
 The maximum number of intents to return in the response\. The default is 10\.  

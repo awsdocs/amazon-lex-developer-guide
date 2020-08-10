@@ -127,7 +127,7 @@ Indicates whether utterances entered by the user should be sent to Amazon Compre
 Type: Boolean
 
  ** [enableModelImprovements](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-enableModelImprovements"></a>
-Indicates whether the bot uses accuracy improvements\. `true` indicates that the bot is using the imoprovements, otherwise, `false`\.  
+Indicates whether the bot uses the new natural language understanding \(NLU\) model or the original NLU\. True indicates that the bot is using the new model, otherwise, false\.  
 Type: Boolean
 
  ** [failureReason](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-failureReason"></a>
@@ -150,7 +150,7 @@ Type: Timestamp
  ** [locale](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-locale"></a>
  Specifies the target locale for the bot\.   
 Type: String  
-Valid Values:` en-US` 
+Valid Values:` en-US | en-GB | de-DE` 
 
  ** [name](#API_CreateBotVersion_ResponseSyntax) **   <a name="lex-CreateBotVersion-response-name"></a>
 The name of the bot\.  

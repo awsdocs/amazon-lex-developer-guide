@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Call Center Bot with Agent Assististant</title>
+
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.685.0.min.js"></script>
+
+	<style language="text/css">
+	
+		input#input {
+			padding: 4px;
+			font-size: 1em;
+			width: 400px
+		}
+
+		input::placeholder {
+			color: #ccc;
+			font-style: italic;
+		}
+
+		p.agentRequest {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			min-width: 50%;
+			max-width: 85%;
+			float: left;
+			background-color: #7d7;
+		}
+		p.customerRequest{
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 55%;
+			max-width: 85%;
+			float: right;
+			background-color: rgb(193, 214, 219);
+			font-style: italic;
+		}
+		p.conversationEndRequest{
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 55%;
+			max-width: 85%;
+			float: right;
+			background-color: rgb(193, 214, 219);
+			font-style: italic;
+		}
+		p.lexResponse {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: left;
+			min-width: 55%;
+			max-width: 85%;
+			float: right;
+			background-color: #bbf;
+		}
+		p.lexError {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 50%;
+			max-width: 85%;
+			float: right;
+			background-color: #f77;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 style="text-align:  left">Call Center Bot with Agent Assistant</h1>
+	<div style="float: left;">
+		<div id="conversation" style="width: 400px; height: 400px;  border: 1px solid #ccc; background-color: #eee; padding: 4px; overflow: scroll"></div>
+		<form method="GET" id="chatform" style="margin-top: 10px;" onsubmit="return pushChat();">
+			<input list="questions" style="width: 400px; height: 20px;" name="questions" id="input" placeholder="Customer-Agent">
+			<datalist id="questions" style="width: 400px; height: 20px;">
+				<option value="Agent: How can I help you?">
+				<option value="Customer: What is Amazon Lex?">
+				<option value="Customer: When should I use Polly instead of Lex?">
+				<option value="Agent: Is there anything else I can help you with?">
+				<option value="Customer: I have no more questions. Thank you.">
+			</datalist>	
+		</form>
+	</div>
+	<div style="float: left;margin-left: 50px;">
+		<div id="conversation1" style="width: 400px; height: 400px; border: 1px solid #ccc; background-color: rgb(228, 225, 227); padding: 4px; overflow: scroll"></div>
+		<form id="chatform" style="margin-top: 10px;" onsubmit="return pushChat();">
+			<h3>Amazon Kendra</h3>
+		</form>
+	</div> 
+	<script type="text/javascript">
+		// Set the focus to the input box
+		document.getElementById("input").focus();
+
+		// Initialize the Amazon Cognito credentials provider
+		// Provide the region of your AWS account below
+		AWS.config.region = 'Enter region here'; // Region
+		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+		// Provide your Pool Id below
+			IdentityPoolId: 'Enter pool Id here',
+		});
+
+		var lexruntime = new AWS.LexRuntime();
+		var lexUserId = 'chatbot-demo' + Date.now();
+		var sessionAttributes = {};
+
+		function pushChat() {
+			var endConversationStatement = "Customer: I have no more questions. Thank you." 
+			// If the agent has to send a message, start the message with 'Agent'
+			var inputText = document.getElementById('input');
+			if (inputText && inputText.value && inputText.value.trim().length > 0 && inputText.value[0]=='A') {
+				showMessage(inputText.value, 'agentRequest','conversation');
+				inputText.value = "";
+			}
+			// If the customer has to send a message, start the message with 'Customer'
+			if(inputText && inputText.value && inputText.value.trim().length > 0 && inputText.value[0]=='C') {
+				// disable input to show we're sending it
+				var input = inputText.value.trim();
+				inputText.value = '...';
+				inputText.locked = true;
+				customerInput = input.substring(2);
+
+				// Send it to the Lex runtime
+				// Provide the name of your bot below 
+				var params = {
+					botAlias: '$LATEST',
+					botName: 'Enter the name of your bot',
+					inputText: customerInput,
+					userId: lexUserId,
+					sessionAttributes: sessionAttributes
+				};
+
+				showMessage(input, 'customerRequest', 'conversation');
+				if(input== endConversationStatement){
+					showMessage('Conversation Ended.','conversationEndRequest','conversation');
+				}
+				lexruntime.postText(params, function(err, data) {
+					if (err) {
+						console.log(err, err.stack);
+						showMessage('Error:  ' + err.message + ' (see console for details)', 'lexError', 'conversation1')
+					}
+
+					if (data && input!=endConversationStatement) {
+						// Capture the sessionAttributes for the next cycle
+						sessionAttributes = data.sessionAttributes;
+						
+							showMessage(data, 'lexResponse', 'conversation1');
+					}
+					// Re-enable input
+					inputText.value = '';
+					inputText.locked = false;
+				});
+			}
+			// We always cancel form submission
+			return false;
+		}
+
+		function showMessage(daText, senderRequest, displayWindow){
+
+			var conversationDiv = document.getElementById(displayWindow);
+			var requestPara = document.createElement("P");
+			requestPara.className = senderRequest;
+			if(senderRequest=='lexResponse'){
+				requestPara.appendChild(document.createTextNode(daText.message));
+				requestPara.appendChild(document.createElement('br'));
+			}
+			else{
+			requestPara.appendChild(document.createTextNode(daText));
+			}
+			conversationDiv.appendChild(requestPara);
+			conversationDiv.scrollTop = conversationDiv.scrollHeight;
+		}
+	</script>
+</body>
+</html>

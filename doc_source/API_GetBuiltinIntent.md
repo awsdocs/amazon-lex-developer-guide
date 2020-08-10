@@ -56,7 +56,7 @@ Type: Array of [BuiltinIntentSlot](API_BuiltinIntentSlot.md) objects
  ** [supportedLocales](#API_GetBuiltinIntent_ResponseSyntax) **   <a name="lex-GetBuiltinIntent-response-supportedLocales"></a>
 A list of locales that the intent supports\.  
 Type: Array of strings  
-Valid Values:` en-US` 
+Valid Values:` en-US | en-GB | de-DE` 
 
 ## Errors<a name="API_GetBuiltinIntent_Errors"></a>
 
