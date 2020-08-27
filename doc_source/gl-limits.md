@@ -94,7 +94,7 @@ Model building refers to creating and managing bots\. This includes creating and
 + You can create up to five aliases for a bot\.
 
    
-+ You can create up to 100 bots per AWS account\.
++ You can create up to 100 bots per region\.
 
    
 + You cannot create multiple intents that extend from the same built\-in intent\.
