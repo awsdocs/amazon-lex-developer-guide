@@ -10,10 +10,14 @@ This Lambda function is written in Python\.
 
 1. Choose **Use a blueprint**\. Type **lex** to find the blueprint, choose the `lex-book-trip-python` blueprint\.
 
-1. Choose **Configure** the Lambda function as follows and then choose **Create Function**\.
+1. Choose **Configure** the Lambda function as follows\.
    + Type a Lambda function name \(`BookTripCodeHook`\)\.
    + For the role, choose **Create a new role from template\(s\)** and then type a role name\.
    + Leave the other default values\.
+
+1. Choose **Create function**\.
+
+1. If you are using a locale other than English \(US\) \(en\-US\), update the intent names as described in [Updating a Blueprint for a Specific Locale](lex-lambda-blueprints.md#blueprint-update-locale)\.
 
 1. Test the Lambda function\. You invoke the Lambda function twice, using sample data for both booking a car and booking a hotel\. 
 

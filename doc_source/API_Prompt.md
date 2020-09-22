@@ -17,7 +17,7 @@ Array Members: Minimum number of 1 item\. Maximum number of 15 items\.
 Required: Yes
 
  **responseCard**   <a name="lex-Type-Prompt-responseCard"></a>
-A response card\. Amazon Lex uses this prompt at runtime, in the `PostText` API response\. It substitutes session attributes and slot values for placeholders in the response card\. For more information, see [Example: Using a Response Card](ex-resp-card.md)\.   
+A response card\. Amazon Lex uses this prompt at runtime, in the `PostText` API response\. It substitutes session attributes and slot values for placeholders in the response card\. For more information, see [Using a Response Card](ex-resp-card.md)\.   
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 50000\.  
 Required: No

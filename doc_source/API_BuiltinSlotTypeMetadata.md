@@ -12,7 +12,7 @@ Required: No
  **supportedLocales**   <a name="lex-Type-BuiltinSlotTypeMetadata-supportedLocales"></a>
 A list of target locales for the slot\.   
 Type: Array of strings  
-Valid Values:` en-US | en-GB | de-DE`   
+Valid Values:` en-AU | en-GB | en-US | es-US`   
 Required: No
 
 ## See Also<a name="API_BuiltinSlotTypeMetadata_SeeAlso"></a>

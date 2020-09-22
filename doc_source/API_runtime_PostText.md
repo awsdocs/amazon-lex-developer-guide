@@ -155,8 +155,6 @@ Array Members: Maximum number of 4 items\.
 
  ** [botVersion](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-botVersion"></a>
 The version of the bot that responded to the conversation\. You can use this information to help determine if one version of a bot is performing better than another version\.  
-If you have enabled the new natural language understanding \(NLU\) model, you can use this to determine if the improvement is due to changes to the bot or changes to the NLU\.  
-For more information about enabling the new NLU, see the [enableModelImprovements](https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements) parameter of the `PutBot` operation\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
 Pattern: `[0-9]+|\$LATEST` 
@@ -205,7 +203,7 @@ Valid Values:` PlainText | CustomPayload | SSML | Composite`
 
  ** [nluIntentConfidence](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-nluIntentConfidence"></a>
 Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent\. The score is between 0\.0 and 1\.0\. For more information, see [Confidence Scores](https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html)\.  
-The score is a relative score, not an absolute score\. The score may change based on improvements to the Amazon Lex natural language understanding \(NLU\) model\.  
+The score is a relative score, not an absolute score\. The score may change based on improvements to Amazon Lex\.  
 Type: [IntentConfidence](API_runtime_IntentConfidence.md) object
 
  ** [responseCard](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-responseCard"></a>

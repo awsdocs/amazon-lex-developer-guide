@@ -13,7 +13,7 @@
 
 *Session attributes* contain application\-specific information that is passed between a bot and a client application during a session\. Amazon Lex passes session attributes to all Lambda functions configured for a bot\. If a Lambda function adds or updates session attributes, Amazon Lex passes the new information back to the client application\. For example:
 + In [Exercise 1: Create an Amazon Lex Bot Using a Blueprint \(Console\)](gs-bp.md), the example bot uses the `price` session attribute to maintain the price of flowers\. The Lambda function sets this attribute based on the type of flowers that was ordered\. For more information, see [Step 5 \(Optional\): Review the Details of the Information Flow \(Console\)](gs-bp-details-after-lambda.md)\. 
-+ In [Example: BookTrip](ex-book-trip.md), the example bot uses the `currentReservation` session attribute to maintain a copy of the slot type data during the conversation to book a hotel or to book a rental car\. For more information, see [Details of the Information Flow](book-trip-detail-flow.md)\.
++ In [Book Trip](ex-book-trip.md), the example bot uses the `currentReservation` session attribute to maintain a copy of the slot type data during the conversation to book a hotel or to book a rental car\. For more information, see [Details of the Information Flow](book-trip-detail-flow.md)\.
 
 Use session attributes in your Lambda functions to initialize a bot and to customize prompts and response cards\. For example:
 + Initialization — In a pizza ordering bot, the client application passes the user's location as a session attribute in the first call to the [PostContent](API_runtime_PostContent.md) or [PostText](API_runtime_PostText.md) operation\. For example, `"Location": "111 Maple Street"`\. The Lambda function uses this information to find the closest pizzeria to place the order\.
@@ -138,7 +138,7 @@ For example, a user of the `ShoeOrdering` bot starts by ordering shoes\. The bot
 
 If you think that your users might switch intents during the same session, you can design your bot to return the status of the latest order\. Instead of asking the user for order information again, you use the `orderNumber` session attribute to share information across intents and fulfill the `GetOrderStatus` intent\. The bot does this by returning the status of the last order that the user placed\.
 
-For an example of cross\-intent information sharing, see [Example: BookTrip](ex-book-trip.md)\.
+For an example of cross\-intent information sharing, see [Book Trip](ex-book-trip.md)\.
 
 ## Setting Complex Attributes<a name="context-mgmt-complex-attributes"></a>
 

@@ -12,6 +12,7 @@ To create an Amazon Lex bot \(console\)
    + Choose the **OrderFlowers** blueprint\.
    + Leave the default bot name \(OrderFlowers\)\.
    + For **COPPA**, choose **No**\.
+   + For **User utterance storage**, choose the appropriate response\.
 
 1. Choose **Create**\. The console makes the necessary requests to Amazon Lex to save the configuration\. The console then displays the bot editor window\.
 

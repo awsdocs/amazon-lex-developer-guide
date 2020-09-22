@@ -1,11 +1,15 @@
 # Document History for Amazon Lex<a name="doc-history"></a>
-+ **Latest documentation update: **July 20, 2020
++ **Latest documentation update: **September 22, 2020
 
 The following table describes important changes in each release of Amazon Lex\. For notification about updates to this documentation, you can subscribe to an RSS feed\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
-| [New example: Call Center Agent Assistant Bot](https://docs.aws.amazon.com/general/latest/dg/ex-agent.html) | Learn how to create an Amazon Lex bot that customer support agents can use to answer customer questions by searching for answers with Amazon Kendra\. | August 10, 2020 | 
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html) | Amazon Lex now supports the Spanish \(US\) \(es\-US\) locale\. For more information, see [Languages supported by Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html)\. | September 22, 2020 | 
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html) | Amazon Lex now supports the English \(British\) \(en\-GB\) locale\. For more information, see [Languages supported by Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html)\. | September 15, 2020 | 
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html) | Amazon Lex now supports the English \(Australian\) \(en\-AU\) locale\. For more information, see [Languages supported by Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html)\. | September 8, 2020 | 
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/howitworks-builtins.html) | Amazon Lex now has 7 new built\-in intents and 9 new built\-in slot types\. For more information, see [Built\-in Intents and Slot Types](https://docs.aws.amazon.com/lex/latest/dg/howitworks-builtins.html)\. | September 8, 2020 | 
+| [New example](https://docs.aws.amazon.com/lex/latest/dg/ex-agent.html) | Learn how to create an Amazon Lex bot that customer support agents can use to answer customer questions by searching for answers with Amazon Kendra\. For more information, see [Example: Call Center Agent Assistant](https://docs.aws.amazon.com/lex/latest/dg/ex-agent.html)\. | August 10, 2020 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html) | Amazon Lex can now return up to four alternative intents based on confidence scores\. For more information, see [Using Confidence Scores](https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html)\. | August 6, 2020 | 
 | [Region expansion](https://docs.aws.amazon.com/general/latest/gr/lex.html) | Amazon Lex is now available in Asia Pacific \(Tokyo\) \(ap\-northeast\-1\)\. | June 30, 2020 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html) | Amazon Lex now supports searching Amazon Kendra indexes for answers to frequently asked questions\. For more information, see [AMAZON\.KendraSearchIntent](https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html)\. | June 11, 2020 | 

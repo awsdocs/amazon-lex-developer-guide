@@ -52,7 +52,7 @@ Now, create the intent to search an Amazon Kendra index and the response message
 
 1. For **Add intent**, choose **Search existing intents**\.
 
-1. In the **Search intents**box, enter **AMAZON\.KendraSearchIntent**, then choose it from the list\.
+1. In the **Search intents** box, enter **AMAZON\.KendraSearchIntent**, then choose it from the list\.
 
 1. For **Copy built\-in intent**, give the intent a name, such as **KendraSearchIntent**, and then choose **Add**\. 
 

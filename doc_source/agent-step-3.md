@@ -4,7 +4,7 @@ An *intent* represents an action that the call center agent wants the bot to per
 
 Amazon Lex has two types of intents: custom intents and built\-in intents\. `AMAZON.KendraSearchIntent` is a built\-in intent\. The bot uses the `AMAZON.KendraSearchIntent` intent to query the index and display the responses suggested by Amazon Kendra\. 
 
-The bot in this example doesn't need a custom intent\. However, to build the bot, you must create at least one custom intent with at least one sample utterance\. This intent is required only to build your agent assistant bot\. It doesn’t perform any other function\. The utterance for the intent must not answer any of the questions that the customer might ask\. This ensures that the `AMAZON.KendraSearchIntent` is called to answer customer queries\. For more information, see [AMAZON\.KendraSearchIntent](lex/latest/dg/faq-bot-kendra-search.html) in the *Amazon Lex Developer Guide*\.
+The bot in this example doesn't need a custom intent\. However, to build the bot, you must create at least one custom intent with at least one sample utterance\. This intent is required only to build your agent assistant bot\. It doesn’t perform any other function\. The utterance for the intent must not answer any of the questions that the customer might ask\. This ensures that the `AMAZON.KendraSearchIntent` is called to answer customer queries\. For more information, see [AMAZON\.KendraSearchIntent](built-in-intent-kendra-search.md)\.
 
 **To create the required custom intent**
 

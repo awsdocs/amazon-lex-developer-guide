@@ -18,7 +18,7 @@ The request uses the following URI parameters\.
 
  ** [locale](#API_GetBuiltinSlotTypes_RequestSyntax) **   <a name="lex-GetBuiltinSlotTypes-request-locale"></a>
 A list of locales that the slot type supports\.  
-Valid Values:` en-US | en-GB | de-DE` 
+Valid Values:` en-AU | en-GB | en-US | es-US` 
 
  ** [maxResults](#API_GetBuiltinSlotTypes_RequestSyntax) **   <a name="lex-GetBuiltinSlotTypes-request-maxResults"></a>
 The maximum number of slot types to return in the response\. The default is 10\.  

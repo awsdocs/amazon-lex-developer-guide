@@ -1,8 +1,6 @@
 # AMAZON\.TIME<a name="built-in-slot-time"></a>
 
-Converts words that represent times into time values\.
-
-Amazon Lex extends the [AMAZON\.TIME](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference#time) slot type to include resolutions for ambiguous times\. When a user enters an ambiguous time, Amazon Lex uses the `slotDetails` attribute of a Lambda event to pass resolutions for the ambiguous times to your Lambda function\. For example, if your bot prompts the user for a delivery time, the user can respond by saying "10 o'clock\." This time is ambiguous\. It means either 10:00 AM or 10:00 PM\. In this case, the value in the `slots` map is `null`, and the `slotDetails` entity contains the two possible resolutions of the time\. Amazon Lex inputs the following into the Lambda function:
+Converts words that represent times into time values\. Includes resolutions for ambiguous times\. When a user enters an ambiguous time, Amazon Lex uses the `slotDetails` attribute of a Lambda event to pass resolutions for the ambiguous times to your Lambda function\. For example, if your bot prompts the user for a delivery time, the user can respond by saying "10 o'clock\." This time is ambiguous\. It means either 10:00 AM or 10:00 PM\. In this case, the value in the `slots` map is `null`, and the `slotDetails` entity contains the two possible resolutions of the time\. Amazon Lex inputs the following into the Lambda function:
 
 ```
 "slots": {

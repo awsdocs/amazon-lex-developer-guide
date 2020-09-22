@@ -217,7 +217,7 @@ If the user chooses to send text \("I would like to order some flowers"\) to the
    + It validates slot data after every user input\. It fulfills the intent at the end\. That is, the bot processes the flower order and returns a message to the user instead of simply returning slot data to the client\. For more information, see [Using Lambda Functions](using-lambda.md)\.
    + It also sets the session attributes\. For more information about session attributes, see [PostText](API_runtime_PostText.md)\. 
 
-      After you complete the Getting Started section, you can do the additional exercises \([Additional Examples: Creating Amazon Lex Bots](additional-exercises.md) \)\. [Example: BookTrip](ex-book-trip.md) uses session attributes to share cross\-intent information to engage in a dynamic conversation with the user\.
+      After you complete the Getting Started section, you can do the additional exercises \([Additional Examples: Creating Amazon Lex Bots](additional-exercises.md) \)\. [Book Trip](ex-book-trip.md) uses session attributes to share cross\-intent information to engage in a dynamic conversation with the user\.
 
 **Next Step**  
 [Step 3: Create a Lambda Function \(Console\)](gs-bp-create-lambda-function.md)

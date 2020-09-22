@@ -1,4 +1,4 @@
-# Example: ScheduleAppointment<a name="ex1-sch-appt"></a>
+# Schedule Appointment<a name="ex1-sch-appt"></a>
 
 The example bot in this exercise schedules appointments for a dentist's office\. The example also illustrates using response cards to obtain user input with buttons\. Specifically, the example illustrates generating response cards dynamically at runtime\. 
 

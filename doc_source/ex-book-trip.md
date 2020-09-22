@@ -1,4 +1,4 @@
-# Example: BookTrip<a name="ex-book-trip"></a>
+# Book Trip<a name="ex-book-trip"></a>
 
 This example illustrates creating a bot that is configured to support multiple intents\. The example also illustrates how you can use session attributes for cross\-intent information sharing\. After creating the bot, you use a test client in the Amazon Lex console to test the bot \(BookTrip\)\. The client uses the [PostText](API_runtime_PostText.md) runtime API operation to send requests to Amazon Lex for each user input\. 
 

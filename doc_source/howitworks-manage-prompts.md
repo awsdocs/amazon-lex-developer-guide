@@ -81,7 +81,7 @@ The text returned to the client application looks like this:
 {Text} [Text]
 ```
 
-For information about session attributes, see the runtime API operations [PostText](API_runtime_PostText.md) and [PostContent](API_runtime_PostContent.md)\. For an example, see [Example: BookTrip](ex-book-trip.md)\. 
+For information about session attributes, see the runtime API operations [PostText](API_runtime_PostText.md) and [PostContent](API_runtime_PostContent.md)\. For an example, see [Book Trip](ex-book-trip.md)\. 
 
 Lambda functions can also generate messages and return them to Amazon Lex to send to the user\. If you add Lambda functions when you configure your intent, you can create messages dynamically\. By providing the messages while configuring your bot, you can eliminate the need to construct a prompt in your Lambda function\.
 
@@ -220,7 +220,7 @@ Now suppose that you've integrated your bot with Facebook Messenger\. The user c
 
 ![\[A response card in Facebook Messenger.\]](http://docs.aws.amazon.com/lex/latest/dg/images/resp-fb-exampleA.png)
 
-To customize the content of a response card, you can refer to session attributes\. At runtime, Amazon Lex substitutes these references with appropriate values from the session attributes\. For more information, see [Setting Session Attributes](context-mgmt.md#context-mgmt-session-attribs)\. For an example, see [Example: Using a Response Card](ex-resp-card.md)\.
+To customize the content of a response card, you can refer to session attributes\. At runtime, Amazon Lex substitutes these references with appropriate values from the session attributes\. For more information, see [Setting Session Attributes](context-mgmt.md#context-mgmt-session-attribs)\. For an example, see [Using a Response Card](ex-resp-card.md)\.
 
 ### Generating Response Cards Dynamically<a name="msg-prompts-resp-card-dynamic"></a>
 
@@ -257,4 +257,4 @@ responseCard: {
 }
 ```
 
-For an example, see [Example: ScheduleAppointment](ex1-sch-appt.md)\.
+For an example, see [Schedule Appointment](ex1-sch-appt.md)\.

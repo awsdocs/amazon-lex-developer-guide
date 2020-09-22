@@ -11,10 +11,12 @@ Create the `PizzaOrderingBot` bot with the minimum information needed\. You add 
    1. If you are creating your first bot, choose **Get Started**\. Otherwise, choose **Bots**, and then choose **Create**\. 
 
    1. On the **Create your Lex bot** page, choose **Custom bot** and provide the following information:
-      + **App name**: PizzaOrderingBot 
+      + **Bot name**: PizzaOrderingBot 
+      + **Language**: Choose the language and locale for your bot\.
       + **Output voice**: Salli 
       + **Session timeout **: 5 minutes\.
-      + **Child\-Directed**: Choose the appropriate response\.
+      + **COPPA**: Choose the appropriate response\.
+      + **User utterance storage: Choose the appropriate response\.**
 
    1. Choose **Create**\. 
 

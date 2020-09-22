@@ -11,7 +11,7 @@ Amazon Lex enables you to build applications using a speech or text interface po
 1. Deploy the bot\. You can deploy the bot on platforms such as mobile applications or messaging platforms such as Facebook Messenger\. 
 
 Before you get started, familiarize yourself with the following Amazon Lex core concepts and terminology:
-+ **Bot** – A bot performs automated tasks such as ordering a pizza, booking a hotel, ordering flowers, and so on\. An Amazon Lex bot is powered by Automatic Speech Recognition \(ASR\) and Natural Language Understanding \(NLU\) capabilities, the same technology that powers Amazon Alexa\.
++ **Bot** – A bot performs automated tasks such as ordering a pizza, booking a hotel, ordering flowers, and so on\. An Amazon Lex bot is powered by Automatic Speech Recognition \(ASR\) and Natural Language Understanding \(NLU\) capabilities\. Each bot must have a unique name within your account\.
 
    
 
@@ -21,7 +21,7 @@ Before you get started, familiarize yourself with the following Amazon Lex core 
 + **Intent** – An intent represents an action that the user wants to perform\. You create a bot to support one or more related intents\. For example, you might create a bot that orders pizza and drinks\. For each intent, you provide the following required information: 
 
    
-  + **Intent name**– A descriptive name for the intent\. For example, **OrderPizza**\.
+  + **Intent name**– A descriptive name for the intent\. For example, **OrderPizza**\. Intent names must be unique within your account\.
   + **Sample utterances** – How a user might convey the intent\. For example, a user might say "Can I order a pizza please" or "I want to order a pizza"\. 
   + **How to fulfill the intent** – How you want to fulfill the intent after the user provides the necessary information \(for example, place order with a local pizza shop\)\. We recommend that you create a Lambda function to fulfill the intent\.
 
@@ -41,7 +41,7 @@ Before you get started, familiarize yourself with the following Amazon Lex core 
   For example, the `OrderPizza` intent requires slots such as pizza size, crust type, and number of pizzas\. In the intent configuration, you add these slots\. For each slot, you provide slot type and a prompt for Amazon Lex to send to the client to elicit data from the user\. A user can reply with a slot value that includes additional words, such as "large pizza please" or "let's stick with small\." Amazon Lex can still understand the intended slot value\. 
 
    
-+ **Slot type** – Each slot has a type\. You can create your custom slot types or use built\-in slot types\. For example, you might create and use the following slot types for the `OrderPizza` intent:
++ **Slot type** – Each slot has a type\. You can create your custom slot types or use built\-in slot types\. Each slot type must have a unique name within your account\. For example, you might create and use the following slot types for the `OrderPizza` intent:
 
    
   + Size – With enumeration values `Small`, `Medium`, and `Large`\.
@@ -58,6 +58,7 @@ Currently, Amazon Lex supports only US English language\. That is, Amazon Lex tr
 The following topics provide additional information\. We recommend that you review them in order and then explore the [Getting Started with Amazon Lex](getting-started.md) exercises\.
 
 **Topics**
++ [Languages Supported in Amazon Lex](how-it-works-language.md)
 + [Programming Model](programming-model.md)
 + [Managing Messages](howitworks-manage-prompts.md)
 + [Managing Conversation Context](context-mgmt.md)

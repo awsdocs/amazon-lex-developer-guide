@@ -1,11 +1,8 @@
 # AMAZON\.WeightUnit<a name="built-in-slot-weight"></a>
 
-
-|  | 
-| --- |
-| This slot type is in preview release for Amazon Lex and is subject to change\. | 
-
 Converts words that represent a weight unit into the corresponding abbreviation\. For example, "kilogram" is converted to `kg`\. 
+
+This slot type is available only in the English \(US\) \(en\-US\) locale\.
 
 The following examples show how the `AMAZON.WeightUnit` slot type captures weight units:
 

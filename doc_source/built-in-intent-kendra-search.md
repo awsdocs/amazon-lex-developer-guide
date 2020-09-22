@@ -2,6 +2,8 @@
 
 To search documents that you have indexed with Amazon Kendra, use the `AMAZON.KendraSearchIntent` intent\. When Amazon Lex can't determine the next action in a conversation with the user, it triggers the search intent\.
 
+The `AMAZON.KendraSearchIntent` is available only in the English \(US\) \(en\-US\) locale\.
+
 Amazon Kendra is a machine\-learning\-based search service that indexes natural language documents such as PDF documents or Microsoft Word files\. It can search indexed documents and return the following types of responses to a question:
 + An answer 
 + An entry from a FAQ that might answer the question
@@ -25,7 +27,7 @@ When you use both the `AMAZON.KendraSearchIntent` and the `AMAZON.FallbackIntent
 
 There are three ways to use the `AMAZON.KendraSearchIntent` to make a request to Amazon Kendra:
 + Let the search intent make the request for you\. Amazon Lex calls Amazon Kendra with the user's utterance as the search string\. When you create the intent, you can define a query filter string that limits the number of responses that Amazon Kendra returns\. Amazon Lex uses the filter in the query request\.
-+ Add additional query parameters to the request using your dialog Lambda function\. You add a `kendraQueryFilterString` field that contains Amazon Kendra query parameters to the `delegate` dialog action\. When you add query parameters to the request with the Lambda function, they take precedence over the query filter that you defined when you created the intent\.
++ Add additional query parameters to the request to narrow the search results using your dialog Lambda function\. You add a `kendraQueryFilterString` field that contains Amazon Kendra query parameters to the `delegate` dialog action\. When you add query parameters to the request with the Lambda function, they take precedence over the query filter that you defined when you created the intent\.
 + Create a new query using the dialog Lambda function\. You can create a complete Amazon Kendra query request that Amazon Lex sends\. You specify the query in the `kendraQueryRequestPayload` field in the `delegate` dialog action\. The `kendraQueryRequestPayload` field takes precedence over the `kendraQueryFilterString` field\.
 
 To specify the `queryFilterString` parameter when you create a bot, or to specify the `kendraQueryFilterString` field when you call the `delegate` action in a dialog Lambda function, you specify a string that is used as the attribute filter for the Amazon Kendra query\. If the string isn't a valid attribute filter, you'll get an `InvalidBotConfigException` exception at runtime\. For more information about attribute filters, see [Using document attributes to filter queries](https://docs.aws.amazon.com/kendra/latest/dg/filtering.html#search-filtering) in the *Amazon Kendra Developer Guide*\.

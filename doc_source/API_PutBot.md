@@ -123,16 +123,16 @@ Type: Boolean
 Required: No
 
  ** [enableModelImprovements](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-enableModelImprovements"></a>
-Set to `true` to enable the use of a new natural language understanding \(NLU\) model\. Using the new NLU may improve the performance of your bot\.   
+Set to `true` to enable access to natural language understanding improvements\.   
 When you set the `enableModelImprovements` parameter to `true` you can use the `nluIntentConfidenceThreshold` parameter to configure confidence scores\. For more information, see [Confidence Scores](https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html)\.  
-You can only set the `enableModelImprovements` parameter in certain Regions\. If you set the parameter to `true`, your bot will use the new NLU\. If you set the parameter to `false`, your bot will continue to use the original NLU\. If you set the parameter to `false` after setting it to `true`, your bot will return to the original NLU\.  
+You can only set the `enableModelImprovements` parameter in certain Regions\. If you set the parameter to `true`, your bot has access to accuracy improvements\.  
 The Regions where you can set the `enableModelImprovements` parameter to `true` are:  
 + US East \(N\. Virginia\) \(us\-east\-1\)
 + US West \(Oregon\) \(us\-west\-2\)
++ Asia Pacific \(Sydney\) \(ap\-southeast\-2\)
 + EU \(Ireland\) \(eu\-west\-1\)
 In other Regions, the `enableModelImprovements` parameter is set to `true` by default\. In these Regions setting the parameter to `false` throws a `ValidationException` exception\.  
 + Asia Pacific \(Singapore\) \(ap\-southeast\-1\)
-+ Asia Pacific \(Sydney\) \(ap\-southeast\-2\)
 + Asia Pacific \(Tokyo\) \(ap\-northeast\-1\)
 + EU \(Frankfurt\) \(eu\-central\-1\)
 + EU \(London\) \(eu\-west\-2\)
@@ -158,12 +158,17 @@ Required: No
  Specifies the target locale for the bot\. Any intent used in the bot must be compatible with the locale of the bot\.   
 The default is `en-US`\.  
 Type: String  
-Valid Values:` en-US | en-GB | de-DE`   
+Valid Values:` en-AU | en-GB | en-US | es-US`   
 Required: Yes
 
  ** [nluIntentConfidenceThreshold](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-nluIntentConfidenceThreshold"></a>
 Determines the threshold where Amazon Lex will insert the `AMAZON.FallbackIntent`, `AMAZON.KendraSearchIntent`, or both when returning alternative intents in a [PostContent](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html) or [PostText](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html) response\. `AMAZON.FallbackIntent` and `AMAZON.KendraSearchIntent` are only inserted if they are configured for the bot\.  
 You must set the `enableModelImprovements` parameter to `true` to use confidence scores\.  
++ US East \(N\. Virginia\) \(us\-east\-1\)
++ US West \(Oregon\) \(us\-west\-2\)
++ Asia Pacific \(Sydney\) \(ap\-southeast\-2\)
++ EU \(Ireland\) \(eu\-west\-1\)
+In other Regions, the `enableModelImprovements` parameter is set to `true` by default\.  
 For example, suppose a bot is configured with the confidence threshold of 0\.80 and the `AMAZON.FallbackIntent`\. Amazon Lex returns three alternative intents with the following confidence scores: IntentA \(0\.70\), IntentB \(0\.60\), IntentC \(0\.50\)\. The response from the `PostText` operation would be:  
 + AMAZON\.FallbackIntent
 + IntentA
@@ -291,7 +296,7 @@ Length Constraints: Minimum length of 0\. Maximum length of 200\.
 Type: Boolean
 
  ** [enableModelImprovements](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-enableModelImprovements"></a>
-Indicates whether the bot uses the new natural language understanding \(NLU\) model or the original NLU\. True indicates that the bot is using the new model, otherwise, false\.  
+Indicates whether the bot uses accuracy improvements\. `true` indicates that the bot is using the improvements, otherwise, `false`\.  
 Type: Boolean
 
  ** [failureReason](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-failureReason"></a>
@@ -314,7 +319,7 @@ Type: Timestamp
  ** [locale](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-locale"></a>
  The target locale for the bot\.   
 Type: String  
-Valid Values:` en-US | en-GB | de-DE` 
+Valid Values:` en-AU | en-GB | en-US | es-US` 
 
  ** [name](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-name"></a>
 The name of the bot\.  

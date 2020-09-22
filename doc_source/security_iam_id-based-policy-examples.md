@@ -254,6 +254,7 @@ This example policy grants an IAM user in your AWS account permission to delete 
             "Effect": "Allow",
             "Action": [
                 "lex:DeleteBot"
+            ],
             "Resource": [
                 "*"
             ]

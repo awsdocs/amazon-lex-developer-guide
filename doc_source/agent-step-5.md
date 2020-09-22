@@ -4,7 +4,7 @@
 
 1. Download the repository at [https://github\.com/awsdocs/amazon\-lex\-developer\-guide/blob/master/example\_apps/agent\_assistance\_bot/ ](https://github.com/awsdocs/amazon-lex-developer-guide/blob/master/example_apps/agent_assistance_bot/) to your computer\.
 
-1. Navigate to the downloaded repository and open the index\.html file in an editor,
+1. Navigate to the downloaded repository and open the index\.html file in an editor\.
 
 1. Make the following changes\.
 

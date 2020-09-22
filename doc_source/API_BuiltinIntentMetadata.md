@@ -12,7 +12,7 @@ Required: No
  **supportedLocales**   <a name="lex-Type-BuiltinIntentMetadata-supportedLocales"></a>
 A list of identifiers for the locales that the intent supports\.  
 Type: Array of strings  
-Valid Values:` en-US | en-GB | de-DE`   
+Valid Values:` en-AU | en-GB | en-US | es-US`   
 Required: No
 
 ## See Also<a name="API_BuiltinIntentMetadata_SeeAlso"></a>

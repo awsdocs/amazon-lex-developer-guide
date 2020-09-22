@@ -191,7 +191,7 @@ Type: [FollowUpPrompt](API_FollowUpPrompt.md) object
 Type: [FulfillmentActivity](API_FulfillmentActivity.md) object
 
  ** [kendraConfiguration](#API_CreateIntentVersion_ResponseSyntax) **   <a name="lex-CreateIntentVersion-response-kendraConfiguration"></a>
-Configuration information, if any, for connectin an Amazon Kendra index with the `AMAZON.KendraSearchIntent` intent\.  
+Configuration information, if any, for connecting an Amazon Kendra index with the `AMAZON.KendraSearchIntent` intent\.  
 Type: [KendraConfiguration](API_KendraConfiguration.md) object
 
  ** [lastUpdatedDate](#API_CreateIntentVersion_ResponseSyntax) **   <a name="lex-CreateIntentVersion-response-lastUpdatedDate"></a>

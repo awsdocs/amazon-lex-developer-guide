@@ -21,6 +21,8 @@ You return to the Amazon Lex console and add the Lambda function as the code hoo
 
 1. Choose **Create function**\.
 
+1. If you are using a locale other than English \(US\) \(en\-US\), update the intent names as described in [Updating a Blueprint for a Specific Locale](lex-lambda-blueprints.md#blueprint-update-locale)\.
+
 1. Test the Lambda function\.
 
    1. Choose **Select a test event**, **Configure test events**\.

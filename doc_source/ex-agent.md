@@ -1,4 +1,4 @@
-# Example Bot: Call Center Agent Assistant<a name="ex-agent"></a>
+# Call Center Agent Assistant<a name="ex-agent"></a>
 
 In this tutorial, you use Amazon Lex with Amazon Kendra to build an agent assist bot that assists customer support agents and publish it as a web application\. Amazon Kendra is an enterprise search service that uses machine learning to search through documents to find answers\. For more information about Amazon Kendra, see [the *Amazon Kendra Developer Guide*](https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html)\. 
 
@@ -16,7 +16,7 @@ In this tutorial, you create an Amazon Kendra index that provides answers to cus
 
 **Estimated time:** 75 minutes
 
-**Estimated cost: **$2\.50 per hour for an Amazon Kendra index and $0\.75 for 1000 Amazon Lex requests
+**Estimated cost: **$2\.50 per hour for an Amazon Kendra index and $0\.75 for 1000 Amazon Lex requests\. Your Amazon Kendra index continues to run after you are finished with this exercise\. Be sure to delete it to avoid unnecessary costs\. 
 
 **Note: **Make sure that you choose the same AWS Region for all the services used in this tutorial\.
 

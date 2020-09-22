@@ -117,7 +117,7 @@ Indicates whether user utterances should be sent to Amazon Comprehend for sentim
 Type: Boolean
 
  ** [enableModelImprovements](#API_GetBot_ResponseSyntax) **   <a name="lex-GetBot-response-enableModelImprovements"></a>
-Indicates whether the bot uses the new natural language understanding \(NLU\) model or the original NLU\. True indicates that the bot is using the new model, otherwise, false\.  
+Indicates whether the bot uses accuracy improvements\. `true` indicates that the bot is using the improvements, otherwise, `false`\.  
 Type: Boolean
 
  ** [failureReason](#API_GetBot_ResponseSyntax) **   <a name="lex-GetBot-response-failureReason"></a>
@@ -140,7 +140,7 @@ Type: Timestamp
  ** [locale](#API_GetBot_ResponseSyntax) **   <a name="lex-GetBot-response-locale"></a>
  The target locale for the bot\.   
 Type: String  
-Valid Values:` en-US | en-GB | de-DE` 
+Valid Values:` en-AU | en-GB | en-US | es-US` 
 
  ** [name](#API_GetBot_ResponseSyntax) **   <a name="lex-GetBot-response-name"></a>
 The name of the bot\.  

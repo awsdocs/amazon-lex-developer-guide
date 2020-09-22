@@ -11,3 +11,17 @@ You can use the following Amazon Lex bot blueprints and the corresponding AWS La
   + AWS Lambda blueprint — `lex-book-trip-python`
 
 To create a bot using a blueprint and configure it to use a Lambda function as a code hook, see [Exercise 1: Create an Amazon Lex Bot Using a Blueprint \(Console\)](gs-bp.md)\. For an example of using other blueprints, see [Additional Examples: Creating Amazon Lex Bots](additional-exercises.md)\.
+
+## Updating a Blueprint for a Specific Locale<a name="blueprint-update-locale"></a>
+
+If you are using a blueprint in a locale other than English \(US\) \(en\-US\), you need to update the name of any intents to include the locale\. For example, if you are using the `OrderFlowers` blueprint, you need to do the following\.
++ Find the `dispatch` function near the end of the Lambda function code\.
++ In the `dispatch` function, update the name of the intent to include the locale that you are using\. For example, if you are using the English \(Australian\) \(en\-AU\) locale, change the line:
+
+  `if intent_name == 'OrderFlowers':`
+
+  to
+
+  `if intent_name == 'OrderFlowers_enAU':`
+
+Other blueprints use other intent names, they should be updated as above before you use them\.

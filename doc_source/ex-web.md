@@ -1,4 +1,4 @@
-# Example: Integrating with a Web site<a name="ex-web"></a>
+# Integrating with a Web site<a name="ex-web"></a>
 
 In this example you integrate a bot with a Web site using text and voice\. You use JavaScript and AWS services to build an interactive experience for visitors to your Web site\. You can choose from these examples documented on the [AWS AI Blog](https://aws.amazon.com/blogs/ai/):
 + [ Deploy a Web UI for Your Chatbot](https://aws.amazon.com/blogs/machine-learning/deploy-a-web-ui-for-your-chatbot/)—Demonstrates a full\-featured Web UI that provides a Web client for Amazon Lex chatbots\. You can use this to learn about Web clients, or as a building block for your own application\.

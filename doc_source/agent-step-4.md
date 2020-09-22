@@ -12,7 +12,7 @@ When creating an identity pool, Amazon Cognito provides you with AWS Identity an
 
 1. Choose **Create new identity pool**\.
 
-1. \.Configure the identity pool\.
+1. Configure the identity pool\.
 
    1. **Identity pool name** – Enter a name that indicates the pool's purpose, such as **BotPool**\.
 

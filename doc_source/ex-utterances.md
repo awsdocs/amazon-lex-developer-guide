@@ -1,4 +1,4 @@
-# Example: Updating Utterances<a name="ex-utterances"></a>
+# Updating Utterances<a name="ex-utterances"></a>
 
 In this exercise, you add additional utterances to those you created in Getting Started Exercise 1\. You use the **Monitoring** tab in the Amazon Lex console to view utterances that your bot did not recognize\. To improve the experience for your users, you add those utterances to the bot\. 
 

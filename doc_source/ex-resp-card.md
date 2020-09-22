@@ -1,4 +1,4 @@
-# Example: Using a Response Card<a name="ex-resp-card"></a>
+# Using a Response Card<a name="ex-resp-card"></a>
 
 In this exercise, you extend Getting Started Exercise 1 by adding a response card\. You create a bot that supports the OrderFlowers intent, and then update the intent by adding a response card for the `FlowerType` slot\. In addition to the following prompt for the `FlowerType` slot, the user can choose the type of flowers from the response card:
 

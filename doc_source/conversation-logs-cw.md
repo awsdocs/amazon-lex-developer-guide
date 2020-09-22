@@ -25,14 +25,31 @@ Log entries for a user utterance is in multiple log streams\. An utterance in th
    "inputTranscript": "text used to process the request",
    "botResponse": "response from the bot",
    "intent": "matched intent",
-   
+   "nluIntentConfidence": "number",
    "slots": {
        "slot name": "slot value",
        "slot name": null,
        "slot name": "slot value"
        ...
    },
-
+   "alternativeIntents": [
+       {
+           "name": "intent name",
+           "nluIntentConfidence": "number",
+           "slots": {
+               "slot name": slot value,
+               "slot name": null,
+               "slot name": slot value
+               ...
+           }
+       },
+       {
+           "name": "intent name",
+           "nluIntentConfidence": number,
+           "slots": {}
+       }
+   ],
+   "developerOverride": "true" | "false",
    "missedUtterance": true | false,
    "inputDialogMode": "Text" | "Speech",
    "requestId": "request ID",
@@ -54,8 +71,51 @@ Log entries for a user utterance is in multiple log streams\. An utterance in th
     },
    "locale": "locale",
    "timestamp": "ISO 8601 UTC timestamp",
-
-   
+   "kendraResponse": {
+      "totalNumberOfResults": number,
+      "resultItems": [
+          {
+              "id": "query ID",
+              "type": "DOCUMENT" | "QUESTION_ANSWER" | "ANSWER",
+              "additionalAttributes": [
+                  {
+                     ...
+                  }
+              ],
+              "documentId": "document ID",
+              "documentTitle": {
+                  "text": "title",
+                  "highlights": null
+              },
+              "documentExcerpt": {
+                  "text": "text",
+                  "highlights": [
+                      {
+                          "beginOffset": number,
+                          "endOffset": number,
+                          "topAnswer": true | false
+                      }
+                  ]
+              },
+              "documentURI": "URI",
+              "documentAttributes": []
+          }  
+      ],
+      "facetResults": [],
+      "sdkResponseMetadata": {
+          "requestId": "request ID"
+      },
+      "sdkHttpMetadata": {
+          "httpHeaders": {
+              "Content-Length": "number",
+              "Content-Type": "application/x-amz-json-1.1",
+              "Date": "date and time",
+              "x-amzn-RequestId": "request ID"
+          },
+          "httpStatusCode": 200
+      },
+      "queryId": "query ID"
+   },
    "sessionAttributes": {
        "attribute name": "attribute value"
        ...
@@ -72,6 +132,8 @@ The contents of the log entry depends on the result of a transaction and the con
 + The `s3PathForAudio` field doesn't appear if audio logs are disabled or if the `inputDialogMode`field is `Text`\.
 + The `responseCard` field only appears when you have defined a response card for the bot\.
 + The `requestAttributes` map only appears if you have specified request attributes in the request\.
++ The `kendraResponse` field is only present when the `AMAZON.KendraSearchIntent` makes a request to search an Amazon Kendra index\.
++ The `developerOverride` field is true when an alternative intent was specified in the bot's Lambda function\.
 + The `sessionAttributes` map only appears if you have specified session attributes in the request\.
 + The `sentimentResponse` map only appears if you configure the bot to return sentiment values\.
 

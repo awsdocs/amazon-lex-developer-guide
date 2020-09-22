@@ -1,13 +1,8 @@
 # AMAZON\.SpeedUnit<a name="built-in-slot-speed"></a>
 
+Converts words that represent speed units into the corresponding abbreviation\. For example, "miles per hour" is converted to `mph`\.
 
-|  | 
-| --- |
-| This slot type is in preview release for Amazon Lex and is subject to change\. | 
-
-Converts words that represent speed units into the corresponding abbreviation\.
-
-For example, "miles per hour" is converted to `mph`\.
+This slot type is available only in the English \(US\) \(en\-US\) locale\.
 
 The following examples show how the `AMAZON.SpeedUnit` slot type captures speed units\.
 
