@@ -9,6 +9,8 @@ Delete resources in the following order:
 + Delete intents to free up slot type resources\.
 + Delete slot types last\.
 
+
+
 **To clean up your account**
 
 1. Sign in to the AWS Management Console and open the Amazon Lex console at [https://console\.aws\.amazon\.com/lex/](https://console.aws.amazon.com/lex/)\.

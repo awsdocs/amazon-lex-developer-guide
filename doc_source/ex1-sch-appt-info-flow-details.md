@@ -343,7 +343,11 @@ This section describes what happens after each user input\.
         + `responseCard` – Returns a list of values for the `Date` slot\.
       + `sessionAttributes` \- This time the Lambda function includes the `bookingMap` session attribute\. Its value is the requested date of the appointment and available appointments \(an empty object indicates that no appointments are available\)\.
 
-   1. Amazon Lex notices the `dialogAction.type` and returns a response to the client that includes information from the Lambda function's response\.  
+   1. Amazon Lex notices the `dialogAction.type` and returns a response to the client that includes information from the Lambda function's response\.
+
+      
+
+        
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/appt-30.png)
 
       The client displays the message: **We do not have any availability on that date, is there another day which works for you?** and the response card \(if the client supports response cards\)\.
@@ -365,6 +369,8 @@ This section describes what happens after each user input\.
          }
       }
       ```
+
+      
 **Note**  
 The Facebook Messenger client does not set any session attributes\. If you want to maintain session states between requests, you must do so in the Lambda function\. In a real application, you might need to maintain these session attributes in a backend database\.
 
@@ -447,10 +453,14 @@ The Facebook Messenger client does not set any session attributes\. If you want 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/respcard-30.png)
       + `sessionAttributes` \- The Lambda function sets the `bookingMap` session attribute with its value set to the appointment date and available appointments on that date\. In this example, these are 30\-minute appointments\. For a root canal that requires one hour, only 4 p\.m\. can be booked\.
 
+        
+
    1. As indicated in the `dialogAction.type` in the Lambda function's response, Amazon Lex returns the following response to the client:   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/appt-40.png)
 
       The client displays the message: **What time on 2017\-02\-15 works for you? 4:00 p\.m\. is our only availability, does that work for you?**
+
+   
 
 1. User: Choose **yes**\. 
 
@@ -506,3 +516,8 @@ The Facebook Messenger client does not set any session attributes\. If you want 
    + `dialogAction.fulfillmentState` is set to `Fulfilled`, indicating that the intent is successfully fulfilled\.
 
    The client displays the message: **Okay, I have booked your appointment\. We will see you at 4:00 p\.m\. on 2017\-02\-15**\.
+
+
+
+
+

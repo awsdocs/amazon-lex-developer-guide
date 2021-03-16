@@ -9,6 +9,8 @@ Tags enable you to categorize your AWS resources in different ways, for example,
 
 You can work with tags using the AWS Management Console, the AWS Command Line Interface, or the Amazon Lex API\.
 
+
+
 ## Tagging Your Resources<a name="tagging-resources"></a>
 
 If you are using the Amazon Lex console, you can tag resources when you create them, or you can add the tags later\. You can also use the console to update or remove existing tags\. 

@@ -4,6 +4,8 @@ In this section you create a Lambda function using a blueprint \(**lex\-book\-tr
 
 This Lambda function is written in Python\.
 
+
+
 1. Sign in to the AWS Management Console and open the AWS Lambda console at [https://console\.aws\.amazon\.com/lambda/](https://console.aws.amazon.com/lambda/)\.
 
 1. Choose **Create function**\.
@@ -32,6 +34,10 @@ This Lambda function is written in Python\.
    1. Verify that the Lambda function ran successfully\. The response in this case matches the Amazon Lex response model\.
 
    1. Repeat the step\. This time you choose the **Amazon Lex Book Car** from the **Sample event template** list\. The Lambda function processes the car reservation\.
+
+
+
+
 
 **Next Step**  
 [Step 4: Add the Lambda Function as a Code Hook](ex-book-trip-create-integrate.md)

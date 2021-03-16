@@ -105,7 +105,19 @@ The input format may change without a corresponding change in the `messageVersio
    },
    "kendraResponse": {
        Complete query response from Amazon Kendra
-   }
+   },
+   "activeContexts": [
+        {
+            "timeToLive": {
+                "timeToLiveInSeconds": seconds,
+                "turnsToLive": turns
+            },
+            "name": "name",
+            "parameters": {
+                "key name": "value"
+            }
+        }
+    ]
 }
 ```
 
@@ -201,10 +213,10 @@ If the intent is not clear, Amazon Lex can't invoke the Lambda function\.
 + **messageVersion** – The version of the message that identifies the format of the event data going into the Lambda function and the expected format of the response from a Lambda function\. 
 **Note**  
 You configure this value when you define an intent\. In the current implementation, only message version 1\.0 is supported\. Therefore, the console assumes the default value of 1\.0 and doesn't show the message version\.
-+ **sessionAttributes** – Application\-specific session attributes that the client sends in the request\. If you want Amazon Lex to include them in the response to the client, your Lambda function should send these back to Amazon Lex in the response\. For more information, see [Setting Session Attributes](context-mgmt.md#context-mgmt-session-attribs)
++ **sessionAttributes** – Application\-specific session attributes that the client sends in the request\. If you want Amazon Lex to include them in the response to the client, your Lambda function should send these back to Amazon Lex in the response\. For more information, see [Setting Session Attributes](context-mgmt-session-attribs.md)
 
    
-+ **requestAttributes** – Request\-specific attributes that the client sends in the request\. Use request attributes to pass information that doesn't need to persist for the entire session\. If there are no request attributes, the value will be null\. For more information, see [Setting Request Attributes](context-mgmt.md#context-mgmt-request-attribs)
++ **requestAttributes** – Request\-specific attributes that the client sends in the request\. Use request attributes to pass information that doesn't need to persist for the entire session\. If there are no request attributes, the value will be null\. For more information, see [Setting Request Attributes](context-mgmt-request-attribs.md)
 
    
 + **recentIntentSummaryView** – Information about the state of an intent\. You can see information about the last three intents used\. You can use this information to set values in the intent or to return to a previous intent\. For more information, see [Managing Sessions With the Amazon Lex API](how-session-api.md)\.
@@ -215,13 +227,21 @@ You configure this value when you define an intent\. In the current implementati
    
 + **kendraResponse** – The result of a query to an Amazon Kendra index\. Only present in the input to a fulfillment code hook and only when the intent extends the `AMAZON.KendraSearchIntent` built\-in intent\. The field contains the entire response from the Amazon Kendra search\. For more information, see [AMAZON\.KendraSearchIntent](built-in-intent-kendra-search.md)\.
 
+   
++ **activeContexts** – One or more contexts that are active during this turn of a conversation with the user\.
+  + **timeToLive** – The length of time or number of turns in the conversation with the user that the context remains active\.
+  + **name** – the name of the context\.
+  + **parameters** a list of key/value pairs the contains the name and value of the slots from the intent that activated the context\.
+
+  For more information, see [Setting Intent Context](context-mgmt-active-context.md)\.
+
 ## Response Format<a name="using-lambda-response-format"></a>
 
 Amazon Lex expects a response from a Lambda function in the following format:
 
 ```
 {
-    "sessionAttributes": {
+  "sessionAttributes": {
     "key1": "value1",
     "key2": "value2"
     ...
@@ -240,6 +260,18 @@ Amazon Lex expects a response from a Lambda function in the following format:
         "slotToElicit": "Next slot to elicit"
     }
   ],
+  "activeContexts": [
+     {
+       "timeToLive": {
+          "timeToLiveInSeconds": seconds,
+          "turnsToLive": turns
+      },
+      "name": "name",
+      "parameters": {
+        "key name": "value"
+      }
+    }
+  ],
   "dialogAction": {
     "type": "ElicitIntent, ElicitSlot, ConfirmIntent, Delegate, or Close",
     Full structure based on the type field. See below for details.
@@ -247,7 +279,7 @@ Amazon Lex expects a response from a Lambda function in the following format:
 }
 ```
 
-The response consists of three fields\. The `sessionAttributes` and `recentIntentSummaryView` fields are optional, the `dialogAction` field is required\. The contents of the `dialogAction` field depends on the value of the `type` field\. For details, see [dialogAction](#lambda-response-dialogAction)\.
+The response consists of four fields\. The `sessionAttributes`, `recentIntentSummaryView`, and `activeContexts` fields are optional, the `dialogAction` field is required\. The contents of the `dialogAction` field depends on the value of the `type` field\. For details, see [dialogAction](#lambda-response-dialogAction)\.
 
 ### sessionAttributes<a name="lambda-response-sessionAttributes"></a>
 
@@ -280,6 +312,16 @@ Optional\. If included, sets values for one or more recent intents\. You can inc
     }
   ]
 ```
+
+### activeContexts<a name="lambda-response-context"></a>
+
+Optional\. If included, sets the value for one or more contexts\. For example, you can include a context to make one or more intents that have that context as an input eligible for recognition in the next turn of the conversation\.
+
+Any active contexts that are not included in the response have their time\-to\-live values decremented and may still be active on the next request\. 
+
+If you specify a time\-to\-live of 0 for a context that was included in the input event, it will be inactive on the next request\.
+
+For more information, see [Setting Intent Context](context-mgmt-active-context.md)\.
 
 ### dialogAction<a name="lambda-response-dialogAction"></a>
 

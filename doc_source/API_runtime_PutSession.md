@@ -12,6 +12,18 @@ Accept: accept
 Content-type: application/json
 
 {
+   "activeContexts": [ 
+      { 
+         "name": "string",
+         "parameters": { 
+            "string" : "string" 
+         },
+         "timeToLive": { 
+            "timeToLiveInSeconds": number,
+            "turnsToLive": number
+         }
+      }
+   ],
    "dialogAction": { 
       "fulfillmentState": "string",
       "intentName": "string",
@@ -76,6 +88,13 @@ Required: Yes
 
 The request accepts the following data in JSON format\.
 
+ ** [activeContexts](#API_runtime_PutSession_RequestSyntax) **   <a name="lex-runtime_PutSession-request-activeContexts"></a>
+A list of contexts active for the request\. A context can be activated when a previous intent is fulfilled, or by including the context in the request,  
+If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session\. If you specify an empty list, all contexts for the session are cleared\.  
+Type: Array of [ActiveContext](API_runtime_ActiveContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 20 items\.  
+Required: No
+
  ** [dialogAction](#API_runtime_PutSession_RequestSyntax) **   <a name="lex-runtime_PutSession-request-dialogAction"></a>
 Sets the next action that the bot should take to fulfill the conversation\.  
 Type: [DialogAction](API_runtime_DialogAction.md) object  
@@ -110,6 +129,7 @@ x-amz-lex-message-format: messageFormat
 x-amz-lex-dialog-state: dialogState
 x-amz-lex-slot-to-elicit: slotToElicit
 x-amz-lex-session-id: sessionId
+x-amz-lex-active-contexts: activeContexts
 
 audioStream
 ```
@@ -120,10 +140,14 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The response returns the following HTTP headers\.
 
+ ** [activeContexts](#API_runtime_PutSession_ResponseSyntax) **   <a name="lex-runtime_PutSession-response-activeContexts"></a>
+A list of active contexts for the session\.
+
  ** [contentType](#API_runtime_PutSession_ResponseSyntax) **   <a name="lex-runtime_PutSession-response-contentType"></a>
 Content type as specified in the `Accept` HTTP header in the request\.
 
  ** [dialogState](#API_runtime_PutSession_ResponseSyntax) **   <a name="lex-runtime_PutSession-response-dialogState"></a>
+  
 +  `ConfirmIntent` \- Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent\.
 +  `ElicitIntent` \- Amazon Lex wants to elicit the user's intent\.
 +  `ElicitSlot` \- Amazon Lex is expecting the value of a slot for the current intent\.
@@ -209,7 +233,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/PutSession) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PutSession) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/runtime.lex-2016-11-28/PutSession) 

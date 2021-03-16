@@ -155,7 +155,7 @@ You can choose to update the Amazon Lex service\-linked role or to use a role th
 
 ## Using Request and Session Attributes as Filters<a name="kendra-search-filter"></a>
 
-To filter the response from Amazon Kendra to items related to current conversation, use session and request attributes as filters by adding the `queryFilterString` parameter when you create your bot\. You specify a placeholder for the attribute when you create the intent, and then Amazon Lex substitutes a value before it calls Amazon Kendra\. For more information about request attributes, see [Setting Request Attributes](context-mgmt.md#context-mgmt-request-attribs)\. For more information about session attributes, see [Setting Session Attributes](context-mgmt.md#context-mgmt-session-attribs)\.
+To filter the response from Amazon Kendra to items related to current conversation, use session and request attributes as filters by adding the `queryFilterString` parameter when you create your bot\. You specify a placeholder for the attribute when you create the intent, and then Amazon Lex substitutes a value before it calls Amazon Kendra\. For more information about request attributes, see [Setting Request Attributes](context-mgmt-request-attribs.md)\. For more information about session attributes, see [Setting Session Attributes](context-mgmt-session-attribs.md)\.
 
 The following is an example of a `queryFilterString` parameter that uses a session attribute called `"DocumentType"` to filter the Amazon Kendra query\.
 

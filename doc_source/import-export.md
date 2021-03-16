@@ -8,6 +8,10 @@ When you export a resource, you have to export it in a format that is compatible
 
 When you export a bot, intent or slot type, its resources are written to a JSON file\. To export a bot, intent, or slot type, you can use either the Amazon Lex console or the [GetExport](API_GetExport.md) operation\. Import a bot, intent or slot type using the [StartImport](API_StartImport.md)\. 
 
+
+
+
+
 **Topics**
 + [Exporting and Importing in Amazon Lex Format](import-export-lex.md)
 + [Exporting to an Alexa Skill](export-to-alexa.md)

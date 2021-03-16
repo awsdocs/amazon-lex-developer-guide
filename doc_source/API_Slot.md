@@ -4,6 +4,11 @@ Identifies the version of a specific slot\.
 
 ## Contents<a name="API_Slot_Contents"></a>
 
+ **defaultValueSpec**   <a name="lex-Type-Slot-defaultValueSpec"></a>
+A list of default values for the slot\. Default values are used when Amazon Lex hasn't determined a value for a slot\. You can specify default values from context variables, session attributes, and defined values\.  
+Type: [SlotDefaultValueSpec](API_SlotDefaultValueSpec.md) object  
+Required: No
+
  **description**   <a name="lex-Type-Slot-description"></a>
 A description of the slot\.  
 Type: String  
@@ -73,5 +78,5 @@ Required: No
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/Slot) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/Slot) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/Slot) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/Slot) 
 +  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/lex-models-2017-04-19/Slot) 

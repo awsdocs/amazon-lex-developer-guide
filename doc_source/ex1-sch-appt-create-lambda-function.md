@@ -27,5 +27,9 @@ In this section, you create a Lambda function using a blueprint \(lex\-make\-app
 
    1. Verify that the Lambda function ran successfully\. The response in this case matches the Amazon Lex response model\.
 
+
+
+
+
 **Next Step**  
 [Step 3: Update the Intent: Configure a Code Hook](ex1-sch-appt-create-integrate.md)

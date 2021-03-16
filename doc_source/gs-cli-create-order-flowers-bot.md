@@ -60,6 +60,8 @@ The following AWS CLI example is formatted for Unix, Linux, and macOS\. For Wind
    }
    ```
 
+   
+
 1. To determine if your new bot is ready for use, run the following command\. Repeat this command until the `status` field returns `READY`\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
    ```

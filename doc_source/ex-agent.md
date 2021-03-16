@@ -10,6 +10,10 @@ The bot and web application that you create in this tutorial helps agents respon
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/agent-tutorial.png)
 
+
+
+
+
 As the diagram shows, the Amazon Kendra index of documents is stored in an Amazon Simple Storage Service \(Amazon S3\) bucket\. If you don't already have an S3 bucket, you can set one up when you create the Amazon Kendra index\. In addition to Amazon S3, you will use Amazon Cognito for this tutorial\. Amazon Cognito manages permissions for deploying the bot as a web application\.
 
 In this tutorial, you create an Amazon Kendra index that provides answers to customer questions, create the bot and add intents that allow it to suggest answers based on the conversation with the customer, set up Amazon Cognito to manage access permissions, and deploy the bot as a web application\.

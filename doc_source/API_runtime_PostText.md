@@ -25,6 +25,18 @@ POST /bot/botName/alias/botAlias/user/userId/text HTTP/1.1
 Content-type: application/json
 
 {
+   "activeContexts": [ 
+      { 
+         "name": "string",
+         "parameters": { 
+            "string" : "string" 
+         },
+         "timeToLive": { 
+            "timeToLiveInSeconds": number,
+            "turnsToLive": number
+         }
+      }
+   ],
    "inputText": "string",
    "requestAttributes": { 
       "string" : "string" 
@@ -62,6 +74,13 @@ Required: Yes
 
 The request accepts the following data in JSON format\.
 
+ ** [activeContexts](#API_runtime_PostText_RequestSyntax) **   <a name="lex-runtime_PostText-request-activeContexts"></a>
+A list of contexts active for the request\. A context can be activated when a previous intent is fulfilled, or by including the context in the request,  
+If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session\. If you specify an empty list, all contexts for the session are cleared\.  
+Type: Array of [ActiveContext](API_runtime_ActiveContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 20 items\.  
+Required: No
+
  ** [inputText](#API_runtime_PostText_RequestSyntax) **   <a name="lex-runtime_PostText-request-inputText"></a>
 The text that the user entered \(Amazon Lex interprets this text\)\.  
 When you are using the AWS CLI, you can't pass a URL in the `--input-text` parameter\. Pass the URL using the `--cli-input-json` parameter instead\.  
@@ -89,6 +108,18 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
+   "activeContexts": [ 
+      { 
+         "name": "string",
+         "parameters": { 
+            "string" : "string" 
+         },
+         "timeToLive": { 
+            "timeToLiveInSeconds": number,
+            "turnsToLive": number
+         }
+      }
+   ],
    "alternativeIntents": [ 
       { 
          "intentName": "string",
@@ -146,6 +177,12 @@ Content-type: application/json
 If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
+
+ ** [activeContexts](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-activeContexts"></a>
+A list of active contexts for the session\. A context can be set when an intent is fulfilled or by calling the `PostContent`, `PostText`, or `PutSession` operation\.  
+You can use a context to control the intents that can follow up an intent, or to modify the operation of your application\.  
+Type: Array of [ActiveContext](API_runtime_ActiveContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 20 items\.
 
  ** [alternativeIntents](#API_runtime_PostText_ResponseSyntax) **   <a name="lex-runtime_PostText-response-alternativeIntents"></a>
 One to four alternative intents that may be applicable to the user's intent\.  
@@ -276,7 +313,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PostText) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/PostText) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PostText) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/runtime.lex-2016-11-28/PostText) 

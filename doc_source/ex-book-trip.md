@@ -32,7 +32,15 @@ In this example, we use the following session attributes\. Only the client and t
    
 + `confirmationContext` – The Lambda function sets this to `AutoPopulate` when it prepopulates some of the slot data based on slot data from the previous reservation \(if there is one\)\. This enables cross\-intent information sharing\. For example, if the user previously booked a hotel and now wants to book a car, Amazon Lex can prompt the user to confirm \(or deny\) that the car is being booked for the same city and dates as their hotel reservation
 
+
+
+
+
 In this exercise you use blueprints to create an Amazon Lex bot and a Lambda function\. For more information about blueprints, see [Amazon Lex and AWS Lambda Blueprints](lex-lambda-blueprints.md)\.
+
+
+
+
 
 **Next Step**  
 [Step 1: Review the Blueprints Used in this Exercise](ex-book-trip-blueprints.md)

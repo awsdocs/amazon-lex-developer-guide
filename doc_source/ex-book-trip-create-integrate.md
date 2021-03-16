@@ -2,6 +2,8 @@
 
 In this section, you update the configurations of both the BookCar and BookHotel intents by adding the Lambda function as a code hook for initialization/validation and fulfillment activities\. Make sure you choose the $LATEST version of the intents because you can only update the $LATEST version of your Amazon Lex resources\.
 
+
+
 1. In the Amazon Lex console, choose the **BookTrip** bot\. 
 
 1. On the **Editor** tab, choose the **BookHotel** intent\. Update the intent configuration as follows:
@@ -21,9 +23,13 @@ In this section, you update the configurations of both the BookCar and BookHotel
 
 1. On the **Editor** tab, choose the BookCar intent\. Follow the preceding step to add your Lambda function as validation and fulfillment code hook\.
 
+   
+
 1. Choose **Build**\. The console sends a series of requests to Amazon Lex to save the configurations\.
 
-1. Test the bot\. Now that you a have a Lambda function performing the initialization, user data validation and fulfillment, you can see the difference in the user interaction\.   
+1. Test the bot\. Now that you a have a Lambda function performing the initialization, user data validation and fulfillment, you can see the difference in the user interaction\. 
+
+     
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/book-trip-with-lambda-30.png)
 
    For more information about the data flow from the client \(console\) to Amazon Lex, and from Amazon Lex to the Lambda function, see [Data Flow: Book Hotel Intent](book-trip-detail-flow.md#data-flow-book-hotel)\.

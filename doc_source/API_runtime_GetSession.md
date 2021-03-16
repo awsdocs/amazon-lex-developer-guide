@@ -43,6 +43,18 @@ HTTP/1.1 200
 Content-type: application/json
 
 {
+   "activeContexts": [ 
+      { 
+         "name": "string",
+         "parameters": { 
+            "string" : "string" 
+         },
+         "timeToLive": { 
+            "timeToLiveInSeconds": number,
+            "turnsToLive": number
+         }
+      }
+   ],
    "dialogAction": { 
       "fulfillmentState": "string",
       "intentName": "string",
@@ -79,6 +91,12 @@ Content-type: application/json
 If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
+
+ ** [activeContexts](#API_runtime_GetSession_ResponseSyntax) **   <a name="lex-runtime_GetSession-response-activeContexts"></a>
+A list of active contexts for the session\. A context can be set when an intent is fulfilled or by calling the `PostContent`, `PostText`, or `PutSession` operation\.  
+You can use a context to control the intents that can follow up an intent, or to modify the operation of your application\.  
+Type: Array of [ActiveContext](API_runtime_ActiveContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 20 items\.
 
  ** [dialogAction](#API_runtime_GetSession_ResponseSyntax) **   <a name="lex-runtime_GetSession-response-dialogAction"></a>
 Describes the current state of the bot\.  
@@ -123,7 +141,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/GetSession) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/GetSession) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/GetSession) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/runtime.lex-2016-11-28/GetSession) 

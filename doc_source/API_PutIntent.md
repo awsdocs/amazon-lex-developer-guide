@@ -86,11 +86,23 @@ Content-type: application/json
       },
       "type": "string"
    },
+   "inputContexts": [ 
+      { 
+         "name": "string"
+      }
+   ],
    "kendraConfiguration": { 
       "kendraIndex": "string",
       "queryFilterString": "string",
       "role": "string"
    },
+   "outputContexts": [ 
+      { 
+         "name": "string",
+         "timeToLiveInSeconds": number,
+         "turnsToLive": number
+      }
+   ],
    "parentIntentSignature": "string",
    "rejectionStatement": { 
       "messages": [ 
@@ -105,6 +117,13 @@ Content-type: application/json
    "sampleUtterances": [ "string" ],
    "slots": [ 
       { 
+         "defaultValueSpec": { 
+            "defaultValueList": [ 
+               { 
+                  "defaultValue": "string"
+               }
+            ]
+         },
          "description": "string",
          "name": "string",
          "obfuscationSetting": "string",
@@ -201,9 +220,21 @@ Required\. Describes how the intent is fulfilled\. For example, after a user pro
 Type: [FulfillmentActivity](API_FulfillmentActivity.md) object  
 Required: No
 
+ ** [inputContexts](#API_PutIntent_RequestSyntax) **   <a name="lex-PutIntent-request-inputContexts"></a>
+An array of `InputContext` objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user\.  
+Type: Array of [InputContext](API_InputContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 5 items\.  
+Required: No
+
  ** [kendraConfiguration](#API_PutIntent_RequestSyntax) **   <a name="lex-PutIntent-request-kendraConfiguration"></a>
 Configuration information required to use the `AMAZON.KendraSearchIntent` intent to connect to an Amazon Kendra index\. For more information, see [ AMAZON\.KendraSearchIntent](http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html)\.  
 Type: [KendraConfiguration](API_KendraConfiguration.md) object  
+Required: No
+
+ ** [outputContexts](#API_PutIntent_RequestSyntax) **   <a name="lex-PutIntent-request-outputContexts"></a>
+An array of `OutputContext` objects that lists the contexts that the intent activates when the intent is fulfilled\.  
+Type: Array of [OutputContext](API_OutputContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 10 items\.  
 Required: No
 
  ** [parentIntentSignature](#API_PutIntent_RequestSyntax) **   <a name="lex-PutIntent-request-parentIntentSignature"></a>
@@ -297,6 +328,11 @@ Content-type: application/json
       },
       "type": "string"
    },
+   "inputContexts": [ 
+      { 
+         "name": "string"
+      }
+   ],
    "kendraConfiguration": { 
       "kendraIndex": "string",
       "queryFilterString": "string",
@@ -304,6 +340,13 @@ Content-type: application/json
    },
    "lastUpdatedDate": number,
    "name": "string",
+   "outputContexts": [ 
+      { 
+         "name": "string",
+         "timeToLiveInSeconds": number,
+         "turnsToLive": number
+      }
+   ],
    "parentIntentSignature": "string",
    "rejectionStatement": { 
       "messages": [ 
@@ -318,6 +361,13 @@ Content-type: application/json
    "sampleUtterances": [ "string" ],
    "slots": [ 
       { 
+         "defaultValueSpec": { 
+            "defaultValueList": [ 
+               { 
+                  "defaultValue": "string"
+               }
+            ]
+         },
          "description": "string",
          "name": "string",
          "obfuscationSetting": "string",
@@ -387,6 +437,11 @@ Type: [FollowUpPrompt](API_FollowUpPrompt.md) object
 If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent\.  
 Type: [FulfillmentActivity](API_FulfillmentActivity.md) object
 
+ ** [inputContexts](#API_PutIntent_ResponseSyntax) **   <a name="lex-PutIntent-response-inputContexts"></a>
+An array of `InputContext` objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user\.  
+Type: Array of [InputContext](API_InputContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 5 items\.
+
  ** [kendraConfiguration](#API_PutIntent_ResponseSyntax) **   <a name="lex-PutIntent-response-kendraConfiguration"></a>
 Configuration information, if any, required to connect to an Amazon Kendra index and use the `AMAZON.KendraSearchIntent` intent\.  
 Type: [KendraConfiguration](API_KendraConfiguration.md) object
@@ -400,6 +455,11 @@ The name of the intent\.
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
+
+ ** [outputContexts](#API_PutIntent_ResponseSyntax) **   <a name="lex-PutIntent-response-outputContexts"></a>
+An array of `OutputContext` objects that lists the contexts that the intent activates when the intent is fulfilled\.  
+Type: Array of [OutputContext](API_OutputContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 10 items\.
 
  ** [parentIntentSignature](#API_PutIntent_ResponseSyntax) **   <a name="lex-PutIntent-response-parentIntentSignature"></a>
 A unique identifier for the built\-in intent that this intent is based on\.  
@@ -455,7 +515,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutIntent) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutIntent) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutIntent) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutIntent) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/PutIntent) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutIntent) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutIntent) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutIntent) 

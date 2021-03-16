@@ -61,6 +61,8 @@ In addition to the bot blueprint, AWS Lambda provides a blueprint \(**lex\-book\
 
 When you create a bot using the BookTrip blueprint, you update configuration of both the intents \(BookCar and BookHotel\) by adding this Lambda function as a code hook for both initialization/validation of user data input and fulfillment of the intents\.
 
+
+
 This Lambda function code provided showcases dynamic conversation using previously known information \(persisted in session attributes\) about a user to initialize slot values for an intent\. For more information, see [Managing Conversation Context](context-mgmt.md)\.
 
 **Next Step**  

@@ -10,7 +10,7 @@ Amazon Lex encrypts the user utterances that it stores\.
 
 ## Sample Utterances<a name="at-rest-sample"></a>
 
-When you develop a bot, you can provide sample utterances for each intent and slot\. You can also provide custom values and synonyms for slots\. This information is used only to build the bot and to create the user experience\. It isn't encrypted\. 
+When you develop a bot, you can provide sample utterances for each intent and slot\. You can also provide custom values and synonyms for slots\. This information is encrypted at rest, and it is used to build the bot and to create the user experience\.
 
 ## Customer Utterances<a name="at-rest-utterances"></a>
 

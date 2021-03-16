@@ -6,6 +6,8 @@ Amazon Lex enables any developer to build conversational chatbots quickly\. With
 
 Amazon Lex provides pre\-built integration with AWS Lambda, and you can easily integrate with many other services on the AWS platform, including Amazon Cognito, AWS Mobile Hub, Amazon CloudWatch, and Amazon DynamoDB\. Integration with Lambda provides bots access to pre\-built serverless enterprise connectors to link to data in SaaS applications, such as Salesforce, HubSpot, or Marketo\.
 
+
+
 Some of the benefits of using Amazon Lex include:
 + **Simplicity** – Amazon Lex guides you through using the console to create your own chatbot in minutes\. You supply just a few example phrases, and Amazon Lex builds a complete natural language model through which the bot can interact using voice and text to ask questions, get answers, and complete sophisticated tasks\.
 

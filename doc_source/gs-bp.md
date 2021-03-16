@@ -31,6 +31,8 @@ You use the **OrderFlowers** blueprint to create an Amazon Lex bot\.For more inf
   + Prompt for the `PickupTime` slot – "At what time do you want the \{FlowerType\} to be picked up?"
   + Confirmation statement – "Okay, your \{FlowerType\} will be ready for pickup by \{PickupTime\} on \{PickupDate\}\. Does this sound okay?" 
 
+
+
 ## AWS Lambda Function: Blueprint Summary<a name="gs-bp-summary-lambda"></a>
 
 The Lambda function in this exercise performs both initialization and validation and fulfillment tasks\. Therefore, after creating the Lambda function, you update the intent configuration by specifying the same Lambda function as a code hook to handle both the initialization and validation and fulfillment tasks\. 

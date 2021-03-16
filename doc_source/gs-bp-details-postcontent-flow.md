@@ -199,6 +199,8 @@ If the user chooses to send text \("I would like to order some flowers"\) to the
 
    1. Amazon Lex interprets the input stream and understands that the user want to proceed with the order\. The `OrderFlowers` intent is configured with `ReturnIntent` as the fulfillment activity\. This directs Amazon Lex to return all of the intent data to the client\. Amazon Lex returns a response with following: 
 
+      
+
       ```
       x-amz-lex-dialog-state:ReadyForFulfillment
       x-amz-lex-input-transcript:yes

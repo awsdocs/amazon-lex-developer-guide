@@ -147,7 +147,7 @@ When you use the [PostText](API_runtime_PostText.md) operation, or when you use 
 
 By default, Amazon Lex returns any one of the messages defined for a particular prompt\. For example, if you define five messages to elicit a slot value, Amazon Lex chooses one of the messages randomly and returns it to the client\.
 
-If you want Amazon Lex to return a specific type of message to the client in a run\-time request, set the `x-amzn-lex:accept-content-types` request parameter\. The response is limited to the type or types requested\. If there is more than one message of the specified type, Amazon Lex returns one at random\. For more information about the `x-amz-lex:accept-content-types` header, see [Setting the Response Type](context-mgmt.md#special-response)\.
+If you want Amazon Lex to return a specific type of message to the client in a run\-time request, set the `x-amzn-lex:accept-content-types` request parameter\. The response is limited to the type or types requested\. If there is more than one message of the specified type, Amazon Lex returns one at random\. For more information about the `x-amz-lex:accept-content-types` header, see [Setting the Response Type](context-mgmt-request-attribs.md#special-response)\.
 
 ## Message Groups<a name="message-groups"></a>
 
@@ -181,7 +181,7 @@ x-amz-lex:accept-content-types: PlainText,SSML
 
 If you request a specific message format and a message group doesn't contain that a message with that format, you get a `NoUsableMessageException` exception\. When you use a message group to group messages by type, don't use the `x-amz-lex:accept-content-types` header\.
 
-For more information about the `x-amz-lex:accept-content-types` header, see [Setting the Response Type](context-mgmt.md#special-response)\.
+For more information about the `x-amz-lex:accept-content-types` header, see [Setting the Response Type](context-mgmt-request-attribs.md#special-response)\.
 
 ## Response Cards<a name="msg-prompts-resp-card"></a>
 
@@ -220,7 +220,7 @@ Now suppose that you've integrated your bot with Facebook Messenger\. The user c
 
 ![\[A response card in Facebook Messenger.\]](http://docs.aws.amazon.com/lex/latest/dg/images/resp-fb-exampleA.png)
 
-To customize the content of a response card, you can refer to session attributes\. At runtime, Amazon Lex substitutes these references with appropriate values from the session attributes\. For more information, see [Setting Session Attributes](context-mgmt.md#context-mgmt-session-attribs)\. For an example, see [Using a Response Card](ex-resp-card.md)\.
+To customize the content of a response card, you can refer to session attributes\. At runtime, Amazon Lex substitutes these references with appropriate values from the session attributes\. For more information, see [Setting Session Attributes](context-mgmt-session-attribs.md)\. For an example, see [Using a Response Card](ex-resp-card.md)\.
 
 ### Generating Response Cards Dynamically<a name="msg-prompts-resp-card-dynamic"></a>
 

@@ -1,6 +1,8 @@
 # Amazon Lex Runtime Service<a name="API_Types_Amazon_Lex_Runtime_Service"></a>
 
 The following data types are supported by Amazon Lex Runtime Service:
++  [ActiveContext](API_runtime_ActiveContext.md) 
++  [ActiveContextTimeToLive](API_runtime_ActiveContextTimeToLive.md) 
 +  [Button](API_runtime_Button.md) 
 +  [DialogAction](API_runtime_DialogAction.md) 
 +  [GenericAttachment](API_runtime_GenericAttachment.md) 

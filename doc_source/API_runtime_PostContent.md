@@ -28,6 +28,7 @@ x-amz-lex-session-attributes: sessionAttributes
 x-amz-lex-request-attributes: requestAttributes
 Content-Type: contentType
 Accept: accept
+x-amz-lex-active-contexts: activeContexts
 
 inputStream
 ```
@@ -48,6 +49,10 @@ The request uses the following URI parameters\.
   + audio/pcm
   + text/plain; charset=utf\-8
   + audio/\* \(defaults to mpeg\)
+
+ ** [activeContexts](#API_runtime_PostContent_RequestSyntax) **   <a name="lex-runtime_PostContent-request-activeContexts"></a>
+A list of contexts active for the request\. A context can be activated when a previous intent is fulfilled, or by including the context in the request,  
+If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session\. If you specify an empty list, all contexts for the session are cleared\.
 
  ** [botAlias](#API_runtime_PostContent_RequestSyntax) **   <a name="lex-runtime_PostContent-request-botAlias"></a>
 Alias of the Amazon Lex bot\.  
@@ -119,6 +124,7 @@ x-amz-lex-slot-to-elicit: slotToElicit
 x-amz-lex-input-transcript: inputTranscript
 x-amz-lex-bot-version: botVersion
 x-amz-lex-session-id: sessionId
+x-amz-lex-active-contexts: activeContexts
 
 audioStream
 ```
@@ -128,6 +134,10 @@ audioStream
 If the action is successful, the service sends back an HTTP 200 response\.
 
 The response returns the following HTTP headers\.
+
+ ** [activeContexts](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-activeContexts"></a>
+A list of active contexts for the session\. A context can be set when an intent is fulfilled or by calling the `PostContent`, `PostText`, or `PutSession` operation\.  
+You can use a context to control the intents that can follow up an intent, or to modify the operation of your application\.
 
  ** [alternativeIntents](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-alternativeIntents"></a>
 One to four alternative intents that may be applicable to the user's intent\.  
@@ -256,7 +266,7 @@ HTTP Status Code: 408
 The Content\-Type header \(`PostContent` API\) has an invalid value\.   
 HTTP Status Code: 415
 
-## Example<a name="API_runtime_PostContent_Examples"></a>
+## Examples<a name="API_runtime_PostContent_Examples"></a>
 
 ### Example 1<a name="API_runtime_PostContent_Example_1"></a>
 
@@ -312,7 +322,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PostContent) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/runtime.lex-2016-11-28/PostContent) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PostContent) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/runtime.lex-2016-11-28/PostContent) 

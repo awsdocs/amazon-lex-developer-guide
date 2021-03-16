@@ -12,7 +12,7 @@ Required: No
  **supportedLocales**   <a name="lex-Type-BuiltinSlotTypeMetadata-supportedLocales"></a>
 A list of target locales for the slot\.   
 Type: Array of strings  
-Valid Values:` en-AU | en-GB | en-US | es-US`   
+Valid Values:` de-DE | en-AU | en-GB | en-US | es-419 | es-ES | es-US | fr-FR | fr-CA | it-IT`   
 Required: No
 
 ## See Also<a name="API_BuiltinSlotTypeMetadata_SeeAlso"></a>
@@ -20,5 +20,5 @@ Required: No
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/BuiltinSlotTypeMetadata) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/BuiltinSlotTypeMetadata) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/BuiltinSlotTypeMetadata) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/BuiltinSlotTypeMetadata) 
 +  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/lex-models-2017-04-19/BuiltinSlotTypeMetadata) 

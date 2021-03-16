@@ -39,6 +39,8 @@ This section explains what happens after each user input\.
       + Request URI – Provides bot name \(BookTrip\), bot alias \($LATEST\) and the user name\. The trailing `text` indicates that it is a `PostText` API request \(and not `PostContent`\)\.
       + Request body – Includes the user input \(`inputText`\) and empty `sessionAttributes`\. Initially, this is an empty object and the Lambda function first sets the session attributes\.
 
+      
+
    1. From the `inputText`, Amazon Lex detects the intent \(BookHotel\)\. This intent is configured with a Lambda function as a code hook for user data initialization/validation\. Therefore, Amazon Lex invokes that Lambda function by passing the following information as the event parameter \(see [Input Event Format](lambda-input-response-format.md#using-lambda-input-event-format)\):
 
       ```
@@ -96,7 +98,9 @@ Only the Lambda function and the client can update these session attributes\. Am
 `dialogAction.type` – By setting this value to `Delegate`, the Lambda function delegates the responsibility for the next course of action to Amazon Lex\.   
 If the Lambda function detected anything in the user data validation, it instructs Amazon Lex what to do next\.
 
-   1. As per the `dialogAction.type`, Amazon Lex decides the next course of action—elicit data from the user for the `Location` slot\. It selects one of the prompt messages \("What city will you be staying in?"\) for this slot, according to the intent configuration, and then sends the following response to the user:   
+   1. As per the `dialogAction.type`, Amazon Lex decides the next course of action—elicit data from the user for the `Location` slot\. It selects one of the prompt messages \("What city will you be staying in?"\) for this slot, according to the intent configuration, and then sends the following response to the user: 
+
+        
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/book-hotel-10.png)
 
       The session attributes are passed to the client\.
@@ -219,6 +223,8 @@ The Lambda function in this exercise has a simple list of valid cities and `Mosc
       }
       ```
 
+      
+
    1. Amazon Lex knows the context, that it was eliciting data for the `Location` slot\. In this context, it knows the `inputText` value is for the `Location` slot\. It then invokes the Lambda function by sending the following event: 
 
       ```
@@ -278,6 +284,8 @@ The Lambda function in this exercise has a simple list of valid cities and `Mosc
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/book-hotel-30.png)
 
       The client displays the message: "What day do you want to check in?" 
+
+   
 
 1. The user interaction continues—the user provides data, the Lambda function validates data, and then delegates the next course of action to Amazon Lex\. Eventually the user provides all of the slot data, the Lambda function validates all of the user input, and then Amazon Lex recognizes it has all the slot data\. 
 **Note**  
@@ -365,6 +373,10 @@ In this exercise, after the user provides all of the slot data, the Lambda funct
 `dialogAction.type` – The Lambda function sets this value to `Close`, indicating that Amazon Lex to not expect a user response\. 
 `dialogAction.fulfillmentState` – Is set to `Fulfilled` and includes an appropriate `message` to convey to the user\.
 
+      
+
+      
+
    1. Amazon Lex reviews the `fulfillmentState` and sends the following response to the client:  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/book-hotel-60.png)
 **Note**  
@@ -440,6 +452,8 @@ Follow the steps in this procedure to continue the conversation\.
  `messageVersion` – Currently Amazon Lex supports the 1\.0 version only\.
 `invocationSource` – Indicates the purpose of invocation is to perform initialization and user data validation\.
 `currentIntent` – It includes the intent name and the slots\. At this time, all slot values are null\.
+
+      
 
    1. The Lambda function notices all null slot values with nothing to validate\. However, it uses session attributes to initialize some of the slot values \(`PickUpDate`, `ReturnDate`, and `PickUpCity`\), and then returns the following response:
 
@@ -539,6 +553,8 @@ The term `ConfirmIntent` \(value of the `dialogAction.type`\) is not related to 
       ```
 
       Because the user replied Yes, Amazon Lex sets the `confirmationStatus` to `Confirmed`\. 
+
+      
 
    1. From the `confirmationStatus`, the Lambda function knows that the prepopulated values are correct\. The Lambda function does the following:
       + Updates the `currentReservation` session attribute to slot value it had prepopulated\.

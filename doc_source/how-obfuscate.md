@@ -1,22 +1,22 @@
 # Slot Obfuscation<a name="how-obfuscate"></a>
 
-Amazon Lex enables you to obfuscate, or hide, the contents of slots so that the content is not visible\. To protect sensitive data captured as slot values, you can enable slot obfuscation to mask those values for logging\.
+Amazon Lex enables you to obfuscate, or hide, the contents of slots so that the content is not visible\. To protect sensitive data captured as slot values, you can enable slot obfuscation to mask those values in conversation logs\.
 
 When you choose to obfuscate slot values, Amazon Lex replaces the value of the slot with the name of the slot in conversation logs\. For a slot called `full_name`, the value of the slot would be obfuscated as follows:
 
 ```
-Before:
+Before obfuscation:
     My name is John Stiles
-After:
+After obfuscation:
     My name is {full_name}
 ```
 
 If an utterance contains bracket characters \(\{\}\) Amazon Lex escapes the bracket characters with two back slashes \(\\\\\)\. For example, the text `{John Stiles}` is obfuscated as follows:
 
 ```
-Before:
+Before obfuscation:
     My name is {John Stiles}
-After:
+After obfuscation:
     My name is \\{{full_name}\\}
 ```
 

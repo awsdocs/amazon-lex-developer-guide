@@ -10,6 +10,8 @@ You can configure response cards at build time \(also referred to as static resp
 + A response card that lists buttons to confirm a suggested appointment time\. For example:  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/respcard-30.png)
 
+  
+
 The available appointment dates and times vary, which requires you to generate response cards at runtime\. You use an AWS Lambda function to generate these response cards dynamically\. The Lambda function returns response cards in its response to Amazon Lex\. Amazon Lex includes the response card in its response to the client\. 
 
 If a client \(for example, Facebook Messenger\) supports response cards, the user can either choose from the list of buttons or type the response\. Otherwise, the user simply types the response\.

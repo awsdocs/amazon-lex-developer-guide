@@ -8,6 +8,8 @@ What type of flowers would you like to order?
 
 The following is the response card:
 
+
+
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lex/latest/dg/images/resp-card-example-10a.png)
 
 The bot user can either type the text or choose from the list of flower types\. This response card is configured with an image, which appears in the client as shown\. For more information about response cards, see [Response Cards](howitworks-manage-prompts.md#msg-prompts-resp-card)\.

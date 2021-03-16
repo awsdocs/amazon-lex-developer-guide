@@ -95,6 +95,11 @@ Content-type: application/json
       },
       "type": "string"
    },
+   "inputContexts": [ 
+      { 
+         "name": "string"
+      }
+   ],
    "kendraConfiguration": { 
       "kendraIndex": "string",
       "queryFilterString": "string",
@@ -102,6 +107,13 @@ Content-type: application/json
    },
    "lastUpdatedDate": number,
    "name": "string",
+   "outputContexts": [ 
+      { 
+         "name": "string",
+         "timeToLiveInSeconds": number,
+         "turnsToLive": number
+      }
+   ],
    "parentIntentSignature": "string",
    "rejectionStatement": { 
       "messages": [ 
@@ -116,6 +128,13 @@ Content-type: application/json
    "sampleUtterances": [ "string" ],
    "slots": [ 
       { 
+         "defaultValueSpec": { 
+            "defaultValueList": [ 
+               { 
+                  "defaultValue": "string"
+               }
+            ]
+         },
          "description": "string",
          "name": "string",
          "obfuscationSetting": "string",
@@ -181,6 +200,11 @@ Type: [FollowUpPrompt](API_FollowUpPrompt.md) object
 Describes how the intent is fulfilled\. For more information, see [PutIntent](API_PutIntent.md)\.   
 Type: [FulfillmentActivity](API_FulfillmentActivity.md) object
 
+ ** [inputContexts](#API_GetIntent_ResponseSyntax) **   <a name="lex-GetIntent-response-inputContexts"></a>
+An array of `InputContext` objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user\.  
+Type: Array of [InputContext](API_InputContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 5 items\.
+
  ** [kendraConfiguration](#API_GetIntent_ResponseSyntax) **   <a name="lex-GetIntent-response-kendraConfiguration"></a>
 Configuration information, if any, to connect to an Amazon Kendra index with the `AMAZON.KendraSearchIntent` intent\.  
 Type: [KendraConfiguration](API_KendraConfiguration.md) object
@@ -194,6 +218,11 @@ The name of the intent\.
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 100\.  
 Pattern: `^([A-Za-z]_?)+$` 
+
+ ** [outputContexts](#API_GetIntent_ResponseSyntax) **   <a name="lex-GetIntent-response-outputContexts"></a>
+An array of `OutputContext` objects that lists the contexts that the intent activates when the intent is fulfilled\.  
+Type: Array of [OutputContext](API_OutputContext.md) objects  
+Array Members: Minimum number of 0 items\. Maximum number of 10 items\.
 
  ** [parentIntentSignature](#API_GetIntent_ResponseSyntax) **   <a name="lex-GetIntent-response-parentIntentSignature"></a>
 A unique identifier for a built\-in intent\.  
@@ -245,7 +274,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetIntent) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetIntent) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetIntent) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetIntent) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/GetIntent) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetIntent) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetIntent) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetIntent) 

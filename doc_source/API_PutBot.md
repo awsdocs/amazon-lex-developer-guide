@@ -132,10 +132,6 @@ The Regions where you can set the `enableModelImprovements` parameter to `true` 
 + Asia Pacific \(Sydney\) \(ap\-southeast\-2\)
 + EU \(Ireland\) \(eu\-west\-1\)
 In other Regions, the `enableModelImprovements` parameter is set to `true` by default\. In these Regions setting the parameter to `false` throws a `ValidationException` exception\.  
-+ Asia Pacific \(Singapore\) \(ap\-southeast\-1\)
-+ Asia Pacific \(Tokyo\) \(ap\-northeast\-1\)
-+ EU \(Frankfurt\) \(eu\-central\-1\)
-+ EU \(London\) \(eu\-west\-2\)
 Type: Boolean  
 Required: No
 
@@ -158,12 +154,12 @@ Required: No
  Specifies the target locale for the bot\. Any intent used in the bot must be compatible with the locale of the bot\.   
 The default is `en-US`\.  
 Type: String  
-Valid Values:` en-AU | en-GB | en-US | es-US`   
+Valid Values:` de-DE | en-AU | en-GB | en-US | es-419 | es-ES | es-US | fr-FR | fr-CA | it-IT`   
 Required: Yes
 
  ** [nluIntentConfidenceThreshold](#API_PutBot_RequestSyntax) **   <a name="lex-PutBot-request-nluIntentConfidenceThreshold"></a>
 Determines the threshold where Amazon Lex will insert the `AMAZON.FallbackIntent`, `AMAZON.KendraSearchIntent`, or both when returning alternative intents in a [PostContent](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html) or [PostText](https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html) response\. `AMAZON.FallbackIntent` and `AMAZON.KendraSearchIntent` are only inserted if they are configured for the bot\.  
-You must set the `enableModelImprovements` parameter to `true` to use confidence scores\.  
+You must set the `enableModelImprovements` parameter to `true` to use confidence scores in the following regions\.  
 + US East \(N\. Virginia\) \(us\-east\-1\)
 + US West \(Oregon\) \(us\-west\-2\)
 + Asia Pacific \(Sydney\) \(ap\-southeast\-2\)
@@ -319,7 +315,7 @@ Type: Timestamp
  ** [locale](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-locale"></a>
  The target locale for the bot\.   
 Type: String  
-Valid Values:` en-AU | en-GB | en-US | es-US` 
+Valid Values:` de-DE | en-AU | en-GB | en-US | es-419 | es-ES | es-US | fr-FR | fr-CA | it-IT` 
 
  ** [name](#API_PutBot_ResponseSyntax) **   <a name="lex-PutBot-response-name"></a>
 The name of the bot\.  
@@ -385,7 +381,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/PutBot) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/PutBot) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/PutBot) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/PutBot) 

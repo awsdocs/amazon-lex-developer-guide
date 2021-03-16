@@ -1,7 +1,7 @@
 # Amazon Lex Developer Guide
 
 -----
-*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2021 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -20,6 +20,13 @@ Amazon's trademarks and trade dress may not be used in
    + [Programming Model](programming-model.md)
    + [Managing Messages](howitworks-manage-prompts.md)
    + [Managing Conversation Context](context-mgmt.md)
+      + [Setting Intent Context](context-mgmt-active-context.md)
+      + [Using Default Slot Values](context-mgmt-default.md)
+      + [Setting Session Attributes](context-mgmt-session-attribs.md)
+      + [Setting Request Attributes](context-mgmt-request-attribs.md)
+      + [Setting the Session Timeout](context-mgmt-session-timeout.md)
+      + [Sharing Information Between Intents](context-mgmt-cross-intent.md)
+      + [Setting Complex Attributes](context-mgmt-complex-attributes.md)
    + [Using Confidence Scores](confidence-scores.md)
    + [Conversation Logs](conversation-logs.md)
       + [IAM Policies for Conversation Logs](conversation-logs-policies.md)
@@ -169,7 +176,6 @@ Amazon's trademarks and trade dress may not be used in
    + [Identity and Access Management for Amazon Lex](security-iam.md)
       + [How Amazon Lex Works with IAM](security_iam_service-with-iam.md)
       + [Amazon Lex Identity-Based Policy Examples](security_iam_id-based-policy-examples.md)
-      + [Amazon Lex Resource-Based Policy Example](security_iam_resource-based-policy-examples.md)
       + [Troubleshooting Amazon Lex Identity and Access](security_iam_troubleshoot.md)
    + [Using Service-Linked Roles for Amazon Lex](using-service-linked-roles.md)
    + [Monitoring in Amazon Lex](monitoring-aws-lex.md)
@@ -244,15 +250,19 @@ Amazon's trademarks and trade dress may not be used in
          + [EnumerationValue](API_EnumerationValue.md)
          + [FollowUpPrompt](API_FollowUpPrompt.md)
          + [FulfillmentActivity](API_FulfillmentActivity.md)
+         + [InputContext](API_InputContext.md)
          + [Intent](API_Intent.md)
          + [IntentMetadata](API_IntentMetadata.md)
          + [KendraConfiguration](API_KendraConfiguration.md)
          + [LogSettingsRequest](API_LogSettingsRequest.md)
          + [LogSettingsResponse](API_LogSettingsResponse.md)
          + [Message](API_Message.md)
+         + [OutputContext](API_OutputContext.md)
          + [Prompt](API_Prompt.md)
          + [ResourceReference](API_ResourceReference.md)
          + [Slot](API_Slot.md)
+         + [SlotDefaultValue](API_SlotDefaultValue.md)
+         + [SlotDefaultValueSpec](API_SlotDefaultValueSpec.md)
          + [SlotTypeConfiguration](API_SlotTypeConfiguration.md)
          + [SlotTypeMetadata](API_SlotTypeMetadata.md)
          + [SlotTypeRegexConfiguration](API_SlotTypeRegexConfiguration.md)
@@ -261,6 +271,8 @@ Amazon's trademarks and trade dress may not be used in
          + [UtteranceData](API_UtteranceData.md)
          + [UtteranceList](API_UtteranceList.md)
       + [Amazon Lex Runtime Service](API_Types_Amazon_Lex_Runtime_Service.md)
+         + [ActiveContext](API_runtime_ActiveContext.md)
+         + [ActiveContextTimeToLive](API_runtime_ActiveContextTimeToLive.md)
          + [Button](API_runtime_Button.md)
          + [DialogAction](API_runtime_DialogAction.md)
          + [GenericAttachment](API_runtime_GenericAttachment.md)

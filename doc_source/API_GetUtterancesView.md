@@ -8,7 +8,7 @@ After you publish a new version of a bot, you can get information about the old 
 
 Utterance statistics are generated once a day\. Data is available for the last 15 days\. You can request information for up to 5 versions of your bot in each request\. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days\. The response contains information about a maximum of 100 utterances for each version\.
 
-If you set `childDirected` field to true when you created your bot, or if you opted out of participating in improving Amazon Lex, utterances are not available\.
+If you set `childDirected` field to true when you created your bot, if you are using slot obfuscation with one or more slots, or if you opted out of participating in improving Amazon Lex, utterances are not available\.
 
 This operation requires permissions for the `lex:GetUtterancesView` action\.
 
@@ -106,7 +106,7 @@ For more information about using this API in one of the language\-specific AWS S
 +  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/GetUtterancesView) 
-+  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/lex-models-2017-04-19/GetUtterancesView) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/lex-models-2017-04-19/GetUtterancesView) 
 +  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/lex-models-2017-04-19/GetUtterancesView) 

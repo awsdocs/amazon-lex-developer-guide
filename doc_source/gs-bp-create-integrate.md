@@ -10,6 +10,8 @@ In this section, you update the configuration of the OrderFlowers intent to use 
 
 1. Add the Lambda function as the fulfillment code hook and test it\.
 
+   
+
    1. In the Editor, choose **AWS Lambda function** as **Fulfillment**, and select the Lambda function that you created in the preceding step \(`OrderFlowersCodeHook`\)\. Choose **OK** to give Amazon Lex permission to invoke the Lambda function\.
 
       You are configuring this Lambda function as a code hook to fulfill the intent\. Amazon Lex invokes this function only after it has all the necessary slot data from the user to fulfill the intent\.

@@ -34,6 +34,8 @@ You can specify multiple actions using wildcards \(\*\)\. For example, to specif
 
 
 
+
+
 ### Resources<a name="security_iam_service-with-iam-id-based-policies-resources"></a>
 
 The `Resource` element specifies the object or objects to which the action applies\. Statements must include either a `Resource` or a `NotResource` element\. You specify a resource using an ARN or, to indicate that the statement applies to all resources, the wildcard \(\*\)\.
@@ -99,15 +101,7 @@ For examples of Amazon Lex identity\-based policies, see [Amazon Lex Identity\-B
 
 ## Amazon Lex Resource\-Based Policies<a name="security_iam_service-with-iam-resource-based-policies"></a>
 
-Resource\-based policies are JSON policy documents that specify what actions a specified principal can perform on the Amazon Lex resource and under what conditions\. Amazon Lex supports resource\-based permissions policies for bots, intents, and slot types\. Use resource\-based policies to grant usage permission to other accounts on a per\-resource basis\. You can also use a resource\-based policy to allow an AWS service to access your Amazon Lex resources\.
-
-To enable cross\-account access, you can specify an entire account or you can specify IAM entities in another account as the [principal in a resource\-based policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html)\. Adding a cross\-account principal to a resource\-based policy is only the first step in establishing the trust relationship\. When the principal and the resource are in different AWS accounts, you must also grant the principal entity permission to access the resource\. Grant permission by attaching an identity\-based policy to the entity\. However, if a resource\-based policy grants access to a principal in the same account, no additional identity\-based policy is required\. For more information, see [How IAM Roles Differ from Resource\-based Policies ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html)in the *IAM User Guide*\.
-
-### Examples<a name="security_iam_service-with-iam-resource-based-policies-examples"></a>
-
-
-
-For examples of Amazon Lex resource\-based policies, see [Amazon Lex Resource\-Based Policy Example](security_iam_resource-based-policy-examples.md),
+Resource\-based policies are JSON policy documents that specify what actions a specified principal can perform on the Amazon Lex resource and under what conditions\. Amazon Lex does not support resource\-based policies\.
 
 ## Authorization Based on Amazon Lex Tags<a name="security_iam_service-with-iam-tags"></a>
 

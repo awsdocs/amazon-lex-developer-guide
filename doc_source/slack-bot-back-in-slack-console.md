@@ -22,5 +22,7 @@ In this section, use the Slack API console to complete integration of the Slack 
    + In the **Subscribe to Bot Events** section, subscribe to the `message.im` bot event to enable direct messaging between the end user and the Slack bot\.
    + Save the changes\.
 
+
+
 **Next Step**  
 [Step 6: Test the Integration ](slack-bot-test.md)

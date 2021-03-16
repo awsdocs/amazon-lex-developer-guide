@@ -66,6 +66,8 @@ For sign\-up instructions, see [https://www\.twilio\.com/console](https://www.tw
 
    1. Update the **Inbound Settings** configuration of the messaging service by setting the **REQUEST URL** value to the callback URL that Amazon Lex provided in the preceding step\.
 
+   
+
 ## Step 4: Test the Integration<a name="twilio-bot-test"></a>
 
 Use your mobile phone to test the integration between Twilio SMS and your bot\.

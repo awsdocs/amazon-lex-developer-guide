@@ -95,7 +95,7 @@ The following is the JSON structure for intents\. Use this structure when you im
     },
     "slotTypes": [
         List of slot type JSON structures.
-        For more information, see .
+        For more information, see Slot Type structure.
     ]
   }
 }
@@ -119,11 +119,11 @@ The following is the JSON structure for bots\. Use this structure when you impor
     "enableModelImprovements": true | false,
     "intents": [
         List of intent JSON structures.
-        For more information, see .
+        For more information, see Intent structure.
     ],
     "slotTypes": [
         List of slot type JSON structures.
-        For more information, see .
+        For more information, see Slot Type structure.
     ],
     "voiceId": "output voice ID",
     "childDirected": boolean,

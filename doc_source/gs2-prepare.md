@@ -4,6 +4,8 @@ First, create a Lambda function which fulfills a pizza order\. You specify this 
 
 **To create a Lambda function**
 
+
+
 1. Sign in to the AWS Management Console and open the AWS Lambda console at [https://console\.aws\.amazon\.com/lambda/](https://console.aws.amazon.com/lambda/)\.
 
 1. Choose **Create function**\.

@@ -5,7 +5,7 @@ This section explains how to deploy Amazon Lex bots on the Facebook, Slack, and 
 **Note**  
 When storing your Facebook, Slack, or Twilio configurations, Amazon Lex uses AWS Key Management Service customer master keys \(CMK\) to encrypt the information\. The first time that you create a channel to one of these messaging platforms, Amazon Lex creates a default CMK \(`aws/lex`\)\. Alternatively, you can create your own CMK with AWS KMS\. This gives you more flexibility, including the ability to create, rotate, and disable keys\. You can also define access controls and audit the encryption keys used to protect your data\. For more information, see the [AWS Key Management Service Developer Guide](http://docs.aws.amazon.com/kms/latest/developerguide/)\.
 
-When a messaging platform sends a request to Amazon Lex it includes platform\-specific information as a request attribute to your Lambda function\. Use these attributes to customize the way that your bot behaves\. For more information, see [Setting Request Attributes](context-mgmt.md#context-mgmt-request-attribs)\.
+When a messaging platform sends a request to Amazon Lex it includes platform\-specific information as a request attribute to your Lambda function\. Use these attributes to customize the way that your bot behaves\. For more information, see [Setting Request Attributes](context-mgmt-request-attribs.md)\.
 
 All of the attributes take the namespace, `x-amz-lex:`, as the prefix \. For example, the `user-id` attribute is called `x-amz-lex:user-id`\. There are common attributes that are sent by all messaging platforms in addition to attributes that are specific to a particular platform\. The following tables list the request attributes that messaging platforms send to your bot's Lambda function\.
 
