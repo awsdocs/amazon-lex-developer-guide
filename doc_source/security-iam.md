@@ -9,6 +9,7 @@ AWS Identity and Access Management \(IAM\) is an AWS service that helps an admin
 + [Learn More](#security_iam_learn-more)
 + [How Amazon Lex Works with IAM](security_iam_service-with-iam.md)
 + [Amazon Lex Identity\-Based Policy Examples](security_iam_id-based-policy-examples.md)
++ [AWS managed policies for Amazon Lex](security-iam-awsmanpol.md)
 + [Troubleshooting Amazon Lex Identity and Access](security_iam_troubleshoot.md)
 
 ## Audience<a name="security_iam_audience"></a>

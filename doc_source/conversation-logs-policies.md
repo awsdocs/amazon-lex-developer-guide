@@ -6,7 +6,7 @@ Depending on the type of logging that you select, Amazon Lex requires permission
 
 To enable conversation logs, you must grant write permission for CloudWatch Logs and Amazon S3\. If you enable object encryption for your S3 objects, you need to grant access permission to the AWS KMS keys used to encrypt the objects\. 
 
-You can use the IAM console, the IAM API, or the AWS Command Line Interface to create the role and policies\. These instructions use the AWS CLI to create the role and policies\.
+You can use the IAM AWS Management Console, the IAM API, or the AWS Command Line Interface to create the role and policies\. These instructions use the AWS CLI to create the role and policies\. For information about creating policies with the console, see [ Creating policies on the JSON tab ](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) in the *AWS Identity and Access Management User Guide*\.
 
 **Note**  
 The following code is formatted for Linux and MacOS\. For Windows, replace the Linux line continuation character \(\\\) with a caret \(^\)\.

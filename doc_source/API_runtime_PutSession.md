@@ -125,6 +125,7 @@ x-amz-lex-intent-name: intentName
 x-amz-lex-slots: slots
 x-amz-lex-session-attributes: sessionAttributes
 x-amz-lex-message: message
+x-amz-lex-encoded-message: encodedMessage
 x-amz-lex-message-format: messageFormat
 x-amz-lex-dialog-state: dialogState
 x-amz-lex-slot-to-elicit: slotToElicit
@@ -156,11 +157,18 @@ Content type as specified in the `Accept` HTTP header in the request\.
 +  `ReadyForFulfillment` \- Conveys that the client has to fulfill the intent\.
 Valid Values:` ElicitIntent | ConfirmIntent | ElicitSlot | Fulfilled | ReadyForFulfillment | Failed` 
 
+ ** [encodedMessage](#API_runtime_PutSession_ResponseSyntax) **   <a name="lex-runtime_PutSession-response-encodedMessage"></a>
+The next message that should be presented to the user\.  
+The `encodedMessage` field is base\-64 encoded\. You must decode the field before you can use the value\.  
+Length Constraints: Minimum length of 1\. Maximum length of 1366\.
+
  ** [intentName](#API_runtime_PutSession_ResponseSyntax) **   <a name="lex-runtime_PutSession-response-intentName"></a>
 The name of the current intent\.
 
  ** [message](#API_runtime_PutSession_ResponseSyntax) **   <a name="lex-runtime_PutSession-response-message"></a>
+ *This header has been deprecated\.*   
 The next message that should be presented to the user\.  
+You can only use this field in the de\-DE, en\-AU, en\-GB, en\-US, es\-419, es\-ES, es\-US, fr\-CA, fr\-FR, and it\-IT locales\. In all other locales, the `message` field is null\. You should use the `encodedMessage` field instead\.  
 Length Constraints: Minimum length of 1\. Maximum length of 1024\.
 
  ** [messageFormat](#API_runtime_PutSession_ResponseSyntax) **   <a name="lex-runtime_PutSession-response-messageFormat"></a>
@@ -229,12 +237,12 @@ HTTP Status Code: 404
 ## See Also<a name="API_runtime_PutSession_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/runtime.lex-2016-11-28/PutSession) 
-+  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/runtime.lex-2016-11-28/PutSession) 
++  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/runtime.lex-2016-11-28/PutSession) 
++  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PutSession) 
++  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PutSession) 
++  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PutSession) 
++  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex-2016-11-28/PutSession) 
++  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PutSession) 
++  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PutSession) 
++  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/runtime.lex-2016-11-28/PutSession) 
++  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/runtime.lex-2016-11-28/PutSession) 

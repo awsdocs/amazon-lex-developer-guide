@@ -1,7 +1,7 @@
 # Amazon Lex Developer Guide
 
 -----
-*****Copyright &copy; 2021 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -168,6 +168,15 @@ Amazon's trademarks and trade dress may not be used in
       + [Step 4: Set up Amazon Cognito](agent-step-4.md)
       + [Step 5: Deploy Your Bot as a Web Application](agent-step-5.md)
       + [Step 6: Use the Bot](agent-step-6.md)
++ [Migrating a bot](migrate.md)
+   + [Migration messages](migrate-messages.md)
+      + [Built-in intent](message-built-in-intent.md)
+      + [Built-in slot type](message-built-in-slot-type.md)
+      + [Conversation logs](message-logs.md)
+      + [Lambda function](message-lambda.md)
+      + [Message groups](migrate-message-groups.md)
+      + [Prompts and phrases](message-prompts-phrases.md)
+      + [Other Amazon Lex V1 features](message-features.md)
 + [Security in Amazon Lex](security.md)
    + [Data Protection in Amazon Lex](data-protection.md)
       + [Encryption at Rest](at-rest.md)
@@ -176,6 +185,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Identity and Access Management for Amazon Lex](security-iam.md)
       + [How Amazon Lex Works with IAM](security_iam_service-with-iam.md)
       + [Amazon Lex Identity-Based Policy Examples](security_iam_id-based-policy-examples.md)
+      + [AWS managed policies for Amazon Lex](security-iam-awsmanpol.md)
       + [Troubleshooting Amazon Lex Identity and Access](security_iam_troubleshoot.md)
    + [Using Service-Linked Roles for Amazon Lex](using-service-linked-roles.md)
    + [Monitoring in Amazon Lex](monitoring-aws-lex.md)
@@ -218,6 +228,8 @@ Amazon's trademarks and trade dress may not be used in
          + [GetIntent](API_GetIntent.md)
          + [GetIntents](API_GetIntents.md)
          + [GetIntentVersions](API_GetIntentVersions.md)
+         + [GetMigration](API_GetMigration.md)
+         + [GetMigrations](API_GetMigrations.md)
          + [GetSlotType](API_GetSlotType.md)
          + [GetSlotTypes](API_GetSlotTypes.md)
          + [GetSlotTypeVersions](API_GetSlotTypeVersions.md)
@@ -228,6 +240,7 @@ Amazon's trademarks and trade dress may not be used in
          + [PutIntent](API_PutIntent.md)
          + [PutSlotType](API_PutSlotType.md)
          + [StartImport](API_StartImport.md)
+         + [StartMigration](API_StartMigration.md)
          + [TagResource](API_TagResource.md)
          + [UntagResource](API_UntagResource.md)
       + [Amazon Lex Runtime Service](API_Operations_Amazon_Lex_Runtime_Service.md)
@@ -257,6 +270,8 @@ Amazon's trademarks and trade dress may not be used in
          + [LogSettingsRequest](API_LogSettingsRequest.md)
          + [LogSettingsResponse](API_LogSettingsResponse.md)
          + [Message](API_Message.md)
+         + [MigrationAlert](API_MigrationAlert.md)
+         + [MigrationSummary](API_MigrationSummary.md)
          + [OutputContext](API_OutputContext.md)
          + [Prompt](API_Prompt.md)
          + [ResourceReference](API_ResourceReference.md)

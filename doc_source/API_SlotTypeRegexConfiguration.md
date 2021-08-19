@@ -15,13 +15,13 @@ The following regular expression operators are not supported:
 + Infinite repeaters: \*, \+, or \{x,\} with no upper bound\.
 + Wild card \(\.\)
 Type: String  
-Length Constraints: Minimum length of 1\. Maximum length of 100\.  
+Length Constraints: Minimum length of 1\. Maximum length of 300\.  
 Required: Yes
 
 ## See Also<a name="API_SlotTypeRegexConfiguration_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/SlotTypeRegexConfiguration) 
-+  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/SlotTypeRegexConfiguration) 
-+  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/SlotTypeRegexConfiguration) 
-+  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/lex-models-2017-04-19/SlotTypeRegexConfiguration) 
++  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/SlotTypeRegexConfiguration) 
++  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/SlotTypeRegexConfiguration) 
++  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/SlotTypeRegexConfiguration) 
++  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/lex-models-2017-04-19/SlotTypeRegexConfiguration) 

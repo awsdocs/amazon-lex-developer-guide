@@ -118,10 +118,12 @@ x-amz-lex-slots: slots
 x-amz-lex-session-attributes: sessionAttributes
 x-amz-lex-sentiment: sentimentResponse
 x-amz-lex-message: message
+x-amz-lex-encoded-message: encodedMessage
 x-amz-lex-message-format: messageFormat
 x-amz-lex-dialog-state: dialogState
 x-amz-lex-slot-to-elicit: slotToElicit
 x-amz-lex-input-transcript: inputTranscript
+x-amz-lex-encoded-input-transcript: encodedInputTranscript
 x-amz-lex-bot-version: botVersion
 x-amz-lex-session-id: sessionId
 x-amz-lex-active-contexts: activeContexts
@@ -169,14 +171,31 @@ Identifies the current state of the user interaction\. Amazon Lex returns one of
    This can happen for various reasons, including that the user does not provide an appropriate response to prompts from the service \(you can configure how many times Amazon Lex can prompt a user for specific information\), or if the Lambda function fails to fulfill the intent\. 
 Valid Values:` ElicitIntent | ConfirmIntent | ElicitSlot | Fulfilled | ReadyForFulfillment | Failed` 
 
- ** [inputTranscript](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-inputTranscript"></a>
+ ** [encodedInputTranscript](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-encodedInputTranscript"></a>
 The text used to process the request\.  
+If the input was an audio stream, the `encodedInputTranscript` field contains the text extracted from the audio stream\. This is the text that is actually processed to recognize intents and slot values\. You can use this information to determine if Amazon Lex is correctly processing the audio that you send\.  
+The `encodedInputTranscript` field is base\-64 encoded\. You must decode the field before you can use the value\.
+
+ ** [encodedMessage](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-encodedMessage"></a>
+The message to convey to the user\. The message can come from the bot's configuration or from a Lambda function\.  
+If the intent is not configured with a Lambda function, or if the Lambda function returned `Delegate` as the `dialogAction.type` in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context\. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message\.  
+When you create an intent you can assign messages to groups\. When messages are assigned to groups Amazon Lex returns one message from each group in the response\. The message field is an escaped JSON string containing the messages\. For more information about the structure of the JSON string returned, see [Supported Message Formats](howitworks-manage-prompts.md#msg-prompts-formats)\.  
+If the Lambda function returns a message, Amazon Lex passes it to the client in its response\.  
+The `encodedMessage` field is base\-64 encoded\. You must decode the field before you can use the value\.  
+Length Constraints: Minimum length of 1\. Maximum length of 1366\.
+
+ ** [inputTranscript](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-inputTranscript"></a>
+ *This header has been deprecated\.*   
+The text used to process the request\.  
+You can use this field only in the de\-DE, en\-AU, en\-GB, en\-US, es\-419, es\-ES, es\-US, fr\-CA, fr\-FR, and it\-IT locales\. In all other locales, the `inputTranscript` field is null\. You should use the `encodedInputTranscript` field instead\.  
 If the input was an audio stream, the `inputTranscript` field contains the text extracted from the audio stream\. This is the text that is actually processed to recognize intents and slot values\. You can use this information to determine if Amazon Lex is correctly processing the audio that you send\.
 
  ** [intentName](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-intentName"></a>
 Current user intent that Amazon Lex is aware of\.
 
  ** [message](#API_runtime_PostContent_ResponseSyntax) **   <a name="lex-runtime_PostContent-response-message"></a>
+ *This header has been deprecated\.*   
+You can only use this field in the de\-DE, en\-AU, en\-GB, en\-US, es\-419, es\-ES, es\-US, fr\-CA, fr\-FR, and it\-IT locales\. In all other locales, the `message` field is null\. You should use the `encodedMessage` field instead\.  
 The message to convey to the user\. The message can come from the bot's configuration or from a Lambda function\.  
 If the intent is not configured with a Lambda function, or if the Lambda function returned `Delegate` as the `dialogAction.type` in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context\. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message\.  
 When you create an intent you can assign messages to groups\. When messages are assigned to groups Amazon Lex returns one message from each group in the response\. The message field is an escaped JSON string containing the messages\. For more information about the structure of the JSON string returned, see [Supported Message Formats](howitworks-manage-prompts.md#msg-prompts-formats)\.  
@@ -318,12 +337,12 @@ SignedHeaders=accept;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-lex
 ## See Also<a name="API_runtime_PostContent_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/runtime.lex-2016-11-28/PostContent) 
-+  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PostContent) 
-+  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PostContent) 
-+  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PostContent) 
-+  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex-2016-11-28/PostContent) 
-+  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PostContent) 
-+  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PostContent) 
-+  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/runtime.lex-2016-11-28/PostContent) 
-+  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/runtime.lex-2016-11-28/PostContent) 
++  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/runtime.lex-2016-11-28/PostContent) 
++  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/runtime.lex-2016-11-28/PostContent) 
++  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex-2016-11-28/PostContent) 
++  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/runtime.lex-2016-11-28/PostContent) 
++  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex-2016-11-28/PostContent) 
++  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/runtime.lex-2016-11-28/PostContent) 
++  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/runtime.lex-2016-11-28/PostContent) 
++  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/runtime.lex-2016-11-28/PostContent) 
++  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/runtime.lex-2016-11-28/PostContent) 

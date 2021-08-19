@@ -37,6 +37,11 @@ This section describes general guidelines when using Amazon Lex\.
   When Amazon Lex calls a Lambda function or returns the result of a speech interaction with your client application, the case of the slot values is not guaranteed\. For example, if you are eliciting values for the [AMAZON\.Movie](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference#movie) built\-in slot type, and a user says or types "Gone with the wind," Amazon Lex may return "Gone with the Wind," "gone with the wind," or "Gone With The Wind\." In text interactions, the case of the slot values matches the text entered or the slot value, depending on the value of the `valueResolutionStrategy` field\.
 
    
++ When defining slot values that contain acronyms, use the following patterns:
+  + Capital letters separated by periods \(D\.V\.D\.\)
+  + Capital letters separated by spaces \(D V D\)
+
+   
 + Amazon Lex does not support the AMAZON\.LITERAL built\-in slot type that the Alexa Skills Kit supports\. However, Amazon Lex supports creating custom slot types that you can use to implement this functionality\. As mentioned in the previous bullet, you can capture values outside the custom slot type definition\. Add more and diverse enumeration values to boost the automatic speech recognition \(ASR\) and natural language understanding \(NLU\) accuracy\. 
 
    

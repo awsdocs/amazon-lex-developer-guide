@@ -1,10 +1,13 @@
 # Document History for Amazon Lex<a name="doc-history"></a>
-+ **Latest documentation update: **November 23, 2020
++ **Latest documentation update: **July 13, 2021
 
 The following table describes important changes in each release of Amazon Lex\. For notification about updates to this documentation, you can subscribe to an RSS feed\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html) | Amazon Lex now supports the English \(Indian\) locale\. For more information, see [Languages supported in Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html)\. | July 15, 2021 | 
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/migration.html) | Amazon Lex now provides a tool to migrate a bot to the Amazon Lex V2 API\. For more information, see [Migrating a bot](https://docs.aws.amazon.com/lex/latest/dg/migration.html)\.  | July 13, 2021 | 
+| [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html) | Amazon Lex now supports the Japanese \(Japan\) locale\. For more information, see [Languages supported by Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html)\. | April 1, 2021 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html) | Amazon Lex now supports the German \(German\) \(de\-DE\) and Spanish \(Latin American\) \(es\-419\) locales\. For more information, see [Languages supported by Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html)\. | November 23, 2020 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/context-mgmt-active-context.html) | Amazon Lex now supports using contexts to manage activating intents\. For more information, see [Setting Intent Context](https://docs.aws.amazon.com/lex/latest/dg/context-mgmt-active-context.html)\. | November 19, 2020 | 
 | [New feature](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html) | Amazon Lex now supports the French \(fr\-FR\), French Canadian \(fr\-CA\), Italian \(it\-IT\) and Spanish \(es\-ES\) locales\. For a complete list of supported locales, see [Languages supported by Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/how-it-works-language.html)\. | November 11, 2020 | 

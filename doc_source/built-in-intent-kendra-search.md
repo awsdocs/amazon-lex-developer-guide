@@ -2,7 +2,7 @@
 
 To search documents that you have indexed with Amazon Kendra, use the `AMAZON.KendraSearchIntent` intent\. When Amazon Lex can't determine the next action in a conversation with the user, it triggers the search intent\.
 
-The `AMAZON.KendraSearchIntent` is available only in the English \(US\) \(en\-US\) locale\.
+The `AMAZON.KendraSearchIntent` is available only in the English \(US\) \(en\-US\) locale and in the US East \(N\. Virginia\), US West \(Oregon\) and Europe \(Ireland\) Regions\.
 
 Amazon Kendra is a machine\-learning\-based search service that indexes natural language documents such as PDF documents or Microsoft Word files\. It can search indexed documents and return the following types of responses to a question:
 + An answer 
@@ -177,6 +177,7 @@ Amazon Kendra has four types of responses\.
 + `x-amz-lex:kendra-search-response-question_answer-question-<N>` – The question from a FAQ that matches the search\.
 + `x-amz-lex:kendra-search-response-question_answer-answer-<N>` – The answer from a FAQ that matches the search\.
 + `x-amz-lex:kendra-search-response-document-<N>` – An excerpt from a document in the index that is related to the text of the utterance\.
++ `x-amz-lex:kendra-search-response-document-link-<N>` – The URL of a document in the index that is related to the text of the utterance\.
 + `x-amz-lex:kendra-search-response-answer-<N>` – An excerpt from a document in the index that answers the question\.
 
 The responses are returned in `request` attributes\. There can be up to five responses for each attribute, numbered 1 through 5\. For more information about responses, see [Types of response](https://docs.aws.amazon.com/kendra/latest/dg/response-types.html) in the *Amazon Kendra Developer Guide*\. 

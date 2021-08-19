@@ -12,15 +12,17 @@ Amazon Lex supports the following languages and locales\.
 | Code | Language and locale | 
 | --- | --- | 
 | de\-DE | German \(German\) | 
-| en\-AU | English \(Australian\) | 
-| en\-GB | English \(British\) | 
+| en\-AU | English \(Australia\) | 
+| en\-GB | English \(UK\) | 
+| en\-IN | English \(India\) | 
 | en\-US | English \(US\) | 
-| es\-419 | Spanish \(Latin American\) | 
+| es\-419 | Spanish \(Latin America\) | 
 | es\-ES | Spanish \(Spain\) | 
 | es\-US | Spanish \(US\) | 
-| fr\-CA | French \(Canadian\) | 
-| fr\-FR | French \(French\) | 
+| fr\-CA | French \(Canada\) | 
+| fr\-FR | French \(France\) | 
 | it\-IT | Italian \(Italy\) | 
+| ja\-JP | Japanese \(Japan\) | 
 
 ## Languages and Locales Supported by Amazon Lex Features<a name="supported-languages-features"></a>
 

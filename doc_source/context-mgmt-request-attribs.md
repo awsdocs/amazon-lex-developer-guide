@@ -22,7 +22,7 @@ You can set the attribute to any combination of the following message types:
 + `SSML`—The message contains text formatted for voice output\.
 + `CustomPayload`—The message contains a custom format that you have created for your client\. You can define the payload to meet the needs of your application\.
 
-Amazon Lex returns only messages with the specified type in the `Message` field of the response\. You can set more than one value by separating values with a comma\. If you are using message groups, every message group must contain at least one message of the specified type\. Otherwise, you get a `NoUsableMessageException` error\. For more information, see [Message Groups](howitworks-manage-prompts.md#message-groups)\.
+Amazon Lex returns only messages with the specified type in the `Message` field of the response\. You can set more than one value by separating values with a comma\. If you are using message groups, every message group must contain at least one message of the specified type\. Otherwise, you get a `NoUsableMessageException` error\. For more information, see [Message GroupsMessage groups ](howitworks-manage-prompts.md#message-groups)\.
 
 **Note**  
 The `x-amz-lex:accept-content-types` request attribute has no effect on the contents of the HTML body\. The contents of a `PostText` operation response is always plain UTF\-8 text\. The body of a `PostContent` operation response contains data in the format set in the `Accept` header in the request\.

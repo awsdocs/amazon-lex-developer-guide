@@ -12,13 +12,13 @@ Required: No
  **supportedLocales**   <a name="lex-Type-BuiltinIntentMetadata-supportedLocales"></a>
 A list of identifiers for the locales that the intent supports\.  
 Type: Array of strings  
-Valid Values:` de-DE | en-AU | en-GB | en-US | es-419 | es-ES | es-US | fr-FR | fr-CA | it-IT`   
+Valid Values:` de-DE | en-AU | en-GB | en-IN | en-US | es-419 | es-ES | es-US | fr-FR | fr-CA | it-IT | ja-JP`   
 Required: No
 
 ## See Also<a name="API_BuiltinIntentMetadata_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/BuiltinIntentMetadata) 
-+  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/BuiltinIntentMetadata) 
-+  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/BuiltinIntentMetadata) 
-+  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/lex-models-2017-04-19/BuiltinIntentMetadata) 
++  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/lex-models-2017-04-19/BuiltinIntentMetadata) 
++  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/lex-models-2017-04-19/BuiltinIntentMetadata) 
++  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/lex-models-2017-04-19/BuiltinIntentMetadata) 
++  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/lex-models-2017-04-19/BuiltinIntentMetadata) 

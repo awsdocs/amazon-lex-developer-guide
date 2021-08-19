@@ -9,6 +9,7 @@ To learn how to create an IAM identity\-based policy using example JSON policy d
 + [AWS Managed \(Predefined\) Policies for Amazon Lex](#access-policy-examples-aws-managed)
 + [Example: Allow Users to View Their Own Permissions](#security_iam_id-based-policy-examples-view-own-permissions)
 + [Example: Delete All Amazon Lex Bots](#security_iam_id-based-policy-examples-access-one-bot)
++ [Example: Allow a user to migrate a bot to Amazon Lex V2 APIs](#security_iam_id-based-policy-examples-migrate)
 + [Example: Use a Tag to Access a Resource](#security_iam_id-based-policy-examples-tag)
 
 ## Policy Best Practices<a name="security_iam_service-with-iam-policy-best-practices"></a>
@@ -92,6 +93,78 @@ This example policy grants an IAM user in your AWS account permission to delete 
             "Resource": [
                 "*"
             ]
+        }
+    ]
+}
+```
+
+## Example: Allow a user to migrate a bot to Amazon Lex V2 APIs<a name="security_iam_id-based-policy-examples-migrate"></a>
+
+The following IAM permission policy allows a user to start migrating a bot from Amazon Lex to Amazon Lex V2 APIs and to see the list of migrations and their progress\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "startMigration",
+            "Effect": "Allow",
+            "Action": "lex:StartMigration",
+            "Resource": "arn:aws:lex:<Region>:<123456789012>:bot:*"
+        },
+        {
+            "Sid": "passRole",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "arn:aws:iam::<123456789012>:role/<v2 bot role>"
+        },
+        {
+            "Sid": "allowOperations",
+            "Effect": "Allow",
+            "Action": [
+                "lex:CreateBot",
+                "lex:CreateIntent",
+                "lex:UpdateSlot",
+                "lex:DescribeBotLocale",
+                "lex:UpdateBotAlias",
+                "lex:CreateSlotType",
+                "lex:DeleteBotLocale",
+                "lex:DescribeBot",
+                "lex:UpdateBotLocale",
+                "lex:CreateSlot",
+                "lex:DeleteSlot",
+                "lex:UpdateBot",
+                "lex:DeleteSlotType",
+                "lex:DescribeBotAlias",
+                "lex:CreateBotLocale",
+                "lex:DeleteIntent",
+                "lex:StartImport",
+                "lex:UpdateSlotType",
+                "lex:UpdateIntent",
+                "lex:DescribeImport"
+            ],
+            "Resource": [
+                "arn:aws:lex:<Region>:<123456789012>:bot/*",
+                "arn:aws:lex:<Region>:<123456789012>:bot-alias/*/*"
+            ]
+        },
+        {
+            "Sid": "showBots",
+            "Effect": "Allow",
+            "Action": [
+                "lex:CreateUploadUrl",
+                "lex:ListBots"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "showMigrations",
+            "Effect": "Allow",
+            "Action": [
+                "lex:GetMigration",
+                "lex:GetMigrations"
+            ],
+            "Resource": "*"
         }
     ]
 }

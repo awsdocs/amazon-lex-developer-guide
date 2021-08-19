@@ -109,11 +109,11 @@ You must specify at least one prompt message for each of the required slots in a
 Which city would you like to fly to?
 ```
 
-You can set one or more prompts for each slot using the console\. You can also create groups of prompts using the [PutIntent](API_PutIntent.md) operation\. For more information, see [Message Groups](#message-groups)\.
+You can set one or more prompts for each slot using the console\. You can also create groups of prompts using the [PutIntent](API_PutIntent.md) operation\. For more information, see [Message GroupsMessage groups ](#message-groups)\.
 
 ### Responses<a name="msg-prompts-response"></a>
 
-In the console, use the **Responses** section to build dynamic, engaging conversations for your bot\. You can create one or more message groups for a response\. At runtime, Amazon Lex builds a response by selecting one message from each message group\. For more information about message groups, see [Message Groups](#message-groups)\. 
+In the console, use the **Responses** section to build dynamic, engaging conversations for your bot\. You can create one or more message groups for a response\. At runtime, Amazon Lex builds a response by selecting one message from each message group\. For more information about message groups, see [Message GroupsMessage groups ](#message-groups)\. 
 
 For example, your first message group could contain different greetings: "Hello," "Hi," and "Greetings\." The second message group could contain different forms of introduction: "I am the reservation bot" and "This is the reservation bot\." A third message group could communicate the bot's capabilities: "I can help with car rentals and hotel reservations," "You can make car rentals and hotel reservations," and "I can help you rent a car and book a hotel\."
 
@@ -143,7 +143,7 @@ When you use the [PostText](API_runtime_PostText.md) operation, or when you use 
 + `PlainText`—The message contains plain UTF\-8 text\.
 + `SSML`—The message contains text formatted for voice output\.
 + `CustomPayload`—The message contains a custom format that you have created for your client\. You can define the payload to meet the needs of your application\.
-+ `Composite`—The message is a collection of messages, one from each message group\. For more information about message groups, see [Message Groups](#message-groups)\.
++ `Composite`—The message is a collection of messages, one from each message group\. For more information about message groups, see [Message GroupsMessage groups ](#message-groups)\.
 
 By default, Amazon Lex returns any one of the messages defined for a particular prompt\. For example, if you define five messages to elicit a slot value, Amazon Lex chooses one of the messages randomly and returns it to the client\.
 

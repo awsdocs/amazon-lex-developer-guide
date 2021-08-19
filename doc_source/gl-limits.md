@@ -2,6 +2,8 @@
 
 This section describes current quotas in Amazon Lex\. These quotas are grouped by categories\. 
 
+Service quotas can be adjusted or increased\. Contact AWS customer support to increase a quota\. It can take a few days to increase a service quota\. If you're increasing your quota as part of a larger project, be sure to add this time to your plan\.
+
 **Topics**
 + [Runtime Service Quotas](#gl-limits-runtime)
 + [Model Building Quotas](#gl-limits-model-building)
@@ -18,6 +20,12 @@ In addition to the quotas described in the API reference, note the following:
 
    
 + The maximum size of `PostContent` headers is 16 KB\. The maximum size of request and session headers combined is 12 KB\.
+
+   
++ When using the `PostContent` or `PostText` operations, the maximum number of concurrent conversations with a bot is 2 for the `$LATEST` alias and 25 for all other aliases\. The quota applies separately for each API\.
+
+   
++ The maximum number of concurrent session management calls \([PutSession](API_runtime_PutSession.md), [GetSession](API_runtime_GetSession.md), and [DeleteSession](API_runtime_DeleteSession.md)\) is 2 for the `$LATEST` alias of a bot and 25 for all other aliases\.
 
    
 + The maximum input size to a Lambda function is 12 KB\. The maximum output size is 25 KB, of which 12 KB can be session attributes\.
@@ -85,7 +93,7 @@ Model building refers to creating and managing bots\. This includes creating and
   In addition, the sample utterances you provide for a slot in one of the intents applies to a slot with the same name in other intents\.
 
    
-+ You can associate a maximum of 100 intents with a bot\.
++ You can associate a maximum of 250 intents with a bot\.
 
    
 + When you create a bot, you specify a session timeout\. The session timeout can be between one minute and one day\. The default is five minutes\.
@@ -94,7 +102,7 @@ Model building refers to creating and managing bots\. This includes creating and
 + You can create up to five aliases for a bot\.
 
    
-+ You can create up to 100 bots per AWS account\.
++ You can create up to 250 bots per AWS account\.
 
    
 + You cannot create multiple intents that extend from the same built\-in intent\.

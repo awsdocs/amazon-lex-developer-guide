@@ -22,6 +22,10 @@ In this section, use the Slack API console to complete integration of the Slack 
    + In the **Subscribe to Bot Events** section, subscribe to the `message.im` bot event to enable direct messaging between the end user and the Slack bot\.
    + Save the changes\.
 
+1. Enable sending messages from the messages tab as follows:
+   + From the left menu, choose **App Home**\.
+   + In the **Show Tabs** section, choose **Allow users to send Slash commands and messages from the messages tab\.**
+
 
 
 **Next Step**  

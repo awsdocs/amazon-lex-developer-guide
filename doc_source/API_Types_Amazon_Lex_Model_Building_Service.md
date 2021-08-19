@@ -20,6 +20,8 @@ The following data types are supported by Amazon Lex Model Building Service:
 +  [LogSettingsRequest](API_LogSettingsRequest.md) 
 +  [LogSettingsResponse](API_LogSettingsResponse.md) 
 +  [Message](API_Message.md) 
++  [MigrationAlert](API_MigrationAlert.md) 
++  [MigrationSummary](API_MigrationSummary.md) 
 +  [OutputContext](API_OutputContext.md) 
 +  [Prompt](API_Prompt.md) 
 +  [ResourceReference](API_ResourceReference.md) 

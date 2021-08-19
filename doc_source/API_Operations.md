@@ -28,6 +28,8 @@ The following actions are supported by Amazon Lex Model Building Service:
 +  [GetIntent](API_GetIntent.md) 
 +  [GetIntents](API_GetIntents.md) 
 +  [GetIntentVersions](API_GetIntentVersions.md) 
++  [GetMigration](API_GetMigration.md) 
++  [GetMigrations](API_GetMigrations.md) 
 +  [GetSlotType](API_GetSlotType.md) 
 +  [GetSlotTypes](API_GetSlotTypes.md) 
 +  [GetSlotTypeVersions](API_GetSlotTypeVersions.md) 
@@ -38,6 +40,7 @@ The following actions are supported by Amazon Lex Model Building Service:
 +  [PutIntent](API_PutIntent.md) 
 +  [PutSlotType](API_PutSlotType.md) 
 +  [StartImport](API_StartImport.md) 
++  [StartMigration](API_StartMigration.md) 
 +  [TagResource](API_TagResource.md) 
 +  [UntagResource](API_UntagResource.md) 
 
