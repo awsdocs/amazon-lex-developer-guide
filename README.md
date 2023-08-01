@@ -1,13 +1,5 @@
 # NOTICE
 
+This repository is archived, read-only, and no longer updated. For more information, read [the announcement on the AWS News Blog](https://aws.amazon.com/blogs/aws/retiring-the-aws-documentation-on-github/).
+
 You can find up-to-date AWS technical documentation on the [AWS Documentation website](https://docs.aws.amazon.com/), where you can also submit feedback and suggestions for improvement.
-
-## Amazon Lex Developer Guide
-
-The open source version of the Amazon Lex docs. You can submit feedback & requests for changes by submitting issues in this repo or by making proposed changes & submitting a pull request.
-
-## License Summary
-
-The documentation is made available under the Creative Commons Attribution-ShareAlike 4.0 International License. See the LICENSE file.
-
-The sample code within this documentation is made available under a modified MIT license. See the LICENSE-SAMPLECODE file.
